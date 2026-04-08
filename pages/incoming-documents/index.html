@@ -1,0 +1,71 @@
+<header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+    <h1 class="text-xl font-bold">Sổ văn bản</h1>
+    <div class="flex items-center space-x-4 text-sm">
+        <button class="flex items-center px-3 py-2 border rounded-md hover:bg-gray-50 text-gray-600"><i class="far fa-calendar-alt mr-2 text-blue-600"></i> Lịch tuần</button>
+        <div class="flex items-center space-x-3 border-l pl-4">
+            <div class="text-right">
+                <p class="font-semibold">{{UserName}}</p>
+                <p class="text-xs text-gray-500">{{UserRole}}</p>
+            </div>
+            <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full border border-gray-200">
+        </div>
+    </div>
+</header>
+
+<div class="p-6">
+    <div class="flex border-b border-gray-200 mb-6 bg-white px-4 rounded-t-lg">
+        <button class="px-6 py-3 font-semibold border-b-2 border-blue-600 text-blue-600 flex items-center">
+            Văn bản đến <span class="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">10+</span>
+        </button>
+        <button class="px-6 py-3 font-semibold text-gray-500 hover:text-blue-600 flex items-center transition">Văn bản đi</button>
+    </div>
+
+    <div class="bg-white p-6 shadow-sm border border-gray-200 rounded-b-lg">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 mb-4">
+            <div class="md:col-span-4 relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400"><i class="fas fa-search"></i></span>
+                <input type="text" placeholder="Tìm kiếm..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 outline-none text-sm">
+            </div>
+            <div class="md:col-span-2">
+                <select class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-600 outline-none">
+                    <option>Năm 2026</option>
+                </select>
+            </div>
+            <div class="md:col-span-6 flex justify-end space-x-2">
+                <button class="px-4 py-2 bg-blue-700 text-white rounded-md text-sm hover:bg-blue-800 transition">Lưu</button>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition">Tạo sổ</button>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm flex items-center hover:bg-blue-700 transition">
+                    <i class="fas fa-file-export mr-2"></i> Xuất file
+                </button>
+            </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+            <table class="w-full text-left text-xs">
+                <thead class="bg-gray-50 text-gray-600 font-semibold uppercase">
+                    <tr>
+                        <th class="px-3 py-3 border-b text-center">Số</th>
+                        <th class="px-3 py-3 border-b">Ngày đến</th>
+                        <th class="px-3 py-3 border-b">Ký hiệu</th>
+                        <th class="px-3 py-3 border-b">Trích yếu</th>
+                        <th class="px-3 py-3 border-b">Hạn xử lý</th>
+                        <th class="px-3 py-3 border-b text-center">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    <tr class="hover:bg-blue-50/50 transition">
+                        <td class="px-3 py-4 text-center">1</td>
+                        <td class="px-3 py-4">07/04/2026</td>
+                        <td class="px-3 py-4 font-medium text-blue-600">61/QĐ-ĐHĐN</td>
+                        <td class="px-3 py-4">Thư mời tham dự hội thảo công nghệ...</td>
+                        <td class="px-3 py-4 text-red-500 font-bold">12/04/2026</td>
+                        <td class="px-3 py-4 text-center">
+                            <button class="text-gray-400 hover:text-blue-600 mx-1"><i class="far fa-edit"></i></button>
+                            <button class="text-gray-400 hover:text-red-600 mx-1"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

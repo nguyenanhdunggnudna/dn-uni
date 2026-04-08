@@ -1,0 +1,63 @@
+<aside class="w-64 bg-white border-r border-gray-200 hidden lg:flex flex-col h-screen sticky top-0">
+    <div class="p-6 border-b border-gray-100 flex justify-center">
+        <img src="https://via.placeholder.com/60" alt="Logo" class="h-12">
+    </div>
+
+    <nav class="flex-1 p-4 space-y-1">
+        <a href="javascript:void(0)" 
+           onclick="loadPage('../pages/home/index.html')" 
+           class="flex items-center p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+            <i class="fas fa-home w-6"></i> <span>Trang chủ</span>
+        </a>
+
+        <div class="space-y-1" id="group-news">
+            <button onclick="toggleSidebarMenu('menu-news')" 
+                    class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+                <div class="flex items-center">
+                    <i class="fas fa-newspaper w-6"></i> <span>Tin nội bộ</span>
+                </div>
+                <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-news"></i>
+            </button>
+            <div id="menu-news" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/internal-news/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Tin công khai</a>
+                
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/private-messages/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Tin nhắn riêng</a>
+            </div>
+        </div>
+
+        <div class="space-y-1" id="group-docs">
+            <button onclick="toggleSidebarMenu('menu-docs')" 
+                    class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+                <div class="flex items-center">
+                    <i class="fas fa-file-alt w-6"></i> <span>Văn bản đến</span>
+                </div>
+                <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-docs"></i>
+            </button>
+            <div id="menu-docs" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <a href="javascript:void(0)"
+                   onclick="loadPage('../pages/incoming-documents/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Sổ văn bản</a>
+                
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/pending-docs/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Chưa tiếp nhận</a>
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" 
+           onclick="loadPage('../pages/outgoing-documents/index.html')" 
+           class="flex items-center p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+            <i class="fas fa-paper-plane w-6"></i> <span>Văn bản đi</span>
+        </a>
+    </nav>
+
+    <div class="p-4 border-t border-gray-100">
+        <button class="flex items-center p-3 text-gray-600 w-full hover:bg-red-50 hover:text-red-600 rounded-lg transition font-medium">
+            <i class="fas fa-sign-out-alt w-6"></i> <span>Đăng xuất</span>
+        </button>
+    </div>
+</aside>

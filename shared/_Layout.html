@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý Văn bản</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden text-gray-800">
+
+    <div id="sidebar-placeholder"></div>
+
+    <main class="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
+        <div id="content-placeholder"></div>
+    </main>
+<script>
+    // 1. Hàm nạp Sidebar (Chỉ nạp 1 lần duy nhất khi mở Layout)
+    async function initLayout() {
+        try {
+            const sideResponse = await fetch('../components/_Sidebar.html'); 
+            if (!sideResponse.ok) throw new Error('Không tìm thấy file _Sidebar.html');
+            const sideHtml = await sideResponse.text();
+            document.getElementById('sidebar-placeholder').innerHTML = sideHtml;
+            
+            // Sau khi nạp Sidebar xong, nạp luôn trang mặc định (Sổ văn bản)
+            loadPage('../pages/incoming-documents/index.html');
+            
+            console.log("Layout và Sidebar đã sẵn sàng!");
+        } catch (err) {
+            console.error("Lỗi khởi tạo:", err);
+        }
+    }
+
+    // 2. Hàm chuyển nội dung trang con (Dùng khi bấm vào các nút ở Sidebar)
+    async function loadPage(pagePath) {
+        try {
+            const response = await fetch(pagePath);
+            if (!response.ok) throw new Error('Không tìm thấy trang: ' + pagePath);
+            const html = await response.text();
+            
+            // Đổ nội dung mới vào khung chính
+            document.getElementById('content-placeholder').innerHTML = html;
+            
+            console.log("Đã nạp trang:", pagePath);
+        } catch (err) {
+            document.getElementById('content-placeholder').innerHTML = 
+                `<div class="p-10 text-red-500">Lỗi nạp trang: ${err.message}</div>`;
+        }
+    }
+
+    // 3. Hàm đóng/mở menu con của Sidebar
+    function toggleSidebarMenu(menuId) {
+        const menu = document.getElementById(menuId);
+        const arrow = document.getElementById('arrow-' + menuId);
+        if (menu.style.maxHeight === '0px' || !menu.style.maxHeight) {
+            menu.style.maxHeight = menu.scrollHeight + "px";
+            if(arrow) arrow.style.transform = 'rotate(90deg)';
+        } else {
+            menu.style.maxHeight = '0px';
+            if(arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    // Chạy khởi tạo khi trang web tải xong
+    initLayout();
+</script>
+</body>
+</html>

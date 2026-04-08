@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #003366; /* Màu truyền thống trường đại học */
+    --sidebar-width: 250px;
+}
+
+body { margin: 0; font-family: Arial, sans-serif; display: flex; }
+
+.wrapper { display: flex; width: 100%; min-height: 100vh; }
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--primary-color);
+    color: white;
+    transition: all 0.3s;
+}
+
+.content {
+    flex: 1;
+    background: #f4f7f6;
+    padding: 20px;
+}
+
+.top-header {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Các mục menu đặc thù cho role (mặc định ẩn, BE sẽ điều khiển hiển thị) */
+.role-specific {
+    display: block; /* Khi làm FE bạn cứ để hiện để check design */
+}
