@@ -9,54 +9,103 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        /* Đảm bảo scroll mượt mà */
+        #content-placeholder { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-50 flex h-screen overflow-hidden text-gray-800">
 
     <div id="sidebar-placeholder"></div>
 
-    <main class="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
-        <div id="content-placeholder"></div>
+    <main class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+        
+        <div id="header-placeholder"></div>
+
+        <div id="content-placeholder" class="flex-1 overflow-y-auto">
+            </div>
+
     </main>
+
 <script>
-    // 1. Hàm nạp Sidebar (Chỉ nạp 1 lần duy nhất khi mở Layout)
+    /**
+     * Khởi tạo Layout: Nạp các thành phần dùng chung khi vừa mở web
+     */
     async function initLayout() {
         try {
-            const sideResponse = await fetch('../components/_Sidebar.html'); 
-            if (!sideResponse.ok) throw new Error('Không tìm thấy file _Sidebar.html');
-            const sideHtml = await sideResponse.text();
-            document.getElementById('sidebar-placeholder').innerHTML = sideHtml;
+            // 1. Nạp Sidebar
+            const sideRes = await fetch('../components/_Sidebar.html'); 
+            if (!sideRes.ok) throw new Error('Không tìm thấy file Sidebar');
+            document.getElementById('sidebar-placeholder').innerHTML = await sideRes.text();
             
-            // Sau khi nạp Sidebar xong, nạp luôn trang mặc định (Sổ văn bản)
+            // 2. Nạp Header
+            const headRes = await fetch('../components/_Header.html');
+            if (!headRes.ok) throw new Error('Không tìm thấy file Header');
+            document.getElementById('header-placeholder').innerHTML = await headRes.text();
+            
+            // 3. Nạp trang mặc định (Sổ văn bản) khi vừa vào hệ thống
             loadPage('../pages/incoming-documents/index.html');
             
-            console.log("Layout và Sidebar đã sẵn sàng!");
+            console.log("Hệ thống đã sẵn sàng!");
         } catch (err) {
-            console.error("Lỗi khởi tạo:", err);
+            console.error("Lỗi khởi động hệ thống:", err);
+            document.body.innerHTML = `<div class="p-20 text-red-500 font-bold text-center">Lỗi nghiêm trọng: ${err.message}. Kiểm tra lại cấu thư mục!</div>`;
         }
     }
 
-    // 2. Hàm chuyển nội dung trang con (Dùng khi bấm vào các nút ở Sidebar)
+    /**
+     * Hàm nạp nội dung trang con mà không gây load lại trang (giữ được CSS)
+     */
     async function loadPage(pagePath) {
         try {
             const response = await fetch(pagePath);
-            if (!response.ok) throw new Error('Không tìm thấy trang: ' + pagePath);
+            if (!response.ok) throw new Error('Không tìm thấy nội dung trang: ' + pagePath);
             const html = await response.text();
             
-            // Đổ nội dung mới vào khung chính
-            document.getElementById('content-placeholder').innerHTML = html;
+            // Cập nhật nội dung vào placeholder
+            const contentArea = document.getElementById('content-placeholder');
+            contentArea.innerHTML = html;
+            contentArea.scrollTop = 0; // Cuộn về đầu trang mới
+
+            // Tự động đổi tiêu đề trên Header để người dùng biết đang ở trang nào
+            updatePageTitle(pagePath);
             
-            console.log("Đã nạp trang:", pagePath);
+            console.log("Chuyển trang thành công: " + pagePath);
         } catch (err) {
+            console.error("Lỗi nạp trang:", err);
             document.getElementById('content-placeholder').innerHTML = 
-                `<div class="p-10 text-red-500">Lỗi nạp trang: ${err.message}</div>`;
+                `<div class="p-10 text-red-500 bg-red-50 m-6 rounded-lg border border-red-200">
+                    <h3 class="font-bold">Lỗi nạp nội dung</h3>
+                    <p>${err.message}</p>
+                </div>`;
         }
     }
 
-    // 3. Hàm đóng/mở menu con của Sidebar
+    /**
+     * Logic đổi chữ trên Header dựa theo trang đang mở
+     */
+    function updatePageTitle(path) {
+        const titleElement = document.getElementById('page-title');
+        if (!titleElement) return;
+
+        if (path.includes('incoming-documents')) {
+            titleElement.innerText = 'Sổ văn bản';
+        } else if (path.includes('internal-news')) {
+            titleElement.innerText = 'Tin nội bộ';
+        } else if (path.includes('home')) {
+            titleElement.innerText = 'Trang chủ';
+        } else {
+            titleElement.innerText = 'Hệ thống Quản lý';
+        }
+    }
+
+    /**
+     * Hàm đóng/mở menu con (Sidebar)
+     */
     function toggleSidebarMenu(menuId) {
         const menu = document.getElementById(menuId);
         const arrow = document.getElementById('arrow-' + menuId);
+        if (!menu) return;
+
         if (menu.style.maxHeight === '0px' || !menu.style.maxHeight) {
             menu.style.maxHeight = menu.scrollHeight + "px";
             if(arrow) arrow.style.transform = 'rotate(90deg)';
@@ -66,7 +115,7 @@
         }
     }
 
-    // Chạy khởi tạo khi trang web tải xong
+    // Chạy khởi tạo
     initLayout();
 </script>
 </body>
