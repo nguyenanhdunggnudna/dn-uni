@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=pages/login.html">
+    <title>Đại học - Hệ thống Quản lý</title>
+    <script>
+        // Check if already logged in to skip login page
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = 'shared/_Layout.html';
+        } else {
+            window.location.href = 'pages/login.html';
+        }
+    </script>
+</head>
+<body>
+    <p>Đang chuyển hướng... Nếu không tự chuyển, <a href="pages/login.html">nhấn vào đây</a>.</p>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Hệ thống Quản lý Đại học</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Outfit', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    
+    <!-- Trang trí nền -->
+    <div class="absolute top-0 -left-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute bottom-0 -right-20 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
+    <div class="glass w-full max-w-md p-8 rounded-2xl shadow-2xl relative z-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Hệ thống Đại học</h1>
+            <p class="text-slate-500">Chào mừng trở lại! Vui lòng chọn vai trò để tiếp tục.</p>
+        </div>
+
+        <form onsubmit="handleLogin(event)" class="space-y-6">
+            <div class="space-y-4">
+                <label class="block text-sm font-semibold text-slate-700">Chọn vai trò truy cập</label>
+                
+                <div class="grid grid-cols-1 gap-3">
+                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
+                        <input type="radio" name="role" value="Director" class="hidden" checked>
+                        <i class="fas fa-user-tie text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
+                        <div>
+                            <p class="font-bold text-slate-800">Giám đốc</p>
+                            <p class="text-xs text-slate-500">Toàn quyền quản trị hệ thống</p>
+                        </div>
+                    </label>
+
+                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
+                        <input type="radio" name="role" value="Principal" class="hidden">
+                        <i class="fas fa-user-graduate text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
+                        <div>
+                            <p class="font-bold text-slate-800">Hiệu trưởng</p>
+                            <p class="text-xs text-slate-500">Quản lý đào tạo và tin tức</p>
+                        </div>
+                    </label>
+
+                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
+                        <input type="radio" name="role" value="Clerk" class="hidden">
+                        <i class="fas fa-user-pen text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
+                        <div>
+                            <p class="font-bold text-slate-800">Văn thư</p>
+                            <p class="text-xs text-slate-500">Xử lý văn bản đi và đến</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition active:scale-[0.98]">
+                Đăng nhập hệ thống
+            </button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+            <p class="text-sm text-slate-400">© 2026 University Management System</p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const selectedRole = document.querySelector('input[name="role"]:checked').value;
+            
+            // Lưu trạng thái giả lập
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userRole', selectedRole);
+            
+            // Chuyển hướng về Layout chính
+            window.location.href = '../shared/_Layout.html';
+        }
+
+        // Nếu đã login rồi thì vào thẳng luôn
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = '../shared/_Layout.html';
+        }
+    </script>
+</body>
+</html>

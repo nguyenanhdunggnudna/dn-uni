@@ -10,6 +10,7 @@
             <i class="fas fa-home w-6"></i> <span>Trang chủ</span>
         </a>
 
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal")) { -->
         <div class="space-y-1" id="group-news">
             <button onclick="toggleSidebarMenu('menu-news')" 
                     class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -28,7 +29,9 @@
                    class="block p-2 text-gray-500 hover:text-blue-600">Tin nhắn riêng</a>
             </div>
         </div>
+        <!-- } -->
 
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk")) { -->
         <div class="space-y-1" id="group-docs">
             <button onclick="toggleSidebarMenu('menu-docs')" 
                     class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -47,12 +50,15 @@
                    class="block p-2 text-gray-500 hover:text-blue-600">Chưa tiếp nhận</a>
             </div>
         </div>
+        <!-- } -->
 
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Clerk")) { -->
         <a href="javascript:void(0)" 
            onclick="loadPage('../pages/outgoing-documents/index.html')" 
            class="flex items-center p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
             <i class="fas fa-paper-plane w-6"></i> <span>Văn bản đi</span>
         </a>
+        <!-- } -->
     </nav>
 
     <div class="p-4 border-t border-gray-100">

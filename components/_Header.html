@@ -16,10 +16,10 @@
 
         <div class="flex items-center space-x-3 border-l pl-6">
             <div class="text-right">
-                <p class="text-sm font-semibold text-gray-800">Ngọc Vũ</p>
-                <p class="text-xs text-gray-500">Giám đốc</p>
+                <p class="text-sm font-semibold text-gray-800">@Model.UserName</p>
+                <p class="text-xs text-gray-500">@Model.UserRole</p>
             </div>
-            <img src="../assets//images/avatar.svg" class="w-10 h-10 rounded-full border border-gray-200">
+            <img src="@Model.UserAvatar" class="w-10 h-10 rounded-full border border-gray-200 cursor-pointer" onclick="logout()" title="Click để đăng xuất">
         </div>
     </div>
 </header>

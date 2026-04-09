@@ -11,7 +11,12 @@
         body { font-family: 'Inter', sans-serif; }
         /* Đảm bảo scroll mượt mà */
         #content-placeholder { scroll-behavior: smooth; }
+        
+        /* Utility for Mock logic */
+        .hidden-role { display: none !important; }
     </style>
+    <!-- Mock Data Configuration -->
+    <script src="../shared/mock-data.js"></script>
 </head>
 <body class="bg-gray-50 flex h-screen overflow-hidden text-gray-800">
 
@@ -28,24 +33,68 @@
 
 <script>
     /**
+     * Mock Razor Engine: Thay thế các biến @Model.Var bằng dữ liệu thật
+     */
+    function renderRazor(html) {
+        const roleData = window.MOCK_DATA.roles[window.MOCK_DATA.currentRole];
+        if (!roleData) return html;
+
+        // 1. Thay thế biến @Model.VariableName
+        let rendered = html;
+        Object.keys(roleData).forEach(key => {
+            const placeholder = `@Model.${key}`;
+            rendered = rendered.split(placeholder).join(roleData[key]);
+        });
+
+        // 2. Giả lập logic Role-based visibility
+        // Tìm các đoạn <!-- @if (User.IsInRole("...")) { --> ... <!-- } -->
+        // Cú pháp hỗ trợ: @if (User.IsInRole("Role1") || User.IsInRole("Role2"))
+        const regexBlock = /<!--\s*@if\s*\((.*?)\)\s*{\s*-->([\s\S]*?)<!--\s*}\s*-->/g;
+        rendered = rendered.replace(regexBlock, (match, condition, content) => {
+            const currentRole = window.MOCK_DATA.currentRole;
+            // Kiểm tra xem currentRole có xuất hiện trong condition không
+            // Đây là bản hack đơn giản cho mockup
+            if (condition.includes(`"${currentRole}"`) || condition.includes(`'${currentRole}'`)) {
+                return content;
+            } else {
+                return "";
+            }
+        });
+
+        return rendered;
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    /**
      * Khởi tạo Layout: Nạp các thành phần dùng chung khi vừa mở web
      */
     async function initLayout() {
+        // Kiểm tra login mockup
+        if (!localStorage.getItem('isLoggedIn') && !window.location.href.includes('login.html')) {
+            window.location.href = '../pages/login.html';
+            return;
+        }
+
         try {
             // 1. Nạp Sidebar
             const sideRes = await fetch('../components/_Sidebar.html'); 
             if (!sideRes.ok) throw new Error('Không tìm thấy file Sidebar');
-            document.getElementById('sidebar-placeholder').innerHTML = await sideRes.text();
+            const sideHtml = await sideRes.text();
+            document.getElementById('sidebar-placeholder').innerHTML = renderRazor(sideHtml);
             
             // 2. Nạp Header
             const headRes = await fetch('../components/_Header.html');
             if (!headRes.ok) throw new Error('Không tìm thấy file Header');
-            document.getElementById('header-placeholder').innerHTML = await headRes.text();
+            const headHtml = await headRes.text();
+            document.getElementById('header-placeholder').innerHTML = renderRazor(headHtml);
             
-            // 3. Nạp trang mặc định (Sổ văn bản) khi vừa vào hệ thống
+            // 3. Nạp trang mặc định khi vừa vào hệ thống
             loadPage('../pages/incoming-documents/index.html');
             
-            console.log("Hệ thống đã sẵn sàng!");
+            console.log("Hệ thống .NET Mock đã sẵn sàng!");
         } catch (err) {
             console.error("Lỗi khởi động hệ thống:", err);
             document.body.innerHTML = `<div class="p-20 text-red-500 font-bold text-center">Lỗi nghiêm trọng: ${err.message}. Kiểm tra lại cấu thư mục!</div>`;
@@ -53,7 +102,7 @@
     }
 
     /**
-     * Hàm nạp nội dung trang con mà không gây load lại trang (giữ được CSS)
+     * Hàm nạp nội dung trang con
      */
     async function loadPage(pagePath) {
         try {
@@ -61,12 +110,11 @@
             if (!response.ok) throw new Error('Không tìm thấy nội dung trang: ' + pagePath);
             const html = await response.text();
             
-            // Cập nhật nội dung vào placeholder
+            // Cập nhật nội dung vào placeholder sau khi render qua Razor Mock
             const contentArea = document.getElementById('content-placeholder');
-            contentArea.innerHTML = html;
-            contentArea.scrollTop = 0; // Cuộn về đầu trang mới
+            contentArea.innerHTML = renderRazor(html);
+            contentArea.scrollTop = 0; 
 
-            // Tự động đổi tiêu đề trên Header để người dùng biết đang ở trang nào
             updatePageTitle(pagePath);
             
             console.log("Chuyển trang thành công: " + pagePath);
@@ -80,9 +128,6 @@
         }
     }
 
-    /**
-     * Logic đổi chữ trên Header dựa theo trang đang mở
-     */
     function updatePageTitle(path) {
         const titleElement = document.getElementById('page-title');
         if (!titleElement) return;
@@ -98,9 +143,12 @@
         }
     }
 
-    /**
-     * Hàm đóng/mở menu con (Sidebar)
-     */
+    function logout() {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('userRole');
+        window.location.href = '../pages/login.html';
+    }
+
     function toggleSidebarMenu(menuId) {
         const menu = document.getElementById(menuId);
         const arrow = document.getElementById('arrow-' + menuId);
@@ -115,7 +163,6 @@
         }
     }
 
-    // Chạy khởi tạo
     initLayout();
 </script>
 </body>
