@@ -1,0 +1,266 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Page Title & Toolbar -->
+    <div>
+        <h2 class="font-manrope text-3xl font-extrabold text-on-surface tracking-tight">Văn bản cần ký</h2>
+    </div>
+
+    <div class="flex items-center justify-between w-full gap-3 p-1.5 rounded-xl">
+
+        <!-- Search -->
+        <div class="border rounded-xl relative flex items-center flex-1 max-w-md">
+            <span class="material-symbols-outlined absolute left-3 text-on-surface-variant">
+                search
+            </span>
+            <input id="search"
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border-none rounded-lg text-sm shadow-sm focus:ring-2 focus:ring-primary"
+                placeholder="Tìm kiếm" type="text">
+        </div>
+
+        <!-- Reload Button -->
+        <button
+            class="p-2.5 bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:shadow-md rounded-lg transition-all flex items-center justify-center">
+            <span class="material-symbols-outlined">refresh</span>
+        </button>
+
+    </div>
+
+    <!-- Table Container -->
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border-none">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high text-on-surface-variant">
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">STT</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Ngày nhận</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Hạn xử lý</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Nội dung</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Trạng thái</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-center">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-container">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                        <td class="px-6 py-5 font-semibold text-on-surface">1</td>
+                        <td class="px-6 py-5 text-on-surface-variant">12/10/2023</td>
+                        <td class="px-6 py-5 text-on-surface-variant">15/10/2023</td>
+                        <td class="px-6 py-5">
+                            <div class="space-y-2">
+                                <div class="text-[13px] leading-relaxed">
+                                    <p class="text-on-surface font-bold text-sm mb-1 uppercase">Triển khai thực hiện Nghị quyết số 248/2025/QH15 của Quốc hội về tổ chức hội nghị, hội thảo quốc tế</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-on-surface-variant font-medium italic">
+                                        <p><span class="font-bold not-italic">KH:</span> /ĐHĐN-KHHTQT</p>
+                                        <p><span class="font-bold not-italic">Soạn thảo:</span> Lê Thị Hồng Oanh</p>
+                                        <p><span class="font-bold not-italic">LĐ ký:</span> Nguyễn Ngọc Vũ</p>
+                                        <p><span class="font-bold not-italic">Đơn vị kiểm tra:</span></p>
+                                    </div>
+                                </div>
+
+                                <!-- Sub-table -->
+                                <div class="border rounded-lg overflow-hidden border-surface-container mt-3">
+                                    <table class="w-full text-xs border-collapse">
+                                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                                            <tr>
+                                                <th class="px-3 py-2 text-center w-8">TT</th>
+                                                <th class="px-3 py-2 text-left">Đơn vị/Cá nhân</th>
+                                                <th class="px-3 py-2 text-center whitespace-nowrap">Cần ký</th>
+                                                <th class="px-3 py-2 text-center whitespace-nowrap">Phản hồi</th>
+                                                <th class="px-3 py-2 text-left">Ý kiến</th>
+                                                <th class="px-3 py-2 text-center w-12"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-surface-container text-on-surface">
+                                            <tr class="hover:bg-surface-container-low transition-colors">
+                                                <td class="px-3 py-2 text-center font-medium">1</td>
+                                                <td class="px-3 py-2 font-medium">Văn phòng ĐHĐN</td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <span class="material-symbols-outlined text-sm text-green-600">check_circle</span>
+                                                </td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-tertiary-container/10 text-tertiary">Ý kiến khác</span>
+                                                </td>
+                                                <td class="px-3 py-2">
+                                                    <div class="relative">
+                                                        <p class="content-text line-clamp-1">1. Văn bản chỉ gồm 01 phụ lục nên không đánh số phụ lục. 2. Bên dưới Phụ lục đính kèm cần ghi rõ Kèm theo Công văn số... 3. Mục 3: Ghi chung là Theo quy định. Không cần ghi rõ quy định của Thủ tướng Chính phủ và pháp luật.</p>
+                                                        <button onclick="toggleExpand(this)" class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:underline">Xem thêm</button>
+                                                    </div>
+                                                </td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-surface-container-low transition-colors">
+                                                <td class="px-3 py-2 text-center font-medium">2</td>
+                                                <td class="px-3 py-2 font-medium">Ban Đào tạo và Đảm bảo chất lượng giáo dục</td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <span class="material-symbols-outlined text-sm text-green-600">check_circle</span>
+                                                </td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng ý</span>
+                                                </td>
+                                                <td class="px-3 py-2">
+                                                    <p class="text-on-surface-variant italic">Thống nhất với dự thảo công văn</p>
+                                                </td>
+                                                <td class="px-3 py-2 text-center">
+                                                    <button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-tertiary-container/15 text-tertiary uppercase">
+                                Chưa xử lý
+                            </span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                        <td class="px-6 py-5 font-semibold text-on-surface">2</td>
+                        <td class="px-6 py-5 text-on-surface-variant">10/10/2023</td>
+                        <td class="px-6 py-5 text-on-surface-variant">20/10/2023</td>
+                        <td class="px-6 py-5">
+                            <div class="relative">
+                                <p class="text-on-surface font-medium line-clamp-1 content-text">Văn bản phê duyệt chi
+                                    phí vận hành hệ
+                                    thống quý IV</p>
+                                <button onclick="toggleExpand(this)"
+                                    class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
+                                    thêm</button>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-secondary-container/40 text-secondary uppercase">
+                                Đã xử lý
+                            </span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                        <td class="px-6 py-5 font-semibold text-on-surface">3</td>
+                        <td class="px-6 py-5 text-on-surface-variant">09/10/2023</td>
+                        <td class="px-6 py-5 text-on-surface-variant">11/10/2023</td>
+                        <td class="px-6 py-5">
+                            <div class="relative">
+                                <p class="text-on-surface font-medium line-clamp-1 content-text">Báo cáo khảo sát hạ
+                                    tầng mạng tại chi
+                                    nhánh miền Nam</p>
+                                <button onclick="toggleExpand(this)"
+                                    class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
+                                    thêm</button>
+                            </div>
+                            <p class="text-xs text-on-surface-variant">Ban Kỹ thuật Hạ tầng</p>
+                        </td>
+                        <td class="px-6 py-5">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-tertiary-container/15 text-tertiary uppercase whitespace-nowrap">
+                                Chưa xử lý
+                            </span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                        <td class="px-6 py-5 font-semibold text-on-surface">4</td>
+                        <td class="px-6 py-5 text-on-surface-variant">08/10/2023</td>
+                        <td class="px-6 py-5 text-on-surface-variant">25/10/2023</td>
+                        <td class="px-6 py-5">
+                            <div class="relative">
+                                <p class="text-on-surface font-medium line-clamp-1 content-text">Tờ trình bổ nhiệm nhân
+                                    sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023 Tờ trình bổ nhiệm nhân sự cấp cao đợt 2
+                                    năm 2023</p>
+                                <button onclick="toggleExpand(this)"
+                                    class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
+                                    thêm</button>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-secondary-container/40 text-secondary uppercase whitespace-nowrap">
+                                Đã xử lý
+                            </span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div
+            class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
+            <div class="text-sm text-on-surface-variant">
+                Hiển thị <span class="font-bold text-on-surface">1-10</span> trong tổng số <span
+                    class="font-bold text-on-surface">1000</span> mục
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-on-surface-variant">Số hàng:</span>
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-surface-container-low border-none rounded-lg text-xs font-semibold px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <nav class="flex items-center gap-1">
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30"
+                        disabled="">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold text-xs shadow-sm">1</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors text-xs">2</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors text-xs">3</button>
+                    <span class="px-1 text-on-surface-variant">...</span>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors text-xs">10</button>
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,22 +42,55 @@
             </button>
             <div id="menu-docs" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
                 <a href="javascript:void(0)"
-                   onclick="loadPage('../pages/incoming-documents/index.html')" 
-                   class="block p-2 text-gray-500 hover:text-blue-600">Sổ văn bản</a>
+                   onclick="loadPage('../pages/incoming-documents/van-ban-but-phe.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản bút phê</a>
                 
                 <a href="javascript:void(0)" 
-                   onclick="loadPage('../pages/pending-docs/index.html')" 
-                   class="block p-2 text-gray-500 hover:text-blue-600">Chưa tiếp nhận</a>
+                   onclick="loadPage('../pages/incoming-documents/van-ban-chi-dao.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản chỉ đạo</a>
+
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/incoming-documents/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Danh sách văn bản đến</a>
+
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/incoming-documents/van-ban-noi-bo.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản nội bộ</a>
+
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/incoming-documents/van-ban-cu.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cũ</a>
             </div>
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Clerk")) { -->
-        <a href="javascript:void(0)" 
-           onclick="loadPage('../pages/outgoing-documents/index.html')" 
-           class="flex items-center p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
-            <i class="fas fa-paper-plane w-6"></i> <span>Văn bản đi</span>
-        </a>
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk")) { -->
+        <div class="space-y-1" id="group-outgoing">
+            <button onclick="toggleSidebarMenu('menu-outgoing')" 
+                    class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+                <div class="flex items-center">
+                    <i class="fas fa-paper-plane w-6"></i> <span>Văn bản đi</span>
+                </div>
+                <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-outgoing"></i>
+            </button>
+            <div id="menu-outgoing" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/outgoing-documents/index.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">VB phối hợp kiểm tra</a>
+                
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/outgoing-documents/can-ky.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cần ký</a>
+
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/outgoing-documents/da-ban-hanh.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản đã ban hành</a>
+
+                <a href="javascript:void(0)" 
+                   onclick="loadPage('../pages/outgoing-documents/van-ban-cu.html')" 
+                   class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cũ</a>
+            </div>
+        </div>
         <!-- } -->
     </nav>
 

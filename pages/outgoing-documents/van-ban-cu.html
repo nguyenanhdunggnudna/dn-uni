@@ -1,0 +1,104 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <h2 class="text-[2rem] font-black tracking-tight text-on-surface leading-none mb-2">Văn bản cũ</h2>
+            <p class="text-on-surface-variant font-medium text-sm">Tra cứu và quản lý danh sách các văn bản lưu trữ từ các năm trước.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <!-- Backend Note: Link or button for adding if needed -->
+        </div>
+    </div>
+
+    <!-- Search Area -->
+    <div class="flex items-center justify-between w-full gap-3 p-1.5 rounded-xl">
+        <div class="relative flex-1 max-w-md group">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
+            <input class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant" placeholder="Tìm kiếm theo số, ký hiệu hoặc nội dung văn bản cũ..." type="text" />
+        </div>
+        <button
+            class="p-2.5 bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:shadow-md rounded-lg transition-all flex items-center justify-center">
+            <span class="material-symbols-outlined">refresh</span>
+        </button>
+    </div>
+
+    <!-- Main Data Table Card -->
+    <div class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high">
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant w-20">Số</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant w-40">Ký hiệu</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">Nội dung</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-right w-32">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                    <!-- 
+                        BACKEND DEVELOPER NOTE: 
+                        Use a loop here to render your data.
+                        Example for .NET Razor:
+                        @foreach(var item in Model.Documents) { ... }
+                    -->
+                    
+                    <!-- Row 1 (Mock) -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">
+                            <!-- @item.Number -->
+                            01
+                        </td>
+                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">
+                            <!-- @item.Symbol -->
+                            123/QĐ-ĐHĐN
+                        </td>
+                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed">
+                            <!-- @item.Content -->
+                            Quyết định về việc phê duyệt chỉ định đơn vị thực hiện gói thầu tư vấn thẩm định giá hạng mục: Mua sắm máy photocopy phục vụ công tác chung cho Trường Y Dược thuộc kế hoạch đầu tư mua sắm, sửa chữa cơ sở vật chất năm 2025 của Trường Y Dược, ĐHĐN
+                        </td>
+                        <td class="px-6 py-5 text-right">
+                            <div class="flex justify-end gap-2">
+                                <button class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 (Mock) -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">02</td>
+                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">456/CV-YDuoc</td>
+                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed">
+                            Công văn về việc phối hợp triển khai công tác khám sức khỏe định kỳ cho sinh viên khóa 2024
+                        </td>
+                        <td class="px-6 py-5 text-right">
+                             <div class="flex justify-end gap-2">
+                                <button class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Pagination Footer -->
+        <div class="px-8 py-5 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10 text-on-surface-variant">
+            <div class="flex items-center gap-8">
+                <p class="text-sm font-medium">Hiển thị <span class="text-on-surface font-bold">1-10</span> trong tổng số <span class="text-on-surface font-bold">150</span> mục</p>
+            </div>
+            <div class="flex items-center gap-1">
+                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button class="w-9 h-9 flex items-center justify-center bg-primary text-on-primary rounded-lg text-sm font-bold shadow-md shadow-primary/20">1</button>
+                <button class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">2</button>
+                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

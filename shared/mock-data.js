@@ -16,7 +16,7 @@ window.MOCK_DATA = {
             UserRole: "Hiệu trưởng",
             UserAvatar: "../assets/images/avatar.svg",
             DashboardTitle: "Hệ thống Quản lý Hiệu trưởng",
-            Permissions: ["INTERNAL_NEWS", "INCOMING_DOCS"]
+            Permissions: ["INTERNAL_NEWS", "INCOMING_DOCS", "OUTGOING_DOCS", "REPORTS"]
         },
         "Clerk": {
             UserName: "Trần Hoa",
