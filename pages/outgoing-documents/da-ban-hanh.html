@@ -2,16 +2,7 @@
     <!-- Header Section -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-            <h2 class="text-[2rem] font-black tracking-tight text-on-surface leading-none mb-2">Văn bản đã ban hành</h2>
-            <p class="text-on-surface-variant font-medium text-sm">Quản lý danh sách các văn bản chính thức đã được phát
-                hành trong hệ thống.</p>
-        </div>
-        <div class="flex items-center gap-3">
-            <button
-                class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-dim text-white font-semibold rounded-xl shadow-lg shadow-primary/20 flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
-                <span class="material-symbols-outlined text-[20px]">add</span>
-                Thêm văn bản mới
-            </button>
+            <h2 class="text-xl font-black tracking-tight text-on-surface leading-none mb-2">Văn bản đã ban hành</h2>
         </div>
     </div>
 
@@ -33,43 +24,41 @@
     <!-- Main Data Table Card -->
     <div
         class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto text-[14px]">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-surface-container-high">
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Số</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Loại văn bản</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Ngày ban hành</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Ký hiệu</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Trích yếu</th>
-                        <th
-                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-center">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant text-center">
                             Hạn xử lý</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Trạng thái</th>
-                        <th
-                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-right">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant text-right">
                             Hành động</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant/10">
                     <!-- Row 1 -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">01</td>
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">Công văn</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant">30/12/2025</td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">123/CV-VP</td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate">Về việc triển
+                        <td class="px-6 py-5 font-medium text-on-surface">01</td>
+                        <td class="px-6 py-5 font-medium text-on-surface">Công văn</td>
+                        <td class="px-6 py-5 text-on-surface-variant">30/12/2025</td>
+                        <td class="px-6 py-5 text-on-surface">123/CV-VP</td>
+                        <td class="px-6 py-5 text-on-surface leading-relaxed max-w-xs truncate">Về việc triển
                             khai kế hoạch số hóa tài liệu năm 2026 tại các đơn vị trực thuộc</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant text-center">15/01/2026</td>
+                        <td class="px-6 py-5 text-on-surface-variant text-center">15/01/2026</td>
                         <td class="px-6 py-5">
                             <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-[0.6875rem] font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
+                                class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
                                 xử lý</span>
                         </td>
                         <td class="px-6 py-5 text-right">
@@ -81,16 +70,16 @@
                     </tr>
                     <!-- Row 2 -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">02</td>
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">Quyết định</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant">28/12/2025</td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">45/QĐ-STC</td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate">Ban hành quy chế
+                        <td class="px-6 py-5 font-medium text-on-surface">02</td>
+                        <td class="px-6 py-5 font-medium text-on-surface">Quyết định</td>
+                        <td class="px-6 py-5 text-on-surface-variant">28/12/2025</td>
+                        <td class="px-6 py-5 text-on-surface">45/QĐ-STC</td>
+                        <td class="px-6 py-5 text-on-surface leading-relaxed max-w-xs truncate">Ban hành quy chế
                             chi tiêu nội bộ áp dụng cho năm tài chính mới</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant text-center">--</td>
+                        <td class="px-6 py-5 text-on-surface-variant text-center">--</td>
                         <td class="px-6 py-5">
                             <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-[0.6875rem] font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
+                                class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
                                 xử lý</span>
                         </td>
                         <td class="px-6 py-5 text-right">
@@ -102,16 +91,16 @@
                     </tr>
                     <!-- Row 3 -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">03</td>
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">Công văn</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant">25/12/2025</td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">88/CV-TCCB</td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate">Triệu tập cán bộ
+                        <td class="px-6 py-5 font-medium text-on-surface">03</td>
+                        <td class="px-6 py-5 font-medium text-on-surface">Công văn</td>
+                        <td class="px-6 py-5 text-on-surface-variant">25/12/2025</td>
+                        <td class="px-6 py-5 text-on-surface">88/CV-TCCB</td>
+                        <td class="px-6 py-5 text-on-surface leading-relaxed max-w-xs truncate">Triệu tập cán bộ
                             tham gia lớp bồi dưỡng kỹ năng quản lý công tác lưu trữ số</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant text-center">31/12/2025</td>
+                        <td class="px-6 py-5 text-on-surface-variant text-center">31/12/2025</td>
                         <td class="px-6 py-5">
                             <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-[0.6875rem] font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
+                                class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
                                 xử lý</span>
                         </td>
                         <td class="px-6 py-5 text-right">
@@ -123,16 +112,16 @@
                     </tr>
                     <!-- Row 4 -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">04</td>
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">Thông báo</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant">20/12/2025</td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">211/TB-VP</td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate">Lịch nghỉ lễ Tết
+                        <td class="px-6 py-5 font-medium text-on-surface">04</td>
+                        <td class="px-6 py-5 font-medium text-on-surface">Thông báo</td>
+                        <td class="px-6 py-5 text-on-surface-variant">20/12/2025</td>
+                        <td class="px-6 py-5 text-on-surface">211/TB-VP</td>
+                        <td class="px-6 py-5 text-on-surface leading-relaxed max-w-xs truncate">Lịch nghỉ lễ Tết
                             Nguyên Đán và phân công trực cơ quan năm 2026</td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant text-center">--</td>
+                        <td class="px-6 py-5 text-on-surface-variant text-center">--</td>
                         <td class="px-6 py-5">
                             <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-[0.6875rem] font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
+                                class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-secondary-container text-on-secondary-container whitespace-nowrap">Chưa
                                 xử lý</span>
                         </td>
                         <td class="px-6 py-5 text-right">
@@ -147,40 +136,44 @@
         </div>
         <!-- Pagination Footer -->
         <div
-            class="px-8 py-5 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10 text-on-surface-variant">
-            <div class="flex items-center gap-8">
-                <p class="text-sm font-medium">Hiển thị <span class="text-on-surface font-bold">1-10</span> trong tổng
-                    số <span class="text-on-surface font-bold">1000</span> mục</p>
-                <div class="flex items-center gap-3">
-                    <span class="text-sm">Số hàng mỗi trang</span>
+            class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
+            <div class="">
+                Hiển thị <span class="">1-10</span> trong tổng số <span class="text-on-surface">1000</span> mục
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="">Số hàng mỗi trang:</span>
                     <div class="relative">
                         <select
-                            class="appearance-none bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-1.5 pr-8 text-sm font-semibold text-on-surface focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+                            class="appearance-none bg-surface-container-low border-none rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all">
                             <option>10</option>
                             <option>20</option>
                             <option>50</option>
                         </select>
                         <span
-                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none">expand_more</span>
+                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
                     </div>
                 </div>
-            </div>
-            <div class="flex items-center gap-1">
-                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                    class="w-9 h-9 flex items-center justify-center bg-primary text-on-primary rounded-lg text-sm font-bold shadow-md shadow-primary/20">1</button>
-                <button
-                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">2</button>
-                <button
-                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">3</button>
-                <span class="px-2">...</span>
-                <button
-                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">10</button>
-                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">chevron_right</span>
-                </button>
+                <nav class="flex items-center gap-1">
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30"
+                        disabled="">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium shadow-sm">1</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+                    <span class="px-1 text-on-surface-variant">...</span>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">10</button>
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
             </div>
         </div>
     </div>

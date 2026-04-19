@@ -2,9 +2,7 @@
     <!-- Header Section -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-            <h2 class="text-[2rem] font-black tracking-tight text-on-surface leading-none mb-2">Văn bản cũ</h2>
-            <p class="text-on-surface-variant font-medium text-sm">Tra cứu và quản lý danh sách các văn bản lưu trữ từ
-                các năm trước.</p>
+            <h2 class="text-xl font-black tracking-tight text-on-surface leading-none mb-2">Văn bản cũ</h2>
         </div>
         <div class="flex items-center gap-3">
             <!-- Backend Note: Link or button for adding if needed -->
@@ -29,20 +27,18 @@
     <!-- Main Data Table Card -->
     <div
         class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto text-[14px]">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-surface-container-high">
-                        <th
-                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant w-20">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant w-20">
                             Số</th>
-                        <th
-                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant w-40">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant w-40">
                             Ký hiệu</th>
-                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant">
                             Nội dung</th>
                         <th
-                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-right w-32">
+                            class="px-6 py-4 font-medium uppercase tracking-wider text-on-surface-variant text-right w-32">
                             Hành động</th>
                     </tr>
                 </thead>
@@ -56,15 +52,15 @@
 
                     <!-- Row 1 (Mock) -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">
+                        <td class="px-6 py-5">
                             <!-- @item.Number -->
                             01
                         </td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">
+                        <td class="px-6 py-5">
                             <!-- @item.Symbol -->
                             123/QĐ-ĐHĐN
                         </td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed">
+                        <td class="px-6 py-5 leading-relaxed">
                             <!-- @item.Content -->
                             Quyết định về việc phê duyệt chỉ định đơn vị thực hiện gói thầu tư vấn thẩm định giá hạng
                             mục: Mua sắm máy photocopy phục vụ công tác chung cho Trường Y Dược thuộc kế hoạch đầu tư
@@ -83,9 +79,9 @@
 
                     <!-- Row 2 (Mock) -->
                     <tr class="hover:bg-surface-container-low transition-colors">
-                        <td class="px-6 py-5 text-sm font-medium text-on-surface">02</td>
-                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">456/CV-YDuoc</td>
-                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed">
+                        <td class="px-6 py-5">02</td>
+                        <td class="px-6 py-5">456/CV-YDuoc</td>
+                        <td class="px-6 py-5 leading-relaxed">
                             Công văn về việc phối hợp triển khai công tác khám sức khỏe định kỳ cho sinh viên khóa 2024
                         </td>
                         <td class="px-6 py-5 text-right">
@@ -103,22 +99,44 @@
 
         <!-- Pagination Footer -->
         <div
-            class="px-8 py-5 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10 text-on-surface-variant">
-            <div class="flex items-center gap-8">
-                <p class="text-sm font-medium">Hiển thị <span class="text-on-surface font-bold">1-10</span> trong tổng
-                    số <span class="text-on-surface font-bold">150</span> mục</p>
+            class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
+            <div class="">
+                Hiển thị <span class="">1-10</span> trong tổng số <span class="">1000</span> mục
             </div>
-            <div class="flex items-center gap-1">
-                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                    class="w-9 h-9 flex items-center justify-center bg-primary text-on-primary rounded-lg text-sm font-bold shadow-md shadow-primary/20">1</button>
-                <button
-                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">2</button>
-                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">chevron_right</span>
-                </button>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="">Số hàng mỗi trang:</span>
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-surface-container-low border-none rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <nav class="flex items-center gap-1">
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30"
+                        disabled="">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium shadow-sm">1</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+                    <span class="px-1 text-on-surface-variant">...</span>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">10</button>
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
             </div>
         </div>
     </div>
