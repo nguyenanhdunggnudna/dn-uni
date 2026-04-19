@@ -1,15 +1,178 @@
 <div class="px-8 py-6 space-y-6">
-    <div>
-        <h2 class="font-manrope text-3xl font-extrabold text-on-surface tracking-tight">Văn bản bút phê</h2>
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <h2 class="text-[2rem] font-black tracking-tight text-on-surface leading-none mb-2">Danh sách văn bản bút
+                phê</h2>
+        </div>
+
     </div>
 
-    <div class="bg-surface-container-lowest rounded-xl shadow-sm p-8 border border-dashed border-surface-container-high flex flex-col items-center justify-center min-h-[400px]">
-        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-            <span class="material-symbols-outlined text-primary text-3xl">edit_note</span>
+    <!-- Search Area -->
+    <div class="flex items-center justify-between w-full gap-3 p-1.5 rounded-xl">
+        <div class="relative flex-1 max-w-md group">
+            <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
+            <input
+                class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant"
+                placeholder="Tìm kiếm" type="text" />
         </div>
-        <h3 class="text-xl font-bold text-on-surface mb-2">Đang xây dựng nội dung</h3>
-        <p class="text-on-surface-variant text-center max-w-md">
-            Trang <span class="font-semibold text-primary">Văn bản bút phê</span> hiện đang trong quá trình phát triển.
-        </p>
+        <button
+            class="p-2.5 bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:shadow-md rounded-lg transition-all flex items-center justify-center">
+            <span class="material-symbols-outlined">refresh</span>
+        </button>
+    </div>
+
+    <!-- Main Data Table Card -->
+    <div
+        class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high">
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                            TT</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                            Số đến</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                            Ngày đến</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                            Ký hiệu</th>
+                        <th
+                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant min-w-[200px]">
+                            CQ ban hành</th>
+                        <th
+                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-center">
+                            Trích yếu</th>
+                        <th class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant">
+                            Chủ trì</th>
+                        <th
+                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-right">
+                            Hạn xử lý</th>
+                        <th class="px-4 py-4 text-center"></th>
+                        <th
+                            class="px-6 py-4 text-[0.75rem] font-bold uppercase tracking-wider text-on-surface-variant text-right">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                    <!-- Row Item -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">1</td>
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">1204</td>
+                        <td class="px-6 py-5 text-sm text-on-surface-variant">18/04/2026</td>
+                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">105/BGDĐT-VP</td>
+                        <td class="px-6 py-5 text-sm text-on-surface">
+                            <div class="line-clamp-1">Bộ Giáo dục và Đào tạo</div>
+                            <button
+                                onclick="this.previousElementSibling.classList.toggle('line-clamp-1'); this.innerText = this.innerText === 'Xem thêm' ? 'Thu gọn' : 'Xem thêm'"
+                                class="text-primary text-[11px] font-semibold mt-1 hover:underline">Xem thêm</button>
+                        </td>
+                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate text-center"
+                            title="Về việc hướng dẫn tổ chức kỳ thi tốt nghiệp THPT năm 2026">Về việc hướng dẫn tổ chức
+                            kỳ thi tốt nghiệp THPT năm 2026</td>
+                        <td class="px-6 py-5 text-sm text-on-surface">Phòng Đào tạo</td>
+                        <td class="px-6 py-5 text-sm font-medium text-error text-right">25/04/2026</td>
+                        <td class="px-4 py-5 text-center">
+                            <a class="btn btn-sm btn-info text-blue-500 hover:text-blue-700 transition-colors"
+                                style="margin-top:3px"
+                                href="http://vps.udn.vn/D02VBden/VBDenViewButphe.aspx?ids=61901&amp;idssss=VBDe_1_11095_639098737015102668&amp;idnoinhanChuyen=44372&amp;idnoinhan=44373&amp;IDCVDen=51832&amp;mn=53&amp;pamn=2"
+                                data-toggle="tooltip" title="Xem văn bản">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Row Item with empty fields to demonstrate null handling -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">2</td>
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">1205</td>
+                        <td class="px-6 py-5 text-sm text-on-surface-variant">18/04/2026</td>
+                        <td class="px-6 py-5 text-sm font-semibold text-on-surface"></td>
+                        <td class="px-6 py-5 text-sm text-on-surface">
+                            <div class="line-clamp-1">UBND TP Hà Nội</div>
+                            <button
+                                onclick="this.previousElementSibling.classList.toggle('line-clamp-1'); this.innerText = this.innerText === 'Xem thêm' ? 'Thu gọn' : 'Xem thêm'"
+                                class="text-primary text-[11px] font-semibold mt-1 hover:underline">Xem thêm</button>
+                        </td>
+                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate text-center"
+                            title="Quyết định phê duyệt dự án đầu tư xây dựng">Quyết định phê duyệt...</td>
+                        <td class="px-6 py-5 text-sm text-on-surface"></td>
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface-variant text-right">--</td>
+                        <td class="px-4 py-5 text-center">
+                            <a class="btn btn-sm btn-info text-blue-500 hover:text-blue-700 transition-colors"
+                                style="margin-top:3px"
+                                href="http://vps.udn.vn/D02VBden/VBDenViewButphe.aspx?ids=61901&amp;idssss=VBDe_1_11095_639098737015102668&amp;idnoinhanChuyen=44372&amp;idnoinhan=44373&amp;IDCVDen=51832&amp;mn=53&amp;pamn=2"
+                                data-toggle="tooltip" title="Xem văn bản">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Row Item -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">3</td>
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface">1206</td>
+                        <td class="px-6 py-5 text-sm text-on-surface-variant">17/04/2026</td>
+                        <td class="px-6 py-5 text-sm font-semibold text-on-surface">42/TB-BGDĐT</td>
+                        <td class="px-6 py-5 text-sm text-on-surface">
+                            <div class="line-clamp-1">Bộ Giáo dục và Đào tạo</div>
+                            <button
+                                onclick="this.previousElementSibling.classList.toggle('line-clamp-1'); this.innerText = this.innerText === 'Xem thêm' ? 'Thu gọn' : 'Xem thêm'"
+                                class="text-primary text-[11px] font-semibold mt-1 hover:underline">Xem thêm</button>
+                        </td>
+                        <td class="px-6 py-5 text-sm text-on-surface leading-relaxed max-w-xs truncate text-center"
+                            title="Thông báo kết luận của Bộ trưởng tại hội nghị">Thông báo kết luận...</td>
+                        <td class="px-6 py-5 text-sm text-on-surface">Văn phòng trường</td>
+                        <td class="px-6 py-5 text-sm font-medium text-on-surface-variant text-right">20/04/2026</td>
+                        <td class="px-4 py-5 text-center">
+                            <a class="btn btn-sm btn-info text-blue-500 hover:text-blue-700 transition-colors"
+                                style="margin-top:3px" data-toggle="tooltip" title="Xem văn bản">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination Footer -->
+        <div
+            class="px-8 py-5 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10 text-on-surface-variant">
+            <div class="flex items-center gap-8">
+                <p class="text-sm font-medium">Hiển thị <span class="text-on-surface font-bold">1-10</span> trong tổng
+                    số <span class="text-on-surface font-bold">1000</span> mục</p>
+                <!-- <div class="flex items-center gap-3">
+                    <span class="text-sm">Số hàng mỗi trang</span>
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-1.5 pr-8 text-sm font-semibold text-on-surface focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] pointer-events-none">expand_more</span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="flex items-center gap-1">
+                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="w-9 h-9 flex items-center justify-center bg-primary text-on-primary rounded-lg text-sm font-bold shadow-md shadow-primary/20">1</button>
+                <button
+                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">2</button>
+                <button
+                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">3</button>
+                <span class="px-2">...</span>
+                <button
+                    class="w-9 h-9 flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary rounded-lg text-sm font-semibold transition-colors">10</button>
+                <button class="p-2 hover:text-primary hover:bg-surface-container-lowest rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>

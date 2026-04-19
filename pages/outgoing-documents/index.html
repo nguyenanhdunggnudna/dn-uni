@@ -4,24 +4,19 @@
         <h2 class="font-manrope text-3xl font-extrabold text-on-surface tracking-tight">Văn bản cần ký</h2>
     </div>
 
+    <!-- Search Area -->
     <div class="flex items-center justify-between w-full gap-3 p-1.5 rounded-xl">
-
-        <!-- Search -->
-        <div class="border rounded-xl relative flex items-center flex-1 max-w-md">
-            <span class="material-symbols-outlined absolute left-3 text-on-surface-variant">
-                search
-            </span>
-            <input id="search"
-                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border-none rounded-lg text-sm shadow-sm focus:ring-2 focus:ring-primary"
-                placeholder="Tìm kiếm" type="text">
+        <div class="relative flex-1 max-w-md group">
+            <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
+            <input
+                class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant"
+                placeholder="Tìm kiếm" type="text" />
         </div>
-
-        <!-- Reload Button -->
         <button
             class="p-2.5 bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:shadow-md rounded-lg transition-all flex items-center justify-center">
             <span class="material-symbols-outlined">refresh</span>
         </button>
-
     </div>
 
     <!-- Table Container -->
@@ -47,8 +42,11 @@
                         <td class="px-6 py-5">
                             <div class="space-y-2">
                                 <div class="text-[13px] leading-relaxed">
-                                    <p class="text-on-surface font-bold text-sm mb-1 uppercase">Triển khai thực hiện Nghị quyết số 248/2025/QH15 của Quốc hội về tổ chức hội nghị, hội thảo quốc tế</p>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-on-surface-variant font-medium italic">
+                                    <p class="text-on-surface font-bold text-sm mb-1 uppercase">Triển khai thực hiện
+                                        Nghị quyết số 248/2025/QH15 của Quốc hội về tổ chức hội nghị, hội thảo quốc tế
+                                    </p>
+                                    <div
+                                        class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-on-surface-variant font-medium italic">
                                         <p><span class="font-bold not-italic">KH:</span> /ĐHĐN-KHHTQT</p>
                                         <p><span class="font-bold not-italic">Soạn thảo:</span> Lê Thị Hồng Oanh</p>
                                         <p><span class="font-bold not-italic">LĐ ký:</span> Nguyễn Ngọc Vũ</p>
@@ -59,7 +57,8 @@
                                 <!-- Sub-table -->
                                 <div class="border rounded-lg overflow-hidden border-surface-container mt-3">
                                     <table class="w-full text-xs border-collapse">
-                                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                                        <thead
+                                            class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
                                             <tr>
                                                 <th class="px-3 py-2 text-center w-8">TT</th>
                                                 <th class="px-3 py-2 text-left">Đơn vị/Cá nhân</th>
@@ -74,35 +73,51 @@
                                                 <td class="px-3 py-2 text-center font-medium">1</td>
                                                 <td class="px-3 py-2 font-medium">Văn phòng ĐHĐN</td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <span class="material-symbols-outlined text-sm text-green-600">check_circle</span>
+                                                    <span
+                                                        class="material-symbols-outlined text-sm text-green-600">check_circle</span>
                                                 </td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-tertiary-container/10 text-tertiary">Ý kiến khác</span>
+                                                    <span
+                                                        class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-tertiary-container/10 text-tertiary">Ý
+                                                        kiến khác</span>
                                                 </td>
                                                 <td class="px-3 py-2">
                                                     <div class="relative">
-                                                        <p class="content-text line-clamp-1">1. Văn bản chỉ gồm 01 phụ lục nên không đánh số phụ lục. 2. Bên dưới Phụ lục đính kèm cần ghi rõ Kèm theo Công văn số... 3. Mục 3: Ghi chung là Theo quy định. Không cần ghi rõ quy định của Thủ tướng Chính phủ và pháp luật.</p>
-                                                        <button onclick="toggleExpand(this)" class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:underline">Xem thêm</button>
+                                                        <p class="content-text line-clamp-1">1. Văn bản chỉ gồm 01 phụ
+                                                            lục nên không đánh số phụ lục. 2. Bên dưới Phụ lục đính kèm
+                                                            cần ghi rõ Kèm theo Công văn số... 3. Mục 3: Ghi chung là
+                                                            Theo quy định. Không cần ghi rõ quy định của Thủ tướng Chính
+                                                            phủ và pháp luật.</p>
+                                                        <button onclick="toggleExpand(this)"
+                                                            class="text-primary text-[10px] font-bold uppercase mt-1 hidden view-more-btn hover:underline">Xem
+                                                            thêm</button>
                                                     </div>
                                                 </td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
+                                                    <button
+                                                        class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
                                                 </td>
                                             </tr>
                                             <tr class="hover:bg-surface-container-low transition-colors">
                                                 <td class="px-3 py-2 text-center font-medium">2</td>
-                                                <td class="px-3 py-2 font-medium">Ban Đào tạo và Đảm bảo chất lượng giáo dục</td>
+                                                <td class="px-3 py-2 font-medium">Ban Đào tạo và Đảm bảo chất lượng giáo
+                                                    dục</td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <span class="material-symbols-outlined text-sm text-green-600">check_circle</span>
+                                                    <span
+                                                        class="material-symbols-outlined text-sm text-green-600">check_circle</span>
                                                 </td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng ý</span>
+                                                    <span
+                                                        class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng
+                                                        ý</span>
                                                 </td>
                                                 <td class="px-3 py-2">
-                                                    <p class="text-on-surface-variant italic">Thống nhất với dự thảo công văn</p>
+                                                    <p class="text-on-surface-variant italic">Thống nhất với dự thảo
+                                                        công văn</p>
                                                 </td>
                                                 <td class="px-3 py-2 text-center">
-                                                    <button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
+                                                    <button
+                                                        class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-bold transition-all">EDIT</button>
                                                 </td>
                                             </tr>
                                         </tbody>
