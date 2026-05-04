@@ -42,25 +42,30 @@
         <div class="overflow-x-auto text-[14px]">
             <table class="w-full text-left border-collapse">
                 <thead>
-                    <tr class="bg-[#1E88E5] text-white">
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider border-r border-white/10 w-16 text-center">STT</th>
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider border-r border-white/10 w-32">Ngày nhận</th>
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider border-r border-white/10 w-24">Ngày hạn</th>
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider border-r border-white/10">Nội dung</th>
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider border-r border-white/10 w-28 text-center">Trạng thái</th>
-                        <th class="px-4 py-3 font-bold uppercase tracking-wider w-20"></th>
+                    <tr class="bg-surface-container-high border-b border-outline-variant/20">
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-16 text-center">STT</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Loại văn bản</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Đơn vị ban hành</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Ký hiệu</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Ngày nhận</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Trích yếu</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 text-center">Hạn xử lý</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 text-center">Trạng thái</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant text-right"></th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant/10">
                     <!-- Row 1 -->
-                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-on-surface">1</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-[13px]">
+                    <tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center text-on-surface">1</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">Tờ trình</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">Trung tâm Đào tạo Thường xuyên</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">272/TTr-ĐTTX</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10">
                             <div class="text-[#2E7D32] font-bold">19/03/2026</div>
-                            <div class="text-[#2E7D32] font-bold">2:14:19 PM</div>
+                            <div class="text-[#2E7D32] font-bold text-[12px]">2:14:19 PM</div>
                         </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                        <td class="px-4 py-5 border-r border-outline-variant/10">
                             <div class="content-wrapper relative group">
                                 <div class="content-text line-clamp-1 transition-all duration-300 text-[#3F51B5] leading-relaxed font-medium">
                                     Tờ trình về việc đề nghị ban hành Quyết định thành lập Hội đồng xét công nhận tốt nghiệp đại học hình thức đào tạo từ xa, ngành Ngôn ngữ Anh, lớp AV31.1B2VTA mở tại Trường Cao đẳng Kỹ thuật Công nghệ Bà Rịa Vũng Tàu và đợt bổ sung lớp AV28.2B2 mở tại Trung tâm Đào tạo Thường xuyên - Đại học Đà Nẵng
@@ -68,10 +73,11 @@
                                 <button onclick="toggleContent(this)" class="text-[#1E88E5] text-[12px] font-bold mt-1 hover:underline cursor-pointer">Xem thêm</button>
                             </div>
                         </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center">
                             <span class="inline-flex items-center px-4 py-1.5 bg-[#FFB300] text-white rounded-full text-[12px] font-bold shadow-sm">Đang XL</span>
                         </td>
-                        <td class="px-4 py-4 text-center">
+                        <td class="px-4 py-5 text-center">
                             <div class="flex flex-col items-center gap-1.5">
                                 <button class="w-8 h-8 inline-flex items-center justify-center bg-[#26A69A] text-white rounded hover:bg-[#00897B] transition-all shadow-sm">
                                     <span class="material-symbols-outlined text-[18px]">visibility</span>
@@ -81,14 +87,16 @@
                         </td>
                     </tr>
                     <!-- Row 2 -->
-                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-on-surface">2</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-[13px]">
+                    <tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center text-on-surface">2</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">Công văn</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">Cơ quan Đại học Đà Nẵng</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-on-surface">387/ĐHĐN-QLCSVCĐT</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10">
                             <div class="text-[#2E7D32] font-bold">19/03/2026</div>
-                            <div class="text-[#2E7D32] font-bold">1:48:04 PM</div>
+                            <div class="text-[#2E7D32] font-bold text-[12px]">1:48:04 PM</div>
                         </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                        <td class="px-4 py-5 border-r border-outline-variant/10">
                             <div class="content-wrapper relative group">
                                 <div class="content-text line-clamp-1 transition-all duration-300 text-[#3F51B5] leading-relaxed font-medium">
                                     V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
@@ -96,66 +104,14 @@
                                 <button onclick="toggleContent(this)" class="text-[#1E88E5] text-[12px] font-bold mt-1 hover:underline cursor-pointer">Xem thêm</button>
                             </div>
                         </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
+                        <td class="px-4 py-5 border-r border-outline-variant/10 text-center">
                             <span class="inline-flex items-center px-4 py-1.5 bg-[#26A69A] text-white rounded-full text-[12px] font-bold shadow-sm">Mới</span>
                         </td>
-                        <td class="px-4 py-4 text-center">
+                        <td class="px-4 py-5 text-center">
                             <button class="w-8 h-8 inline-flex items-center justify-center bg-[#26A69A] text-white rounded hover:bg-[#00897B] transition-all shadow-sm">
                                 <span class="material-symbols-outlined text-[18px]">visibility</span>
                             </button>
-                        </td>
-                    </tr>
-                    <!-- Row 3 -->
-                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-on-surface">3</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-[13px]">
-                            <div class="text-[#2E7D32] font-bold">19/03/2026</div>
-                            <div class="text-[#2E7D32] font-bold">2:02:16 PM</div>
-                        </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10">
-                            <div class="content-wrapper relative group">
-                                <div class="content-text line-clamp-1 transition-all duration-300 text-[#3F51B5] leading-relaxed font-medium">
-                                    Về việc thông báo đoàn khách nước ngoài đến làm việc
-                                </div>
-                                <button onclick="toggleContent(this)" class="text-[#1E88E5] text-[12px] font-bold mt-1 hover:underline cursor-pointer">Xem thêm</button>
-                            </div>
-                        </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
-                            <span class="inline-flex items-center px-4 py-1.5 bg-[#26A69A] text-white rounded-full text-[12px] font-bold shadow-sm">Mới</span>
-                        </td>
-                        <td class="px-4 py-4 text-center">
-                            <button class="w-8 h-8 inline-flex items-center justify-center bg-[#26A69A] text-white rounded hover:bg-[#00897B] transition-all shadow-sm">
-                                <span class="material-symbols-outlined text-[18px]">visibility</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- Row 4 -->
-                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-on-surface">4</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-[13px]">
-                            <div class="text-[#2E7D32] font-bold">19/03/2026</div>
-                            <div class="text-[#2E7D32] font-bold">2:14:19 PM</div>
-                        </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center text-red-500 font-medium italic">null</td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10">
-                            <div class="content-wrapper relative group">
-                                <div class="content-text line-clamp-1 transition-all duration-300 text-[#3F51B5] leading-relaxed font-medium">
-                                    Tờ trình về việc đề nghị ban hành Quyết định thành lập Hội đồng xét công nhận tốt nghiệp đại học hình thức đào tạo từ xa, ngành Ngôn ngữ Anh, lớp AV31.1B2VTA mở tại Trường Cao đẳng Kỹ thuật Công nghệ Bà Rịa Vũng Tàu và đợt bổ sung lớp AV28.2B2 mở tại Trung tâm Đào tạo Thường xuyên - Đại học Đà Nẵng
-                                </div>
-                                <button onclick="toggleContent(this)" class="text-[#1E88E5] text-[12px] font-bold mt-1 hover:underline cursor-pointer">Xem thêm</button>
-                            </div>
-                        </td>
-                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
-                            <span class="inline-flex items-center px-4 py-1.5 bg-[#FFB300] text-white rounded-full text-[12px] font-bold shadow-sm">Đang XL</span>
-                        </td>
-                        <td class="px-4 py-4 text-center">
-                            <div class="flex flex-col items-center gap-1.5">
-                                <button class="w-8 h-8 inline-flex items-center justify-center bg-[#26A69A] text-white rounded hover:bg-[#00897B] transition-all shadow-sm">
-                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
-                                </button>
-                                <div class="w-8 h-6 bg-[#2E7D32] text-white rounded-full flex items-center justify-center text-[12px] font-black border-2 border-[#FFB300] shadow-sm">1</div>
-                            </div>
                         </td>
                     </tr>
                 </tbody>
