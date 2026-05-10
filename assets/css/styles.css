@@ -31,6 +31,20 @@ body { margin: 0; font-family: Arial, sans-serif; display: flex; }
 }
 
 /* Các mục menu đặc thù cho role (mặc định ẩn, BE sẽ điều khiển hiển thị) */
-.role-specific {
-    display: block; /* Khi làm FE bạn cứ để hiện để check design */
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
 }

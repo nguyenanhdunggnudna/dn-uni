@@ -1,0 +1,154 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-6">
+        <h1 class="text-xl font-bold text-[#333]">Đăng ký lịch</h1>
+        <div class="flex items-center gap-3 ml-auto">
+            <button onclick="loadPage('../pages/calendar/dang-ky-lich.html')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Hủy bỏ
+            </button>
+            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-8 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Đăng ký
+            </button>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="bg-white rounded-[1.25rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-10">
+        <form class="space-y-8">
+            <!-- Row 1: Năm, Tuần chọn, Ngày, Mục đăng ký -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">1. Năm <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="2026" selected>2026</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">2. Tuần chọn <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Tuần 1</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">3. Ngày <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="01/01/2026">01/01/2026</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">4. Mục đăng ký <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Lịch trường</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Thời gian bắt đầu, Thời gian đến -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">5. Thời gian bắt đầu <span class="text-red-500">*</span></label>
+                    <input type="time" value="00:00" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">Thời gian đến <span class="text-red-500">*</span></label>
+                    <input type="time" value="00:00" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                </div>
+            </div>
+
+            <!-- Row 3: Nội dung, Thành phần -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">6. Nội dung <span class="text-red-500">*</span></label>
+                    <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">7. Thành phần <span class="text-red-500">*</span></label>
+                    <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+                </div>
+            </div>
+
+            <!-- Row 4: Địa điểm (Select + Input) -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-500">8. Địa điểm <span class="text-red-500">*</span></label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Hội trường A</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                    <input type="text" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300" />
+                </div>
+            </div>
+
+            <!-- Row 5: Chủ trì, Số lượng tham dự -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">9. Chủ trì <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Thầy An</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">10. Số lượng tham dự</label>
+                    <input type="number" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300" />
+                </div>
+            </div>
+
+            <!-- Row 6: Yêu cầu -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-500">11. Yêu cầu</label>
+                <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Reset selection colors */
+    ::selection {
+        background-color: rgba(0, 105, 217, 0.1);
+        color: #0069D9;
+    }
+    
+    /* Smooth transitions */
+    button, input, select, textarea {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Custom scrollbar */
+    textarea::-webkit-scrollbar {
+        width: 8px;
+    }
+    textarea::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    textarea::-webkit-scrollbar-thumb {
+        background: #E9ECEF;
+        border-radius: 10px;
+    }
+</style>

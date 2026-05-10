@@ -1,0 +1,186 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <h1 class="text-xl font-bold text-[#333]">Tuần đăng ký</h1>
+        <div class="flex items-center gap-3">
+            <button class="bg-[#DC3545] hover:bg-red-700 text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Xóa
+            </button>
+            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Lưu thay đổi
+            </button>
+            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 flex items-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[20px]">add</span>
+                Thêm mới
+            </button>
+        </div>
+    </div>
+
+    <!-- Form Section Container -->
+    <div class="bg-white rounded-[1.25rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 space-y-8">
+        <h2 class="text-lg font-bold text-[#333]">I. Thông tin văn bản đi</h2>
+        
+        <form class="space-y-6">
+            <!-- Row 1: 4 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 1. Năm -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">1. Năm <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026" selected>2026</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 2. Tuần thứ -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">2. Tuần thứ <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Tuần 1</option>
+                            <option value="2">Tuần 2</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 3. Từ ngày -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">3. Từ ngày <span class="text-red-500">*</span></label>
+                    <div class="relative group">
+                        <input type="text" value="01/01/2026" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">calendar_month</span>
+                    </div>
+                </div>
+
+                <!-- 4. Đến ngày -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">4. Đến ngày <span class="text-red-500">*</span></label>
+                    <div class="relative group">
+                        <input type="text" value="01/01/2026" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">calendar_month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: 2 Input Cols + 2 Checkbox Cols -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+                <!-- 5. Khóa không cho thêm ngày -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">5. Khóa không cho thêm ngày <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Thứ 2</option>
+                            <option value="2">Thứ 3</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 6. Giờ khóa -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">6. Giờ khóa <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <input type="time" value="00:00" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                    </div>
+                </div>
+
+                <!-- 7. Không cho thay đổi -->
+                <div class="flex items-center h-[52px]">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <div class="relative flex items-center">
+                            <input type="checkbox" class="peer hidden" id="chk_7" />
+                            <div class="w-6 h-6 border-2 border-gray-200 rounded-lg peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all duration-200 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-[18px] opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 group-hover:text-blue-600 transition-colors">7. Không cho thay đổi</span>
+                    </label>
+                </div>
+
+                <!-- 8. Ẩn trên list chọn -->
+                <div class="flex items-center h-[52px]">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <div class="relative flex items-center">
+                            <input type="checkbox" class="peer hidden" id="chk_8" />
+                            <div class="w-6 h-6 border-2 border-gray-200 rounded-lg peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all duration-200 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-[18px] opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 group-hover:text-blue-600 transition-colors">8. Ẩn trên list chọn</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Row 3: 2 Checkbox Cols + Empty Cols -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 9. Xem trên VPS -->
+                <div class="flex items-center h-12">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <div class="relative flex items-center">
+                            <input type="checkbox" class="peer hidden" id="chk_9" />
+                            <div class="w-6 h-6 border-2 border-gray-200 rounded-lg peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all duration-200 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-[18px] opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 group-hover:text-blue-600 transition-colors">9. Xem trên VPS</span>
+                    </label>
+                </div>
+
+                <!-- 10. Public để mọi người xem -->
+                <div class="flex items-center h-12">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <div class="relative flex items-center">
+                            <input type="checkbox" class="peer hidden" id="chk_10" />
+                            <div class="w-6 h-6 border-2 border-gray-200 rounded-lg peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all duration-200 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-[18px] opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 group-hover:text-blue-600 transition-colors">10. Public để mọi người xem</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Row 4: Textarea -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-500">11. Ghi chú</label>
+                <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Reset selection colors to match primary brand */
+    ::selection {
+        background-color: rgba(0, 105, 217, 0.1);
+        color: #0069D9;
+    }
+    
+    /* Smooth transitions for interactive elements */
+    button, input, select, textarea {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Custom scrollbar for textarea */
+    textarea::-webkit-scrollbar {
+        width: 8px;
+    }
+    textarea::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    textarea::-webkit-scrollbar-thumb {
+        background: #E9ECEF;
+        border-radius: 10px;
+    }
+    textarea::-webkit-scrollbar-thumb:hover {
+        background: #DEE2E6;
+    }
+</style>
