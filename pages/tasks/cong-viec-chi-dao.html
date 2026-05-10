@@ -1,0 +1,97 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/10 pb-4">
+        <h1 class="text-xl font-bold text-on-surface">Công việc chỉ đạo</h1>
+    </div>
+
+    <!-- Filter & Search Section -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0">
+            <button
+                class="flex items-center gap-2 px-6 py-2.5 bg-[#8B4513] text-white rounded-full font-bold shadow-md whitespace-nowrap">
+                Tất cả <span class="bg-[#4D4D4D] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+            </button>
+            <button
+                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
+                Mới <span class="bg-[#17A2B8] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+            </button>
+            <button
+                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
+                Đang xử lý <span class="bg-[#FFC107] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+            </button>
+            <button
+                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
+                Hoàn thành <span class="bg-[#28A745] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+            </button>
+        </div>
+
+        <div class="relative flex-1 max-w-md group">
+            <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
+            <input
+                class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant"
+                placeholder="Tìm kiếm nội dung..." type="text" />
+        </div>
+    </div>
+
+    <!-- Main Data Table Card -->
+    <div
+        class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
+        <div class="overflow-x-auto text-[14px]">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high border-b border-outline-variant/20">
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-12 text-center">STT</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-40 text-center">Ngày nhận</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-40 text-center">Hạn xử lý</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Nội dung</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant w-32 text-center">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
+                        <td colspan="5" class="px-4 py-20 text-center text-outline-variant italic">
+                            Chưa có dữ liệu công việc chỉ đạo
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Pagination Footer -->
+        <div
+            class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
+            <div class="text-on-surface-variant">
+                Hiển thị <span class="font-medium text-on-surface">0</span> trong tổng số <span class="font-medium text-on-surface">0</span> mục
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-on-surface-variant">Số hàng mỗi trang:</span>
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-surface-container-low border border-outline-variant/20 rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all text-sm">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <nav class="flex items-center gap-1">
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30"
+                        disabled="">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium shadow-sm">1</button>
+                    <button
+                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

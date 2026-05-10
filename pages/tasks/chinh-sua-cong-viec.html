@@ -1,0 +1,272 @@
+<div class="px-8 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left Column: Main Form -->
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/10 p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-xl font-bold text-on-surface">Phần giao việc</h2>
+                    <button
+                        class="px-6 py-2.5 bg-[#0056B3] text-white rounded-lg font-bold hover:bg-[#004494] transition-all">
+                        Chuyển thực hiện
+                    </button>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- 1. Title -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-on-surface">1. Tiêu đề <span
+                                class="text-red-500">*</span></label>
+                        <textarea
+                            class="w-full border border-outline-variant/30 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none min-h-[100px]"
+                            placeholder="Nhập"></textarea>
+                    </div>
+
+                    <!-- 2 & 3: Type & Deadline -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="block font-bold text-on-surface">2. Loại công việc <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select
+                                    class="w-full appearance-none border border-outline-variant/30 rounded-lg p-3 pr-10 focus:ring-2 focus:ring-primary/20 outline-none bg-white">
+                                    <option>Chọn</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block font-bold text-on-surface">3. Ngày hạn xử lý <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <input type="text"
+                                    class="w-full border border-outline-variant/30 rounded-lg p-3 pr-10 focus:ring-2 focus:ring-primary/20 outline-none"
+                                    value="01/01/2026">
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline-variant">calendar_month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Content -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-on-surface">4. Nội dung yêu cầu <span
+                                class="text-red-500">*</span></label>
+                        <textarea
+                            class="w-full border border-outline-variant/30 rounded-lg p-3 focus:ring-2 focus:ring-primary/20 outline-none min-h-[120px]"
+                            placeholder="Nhập"></textarea>
+                    </div>
+
+                    <!-- 5. Table -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-on-surface">5. Chọn cá nhân xử lý</h3>
+                        <div class="overflow-x-auto rounded-lg border border-outline-variant/20">
+                            <table class="w-full text-sm text-left border-collapse">
+                                <thead class="bg-surface-container-low text-on-surface">
+                                    <tr>
+                                        <th
+                                            class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center w-12">
+                                            Số</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10">Họ tên</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            LĐ theo dõi</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            XL. Chính</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            Phối hợp</th>
+                                        <th class="px-4 py-3 font-bold text-center">Để xem</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-outline-variant/10">
+                                    <tr>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">1</td>
+                                        <td
+                                            class="px-4 py-3 border-r border-outline-variant/10 text-[#007BFF] font-medium">
+                                            -</td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">-</td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center"></td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center"></td>
+                                        <td class="px-4 py-3 text-center"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Attachments -->
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-on-surface">Đính kèm file</h3>
+                        <div class="flex items-start gap-4">
+                            <input type="file" id="fileInput" class="hidden" multiple>
+                            <div
+                                onclick="document.getElementById('fileInput').click()"
+                                class="flex-1 border-2 border-dashed border-[#007BFF] rounded-xl p-8 bg-blue-50/10 flex flex-col items-center justify-center cursor-pointer group hover:bg-blue-50/30 transition-all">
+                                <div class="text-[#007BFF] font-bold text-lg mb-1">Kéo & thả file vào đây hoặc click để
+                                    chọn</div>
+                                <div class="text-outline-variant text-sm italic">Loại file: doc, docx, pdf, jpg, jpeg,
+                                    xls, zip, rar, png</div>
+                            </div>
+                            <button
+                                class="w-12 h-12 flex items-center justify-center bg-[#FF4500] text-white rounded-lg shadow-sm hover:opacity-90 transition-all">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Unit -->
+                    <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+                        <h3 class="text-lg font-bold text-on-surface">V. Đơn vị phối hợp xử lý công việc</h3>
+                        <button
+                            onclick="openUnitModal()"
+                            class="flex items-center gap-2 px-4 py-2 bg-surface-container-high text-on-surface rounded-lg font-bold hover:bg-surface-container-highest transition-all text-sm">
+                            <span class="material-symbols-outlined text-[18px]">add</span> Thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Info Panels -->
+        <div class="space-y-6">
+            <!-- Panel 1: Document Info -->
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                <div class="flex border-b border-outline-variant/10">
+                    <button class="flex-1 py-3 text-[#007BFF] font-bold border-b-2 border-[#007BFF]">Văn bản</button>
+                    <button
+                        class="flex-1 py-3 text-on-surface-variant font-bold hover:bg-surface-container-lowest transition-all">Công
+                        việc</button>
+                </div>
+                <div class="p-6 space-y-6">
+                    <h3 class="text-xl font-bold text-on-surface">Nội dung văn bản</h3>
+                    <div class="grid grid-cols-1 gap-6 text-sm">
+                        <div class="space-y-1">
+                            <div class="text-outline-variant font-medium">Trích yếu</div>
+                            <div class="text-on-surface leading-relaxed">Về việc Báo cáo thực hiện Kế hoạch số
+                                1919/KH-BGDĐT</div>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <div class="space-y-1 flex-1">
+                                <div class="text-outline-variant font-medium">Độ khẩn</div>
+                                <div class="text-on-surface">-</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <div class="space-y-1 flex-1">
+                                <div class="text-outline-variant font-medium">Số ký hiệu</div>
+                                <div class="text-on-surface">7351/BGDĐT-GDĐH</div>
+                            </div>
+                            <div class="space-y-1 flex-1">
+                                <div class="text-outline-variant font-medium">Ngày ban hành</div>
+                                <div class="text-on-surface">12/11/2025</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <div class="space-y-1 flex-1">
+                                <div class="text-outline-variant font-medium">Loại văn bản</div>
+                                <div class="text-on-surface">Công văn</div>
+                            </div>
+                            <div class="space-y-1 flex-1">
+                                <div class="text-outline-variant font-medium">Hạn xử lý</div>
+                                <div class="text-on-surface">12/12/2025</div>
+                            </div>
+                        </div>
+                        <div class="space-y-1 pt-2 border-t border-outline-variant/10">
+                            <div class="text-outline-variant font-medium">File văn bản</div>
+                            <a href="#" class="text-[#007BFF] font-bold hover:underline block truncate">
+                                1- 4053 (7351 BGDĐT-GDĐH).pdf (Xem nội dung)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2: Task Info -->
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/10 p-6 space-y-6">
+                <h3 class="text-xl font-bold text-on-surface">Nội dung công việc</h3>
+                <div class="grid grid-cols-1 gap-6 text-sm">
+                    <div class="flex justify-between gap-4">
+                        <div class="space-y-1 flex-1">
+                            <div class="text-outline-variant font-medium">Yêu cầu</div>
+                            <div class="text-on-surface leading-relaxed">Về việc Báo cáo thực hiện Kế hoạch số
+                                1919/KH-BGDĐT</div>
+                        </div>
+                        <div class="space-y-1 w-28">
+                            <div class="text-outline-variant font-medium">Hạn xử lý</div>
+                            <div class="text-on-surface">12/12/2025</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between gap-4">
+                        <div class="space-y-1 flex-1">
+                            <div class="text-outline-variant font-medium">Đơn vị xử lý chính</div>
+                            <div class="text-on-surface">TP. Test 1</div>
+                        </div>
+                        <div class="space-y-1 flex-1">
+                            <div class="text-outline-variant font-medium">Đơn vị phối hợp</div>
+                            <div class="text-on-surface">Tp2TT1</div>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-outline-variant font-medium">Lãnh đạo theo dõi, chỉ đạo</div>
+                        <div class="text-on-surface">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Unit Selection Modal -->
+<div id="unitModal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeUnitModal()"></div>
+    
+    <!-- Modal Content -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+        <!-- Modal Header -->
+        <div class="bg-gray-100 px-4 py-2 flex justify-end border-b border-gray-200">
+            <button onclick="closeUnitModal()" class="text-gray-500 hover:text-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-[20px] bg-white border border-gray-300 rounded shadow-sm">close</span>
+            </button>
+        </div>
+
+        <div class="p-6 space-y-6">
+            <!-- Search & Filters -->
+            <div class="bg-gray-50/50 p-6 rounded-lg border border-gray-200 space-y-4">
+                <div class="flex justify-end gap-0">
+                    <div class="relative w-full max-w-sm">
+                        <input type="text" placeholder="Search" class="w-full border border-amber-400 rounded-l-md px-4 py-2 outline-none focus:ring-1 focus:ring-amber-400">
+                    </div>
+                    <button class="px-8 py-2 bg-gray-500 text-white font-bold rounded-r-md hover:bg-gray-600 transition-all">Tìm</button>
+                </div>
+
+                <div class="flex items-end">
+                    <div class="flex border border-gray-300 rounded-t-md overflow-hidden bg-white">
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium border-r border-gray-300 hover:bg-gray-300 transition-all">Lãnh đạo</button>
+                        <button class="px-6 py-2 bg-white text-on-surface font-medium border-r border-gray-300 hover:bg-gray-100 transition-all">Tất cả</button>
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium border-r border-gray-300 hover:bg-gray-300 transition-all">Nội dung công việc</button>
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium hover:bg-gray-300 transition-all">VT Trường</button>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-300 bg-white min-h-[40px] rounded-b-md rounded-tr-md"></div>
+            </div>
+
+            <!-- Content Area (Placeholder for data) -->
+            <div class="min-h-[300px]">
+                <!-- Data list would go here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openUnitModal() {
+        document.getElementById('unitModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeUnitModal() {
+        document.getElementById('unitModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+</script>

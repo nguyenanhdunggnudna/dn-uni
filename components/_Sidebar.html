@@ -44,7 +44,8 @@
                 <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/van-ban-chi-dao.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản chỉ đạo</a>
 
-                <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')"
+                <a href="javascript:void(0)"
+                    onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Danh sách văn bản đến</a>
 
                 <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/van-ban-noi-bo.html')"
@@ -79,6 +80,37 @@
 
                 <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/van-ban-cu.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cũ</a>
+            </div>
+        </div>
+        <!-- } -->
+
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk")) { -->
+        <div class="space-y-1" id="group-tasks">
+            <button onclick="toggleSidebarMenu('menu-tasks'); loadPage('../pages/tasks/cong-viec-giao.html')"
+                class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+                <div class="flex items-center">
+                    <i class="ion ion-arrow-swap"></i> <span>Xử lý công việc</span>
+                </div>
+                <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-tasks"></i>
+            </button>
+            <div id="menu-tasks" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-giao.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Công việc giao</a>
+
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-chi-dao.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Công việc chỉ đạo</a>
+
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-nhan.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Công việc nhận</a>
+
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-xu-ly.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Công việc xử lý</a>
+
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/de-nam-thong-tin.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Để nắm thông tin</a>
+
+                <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/luu-tru-van-ban.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Lưu trữ văn bản</a>
             </div>
         </div>
         <!-- } -->

@@ -213,8 +213,22 @@
             
             // Cập nhật nội dung vào placeholder sau khi render qua Razor Mock
             const contentArea = document.getElementById('content-placeholder');
-            contentArea.innerHTML = renderRazor(html);
+            const renderedHtml = renderRazor(html);
+            contentArea.innerHTML = renderedHtml;
             contentArea.scrollTop = 0; 
+
+            // Execute scripts manually because innerHTML doesn't execute them
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = renderedHtml;
+            const scripts = tempDiv.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                document.body.appendChild(newScript);
+                // Optionally remove it after execution to keep DOM clean
+                // newScript.parentNode.removeChild(newScript);
+            });
 
             // Initialize view more after content is loaded
             setTimeout(initViewMore, 100); 
