@@ -123,20 +123,23 @@
             rendered = rendered.split(placeholder).join(roleData[key]);
         });
 
-        // 2. Giả lập logic Role-based visibility
-        // Tìm các đoạn <!-- @if (User.IsInRole("...")) { --> ... <!-- } -->
-        // Cú pháp hỗ trợ: @if (User.IsInRole("Role1") || User.IsInRole("Role2"))
-        const regexBlock = /<!--\s*@if\s*\((.*?)\)\s*{\s*-->([\s\S]*?)<!--\s*}\s*-->/g;
-        rendered = rendered.replace(regexBlock, (match, condition, content) => {
-            const currentRole = window.MOCK_DATA.currentRole;
-            // Kiểm tra xem currentRole có xuất hiện trong condition không
-            // Đây là bản hack đơn giản cho mockup
-            if (condition.includes(`"${currentRole}"`) || condition.includes(`'${currentRole}'`)) {
-                return content;
-            } else {
-                return "";
-            }
-        });
+        // 2. Giả lập logic Role-based visibility (Hỗ trợ lồng nhau)
+        // Sử dụng loop để xử lý các block từ trong ra ngoài
+        const currentRole = window.MOCK_DATA.currentRole;
+        const regexInnermost = /<!--\s*@if\s*\((.*?)\)\s*{\s*-->((?:(?!<!--\s*@if)[\s\S])*?)<!--\s*}\s*-->/g;
+
+        let previousRendered;
+        do {
+            previousRendered = rendered;
+            rendered = rendered.replace(regexInnermost, (match, condition, content) => {
+                // Kiểm tra xem currentRole có xuất hiện trong condition không
+                if (condition.includes(`"${currentRole}"`) || condition.includes(`'${currentRole}'`)) {
+                    return content;
+                } else {
+                    return "";
+                }
+            });
+        } while (rendered !== previousRendered);
 
         return rendered;
     }
