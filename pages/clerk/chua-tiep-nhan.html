@@ -1,0 +1,166 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Filter & Action Section -->
+    <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+            <!-- Search -->
+            <div class="relative max-w-xs group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors text-xl">search</span>
+                <input class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-10 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-outline-variant w-64"
+                    placeholder="Tìm kiếm" type="text" />
+            </div>
+
+            <!-- Trạng thái Dropdown -->
+            <div class="relative">
+                <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm w-44 cursor-pointer">
+                    <option>Tất cả</option>
+                    <option>Đã chuyển</option>
+                    <option>Chưa chuyển</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-xl">expand_more</span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button class="p-2.5 bg-surface-container-lowest border border-outline-variant/10 text-on-surface-variant hover:text-primary hover:shadow-md rounded-xl transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">refresh</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="bg-surface-container-lowest rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant/20 overflow-hidden">
+        <div class="overflow-x-auto text-sm">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-low border-b border-outline-variant/20 text-on-surface-variant font-bold uppercase tracking-wider text-[12px]">
+                        <th class="px-4 py-4 text-center w-12 border-r border-outline-variant/10">Số</th>
+                        <th class="px-4 py-4 w-32 border-r border-outline-variant/10">Ngày gửi</th>
+                        <th class="px-4 py-4 w-32 border-r border-outline-variant/10">Ngày BH</th>
+                        <th class="px-4 py-4 border-r border-outline-variant/10">Trích yếu</th>
+                        <th class="px-4 py-4 w-32 border-r border-outline-variant/10 text-center">Trạng thái</th>
+                        <th class="px-4 py-4 text-center w-32">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-primary/5 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-outline-variant/10">1</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 font-bold text-on-surface text-center">03/25/2023</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">61/QĐ-ĐHĐN</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                            <div class="space-y-1">
+                                <a href="javascript:void(0)" class="text-primary font-bold hover:underline leading-relaxed block">
+                                    V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                                </a>
+                                <div class="text-xs text-on-surface-variant font-medium">KH: 387/ĐHĐN-QLCSVCĐT</div>
+                                <div class="text-xs text-on-surface-variant italic">Đang thực hiện: Chưa tiếp nhận</div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-[#FFF9C4] text-[#F57F17] rounded-full text-[11px] font-bold shadow-sm">Chưa chuyển</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <a href="javascript:void(0)" onclick="loadPage('../pages/clerk/chi-tiet-chua-tiep-nhan.html')" class="text-primary font-bold text-[13px] hover:underline transition-all">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-primary/5 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-outline-variant/10">2</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 font-bold text-on-surface text-center">03/25/2023</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">61/QĐ-ĐHĐN</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                            <div class="space-y-1">
+                                <a href="javascript:void(0)" class="text-primary font-bold hover:underline leading-relaxed block">
+                                    V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                                </a>
+                                <div class="text-xs text-on-surface-variant font-medium">KH: 387/ĐHĐN-QLCSVCĐT</div>
+                                <div class="text-xs text-on-surface-variant italic">Đang thực hiện: Chưa tiếp nhận</div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] rounded-full text-[11px] font-bold shadow-sm">Đã chuyển</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <a href="javascript:void(0)" onclick="loadPage('../pages/clerk/chi-tiet-chua-tiep-nhan.html')" class="text-primary font-bold text-[13px] hover:underline transition-all">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-primary/5 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-outline-variant/10">3</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 font-bold text-on-surface text-center">03/25/2023</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">61/QĐ-ĐHĐN</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                            <div class="space-y-1">
+                                <a href="javascript:void(0)" class="text-primary font-bold hover:underline leading-relaxed block">
+                                    V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                                </a>
+                                <div class="text-xs text-on-surface-variant font-medium">KH: 387/ĐHĐN-QLCSVCĐT</div>
+                                <div class="text-xs text-on-surface-variant italic">Đang thực hiện: Chưa tiếp nhận</div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] rounded-full text-[11px] font-bold shadow-sm">Đã chuyển</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <a href="javascript:void(0)" class="text-primary font-bold text-[13px] hover:underline transition-all">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-primary/5 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-outline-variant/10">4</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 font-bold text-on-surface text-center">03/25/2023</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">61/QĐ-ĐHĐN</td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10">
+                            <div class="space-y-1">
+                                <a href="javascript:void(0)" class="text-primary font-bold hover:underline leading-relaxed block">
+                                    V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                                </a>
+                                <div class="text-xs text-on-surface-variant font-medium">KH: 387/ĐHĐN-QLCSVCĐT</div>
+                                <div class="text-xs text-on-surface-variant italic">Đang thực hiện: Chưa tiếp nhận</div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-r border-outline-variant/10 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-[#FFF9C4] text-[#F57F17] rounded-full text-[11px] font-bold shadow-sm">Chưa chuyển</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <a href="javascript:void(0)" class="text-primary font-bold text-[13px] hover:underline transition-all">Xem chi tiết</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-outline-variant/10 bg-surface-container-low/30">
+            <div class="text-sm text-on-surface-variant">
+                Hiển thị <span class="font-bold text-on-surface">1-10</span> trong tổng số <span class="font-bold text-on-surface">1000</span> mục
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-3 text-sm text-on-surface-variant">
+                    <span>Số hàng mỗi trang:</span>
+                    <div class="relative">
+                        <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all cursor-pointer">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xl pointer-events-none text-outline-variant">expand_more</span>
+                    </div>
+                </div>
+                <nav class="flex items-center gap-1.5">
+                    <button class="p-1.5 text-outline-variant hover:bg-surface-container rounded-lg transition disabled:opacity-30" disabled>
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-xl bg-primary text-white font-bold shadow-md">1</button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition font-medium">2</button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition font-medium">3</button>
+                    <span class="px-1 text-outline-variant">...</span>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition font-medium">10</button>
+                    <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

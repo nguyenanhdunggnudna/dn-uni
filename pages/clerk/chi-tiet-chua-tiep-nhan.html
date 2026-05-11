@@ -1,0 +1,227 @@
+<div class="px-8 py-6">
+    <div class="bg-surface-container-lowest rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-outline-variant/10 overflow-hidden">
+        <!-- Tabs & Action Header -->
+        <div class="px-8 py-6 border-b border-outline-variant/10 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <button onclick="switchTab('noidung')" id="tab-noidung" class="pb-2 text-primary font-bold border-b-2 border-primary text-lg transition-all">Nội dung</button>
+                <button onclick="switchTab('quatrinh')" id="tab-quatrinh" class="pb-2 text-on-surface-variant font-medium hover:text-primary transition-colors text-lg transition-all">Quá trình</button>
+            </div>
+            <button onclick="loadPage('../pages/clerk/tiep-nhan-van-ban.html')" class="bg-primary hover:bg-primary-dim text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95">
+                <span class="material-symbols-outlined text-xl">login</span>
+                Tiếp nhận
+            </button>
+        </div>
+
+        <!-- Tab Content: Nội dung -->
+        <div id="content-noidung" class="p-10 space-y-10">
+            <!-- Title Section -->
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl font-black text-on-surface tracking-tight">Công văn 387/ĐHĐN-QLCSVCĐT</h1>
+                <span class="bg-[#FFF9C4] text-[#F57F17] px-3 py-1 rounded-full text-xs font-black shadow-sm">Chưa chuyển</span>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-12">
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Số ký hiệu</div>
+                    <div class="text-[15px] font-bold text-on-surface">387/ĐHĐN-QLCSVCĐT</div>
+                </div>
+                <!-- ... other fields remain same ... -->
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Loại văn bản</div>
+                    <div class="text-[15px] font-bold text-on-surface">Công văn</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Người ký</div>
+                    <div class="text-[15px] font-bold text-on-surface">Nguyễn Mạnh Toàn</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Độ khẩn</div>
+                    <div class="text-[15px] font-bold text-on-surface">Bình thường</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Ngày ban hành</div>
+                    <div class="text-[15px] font-bold text-on-surface">01/02/2024</div>
+                </div>
+                <div class="space-y-2 md:col-span-1">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">CQ ban hành</div>
+                    <div class="text-[15px] font-bold text-on-surface leading-relaxed">Ban Quản lý cơ sở vật chất và Đầu tư</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Nơi nhận</div>
+                    <div class="text-[15px] font-bold text-on-surface">VNUK</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Nơi nhận khác</div>
+                    <div class="text-[15px] font-bold text-on-surface">-</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">File văn bản</div>
+                    <a href="javascript:void(0)" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+                        <span class="material-symbols-outlined text-lg">description</span>
+                        1- CV 387.pdf
+                    </a>
+                </div>
+                <div class="space-y-2 md:col-span-3">
+                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Trích yếu</div>
+                    <div class="text-[15px] font-bold text-on-surface leading-relaxed italic">
+                        V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Quá trình -->
+        <div id="content-quatrinh" class="p-10 hidden">
+            <div class="flex items-center gap-4 mb-10">
+                <h1 class="text-2xl font-black text-on-surface tracking-tight">Công văn 387/ĐHĐN-QLCSVCĐT</h1>
+                <span class="bg-[#FFF9C4] text-[#F57F17] px-3 py-1 rounded-full text-xs font-black shadow-sm">Chưa chuyển</span>
+            </div>
+
+            <!-- Workflow Tree -->
+            <div class="relative pl-20 py-10">
+                <!-- Vertical Root Line -->
+                <div class="absolute left-10 top-0 bottom-0 w-px bg-gray-200"></div>
+
+                <!-- CESO Level -->
+                <div class="relative mb-12">
+                    <!-- Horizontal connection -->
+                    <div class="absolute -left-10 top-1/2 w-10 h-px bg-gray-200"></div>
+                    <div class="inline-block bg-gray-100 px-4 py-2 rounded-lg text-sm font-bold text-gray-600 border border-gray-200 shadow-sm">CESO</div>
+                    
+                    <!-- Sub-items level -->
+                    <div class="mt-6 ml-10 space-y-4 relative">
+                        <!-- Sub-vertical line -->
+                        <div class="absolute -left-6 top-0 bottom-0 w-px bg-gray-200"></div>
+
+                        <!-- Green Card -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-[#2E7D32] text-white p-3 rounded-lg shadow-md min-w-[280px]">
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:46:29 PM
+                                </div>
+                                <div class="text-sm font-bold">Hoàng Hải (CESO)</div>
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mt-1">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    09/02/2026 3:35:42 PM
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gray Card -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-gray-100 text-gray-700 p-3 rounded-lg border border-gray-200 shadow-sm min-w-[280px] relative group">
+                                <button class="absolute -top-1.5 -right-1.5 bg-white text-gray-400 hover:text-red-500 rounded-full shadow-sm p-0.5 border border-gray-100 transition-colors">
+                                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                                </button>
+                                <div class="flex items-center gap-2 text-[11px] font-bold text-gray-400 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:32:15 PM
+                                </div>
+                                <div class="text-sm font-bold">Văn thư Trung tâm Phát triển VL-ĐHTT (CESO)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GDQPANTT Level -->
+                <div class="relative">
+                    <!-- Horizontal connection -->
+                    <div class="absolute -left-10 top-6 w-10 h-px bg-gray-200"></div>
+                    
+                    <div class="ml-10 space-y-4 relative">
+                        <!-- Sub-vertical line -->
+                        <div class="absolute -left-6 top-0 bottom-0 w-px bg-gray-200"></div>
+
+                        <!-- Green Card 1 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-[#2E7D32] text-white p-3 rounded-lg shadow-md min-w-[280px]">
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:46:29 PM
+                                </div>
+                                <div class="text-sm font-bold">Hồ Phan Hiếu (GDQPANTT)</div>
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mt-1">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    24/02/2026 9:51:35 AM
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Green Card 2 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-[#2E7D32] text-white p-3 rounded-lg shadow-md min-w-[280px]">
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:46:29 PM
+                                </div>
+                                <div class="text-sm font-bold">Trần Thị Kim Oanh (GDQPANTT)</div>
+                                <div class="flex items-center gap-2 text-[11px] font-medium opacity-90 mt-1">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    10/02/2026 8:45:35 AM
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gray Card 1 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-gray-100 text-gray-700 p-3 rounded-lg border border-gray-200 shadow-sm min-w-[280px] relative">
+                                <button class="absolute -top-1.5 -right-1.5 bg-white text-gray-400 hover:text-red-500 rounded-full shadow-sm p-0.5 border border-gray-100">
+                                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                                </button>
+                                <div class="flex items-center gap-2 text-[11px] font-bold text-gray-400 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:46:29 PM
+                                </div>
+                                <div class="text-sm font-bold">Trần Thanh Điệp (GDQPANTT)</div>
+                            </div>
+                        </div>
+
+                        <!-- Gray Card 2 -->
+                        <div class="relative flex items-start">
+                            <div class="absolute -left-6 top-1/2 w-6 h-px bg-gray-200"></div>
+                            <div class="bg-gray-100 text-gray-700 p-3 rounded-lg border border-gray-200 shadow-sm min-w-[280px] relative">
+                                <button class="absolute -top-1.5 -right-1.5 bg-white text-gray-400 hover:text-red-500 rounded-full shadow-sm p-0.5 border border-gray-100">
+                                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                                </button>
+                                <div class="flex items-center gap-2 text-[11px] font-bold text-gray-400 mb-1">
+                                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                                    06/02/2026 4:46:29 PM
+                                </div>
+                                <div class="text-sm font-bold">Nguyễn Công Hải (GDQPANTT)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tabName) {
+        // Toggle Buttons
+        const tabs = ['noidung', 'quatrinh'];
+        tabs.forEach(t => {
+            const btn = document.getElementById('tab-' + t);
+            const content = document.getElementById('content-' + t);
+            if (t === tabName) {
+                btn.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary');
+                btn.classList.remove('text-on-surface-variant', 'font-medium');
+                content.classList.remove('hidden');
+            } else {
+                btn.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary');
+                btn.classList.add('text-on-surface-variant', 'font-medium');
+                content.classList.add('hidden');
+            }
+        });
+    }
+</script>
+    </div>
+</div>
