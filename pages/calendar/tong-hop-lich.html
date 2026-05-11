@@ -1,0 +1,172 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <h1 class="text-xl font-bold text-[#333]">Tổng hợp lịch</h1>
+            <div class="flex items-center gap-3 ml-4">
+                <div class="relative">
+                    <select class="min-w-[120px] bg-white border border-gray-200 rounded-lg py-2 px-4 appearance-none focus:ring-1 focus:ring-blue-500 transition-all outline-none text-gray-500 text-sm">
+                        <option value="">Năm</option>
+                        <option value="2026">2026</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">expand_more</span>
+                </div>
+                <div class="relative">
+                    <select class="min-w-[120px] bg-white border border-gray-200 rounded-lg py-2 px-4 appearance-none focus:ring-1 focus:ring-blue-500 transition-all outline-none text-gray-500 text-sm">
+                        <option value="">Tuần</option>
+                        <option value="1">Tuần 1</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">expand_more</span>
+                </div>
+            </div>
+        </div>
+        <button id="btnXem" onclick="toggleView()" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 text-sm shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            <span>Xem</span>
+        </button>
+    </div>
+
+    <!-- Main View (Image 1) -->
+    <div id="listView" class="space-y-4">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden p-6 space-y-6">
+            <!-- Tabs Navigation -->
+            <div class="flex border-b border-gray-100 mb-4">
+                <button class="px-6 py-3 text-sm font-medium text-gray-400 hover:text-gray-600 transition-all">Lịch của trường</button>
+                <button class="px-6 py-3 text-sm font-bold text-[#0069D9] border-b-2 border-[#0069D9] transition-all">Lịch nội bộ</button>
+            </div>
+
+            <h2 class="text-lg font-bold text-[#333]">Lịch nội bộ</h2>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-[#EEF1F4]">
+                        <tr>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100 first:rounded-tl-lg">Số</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Ngày</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Thời gian</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Nội dung</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Thành phần</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Địa điểm</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Chủ trì</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">Đăng ký</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100">XN</th>
+                            <th class="px-4 py-3 text-xs font-bold text-gray-600 border-b border-gray-100 last:rounded-tr-lg">Duyệt</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 text-sm text-gray-600">1</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">01/01/2026</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">30/12/2025</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">Thầy An</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 text-sm text-gray-600">2</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">01/01/2026</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">30/12/2025</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">Thầy An</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 text-sm text-gray-600">3</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">01/01/2026</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">30/12/2025</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">Thầy An</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                            <td class="px-4 py-4 text-sm text-gray-600">text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination (Outside box) -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-2">
+            <span class="text-sm text-gray-500">Hiển thị 1-10 trong tổng số 1000 mục</span>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-sm text-gray-500">Số hàng mỗi trang</span>
+                    <div class="relative">
+                        <select class="bg-white border border-gray-200 rounded-lg py-1 px-3 pr-8 text-sm outline-none appearance-none cursor-pointer">
+                            <option>10</option>
+                            <option>20</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[18px]">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded bg-[#0069D9] text-white font-bold text-sm">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">3</button>
+                    <span class="px-1 text-gray-400">...</span>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">10</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result View (Image 2) -->
+    <div id="resultView" class="hidden space-y-4">
+        <div class="bg-[#F0F9F9] rounded-lg border-l-4 border-[#17A2B8] p-4 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#17A2B8]">info</span>
+                <p class="text-gray-700 font-medium">Tổng hợp lịch</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#17A2B8] hover:bg-[#138496] text-white px-4 py-1.5 rounded font-medium text-sm transition-all flex items-center gap-2">
+                    In lịch
+                </button>
+                <button class="bg-[#17A2B8] hover:bg-[#138496] text-white px-4 py-1.5 rounded font-medium text-sm transition-all flex items-center gap-2">
+                    Export to Word
+                </button>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-12 min-h-[400px]">
+            <!-- Content for .NET dev to inject -->
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleView() {
+        const listView = document.getElementById('listView');
+        const resultView = document.getElementById('resultView');
+        const btnXem = document.getElementById('btnXem');
+
+        if (listView.classList.contains('hidden')) {
+            listView.classList.remove('hidden');
+            resultView.classList.add('hidden');
+            btnXem.innerHTML = '<span class="material-symbols-outlined text-[18px]">visibility</span> <span>Xem</span>';
+        } else {
+            listView.classList.add('hidden');
+            resultView.classList.remove('hidden');
+            btnXem.innerHTML = '<span class="material-symbols-outlined text-[18px]">arrow_back</span> <span>Quay lại</span>';
+        }
+    }
+</script>
+
+<style>
+    /* Match exactly with screenshot styling */
+    th { font-family: inherit; }
+    tbody tr:nth-child(even) { background-color: white; }
+    tbody tr:hover { background-color: #f9fafb; }
+</style>
