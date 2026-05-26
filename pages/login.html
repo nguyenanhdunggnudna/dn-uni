@@ -1,112 +1,198 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Hệ thống Quản lý Đại học</title>
+    <title>Đăng nhập - Hệ thống Văn phòng số VN-UK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Outfit', sans-serif; }
-        .glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .login-btn {
+            background-color: #5D73E2;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .login-btn:hover {
+            background-color: #4A60D0;
+            box-shadow: 0 4px 12px rgba(93, 115, 226, 0.4);
+        }
+
+        .left-bg-gradient {
+            background: linear-gradient(135deg, rgba(147, 197, 253, 0.4) 0%, rgba(59, 130, 246, 0.2) 100%), #e0f2fe;
         }
     </style>
 </head>
-<body class="bg-slate-900 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-    
-    <!-- Trang trí nền -->
-    <div class="absolute top-0 -left-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-    <div class="absolute bottom-0 -right-20 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
-    <div class="glass w-full max-w-md p-8 rounded-2xl shadow-2xl relative z-10">
-        <div class="text-center mb-10">
-            <h1 class="text-3xl font-bold text-slate-800 mb-2">Hệ thống Đại học</h1>
-            <p class="text-slate-500">Chào mừng trở lại! Vui lòng chọn vai trò để tiếp tục.</p>
-        </div>
+<body class="min-h-screen bg-slate-50 flex overflow-hidden">
 
-        <form onsubmit="handleLogin(event)" class="space-y-6">
-            <div class="space-y-4">
-                <label class="block text-sm font-semibold text-slate-700">Chọn vai trò truy cập</label>
-                
-                <div class="grid grid-cols-1 gap-3">
-                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
-                        <input type="radio" name="role" value="Director" class="hidden" checked>
-                        <i class="fas fa-user-tie text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
-                        <div>
-                            <p class="font-bold text-slate-800">Giám đốc</p>
-                            <p class="text-xs text-slate-500">Toàn quyền quản trị hệ thống</p>
-                        </div>
-                    </label>
+    <!-- Container chính: chia đôi màn hình -->
+    <div class="w-full flex flex-col md:flex-row">
 
-                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
-                        <input type="radio" name="role" value="Principal" class="hidden">
-                        <i class="fas fa-user-graduate text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
-                        <div>
-                            <p class="font-bold text-slate-800">Hiệu trưởng</p>
-                            <p class="text-xs text-slate-500">Quản lý đào tạo và tin tức</p>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
-                        <input type="radio" name="role" value="Clerk" class="hidden">
-                        <i class="fas fa-user-pen text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
-                        <div>
-                            <p class="font-bold text-slate-800">Văn thư</p>
-                            <p class="text-xs text-slate-500">Xử lý văn bản đi và đến</p>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
-                        <input type="radio" name="role" value="AdministrativeHead" class="hidden">
-                        <i class="fas fa-user-shield text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
-                        <div>
-                            <p class="font-bold text-slate-800">Trưởng phòng hành chính</p>
-                            <p class="text-xs text-slate-500">Quản lý hành chính và văn bản</p>
-                        </div>
-                    </label>
-
-                    <label class="relative flex items-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer hover:border-blue-500 transition group has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
-                        <input type="radio" name="role" value="DeputyHead" class="hidden">
-                        <i class="fas fa-user-tag text-2xl text-slate-400 group-hover:text-blue-500 mr-4"></i>
-                        <div>
-                            <p class="font-bold text-slate-800">Phó phòng</p>
-                            <p class="text-xs text-slate-500">Xử lý văn bản và công việc phòng</p>
-                        </div>
-                    </label>
-                </div>
+        <!-- Cột TRÁI: Hình ảnh trường học (được giả lập bằng gradient và text) -->
+        <div class="hidden md:flex md:w-[60%] left-bg-gradient relative p-12 flex-col justify-end overflow-hidden">
+            <!-- Overlay mờ và họa tiết để giả lập ảnh nếu không có url -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-85"
+                style="background-image: url('https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/diem_chuan_dai_hoc_kinh_te_da_nang_158838eb9b.jpg');">
             </div>
 
-            <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition active:scale-[0.98]">
-                Đăng nhập hệ thống
-            </button>
-        </form>
+            <!-- Bộ lọc màu xanh lam/cyan tươi sáng phủ lên hình ảnh giống như trong screenshot -->
+            <div class="absolute inset-0 bg-blue-500/20 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
 
-        <div class="mt-8 pt-6 border-t border-slate-100 text-center">
-            <p class="text-sm text-slate-400">© 2026 University Management System</p>
+
+
         </div>
+
+        <!-- Cột PHẢI: Form Đăng nhập -->
+        <div
+            class="w-full md:w-[40%] bg-white flex flex-col justify-center items-center px-8 py-12 relative shadow-2xl">
+            <div class="w-full max-w-md flex flex-col items-center">
+
+                <!-- Logo VN-UK / UD -->
+                <div class="mb-6 p-4 border border-blue-600 rounded-lg flex items-center justify-center bg-white shadow-sm"
+                    style="width: 100px; height: 100px;">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-blue-600">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-dasharray="1 1" />
+                        <path
+                            d="M50,15 C69.3,15 85,30.7 85,50 C85,69.3 69.3,85 50,85 C30.7,85 15,69.3 15,50 C15,30.7 30.7,15 50,15 Z"
+                            fill="none" stroke="currentColor" stroke-width="1" />
+                        <!-- Sóng wifi/tín hiệu theo logo trong ảnh -->
+                        <path d="M50,30 A 20 20 0 0 1 70,50" fill="none" stroke="currentColor" stroke-width="4"
+                            stroke-linecap="round" />
+                        <path d="M50,38 A 12 12 0 0 1 62,50" fill="none" stroke="currentColor" stroke-width="4"
+                            stroke-linecap="round" />
+                        <path d="M50,46 A 4 4 0 0 1 54,50" fill="none" stroke="currentColor" stroke-width="4"
+                            stroke-linecap="round" />
+                        <path d="M50,22 A 28 28 0 0 1 78,50" fill="none" stroke="currentColor" stroke-width="4"
+                            stroke-linecap="round" />
+                        <!-- Chữ UD ở góc dưới -->
+                        <circle cx="50" cy="70" r="10" fill="currentColor" />
+                        <text x="50" y="73" fill="white" font-size="8" font-weight="bold" text-anchor="middle">UD</text>
+                    </svg>
+                </div>
+
+                <!-- Đường gạch ngang mảnh -->
+                <div class="w-32 h-[1px] bg-slate-200 mb-6"></div>
+
+                <!-- Tiêu đề Đăng nhập -->
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold text-slate-800 tracking-widest uppercase mb-1">Đăng nhập</h1>
+                    <h2 class="text-xl font-bold tracking-wider uppercase">
+                        <span class="text-[#E53E3E]">Văn</span> <span class="text-amber-500">Phòng Số</span>
+                    </h2>
+                </div>
+
+                <!-- Form đăng nhập -->
+                <form onsubmit="handleLogin(event)" class="w-full space-y-5">
+                    <!-- Error Alert -->
+                    <div id="errorAlert"
+                        class="hidden bg-red-50 text-red-600 text-xs px-4 py-3 rounded-lg border border-red-200 flex items-center gap-2">
+                        <i class="fas fa-exclamation-circle text-sm"></i>
+                        <span id="errorMessage">Tài khoản hoặc mật khẩu không chính xác.</span>
+                    </div>
+
+                    <!-- Input Tài khoản -->
+                    <div class="relative">
+                        <input type="text" id="username" required
+                            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-sm transition"
+                            placeholder="Account">
+                    </div>
+
+                    <!-- Input Mật khẩu -->
+                    <div class="relative">
+                        <input type="password" id="password" required
+                            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-sm pr-12 transition"
+                            placeholder="Password">
+                        <button type="button" onclick="togglePasswordVisibility()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 focus:outline-none">
+                            <i id="eyeIcon" class="far fa-eye text-sm"></i>
+                        </button>
+                    </div>
+
+                    <!-- Link quên mật khẩu -->
+                    <div class="flex justify-end">
+                        <a href="#" class="text-xs text-slate-500 hover:text-blue-600 hover:underline">Quên mật
+                            khẩu?</a>
+                    </div>
+
+                    <!-- Nút đăng nhập -->
+                    <button type="submit"
+                        class="w-full py-4 text-white text-xs font-bold tracking-widest uppercase rounded-lg login-btn shadow-md">
+                        Login
+                    </button>
+                </form>
+
+                <!-- Footer của form -->
+                <div class="mt-12 text-center text-[10px] text-slate-400">
+                    © 2026 VNUK • Đại học Đà Nẵng
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
+    <!-- Nạp Mock Data để kiểm tra thông tin đăng nhập -->
+    <script src="../shared/mock-data.js"></script>
     <script>
-        function handleLogin(e) {
-            e.preventDefault();
-            const selectedRole = document.querySelector('input[name="role"]:checked').value;
-            
-            // Lưu trạng thái giả lập
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userRole', selectedRole);
-            
-            // Chuyển hướng về Layout chính
-            window.location.href = '../shared/_Layout.html';
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
         }
 
-        // Nếu đã login rồi thì vào thẳng luôn
+        function handleLogin(e) {
+            e.preventDefault();
+            const usernameInput = document.getElementById('username').value.trim();
+            const passwordInput = document.getElementById('password').value.trim();
+            const errorAlert = document.getElementById('errorAlert');
+            const errorMessage = document.getElementById('errorMessage');
+
+            errorAlert.classList.add('hidden');
+
+            if (!window.MOCK_USERS) {
+                errorMessage.textContent = "Không tìm thấy cơ sở dữ liệu tài khoản mẫu.";
+                errorAlert.classList.remove('hidden');
+                return;
+            }
+
+            // Tìm user khớp thông tin
+            const user = window.MOCK_USERS.find(u => u.username === usernameInput && u.password === passwordInput);
+
+            if (user) {
+                // Lưu trạng thái giả lập
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userRole', user.role);
+
+                // Chuyển hướng về Layout chính
+                window.location.href = '../shared/_Layout.html';
+            } else {
+                errorMessage.textContent = "Tài khoản hoặc mật khẩu không chính xác.";
+                errorAlert.classList.remove('hidden');
+            }
+        }
+
+        // Nếu đã login rồi thì tự động vào thẳng luôn
         if (localStorage.getItem('isLoggedIn') === 'true') {
             window.location.href = '../shared/_Layout.html';
         }
     </script>
 </body>
+
 </html>

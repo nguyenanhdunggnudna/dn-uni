@@ -42,3 +42,11 @@ window.MOCK_DATA = {
     },
     currentRole: localStorage.getItem('userRole') || 'Director'
 };
+
+window.MOCK_USERS = [
+    { username: "giamdoc", password: "123", role: "Director" },
+    { username: "hieutruong", password: "123", role: "Principal" },
+    { username: "vanthu", password: "123", role: "Clerk" },
+    { username: "truongphong", password: "123", role: "AdministrativeHead" },
+    { username: "phophong", password: "123", role: "DeputyHead" }
+];
