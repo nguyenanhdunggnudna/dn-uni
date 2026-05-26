@@ -1,0 +1,564 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Tabs Section -->
+    <div class="flex items-center gap-8 border-b border-outline-variant/20">
+        <button onclick="loadPage('../pages/clerk/vao-so-van-ban-den.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Vào sổ văn bản đến
+        </button>
+        <button onclick="loadPage('../pages/clerk/cap-so.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Cấp số
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">3</span>
+        </button>
+        <button class="pb-3 text-primary font-bold border-b-2 border-primary flex items-center gap-2 whitespace-nowrap">
+            Đóng dấu văn bản
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">1</span>
+        </button>
+        <button onclick="loadPage('../pages/clerk/danh-sach-vb-di.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Danh sách văn bản đi
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">1</span>
+        </button>
+    </div>
+
+    <!-- Navigation Sub-Tabs -->
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 bg-gray-100/80 p-1 rounded-xl">
+            <button onclick="switchTab('tab-content')" id="btn-tab-content" class="px-4 py-2 text-xs font-bold rounded-lg bg-white text-primary shadow-sm transition-all">
+                Nội dung văn bản & trình ký
+            </button>
+            <button onclick="switchTab('tab-leadership')" id="btn-tab-leadership" class="px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-gray-900 transition-all">
+                Lãnh đạo ký
+            </button>
+            <button onclick="switchTab('tab-process')" id="btn-tab-process" class="px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-gray-900 transition-all">
+                Quá trình xử lý
+            </button>
+            <button onclick="switchTab('tab-unit')" id="btn-tab-unit" class="px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-gray-900 transition-all">
+                Đơn vị trình ký
+            </button>
+            <button onclick="switchTab('tab-check')" id="btn-tab-check" class="px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-gray-900 transition-all">
+                Đơn vị kiểm tra
+            </button>
+        </div>
+
+        <button onclick="backToList()" class="flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-lg">arrow_back</span>
+            Quay lại danh sách
+        </button>
+    </div>
+
+    <!-- Main Content Area: Detail View -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left Side: Nội dung văn bản (Covers 2 columns) -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Tab: Nội dung văn bản & trình ký -->
+            <div id="tab-content-panel" class="tab-panel space-y-6">
+                <!-- Card Nội dung văn bản -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                    <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                        Nội dung văn bản
+                    </h3>
+
+                    <!-- Fields Grid -->
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Trích yếu</span>
+                            <p class="text-sm font-semibold text-gray-800 leading-relaxed">
+                                V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Số ký hiệu</span>
+                                <p class="text-sm font-bold text-gray-800">387/ĐHĐN-QLSVCĐT</p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Độ khẩn</span>
+                                <p class="text-sm font-semibold text-gray-800">Bình thường</p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Loại văn bản</span>
+                                <p class="text-sm font-semibold text-gray-800">Công văn</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Lĩnh vực</span>
+                                <p class="text-sm font-semibold text-gray-800">Bảo hiểm</p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Nơi nhận</span>
+                                <p class="text-sm font-semibold text-gray-800">VNUK</p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Căn cứ pháp lý</span>
+                                <p class="text-sm font-semibold text-gray-400">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card File cần ký -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-4">
+                    <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                        File cần ký
+                    </h3>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-gray-50 border-b border-gray-100 text-gray-500 font-bold uppercase tracking-wider">
+                                    <th class="px-4 py-3 w-12 text-center">Số</th>
+                                    <th class="px-4 py-3">Tên file</th>
+                                    <th class="px-4 py-3 w-36">Ngày upload file</th>
+                                    <th class="px-4 py-3 w-20 text-center">Ký nháy</th>
+                                    <th class="px-4 py-3 w-20 text-center">F. Ký</th>
+                                    <th class="px-4 py-3 w-20 text-center">F. Dấu</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 text-gray-700">
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="px-4 py-3.5 text-center font-medium text-gray-500">1</td>
+                                    <td class="px-4 py-3.5 font-bold text-primary hover:underline cursor-pointer">2. Quyet dinh huong dan trien khai tong kiem ke tai san cong...</td>
+                                    <td class="px-4 py-3.5 text-gray-500">04/03/2026 23:15</td>
+                                    <td class="px-4 py-3.5 text-center text-gray-400">-</td>
+                                    <td class="px-4 py-3.5 text-center">
+                                        <button onclick="previewFile('2. Quyet dinh...', 'signed')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-lg transition text-[11px]">Xem</button>
+                                    </td>
+                                    <td class="px-4 py-3.5 text-center">
+                                        <button onclick="openStampModal('2. Quyet dinh...')" class="px-3 py-1 bg-[#0b57d0] hover:bg-blue-700 text-white font-bold rounded-lg transition text-[11px] flex items-center gap-1 mx-auto shadow-sm shadow-primary/10">
+                                            <span class="material-symbols-outlined text-xs">workspace_premium</span>
+                                            Đóng dấu
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="px-4 py-3.5 text-center font-medium text-gray-500">2</td>
+                                    <td class="px-4 py-3.5 font-bold text-primary hover:underline cursor-pointer">Phu luc dinh kem chi tiet ke hoach ban hanh...</td>
+                                    <td class="px-4 py-3.5 text-gray-500">04/03/2026 23:15</td>
+                                    <td class="px-4 py-3.5 text-center text-gray-400">-</td>
+                                    <td class="px-4 py-3.5 text-center">
+                                        <button onclick="previewFile('Phu luc dinh kem...', 'signed')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-lg transition text-[11px]">Xem</button>
+                                    </td>
+                                    <td class="px-4 py-3.5 text-center">
+                                        <button onclick="openStampModal('Phu luc dinh kem...')" class="px-3 py-1 bg-[#0b57d0] hover:bg-blue-700 text-white font-bold rounded-lg transition text-[11px] flex items-center gap-1 mx-auto shadow-sm shadow-primary/10">
+                                            <span class="material-symbols-outlined text-xs">workspace_premium</span>
+                                            Đóng dấu
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Lãnh đạo ký -->
+            <div id="tab-leadership-panel" class="tab-panel hidden bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                    Thông tin Lãnh đạo ký
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">HT</div>
+                        <div class="space-y-1">
+                            <p class="text-sm font-bold text-gray-800">Hiệu trưởng trường test 1</p>
+                            <p class="text-xs text-gray-500">Vai trò: Người ký ban hành</p>
+                            <p class="text-xs text-green-600 font-medium flex items-center gap-1 mt-1">
+                                <span class="material-symbols-outlined text-xs">check_circle</span>
+                                Đã ký phê duyệt lúc 04/03/2026 22:45
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Quá trình xử lý -->
+            <div id="tab-process-panel" class="tab-panel hidden bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                    Nhật ký xử lý văn bản
+                </h3>
+                <div class="relative pl-6 border-l border-gray-200 space-y-6">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-green-500 border-4 border-white shadow-sm"></span>
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold text-gray-400">04/03/2026 22:45</span>
+                            <p class="text-xs font-bold text-gray-800">Hiệu trưởng trường test 1</p>
+                            <p class="text-xs text-gray-500">Đã phê duyệt & chuyển văn thư đóng dấu.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></span>
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold text-gray-400">04/03/2026 21:00</span>
+                            <p class="text-xs font-bold text-gray-800">Chuyên viên phòng QLSVCĐT</p>
+                            <p class="text-xs text-gray-500">Đã trình ký dự thảo Tổng kiểm kê tài sản.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Đơn vị trình ký -->
+            <div id="tab-unit-panel" class="tab-panel hidden bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                    Thông tin đơn vị trình
+                </h3>
+                <div class="grid grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <span class="text-gray-400 block mb-1">Tên đơn vị trình</span>
+                        <span class="font-bold text-gray-800">Phòng để test 1 (Phòng Quản lý cơ sở vật chất)</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block mb-1">Người tạo trình</span>
+                        <span class="font-bold text-gray-800">Chuyên viên test 1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Đơn vị kiểm tra -->
+            <div id="tab-check-panel" class="tab-panel hidden bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                    Đơn vị phối hợp kiểm tra
+                </h3>
+                <p class="text-xs text-gray-500 italic">Không có đơn vị phối hợp kiểm tra đối với văn bản này.</p>
+            </div>
+
+        </div>
+
+        <!-- Right Side: Nội dung trình ký -->
+        <div class="space-y-6">
+            <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <span class="w-1.5 h-5 bg-primary rounded-full"></span>
+                    Nội dung trình ký
+                </h3>
+
+                <div class="space-y-4 text-xs">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <span class="text-gray-500">Nội dung</span>
+                        <span class="font-bold text-gray-800 text-right">Đóng dấu 2</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <span class="text-gray-500">Hạn xử lý</span>
+                        <span class="font-bold text-gray-400 text-right">-</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <span class="text-gray-500">Đơn vị trình ký</span>
+                        <span class="font-bold text-gray-800 text-right">Phòng để test 1</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <span class="text-gray-500">Đơn vị liên quan</span>
+                        <span class="font-bold text-gray-400 text-right">-</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                        <span class="text-gray-500">Lãnh đạo ký</span>
+                        <span class="font-bold text-gray-800 text-right">Hiệu trưởng trường test 1</span>
+                    </div>
+                </div>
+
+                <!-- Action Button exact to the screenshot -->
+                <div class="pt-4 space-y-3">
+                    <button onclick="executePublish()" class="w-full bg-[#0b57d0] hover:bg-blue-700 text-white py-3.5 px-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transform active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-lg">publish</span>
+                        Ban hành văn bản
+                    </button>
+                    
+                    <button onclick="rejectDocument()" class="w-full bg-gray-50 hover:bg-red-50 text-gray-500 hover:text-error py-3 px-4 rounded-xl font-bold transition flex items-center justify-center gap-2 border border-gray-200 hover:border-error/20 text-xs">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                        Trả lại văn bản trình
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Premium Stamp Overlay/Modal -->
+<div id="stamp-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center hidden">
+    <div class="bg-white rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col h-[85vh]">
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900" id="stamp-filename">Đang tải file...</h3>
+                    <p class="text-xs text-gray-500">Kéo thả dấu đỏ đến vị trí ký để hoàn tất</p>
+                </div>
+            </div>
+            <button onclick="closeStampModal()" class="w-8 h-8 rounded-lg hover:bg-gray-200 flex items-center justify-center text-gray-500 transition-colors">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        </div>
+
+        <!-- Working Bench -->
+        <div class="flex-1 flex overflow-hidden">
+            <!-- PDF Document simulator (center-left) -->
+            <div class="flex-1 bg-gray-100 p-8 overflow-y-auto flex justify-center relative" id="pdf-container">
+                <div class="w-[595px] h-[842px] bg-white shadow-lg rounded-sm p-16 relative select-none" id="pdf-page">
+                    <!-- Heading of PDF -->
+                    <div class="text-center space-y-1">
+                        <p class="text-[10px] font-bold tracking-widest text-gray-800">ĐẠI HỌC ĐÀ NẴNG</p>
+                        <p class="text-[11px] font-extrabold tracking-widest text-gray-900 border-b border-black pb-2 w-32 mx-auto">TRƯỜNG TEST 1</p>
+                    </div>
+
+                    <!-- PDF Content Simulator -->
+                    <div class="mt-8 space-y-4 text-xs text-justify leading-relaxed">
+                        <div class="flex justify-between items-center text-[10px] font-bold text-gray-500">
+                            <span>Số: 387/QĐ-ĐHĐN-QLSVCĐT</span>
+                            <span>Đà Nẵng, ngày 04 tháng 03 năm 2026</span>
+                        </div>
+                        <p class="text-center font-bold text-sm text-gray-900 mt-6 uppercase">QUYẾT ĐỊNH</p>
+                        <p class="text-center font-bold text-xs text-gray-800">V/v Hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị</p>
+
+                        <div class="space-y-3 mt-6 text-gray-800 text-[11px]">
+                            <p class="italic">- Căn cứ Luật Quản lý, sử dụng tài sản công ngày 21 tháng 6 năm 2017;</p>
+                            <p class="italic">- Căn cứ Quyết định số 156/QĐ-TTg ngày 28 tháng 01 năm 2026 của Thủ tướng Chính phủ;</p>
+                            <p class="font-bold uppercase mt-4">HIỆU TRƯỞNG QUYẾT ĐỊNH:</p>
+                            <p><span class="font-bold">Điều 1.</span> Ban hành kèm theo Quyết định này Hướng dẫn tổng kiểm kê tài sản công tại các đơn vị trực thuộc Trường Test 1.</p>
+                            <p><span class="font-bold">Điều 2.</span> Giao Trưởng phòng Quản lý cơ sở vật chất chủ trì phối hợp với các ban ngành liên quan triển khai thực hiện đúng quy định.</p>
+                            <p><span class="font-bold">Điều 3.</span> Quyết định này có hiệu lực kể từ ngày ký.</p>
+                        </div>
+
+                        <!-- Signature block -->
+                        <div class="mt-16 flex justify-between items-start">
+                            <div class="w-1/2 space-y-1">
+                                <p class="text-[9px] font-bold uppercase text-gray-500 border-b border-gray-100 pb-1">Nơi nhận:</p>
+                                <p class="text-[8px] text-gray-500 leading-tight">- Như Điều 3;</p>
+                                <p class="text-[8px] text-gray-500 leading-tight">- Ban Giám hiệu (để b/c);</p>
+                                <p class="text-[8px] text-gray-500 leading-tight">- Lưu VT, QLSVCĐT.</p>
+                            </div>
+                            <div class="w-1/2 text-center space-y-1 relative" id="signature-area">
+                                <p class="font-bold text-gray-900 uppercase">HIỆU TRƯỞNG</p>
+                                <div class="h-12 flex items-center justify-center">
+                                    <!-- Digitally signed simulated signature -->
+                                    <span class="text-xs text-blue-500 font-semibold border border-dashed border-blue-300 px-2 py-1 rounded bg-blue-50/50 flex items-center gap-1 select-none">
+                                        <span class="material-symbols-outlined text-sm">lock</span>
+                                        Đã ký bởi Hiệu trưởng
+                                    </span>
+                                </div>
+                                <p class="font-bold text-gray-800 mt-2">Nguyễn Văn A</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Draggable Stamp Overlay inside PDF container -->
+                    <div id="draggable-stamp" class="absolute w-24 h-24 border border-dashed border-red-400 rounded-full cursor-move flex items-center justify-center bg-red-50/20 backdrop-blur-[0.5px] transition-shadow duration-200 select-none shadow-md" style="top: 550px; left: 320px;">
+                        <img src="../assets/images/logo.svg" class="w-12 h-12 opacity-80 filter grayscale sepia hue-rotate-[320deg] saturate-[600%]" alt="Sealing stamp logo">
+                        <div class="absolute inset-0 border-4 border-double border-red-600 rounded-full flex flex-col items-center justify-center p-1 text-center font-bold text-red-600 select-none leading-none pointer-events-none">
+                            <span class="text-[6px] tracking-wider">TRƯỜNG ĐẠI HỌC</span>
+                            <span class="text-[8px] my-0.5">CÔNG NGHỆ</span>
+                            <span class="text-[6px] tracking-wider">ĐẠI HỌC ĐN</span>
+                        </div>
+                        
+                        <!-- Actions to resize or confirm directly above the stamp -->
+                        <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 font-bold shadow-lg opacity-0 hover:opacity-100 transition-opacity whitespace-nowrap">
+                            <span>Vị trí đóng dấu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stamp Sidebar controls (right) -->
+            <div class="w-80 border-l border-gray-100 p-6 space-y-6 flex flex-col bg-gray-50">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider">Chọn loại dấu</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="selectStampType('co-quan')" id="stamp-co-quan" class="p-3 bg-white border-2 border-primary rounded-xl flex flex-col items-center justify-center gap-2 shadow-sm transition">
+                            <span class="material-symbols-outlined text-red-500 text-2xl">workspace_premium</span>
+                            <span class="text-[11px] font-bold text-gray-800">Dấu cơ quan</span>
+                        </button>
+                        <button onclick="selectStampType('ca-nhan')" id="stamp-ca-nhan" class="p-3 bg-white border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 opacity-50 hover:opacity-100 transition">
+                            <span class="material-symbols-outlined text-blue-500 text-2xl">person_pin</span>
+                            <span class="text-[11px] font-bold text-gray-500">Dấu chức danh</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider">Thiết lập dấu</label>
+                    <div class="bg-white rounded-xl p-4 border border-gray-200/80 space-y-4">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-500">Kích thước (px)</span>
+                            <span class="font-bold text-gray-800" id="stamp-size-val">96px</span>
+                        </div>
+                        <input type="range" min="80" max="150" value="96" oninput="changeStampSize(this.value)" class="w-full accent-primary">
+                        
+                        <div class="flex justify-between items-center text-xs pt-2">
+                            <span class="text-gray-500">Độ trong suốt</span>
+                            <span class="font-bold text-gray-800" id="stamp-opacity-val">90%</span>
+                        </div>
+                        <input type="range" min="50" max="100" value="90" oninput="changeStampOpacity(this.value)" class="w-full accent-primary">
+                    </div>
+                </div>
+
+                <div class="flex-1"></div>
+
+                <div class="space-y-3">
+                    <button onclick="confirmStamp()" class="w-full bg-[#0b57d0] hover:bg-blue-700 text-white py-3.5 px-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-lg">check_circle</span>
+                        Đóng dấu vào file
+                    </button>
+                    <button onclick="closeStampModal()" class="w-full bg-white hover:bg-gray-100 text-gray-700 py-3 px-4 rounded-xl font-bold transition flex items-center justify-center border border-gray-200 text-xs">
+                        Hủy bỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching logic
+    function switchTab(tabId) {
+        // Toggle active button style
+        const tabs = ['tab-content', 'tab-leadership', 'tab-process', 'tab-unit', 'tab-check'];
+        tabs.forEach(id => {
+            const btn = document.getElementById('btn-' + id);
+            const panel = document.getElementById(id + '-panel');
+            if (id === tabId) {
+                btn.className = "px-4 py-2 text-xs font-bold rounded-lg bg-white text-primary shadow-sm transition-all";
+                if(panel) panel.classList.remove('hidden');
+            } else {
+                btn.className = "px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-gray-900 transition-all";
+                if(panel) panel.classList.add('hidden');
+            }
+        });
+    }
+
+    // Modal stamp logic
+    function openStampModal(filename) {
+        document.getElementById('stamp-filename').innerText = filename;
+        const modal = document.getElementById('stamp-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        // Init drag logic
+        initDraggable();
+    }
+
+    function closeStampModal() {
+        const modal = document.getElementById('stamp-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function selectStampType(type) {
+        const coQuan = document.getElementById('stamp-co-quan');
+        const caNhan = document.getElementById('stamp-ca-nhan');
+        if (type === 'co-quan') {
+            coQuan.className = "p-3 bg-white border-2 border-primary rounded-xl flex flex-col items-center justify-center gap-2 shadow-sm transition";
+            caNhan.className = "p-3 bg-white border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 opacity-50 hover:opacity-100 transition";
+        } else {
+            caNhan.className = "p-3 bg-white border-2 border-primary rounded-xl flex flex-col items-center justify-center gap-2 shadow-sm transition";
+            coQuan.className = "p-3 bg-white border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 opacity-50 hover:opacity-100 transition";
+        }
+    }
+
+    function changeStampSize(val) {
+        document.getElementById('stamp-size-val').innerText = val + 'px';
+        const stamp = document.getElementById('draggable-stamp');
+        stamp.style.width = val + 'px';
+        stamp.style.height = val + 'px';
+    }
+
+    function changeStampOpacity(val) {
+        document.getElementById('stamp-opacity-val').innerText = val + '%';
+        const stamp = document.getElementById('draggable-stamp');
+        stamp.style.opacity = val / 100;
+    }
+
+    function confirmStamp() {
+        alert("Đóng dấu vào văn bản thành công!");
+        closeStampModal();
+    }
+
+    function executePublish() {
+        alert("Ban hành văn bản thành công!");
+        loadPage('../pages/clerk/danh-sach-vb-di.html');
+    }
+
+    function rejectDocument() {
+        const reason = prompt("Nhập lý do trả lại văn bản trình:");
+        if (reason) {
+            alert("Đã trả lại văn bản trình với lý do: " + reason);
+            loadPage('../pages/clerk/cap-so.html');
+        }
+    }
+
+    function backToList() {
+        loadPage('../pages/clerk/cap-so.html');
+    }
+
+    // Advanced interactive draggable signature / stamp
+    function initDraggable() {
+        const stamp = document.getElementById('draggable-stamp');
+        const boundary = document.getElementById('pdf-page');
+        if (!stamp || !boundary) return;
+
+        let active = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 320;
+        let yOffset = 550;
+
+        stamp.addEventListener("mousedown", dragStart, false);
+        document.addEventListener("mouseup", dragEnd, false);
+        document.addEventListener("mousemove", drag, false);
+
+        function dragStart(e) {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+            if (e.target === stamp || stamp.contains(e.target)) {
+                active = true;
+            }
+        }
+
+        function dragEnd() {
+            active = false;
+        }
+
+        function drag(e) {
+            if (active) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+
+                // Restrict stamp within PDF page
+                const minX = 0;
+                const maxX = boundary.offsetWidth - stamp.offsetWidth;
+                const minY = 0;
+                const maxY = boundary.offsetHeight - stamp.offsetHeight;
+
+                if (currentX < minX) currentX = minX;
+                if (currentX > maxX) currentX = maxX;
+                if (currentY < minY) currentY = minY;
+                if (currentY > maxY) currentY = maxY;
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                setTranslate(currentX, currentY, stamp);
+            }
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.left = xPos + "px";
+            el.style.top = yPos + "px";
+        }
+    }
+</script>

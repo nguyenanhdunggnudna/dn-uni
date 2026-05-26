@@ -1,0 +1,290 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between">
+        <h1 class="text-xl font-bold text-gray-800">Danh sách VB đến</h1>
+        <button onclick="loadPage('../pages/clerk/vao-so-van-ban-den.html')" class="px-5 py-2 bg-[#1b56db] hover:bg-blue-700 text-white rounded-lg font-semibold text-sm transition shadow-sm">
+            Thêm mới
+        </button>
+    </div>
+
+    <!-- Filter & Action Section -->
+    <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+            <!-- Search -->
+            <div class="relative max-w-xs group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors text-xl">search</span>
+                <input class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-10 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-outline-variant w-64"
+                    placeholder="Tìm kiếm" type="text" />
+            </div>
+
+            <!-- Năm -->
+            <div class="relative">
+                <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm w-32 cursor-pointer">
+                    <option>Năm</option>
+                    <option>Tất cả</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-xl">expand_more</span>
+            </div>
+
+            <!-- Tháng -->
+            <div class="relative">
+                <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm w-32 cursor-pointer">
+                    <option>Tháng</option>
+                    <option>Tất cả</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-xl">expand_more</span>
+            </div>
+
+            <!-- Loại -->
+            <div class="relative">
+                <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm w-36 cursor-pointer">
+                    <option>Loại</option>
+                    <option>-</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-xl">expand_more</span>
+            </div>
+
+            <!-- Lĩnh vực -->
+            <div class="relative">
+                <select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-2.5 pl-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm w-40 cursor-pointer">
+                    <option>Lĩnh vực</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-xl">expand_more</span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button class="p-2.5 bg-surface-container-lowest border border-outline-variant/10 text-on-surface-variant hover:text-primary hover:shadow-md rounded-xl transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">refresh</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="bg-white border border-gray-300 rounded overflow-hidden">
+        <div class="overflow-x-auto text-xs">
+            <table class="w-full text-left border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100 border-b border-gray-300 text-gray-700 font-bold">
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-12">TT</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-16">Số đến</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-36">Ký hiệu</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-28">Loại CV</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-28">Ngày đến</th>
+                        <th class="px-3 py-3 border-r border-gray-300 w-36">Chủ trì</th>
+                        <th class="px-3 py-3 border-r border-gray-300">Trích yếu</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-28">Hạn xử lý</th>
+                        <th class="px-3 py-3 text-center w-24"></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-300 text-gray-800">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">1</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">15</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">239/QĐ-PHKT</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">Quyết định</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">24/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng ĐT test1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Quyết định về việc chỉ định nhà thầu Lập Báo cáo kinh tế kỹ thuật</div>
+                                <div class="text-[11px] text-gray-600 space-y-1">
+                                    <div><span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">941 (239 QĐ-PHKT).pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span></div>
+                                    <div>2- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">239.qd-phkt ngay 24.3.2026 QĐ chỉ định NT lập BC KTKT.pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center text-red-600 font-semibold">27/03/2026</td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white" title="Chuyển xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">2</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">14</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">-</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">23/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Đơn xin cấp lại bằng tốt nghiệp thạc sĩ - Trà Thị Doãn Dung</div>
+                                <div class="text-[11px] text-gray-600">
+                                    <span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">918.pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">3</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">13</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">1340/ĐHBK-KHCN&ĐN</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">Công văn</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">23/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Về việc thông báo đoàn khách nước ngoài đến làm việc</div>
+                                <div class="text-[11px] text-gray-600">
+                                    <span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">913 (1340 ĐHBK-KHCN&ĐN).pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">4</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">12</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">659/ĐHVH-ĐT</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">Công văn</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">23/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Về việc đề nghị cấp phôi văn bằng trình độ đại học</div>
+                                <div class="text-[11px] text-gray-600">
+                                    <span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">915 (659 ĐHVH-ĐT).pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">5</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">11</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">04/TTr-CCB</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">Tờ trình</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">19/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Tờ trình về việc xin chủ trương tổ chức hành trình thăm chiến trường xưa</div>
+                                <div class="text-[11px] text-gray-600">
+                                    <span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">04 TTr-CCB.pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 6 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">6</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center font-semibold text-gray-900">10</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">273/TTr-ĐTTX</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">Tờ trình</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">19/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">
+                            <div class="space-y-1.5">
+                                <div class="font-semibold text-gray-900 leading-normal text-sm">Tờ trình về việc cho viên chức, người lao động tham quan, nghỉ dưỡng năm 2026 ở nước ngoài</div>
+                                <div class="text-[11px] text-gray-600">
+                                    <span class="font-bold text-gray-800">Files:</span> 1- <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">852 (273 TTr-ĐTTX).pdf</a> <span class="text-[#0053dc] italic cursor-pointer hover:underline">(Xem nội dung)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#D62828] hover:bg-[#B51E1E] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                                </button>
+                                <button class="w-8 h-8 rounded bg-[#0F56B3] hover:bg-[#0B3D7F] flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

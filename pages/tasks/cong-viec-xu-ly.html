@@ -6,30 +6,30 @@
 
     <!-- Filter & Search Section -->
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0">
+        <div class="flex items-center gap-3 overflow-x-auto pb-2 lg:pb-0">
             <button
-                class="flex items-center gap-2 px-6 py-2.5 bg-[#17A2B8] text-white rounded-full font-bold shadow-md whitespace-nowrap">
-                Mới <span class="bg-[#4D4D4D] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+                class="flex items-center gap-2 px-5 py-2 bg-[#F8F9FA] border border-gray-200 text-gray-800 rounded-lg font-bold shadow-sm whitespace-nowrap text-sm">
+                Mới <span class="bg-[#17A2B8] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
             </button>
             <button
-                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
-                Đang xử lý <span class="bg-[#FFC107] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Đang xử lý <span class="bg-[#FFC107] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
             </button>
             <button
-                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
-                Hoàn thành <span class="bg-[#28A745] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Hoàn thành <span class="bg-[#28A745] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
             </button>
             <button
-                class="flex items-center gap-2 px-6 py-2.5 bg-white border border-outline-variant/30 text-on-surface-variant rounded-full font-bold hover:bg-surface-container-low transition-all whitespace-nowrap">
-                Tất cả <span class="bg-[#8B4513] text-white px-2 py-0.5 rounded-full text-xs">0</span>
+                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Tất cả <span class="bg-[#4D4D4D] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
             </button>
         </div>
 
-        <div class="relative flex-1 max-w-md group">
+        <div class="relative max-w-md w-full lg:w-80 group">
             <span
-                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">search</span>
             <input
-                class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant"
+                class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
                 placeholder="Tìm kiếm nội dung..." type="text" />
         </div>
     </div>

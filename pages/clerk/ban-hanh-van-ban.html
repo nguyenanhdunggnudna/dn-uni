@@ -1,0 +1,267 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Tabs Section -->
+    <div class="flex items-center gap-8 border-b border-outline-variant/20">
+        <button class="pb-3 text-primary font-bold border-b-2 border-primary flex items-center gap-2 whitespace-nowrap">
+            Vào sổ văn bản đi
+        </button>
+        <button onclick="loadPage('../pages/clerk/cap-so.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Cấp số
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">1</span>
+        </button>
+        <button onclick="loadPage('../pages/clerk/dong-dau-van-ban.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Đóng dấu văn bản
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">1</span>
+        </button>
+        <button onclick="loadPage('../pages/clerk/danh-sach-vb-di.html')" class="pb-3 text-on-surface-variant font-medium hover:text-primary flex items-center gap-2 transition-colors whitespace-nowrap">
+            Danh sách văn bản đi
+            <span class="bg-error text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">1</span>
+        </button>
+    </div>
+
+    <!-- Main Form Card -->
+    <div class="bg-surface-container-lowest rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-outline-variant/10 p-10 space-y-10">
+        
+        <!-- Header Actions -->
+        <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-on-surface">I. Thông tin văn bản đi</h2>
+            <div class="flex items-center gap-3">
+                <button class="bg-[#0b57d0] hover:bg-blue-700 text-white px-8 py-2.5 rounded-xl font-bold transition shadow-sm">Lưu</button>
+                <button class="bg-[#0b57d0] hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95">
+                    Ban hành
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Grid -->
+        <div class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Năm -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">Năm</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 1. Số văn bản -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">1. Số văn bản <span class="text-error">*</span></label>
+                    <input type="text" placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                </div>
+
+                <!-- 2. Ký hiệu -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">2. Ký hiệu <span class="text-error">*</span></label>
+                    <input type="text" placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                </div>
+
+                <!-- 3. Ngày ký -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">3. Ngày ký <span class="text-error">*</span></label>
+                    <div class="relative">
+                        <input type="text" value="01/01/2026" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">calendar_month</span>
+                    </div>
+                </div>
+
+                <!-- 4. Loại văn bản -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">4. Loại văn bản <span class="text-error">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- Loại khác -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">Loại khác</label>
+                    <input type="text" placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                </div>
+            </div>
+
+            <!-- 5. Trích yếu -->
+            <div class="space-y-2">
+                <label class="text-[15px] font-medium text-on-surface">5. Trích yếu <span class="text-error">*</span></label>
+                <textarea placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all min-h-[120px]"></textarea>
+            </div>
+
+            <!-- 6. Đơn vị ban hành -->
+            <div class="space-y-2">
+                <label class="text-[15px] font-medium text-on-surface">6. Đơn vị ban hành</label>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <input type="text" placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 7. Người ký -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">7. Người ký</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 8. Độ khẩn -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">8. Độ khẩn</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 9. Lĩnh vực -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">9. Lĩnh vực</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 10. Ngày hiệu lực -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">10. Ngày hiệu lực</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                            <option>Chọn</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <!-- 11. Văn bản QPPL -->
+                <div class="space-y-2 flex flex-col justify-end">
+                    <div class="flex items-center gap-3 pb-3 cursor-pointer">
+                        <input type="checkbox" id="qppl" class="w-5 h-5 rounded border-outline-variant/30 text-primary focus:ring-primary">
+                        <label for="qppl" class="text-[15px] font-medium text-on-surface cursor-pointer">11. Văn bản QPPL</label>
+                    </div>
+                </div>
+
+                <!-- 12. Số trang -->
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">12. Số trang</label>
+                    <input type="text" placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                </div>
+            </div>
+
+            <!-- 13. Nơi nhận khác -->
+            <div class="space-y-2">
+                <label class="text-[15px] font-medium text-on-surface">13. Nơi nhận khác</label>
+                <textarea placeholder="Nhập" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all min-h-[120px]"></textarea>
+            </div>
+
+            <!-- 14 & 15. Nơi nhận ngoài đơn vị -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">14. Nơi nhận ngoài đơn vị</label>
+                    <div class="relative">
+                        <input type="text" placeholder="Tìm kiếm" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">search</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[15px] font-medium text-on-surface">15. Nơi nhận ngoài đơn vị</label>
+                    <div class="relative">
+                        <input type="text" placeholder="Tìm kiếm" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">search</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15. Nơi nhận trong đơn vị Section -->
+        <div class="pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+            <h3 class="text-xl font-bold text-on-surface">15. Nơi nhận trong đơn vị</h3>
+            <button class="bg-[#0b57d0] hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold flex items-center gap-2 shadow-sm transition active:scale-95">
+                <span class="material-symbols-outlined text-lg">add</span>
+                Thêm
+            </button>
+        </div>
+
+        <!-- Section II. Đính kèm file -->
+        <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-on-surface">II. Đính kèm file</h2>
+            <div class="space-y-2">
+                <label class="text-[15px] font-medium text-on-surface">16. File đính kèm <span class="text-error">*</span></label>
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 flex items-center gap-4">
+                    <div class="flex-1 border-2 border-dashed border-primary/30 bg-surface-container-lowest rounded-xl p-8 text-center cursor-pointer hover:bg-primary/5 transition-colors">
+                        <div class="text-primary font-bold text-lg mb-1">Kéo & thả file vào đây hoặc click để chọn</div>
+                        <div class="text-outline-variant text-sm">Loại file: doc, docx, pdf, jpg, jpeg, xls, zip, rar, png</div>
+                    </div>
+                    <button class="w-12 h-12 bg-error text-white rounded-xl shadow-lg shadow-error/20 flex items-center justify-center transition-transform active:scale-95">
+                        <span class="material-symbols-outlined text-2xl">delete</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section III. Xử lý -->
+        <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-on-surface">III. Xử lý</h2>
+            <div class="space-y-2 max-w-2xl relative">
+                <label class="text-[15px] font-medium text-on-surface">Chuyển đến</label>
+                <div class="relative group">
+                    <input type="text" placeholder="Tìm kiếm" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl py-3 px-4 pr-10 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">search</span>
+                    
+                    <!-- Dropdown Simulation -->
+                    <div class="absolute z-10 bottom-full left-0 right-0 mb-2 bg-white rounded-2xl shadow-2xl border border-outline-variant/10 p-2 overflow-hidden hidden group-focus-within:block">
+                        <div class="max-h-60 overflow-y-auto">
+                            <label class="flex items-center gap-3 p-3 hover:bg-surface-container-low rounded-xl cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-outline-variant/30 text-primary">
+                                <span class="text-sm font-bold text-on-surface">Chọn tất cả</span>
+                            </label>
+                            <div class="h-px bg-outline-variant/10 my-1"></div>
+                            
+                            <label class="flex items-center gap-4 p-3 hover:bg-surface-container-low rounded-xl cursor-pointer">
+                                <input type="checkbox" checked class="w-5 h-5 rounded border-outline-variant/30 text-primary">
+                                <div class="flex-1 flex items-center justify-between">
+                                    <div class="space-y-0.5">
+                                        <div class="text-sm font-bold text-on-surface">Thầy Trần Văn Việt</div>
+                                        <div class="text-[11px] text-outline-variant">vpstest@vnuk.udn.vn</div>
+                                    </div>
+                                    <span class="text-[11px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded">Hiệu trưởng</span>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center gap-4 p-3 hover:bg-surface-container-low rounded-xl cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-outline-variant/30 text-primary">
+                                <div class="flex-1 flex items-center justify-between">
+                                    <div class="space-y-0.5">
+                                        <div class="text-sm font-bold text-on-surface">Thầy Nguyễn Văn Nam</div>
+                                        <div class="text-[11px] text-outline-variant">Test1@ac.udn.vn</div>
+                                    </div>
+                                    <span class="text-[11px] font-bold bg-outline-variant/10 text-on-surface-variant px-2 py-0.5 rounded">Hiệu phó</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
