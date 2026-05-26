@@ -1,0 +1,294 @@
+<div class="px-8 py-6 space-y-6 bg-slate-50/50 min-h-full">
+    <!-- Row 1: Header / Welcome Grid -->
+    <!-- <div
+        class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+        <div>
+            <h2 class="font-manrope text-2xl font-extrabold text-gray-900">Xin chào, @Model.UserName!</h2>
+            <p class="text-sm text-gray-500 mt-1">Hôm nay bạn có các công việc và văn bản cần xử lý dưới đây.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span
+                class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100/50">
+                Vai trò: @Model.UserRole
+            </span>
+            <span id="live-clock"
+                class="px-3 py-1.5 bg-gray-50 text-gray-600 rounded-lg text-xs font-medium border border-gray-100">
+                Đang tải...
+            </span>
+        </div>
+    </div> -->
+
+    <!-- Row 2: Grid of Quick Stats / Counters matching the reference UI -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1: VB Cần ký -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/can-ky.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 group">
+            <div class="p-3 bg-blue-50 rounded-lg mr-4 transition-colors group-hover:bg-blue-100">
+                <i class="fa-solid fa-file-signature text-2xl text-blue-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">VB CẦN KÝ</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-vb-can-ky">0</span>
+            </div>
+        </a>
+
+        <!-- Card 2: VB Cần kiểm tra -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/index.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-red-200 transition-all duration-200 group">
+            <div class="p-3 bg-red-50 rounded-lg mr-4 transition-colors group-hover:bg-red-100">
+                <i class="fa-solid fa-file-shield text-2xl text-red-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">VB CẦN KIỂM TRA</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-vb-kiem-tra">2</span>
+            </div>
+        </a>
+
+        <!-- Card 3: Tham mưu -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/van-ban-tham-muu.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-emerald-200 transition-all duration-200 group">
+            <div class="p-3 bg-emerald-50 rounded-lg mr-4 transition-colors group-hover:bg-emerald-100">
+                <i class="fa-solid fa-comments-dollar text-2xl text-emerald-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">THAM MƯU</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-tham-muu">0</span>
+            </div>
+        </a>
+
+        <!-- Card 4: Giao việc -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-giao.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 group">
+            <div class="p-3 bg-amber-50 rounded-lg mr-4 transition-colors group-hover:bg-amber-100">
+                <i class="fa-solid fa-tasks text-2xl text-amber-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">GIAO VIỆC</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-giao-viec">3</span>
+            </div>
+        </a>
+
+        <!-- Card 5: Cần xử lý -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-xu-ly.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-200 group">
+            <div class="p-3 bg-purple-50 rounded-lg mr-4 transition-colors group-hover:bg-purple-100">
+                <i class="fa-solid fa-spinner text-2xl text-purple-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">CẦN XỬ LÝ</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-can-xu-ly">0</span>
+            </div>
+        </a>
+
+        <!-- Card 6: Công việc nhận -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-nhan.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-200 group">
+            <div class="p-3 bg-indigo-50 rounded-lg mr-4 transition-colors group-hover:bg-indigo-100">
+                <i class="fa-solid fa-clipboard-check text-2xl text-indigo-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">CÔNG VIỆC NHẬN</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-cong-viec-nhan">3</span>
+            </div>
+        </a>
+
+        <!-- Card 7: Trình ký VB -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/trinh-ky-van-ban.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-200 group">
+            <div class="p-3 bg-teal-50 rounded-lg mr-4 transition-colors group-hover:bg-teal-100">
+                <i class="fa-solid fa-file-signature text-2xl text-teal-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">TRÌNH KÝ VB</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-trinh-ky">0</span>
+            </div>
+        </a>
+
+        <!-- Card 8: VB Đã ban hành -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/da-ban-hanh.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-cyan-200 transition-all duration-200 group">
+            <div class="p-3 bg-cyan-50 rounded-lg mr-4 transition-colors group-hover:bg-cyan-100">
+                <i class="fa-solid fa-circle-check text-2xl text-cyan-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">VB ĐÃ BAN HÀNH</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-da-ban-hanh">0</span>
+            </div>
+        </a>
+
+        <!-- Card 9: VB Đến -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-rose-200 transition-all duration-200 group">
+            <div class="p-3 bg-rose-50 rounded-lg mr-4 transition-colors group-hover:bg-rose-100">
+                <i class="fa-solid fa-file-import text-2xl text-rose-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">VB ĐẾN</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-vb-den">2</span>
+            </div>
+        </a>
+
+        <!-- Card 10: Tin riêng -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/private-messages/index.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-sky-200 transition-all duration-200 group">
+            <div class="p-3 bg-sky-50 rounded-lg mr-4 transition-colors group-hover:bg-sky-100">
+                <i class="fa-solid fa-envelope-open text-2xl text-sky-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">TIN RIÊNG</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-tin-rieng">3</span>
+            </div>
+        </a>
+
+        <!-- Card 11: Tin công khai -->
+        <a href="javascript:void(0)" onclick="loadPage('../pages/internal-news/index.html')"
+            class="flex items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all duration-200 group">
+            <div class="p-3 bg-orange-50 rounded-lg mr-4 transition-colors group-hover:bg-orange-100">
+                <i class="fa-solid fa-bullhorn text-2xl text-orange-600"></i>
+            </div>
+            <div class="flex-1">
+                <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">TIN CÔNG KHAI</span>
+                <span class="block text-2xl font-black text-gray-900 mt-0.5" id="stat-tin-cong-khai">0</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Row 3: Main split section - Left: Newest Incoming Documents, Right: Today's Tasks & Schedule -->
+    <!-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left: Incoming Documents List (Span 2) -->
+    <!-- <div class="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
+        <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-file-lines text-blue-600"></i>
+                <h3 class="font-manrope font-bold text-gray-900">Văn bản mới nhất</h3>
+            </div>
+            <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')"
+                class="text-xs font-semibold text-blue-600 hover:text-blue-700 hover:underline transition">Xem tất
+                cả</a>
+        </div>
+        <div class="p-5 space-y-4">
+            <!-- Document 1 -->
+    <!-- <div
+                    class="p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-blue-100 transition flex items-start justify-between gap-4">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-0.5 text-[10px] font-bold text-blue-700 bg-blue-50 rounded">61/QĐ-ĐHĐN</span>
+                            <span class="text-xs text-gray-400">Ngày đến: 07/04/2026</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-gray-900 line-clamp-2 leading-relaxed">
+                            Thư mời tham dự hội thảo công nghệ thông tin năm 2026 tại Đại học Đà Nẵng
+                        </h4>
+                        <p class="text-xs text-gray-500">Người gửi: Ban Khoa học Công nghệ và Môi trường</p>
+                    </div>
+                    <span
+                        class="shrink-0 px-2 py-1 text-[11px] font-semibold bg-amber-50 text-amber-700 rounded border border-amber-100">
+                        Chờ bút phê
+                    </span>
+                </div> -->
+
+    <!-- Document 2 -->
+    <!-- <div
+                    class="p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-blue-100 transition flex items-start justify-between gap-4">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-0.5 text-[10px] font-bold text-purple-700 bg-purple-50 rounded">124/TTr-ĐHKT</span>
+                            <span class="text-xs text-gray-400">Ngày đến: 05/04/2026</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-gray-900 line-clamp-2 leading-relaxed">
+                            Tờ trình xin phê duyệt ngân sách nâng cấp trang thiết bị phòng máy chủ CNTT
+                        </h4>
+                        <p class="text-xs text-gray-500">Người gửi: Phòng Kế hoạch Tài chính</p>
+                    </div>
+                    <span
+                        class="shrink-0 px-2 py-1 text-[11px] font-semibold bg-red-50 text-red-700 rounded border border-red-100">
+                        Hạn gấp
+                    </span>
+                </div> -->
+</div>
+</div> -->
+
+<!-- Right: Recent Tasks -->
+<!-- <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
+        <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-amber-600"></i>
+                <h3 class="font-manrope font-bold text-gray-900">Nhiệm vụ hôm nay</h3>
+            </div>
+            <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-nhan.html')"
+                class="text-xs font-semibold text-amber-600 hover:text-amber-700 hover:underline transition">Xem chi
+                tiết</a>
+        </div>
+        <div class="p-5 space-y-4">
+            <!-- Task 1 -->
+<!-- <div
+        class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" checked
+            disabled>
+        <div class="space-y-1">
+            <span class="text-xs font-medium text-gray-400 line-through">Duyệt tờ trình kinh phí quý
+                2</span>
+            <p class="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-circle-check"></i> Hoàn thành
+            </p>
+        </div>
+    </div> -->
+
+<!-- Task 2 -->
+<!-- <div
+        class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" disabled>
+        <div class="space-y-1">
+            <span class="text-xs font-medium text-gray-700">Họp trực tuyến với ĐHĐN bàn về tuyển sinh</span>
+            <p class="text-[11px] text-amber-600 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-clock"></i> 14:00 chiều nay
+            </p>
+        </div>
+    </div> -->
+
+<!-- Task 3 -->
+<!-- <div
+        class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" disabled>
+        <div class="space-y-1">
+            <span class="text-xs font-medium text-gray-700">Ký duyệt văn bản gửi Bộ Giáo dục Đào tạo</span>
+            <p class="text-[11px] text-red-600 font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-triangle-exclamation"></i> Gấp trong ngày
+            </p>
+        </div>
+    </div> -->
+</div>
+</div> -->
+</div> -->
+</div>
+
+<script>
+    // Live clock logic
+    function updateClock() {
+        const now = new Date();
+        const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+        const day = days[now.getDay()];
+        const time = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const date = now.toLocaleDateString('vi-VN');
+        const clockEl = document.getElementById('live-clock');
+        if (clockEl) {
+            clockEl.innerHTML = `<i class="fa-regular fa-clock mr-1"></i> ${day}, ${time} | ${date}`;
+        }
+    }
+
+    // Update immediately and then every second
+    updateClock();
+    const clockInterval = setInterval(updateClock, 1000);
+
+    // Clean up interval when loading another page to prevent memory leak
+    // Save reference in content placeholder to track page transitions
+    const contentArea = document.getElementById('content-placeholder');
+    if (contentArea) {
+        // Clear previous interval if exists
+        if (window.activeClockInterval) {
+            clearInterval(window.activeClockInterval);
+        }
+        window.activeClockInterval = clockInterval;
+    }
+</script>

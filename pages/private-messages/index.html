@@ -1,0 +1,149 @@
+<section class="p-8 max-w-6xl mx-auto">
+    <!-- Header Area -->
+    <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Tin nhắn riêng</h2>
+        <button type="button" form="messageForm" onclick="submitMessage()" class="bg-[#1a56db] hover:bg-blue-700 text-white px-7 py-2.5 rounded-lg flex items-center gap-2.5 transition-all active:scale-95 font-semibold shadow-lg shadow-blue-500/20 group">
+            <i class="fa-solid fa-paper-plane text-sm group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            <span>Gửi tin</span>
+        </button>
+    </div>
+
+    <!-- Form Container -->
+    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-10">
+        <form action="" method="POST" id="messageForm" class="space-y-8">
+            <!-- Recipient Field -->
+            <div class="space-y-2.5">
+                <label for="recipient" class="block text-[15px] font-bold text-gray-700">
+                    Gửi đến <span class="text-red-500">*</span>
+                </label>
+                <div class="relative group">
+                    <input type="text" id="recipient" name="Recipient" placeholder="Gửi đến" required
+                        class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
+                </div>
+            </div>
+
+            <!-- Title Field -->
+            <div class="space-y-2.5">
+                <label for="title" class="block text-[15px] font-bold text-gray-700">
+                    Tiêu đề <span class="text-red-500">*</span>
+                </label>
+                <div class="relative group">
+                    <input type="text" id="title" name="Title" placeholder="Nhập tiêu đề" required
+                        class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
+                </div>
+            </div>
+
+            <!-- Content Field (CKEditor) -->
+            <div class="space-y-2.5">
+                <label class="block text-[15px] font-bold text-gray-700">
+                    Nội dung <span class="text-red-500">*</span>
+                </label>
+                <div class="rounded-xl overflow-hidden border border-gray-200 focus-within:border-blue-500 transition-colors">
+                    <textarea id="messageContentEditor" name="Content" required></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<style>
+    /* Custom styles for CKEditor 5 integration */
+    .ck-editor__editable {
+        min-height: 400px !important;
+        border-bottom-left-radius: 12px !important;
+        border-bottom-right-radius: 12px !important;
+        padding: 0 20px !important;
+    }
+    .ck-toolbar {
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+        background-color: #f9fafb !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        padding: 8px !important;
+    }
+    .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+        border-color: #e5e7eb !important;
+    }
+    .ck.ck-editor__main>.ck-editor__editable.ck-focused {
+        border-color: #3b82f6 !important;
+        box-shadow: none !important;
+    }
+    
+    /* Input transition enhancement */
+    input:focus {
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    }
+</style>
+
+<script>
+    /**
+     * Tích hợp CKEditor 5 cho phần nội dung tin nhắn riêng
+     */
+    function initMessageEditor() {
+        if (typeof ClassicEditor !== 'undefined') {
+            ClassicEditor
+                .create(document.querySelector('#messageContentEditor'), {
+                    placeholder: 'Nhập nội dung tin nhắn riêng chi tiết tại đây...',
+                    toolbar: {
+                        items: [
+                            'undo', 'redo', '|', 'heading', '|', 
+                            'bold', 'italic', 'underline', 'strikethrough', '|',
+                            'bulletedList', 'numberedList', 'outdent', 'indent', '|',
+                            'link', 'insertTable', 'imageUpload', 'blockQuote', 'mediaEmbed', '|',
+                            'sourceEditing', 'fullScreen'
+                        ]
+                    },
+                    language: 'vi'
+                })
+                .then(editor => {
+                    window.messageEditor = editor;
+                    
+                    // Khởi tạo một số nội dung mẫu nếu muốn
+                    editor.setData(`
+                        <p>Nội dung tin nhắn riêng...</p>
+                    `);
+                })
+                .catch(error => {
+                    console.error('Lỗi khởi tạo CKEditor:', error);
+                });
+        }
+    }
+
+    // Kiểm tra và tải CKEditor 5 script nếu chưa có
+    if (typeof ClassicEditor === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js';
+        script.onload = initMessageEditor;
+        document.head.appendChild(script);
+    } else {
+        initMessageEditor();
+    }
+
+    /**
+     * Hàm giả lập gửi tin nhắn riêng
+     */
+    function submitMessage() {
+        const form = document.getElementById('messageForm');
+        
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const formData = new FormData(form);
+        
+        // Lấy nội dung từ CKEditor
+        if (window.messageEditor) {
+            const editorData = window.messageEditor.getData();
+            if (!editorData || editorData.trim() === '') {
+                alert('Vui lòng nhập nội dung tin nhắn!');
+                return;
+            }
+            formData.set('Content', editorData);
+        }
+
+        const data = Object.fromEntries(formData.entries());
+        console.log('Dữ liệu gửi lên .NET Controller:', data);
+        alert('Gửi tin nhắn riêng thành công!');
+    }
+</script>

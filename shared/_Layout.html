@@ -126,7 +126,7 @@
         // 2. Giả lập logic Role-based visibility (Hỗ trợ lồng nhau)
         // Sử dụng loop để xử lý các block từ trong ra ngoài
         const currentRole = window.MOCK_DATA.currentRole;
-        const regexInnermost = /<!--\s*@if\s*\((.*?)\)\s*{\s*-->((?:(?!<!--\s*@if)[\s\S])*?)<!--\s*}\s*-->/g;
+        const regexInnermost = new RegExp('<!--\\s*@if\\s*\\((.*?)\\)\\s*{\\s*-->((?:(?!<!--\\s*@if)[\\s\\S])*?)<!--\\s*}\\s*-->', 'g');
 
         let previousRendered;
         do {
@@ -196,7 +196,7 @@
             document.getElementById('header-placeholder').innerHTML = renderRazor(headHtml);
             
             // 3. Nạp trang mặc định khi vừa vào hệ thống
-            loadPage('../pages/incoming-documents/index.html');
+            loadPage('../pages/home/index.html');
             
             console.log("Hệ thống .NET Mock đã sẵn sàng!");
         } catch (err) {
