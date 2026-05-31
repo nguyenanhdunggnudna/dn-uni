@@ -68,11 +68,20 @@
                         </td>
                         <td class="px-6 py-5 text-right">
                             <div class="flex justify-end gap-2">
-                                <button
-                                    class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all"
-                                    title="Xem chi tiết">
-                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
-                                </button>
+                                <div class="relative inline-block text-left dropdown-container">
+                                    <button onclick="toggleRowDropdown(event, this)"
+                                        class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all focus:outline-none"
+                                        title="Hành động">
+                                        <span class="material-symbols-outlined text-[20px]">arrow_drop_down</span>
+                                    </button>
+                                    <div class="absolute right-0 mt-1 w-32 bg-white rounded-lg shadow-lg border border-outline-variant/15 p-1 hidden z-50">
+                                        <a href="javascript:void(0)" onclick="loadPage('../pages/clerk/chi-tiet-van-ban-den.html')"
+                                            class="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-100 rounded-md transition-colors text-left">
+                                            <span class="material-symbols-outlined text-[16px]">visibility</span>
+                                            <span>Xem chi tiết</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -84,15 +93,25 @@
                         <td class="px-6 py-5 leading-relaxed">
                             Công văn về việc phối hợp triển khai công tác khám sức khỏe định kỳ cho sinh viên khóa 2024
                         </td>
-                        <td class="px-6 py-5 text-right">
-                            <div class="flex justify-end gap-2">
-                                <button
-                                    class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
-                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                         <td class="px-6 py-5 text-right">
+                             <div class="flex justify-end gap-2">
+                                 <div class="relative inline-block text-left dropdown-container">
+                                     <button onclick="toggleRowDropdown(event, this)"
+                                         class="w-8 h-8 inline-flex items-center justify-center bg-surface-container-high rounded-lg text-primary hover:bg-primary hover:text-white transition-all focus:outline-none"
+                                         title="Hành động">
+                                         <span class="material-symbols-outlined text-[20px]">arrow_drop_down</span>
+                                     </button>
+                                     <div class="absolute right-0 mt-1 w-32 bg-white rounded-lg shadow-lg border border-outline-variant/15 p-1 hidden z-50">
+                                         <a href="javascript:void(0)" onclick="loadPage('../pages/clerk/chi-tiet-van-ban-den.html')"
+                                             class="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-100 rounded-md transition-colors text-left">
+                                             <span class="material-symbols-outlined text-[16px]">visibility</span>
+                                             <span>Xem chi tiết</span>
+                                         </a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </td>
+                     </tr>
                 </tbody>
             </table>
         </div>
@@ -141,3 +160,26 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleRowDropdown(event, button) {
+        event.stopPropagation();
+        const container = button.closest('.dropdown-container');
+        const menu = container.querySelector('div');
+        
+        // Hide all other dropdowns
+        document.querySelectorAll('.dropdown-container > div').forEach(div => {
+            if (div !== menu) div.classList.add('hidden');
+        });
+        
+        // Toggle the clicked dropdown
+        menu.classList.toggle('hidden');
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown-container > div').forEach(div => {
+            div.classList.add('hidden');
+        });
+    });
+</script>

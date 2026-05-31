@@ -1,94 +1,363 @@
-<div class="px-8 py-6">
-    <div class="bg-surface-container-lowest rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-outline-variant/10 overflow-hidden">
-        <!-- Tabs & Action Header -->
-        <div class="px-8 py-6 border-b border-outline-variant/10 flex items-center justify-between">
-            <div class="flex items-center gap-8">
-                <button class="pb-2 text-primary font-bold border-b-2 border-primary text-lg">Nội dung</button>
-                <button class="pb-2 text-on-surface-variant font-medium hover:text-primary transition-colors text-lg">Luồng</button>
-                <button class="pb-2 text-on-surface-variant font-medium hover:text-primary transition-colors text-lg">Thời gian</button>
-            </div>
-            <button class="bg-primary hover:bg-primary-dim text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95">
-                <span class="material-symbols-outlined text-xl">add</span>
-                Thêm người xem
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/clerk/danh-sach-vb-den.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
             </button>
+            <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản đến</h1>
         </div>
 
-        <!-- Document Details -->
-        <div class="p-10 space-y-10">
-            <!-- Title Section -->
-            <div class="flex items-center gap-4">
-                <h1 class="text-2xl font-black text-on-surface tracking-tight">Thư chuyển trực tiếp</h1>
-                <span class="bg-[#FFF9C4] text-[#F57F17] px-3 py-1 rounded-full text-xs font-black shadow-sm">Chưa chuyển</span>
+        <!-- Tabs on the right -->
+        <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+            <button onclick="switchTab('noidung')" id="btn-tab-noidung" class="px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm">
+                Nội dung
+            </button>
+            <button onclick="switchTab('luong')" id="btn-tab-luong" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
+                Luồng văn bản
+            </button>
+        </div>
+    </div>
+
+    <!-- Tab 1: Nội dung văn bản -->
+    <div id="tab-content-noidung" class="space-y-6">
+        <!-- Main Document Details Grid Table -->
+        <div class="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+            <table class="w-full text-left border-collapse text-sm">
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trích yếu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300">Quyết định về việc chỉ định nhà thầu Lập Báo cáo kinh tế kỹ thuật</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Độ khẩn</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%]">-</td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Số ký hiệu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-bold text-[#0f56b3] border-r border-gray-300">239/QĐ-PHKT</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày ban hành</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">24/03/2026</td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Loại văn bản</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">Quyết định</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">CQ ban hành</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">Phòng Hành chính - Tổng Hợp</td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Tóm tắt:</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300"></td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Hạn xử lý</td>
+                        <td class="px-4 py-3.5 text-red-600 font-semibold">27/03/2026</td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Bút phê</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3"></td>
+                    </tr>
+                    <!-- Row 6 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Chỉ đạo</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-semibold" colspan="3">HP.Test1</td>
+                    </tr>
+                    <!-- Row 7 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Chủ trì</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-semibold" colspan="3">Phòng ĐT test1</td>
+                    </tr>
+                    <!-- Row 8 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Phối hợp</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-semibold" colspan="3">P.Phòng; T.Phòng</td>
+                    </tr>
+                    <!-- Row 9 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Để biết</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3"></td>
+                    </tr>
+                    <!-- Row 10 -->
+                    <tr>
+                        <td class="px-4 py-4 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">File văn bản</td>
+                        <td class="px-4 py-4 text-gray-800 font-medium space-y-2" colspan="3">
+                            <div class="flex items-center gap-2">
+                                <span>1-</span>
+                                <a href="javascript:void(0)" onclick="previewPdf('941 (239 QĐ-PHKT).pdf')" class="text-[#0053dc] hover:underline font-bold">941 (239 QĐ-PHKT).pdf</a>
+                                <span onclick="previewPdf('941 (239 QĐ-PHKT).pdf')" class="text-[#0053dc] italic cursor-pointer hover:underline text-xs">(Xem nội dung)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span>2-</span>
+                                <a href="javascript:void(0)" onclick="previewPdf('239.qd-phkt ngay 24.3.2026 QĐ chỉ định NT lập BC KTKT.pdf')" class="text-[#0053dc] hover:underline font-bold">239.qd-phkt ngay 24.3.2026 QĐ chỉ định NT lập BC KTKT.pdf</a>
+                                <span onclick="previewPdf('239.qd-phkt ngay 24.3.2026 QĐ chỉ định NT lập BC KTKT.pdf')" class="text-[#0053dc] italic cursor-pointer hover:underline text-xs">(Xem nội dung)</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PDF Previewer Panel (Appears when clicking Xem nội dung) -->
+        <div id="pdf-previewer" class="hidden bg-white border border-gray-300 rounded-xl overflow-hidden shadow-md transition-all duration-300">
+            <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-5 py-3">
+                <span class="text-xs font-bold text-gray-700 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[18px] text-red-500">picture_as_pdf</span>
+                    <span id="preview-filename">document.pdf</span>
+                </span>
+                <button onclick="closePdfPreview()" class="text-gray-400 hover:text-gray-600">
+                    <span class="material-symbols-outlined text-lg">close</span>
+                </button>
+            </div>
+            <div class="bg-gray-100 p-8 flex justify-center max-h-[500px] overflow-y-auto">
+                <div class="bg-white shadow-lg border border-gray-200 p-10 max-w-xl w-full text-gray-800 font-serif space-y-6">
+                    <div class="flex justify-between border-b border-gray-200 pb-4 text-xs font-sans not-italic text-gray-500">
+                        <div class="text-center">
+                            <p class="font-bold uppercase">ĐẠI HỌC ĐÀ NẴNG</p>
+                            <p class="font-bold underline uppercase">PHÒNG HÀNH CHÍNH - TỔNG HỢP</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold uppercase">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                            <p class="font-bold underline uppercase">Độc lập - Tự do - Hạnh phúc</p>
+                        </div>
+                    </div>
+                    <div class="text-center space-y-2 font-sans py-4">
+                        <h3 class="font-black text-base uppercase text-gray-900" id="preview-doc-title">QUYẾT ĐỊNH</h3>
+                        <p class="font-bold text-xs italic">V/v chỉ định nhà thầu Lập Báo cáo kinh tế kỹ thuật</p>
+                    </div>
+                    <div class="space-y-4 text-justify leading-relaxed text-xs font-sans">
+                        <p>Căn cứ các quy định hiện hành về quản lý đầu tư xây dựng và kế hoạch công tác năm 2026 của cơ quan,</p>
+                        <p>Xét đề nghị của bộ phận chuyên môn quản lý thiết bị cơ sở vật chất,</p>
+                        <p class="font-bold">QUYẾT ĐỊNH:</p>
+                        <p><strong>Điều 1.</strong> Chỉ định đơn vị tư vấn thực hiện nhiệm vụ Lập Báo cáo kinh tế kỹ thuật xây dựng công trình cải tạo hệ thống phòng học kỹ thuật chất lượng cao.</p>
+                        <p><strong>Điều 2.</strong> Các bộ phận phòng ban có trách nhiệm triển khai và giám sát việc thực hiện đúng tiến độ được giao.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUỒNG XỬ LÝ Box Header & Section -->
+        <div class="space-y-4">
+            <div class="flex items-center bg-[#eef9fd] border-l-4 border-[#00A8B5] px-4 py-3 rounded-r-md">
+                <span class="font-bold text-[#00A8B5] tracking-wide text-sm">LUỒNG XỬ LÝ</span>
+            </div>
+            
+            <!-- Timeline Process Flow -->
+            <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <div class="relative pl-8 border-l-2 border-[#00A8B5]/20 space-y-6 py-1">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 w-6 h-6 rounded-full bg-[#00A8B5] border-4 border-white shadow-sm flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[10px] text-white font-bold">check</span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-[#00A8B5] uppercase">Bước 1: Tiếp nhận văn bản</span>
+                                <span class="text-[11px] text-gray-500">24/03/2026 09:30 AM</span>
+                            </div>
+                            <p class="text-xs font-bold text-gray-800 mt-1">Văn thư - Trần Thị Hoa</p>
+                            <p class="text-xs text-gray-600 mt-0.5">Đã vào sổ văn bản đến, chuyển lãnh đạo phòng phê duyệt.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 w-6 h-6 rounded-full bg-[#FFB703] border-4 border-white shadow-sm flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[10px] text-white font-bold">hourglass_empty</span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-amber-600 uppercase">Bước 2: Chỉ đạo xử lý (Hiện tại)</span>
+                                <span class="text-[11px] text-gray-500">24/03/2026 10:45 AM</span>
+                            </div>
+                            <p class="text-xs font-bold text-gray-800 mt-1">Lãnh đạo phòng - HP.Test1</p>
+                            <p class="text-xs text-gray-600 mt-0.5">Đã cho ý kiến chỉ đạo: "Chuyển Phòng ĐT test1 chủ trì phối hợp với P.Phòng và T.Phòng thực hiện."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GỬI ĐỂ XEM Box Header & Section -->
+        <div class="space-y-4">
+            <div class="flex items-center justify-between bg-[#eef9fd] border-l-4 border-[#0f56b3] px-4 py-2.5 rounded-r-md">
+                <span class="font-bold text-[#0f56b3] tracking-wide text-sm">GỬI ĐỂ XEM</span>
+                <button onclick="openViewerModal()" class="px-4 py-1.5 bg-[#0f56b3] hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition shadow-sm">
+                    Thêm
+                </button>
             </div>
 
-            <!-- Info Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-12">
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Số ký hiệu</div>
-                    <div class="text-[15px] font-bold text-on-surface">387/ĐHĐN-QLCSVCĐT</div>
+            <!-- Viewers List -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm text-xs text-gray-600">
+                <div class="flex flex-wrap gap-2" id="viewer-tags-container">
+                    <span class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full font-semibold border border-gray-200">
+                        <span class="material-symbols-outlined text-sm">person</span>
+                        <span>Nguyễn Văn A (Ban Giám Hiệu)</span>
+                        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full font-semibold border border-gray-200">
+                        <span class="material-symbols-outlined text-sm">person</span>
+                        <span>Trần Thị B (Phòng Thanh tra)</span>
+                        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+                    </span>
                 </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Loại văn bản</div>
-                    <div class="text-[15px] font-bold text-on-surface">Công văn</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Yêu cầu</div>
-                    <div class="text-[15px] font-bold text-on-surface">Cần xử lý, báo cáo</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Độ khẩn</div>
-                    <div class="text-[15px] font-bold text-on-surface">Bình thường</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 2: Luồng xử lý độc lập -->
+    <div id="tab-content-luong" class="hidden space-y-6">
+        <div class="bg-white border border-gray-300 rounded-xl p-8 shadow-sm">
+            <h3 class="text-base font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0f56b3]">account_tree</span>
+                <span>Luồng luân chuyển chi tiết văn bản đến</span>
+            </h3>
+            
+            <div class="relative pl-10 border-l-2 border-gray-200 space-y-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">1. Tiếp nhận & Vào sổ</span>
+                            <span class="text-xs text-gray-500 font-semibold">24/03/2026 09:30 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Trần Thị Hoa - Văn thư</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã tiếp nhận bản giấy, số hóa văn bản quét PDF đính kèm, cập nhật vào sổ đăng ký số đến <strong class="text-gray-900">15</strong>.</p>
+                    </div>
                 </div>
 
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Ngày ban hành</div>
-                    <div class="text-[15px] font-bold text-on-surface">01/02/2024</div>
-                </div>
-                <div class="space-y-2 md:col-span-1">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">CQ ban hành</div>
-                    <div class="text-[15px] font-bold text-on-surface leading-relaxed">Ban Quản lý cơ sở vật chất và Đầu tư</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Hạn xử lý</div>
-                    <div class="text-[15px] font-bold text-on-surface">-</div>
-                </div>
-                <div class="hidden lg:block"></div> <!-- Spacer -->
-
-                <!-- Bút phê & Chỉ đạo -->
-                <div class="space-y-2 md:col-span-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Bút phê</div>
-                    <div class="text-[15px] font-bold text-on-surface">-</div>
-                </div>
-                <div class="space-y-2 md:col-span-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Chỉ đạo</div>
-                    <div class="text-[15px] font-bold text-on-surface">-</div>
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">2. Duyệt & Cho ý kiến</span>
+                            <span class="text-xs text-gray-500 font-semibold">24/03/2026 10:45 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">HP.Test1 - Lãnh đạo</p>
+                        <p class="text-xs text-gray-600 mt-1">Bút phê chỉ đạo xử lý văn bản, xác định phân công đơn vị chủ trì là Phòng ĐT test1 và đơn vị phối hợp.</p>
+                    </div>
                 </div>
 
-                <!-- Phối hợp & Để biết -->
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Phối hợp</div>
-                    <div class="text-[15px] font-bold text-on-surface">387/ĐHĐN-QLCSVCĐT</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Để biết</div>
-                    <div class="text-[15px] font-bold text-on-surface">Công văn</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">File văn bản</div>
-                    <a href="javascript:void(0)" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
-                        <span class="material-symbols-outlined text-lg">description</span>
-                        1- CV 387.pdf
-                    </a>
-                </div>
-                <div class="hidden lg:block"></div> <!-- Spacer -->
-
-                <div class="space-y-2 md:col-span-4">
-                    <div class="text-[13px] font-medium text-outline-variant uppercase tracking-wider">Trích yếu</div>
-                    <div class="text-[15px] font-bold text-on-surface leading-relaxed italic">
-                        V/v hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-[#FFB703] border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">hourglass_empty</span>
+                    </div>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-amber-600 uppercase">3. Đang xử lý</span>
+                            <span class="text-xs text-gray-500 font-semibold">Chưa hoàn thành</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Phòng ĐT test1 - Chủ trì thực hiện</p>
+                        <p class="text-xs text-gray-600 mt-1">Hạn cuối hoàn thành xử lý báo cáo là ngày <strong class="text-red-600 font-bold">27/03/2026</strong>. Hiện đang tiến hành thảo luận chuẩn bị.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal Thêm Người Xem -->
+<div id="add-viewer-modal" class="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-xl border border-gray-200 transform scale-95 transition-transform duration-300">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+            <h3 class="text-base font-bold text-gray-800 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0f56b3]">person_add</span>
+                <span>Thêm người xem để biết</span>
+            </h3>
+            <button onclick="closeViewerModal()" class="text-gray-400 hover:text-gray-600">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="space-y-3.5 text-xs font-semibold text-gray-700">
+            <div class="space-y-1.5">
+                <label class="block">Họ tên / Đơn vị <span class="text-red-500">*</span></label>
+                <input id="modal-viewer-name" type="text" placeholder="Ví dụ: Lê Văn C (Phòng Đào Tạo)..." class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-[#0f56b3]/20 outline-none">
+            </div>
+        </div>
+        <div class="flex gap-3 pt-2">
+            <button onclick="closeViewerModal()" class="flex-1 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg text-xs font-bold transition">Hủy</button>
+            <button onclick="confirmAddViewer()" class="flex-1 py-2 px-4 bg-[#0f56b3] hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition shadow">Xác nhận</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tabId) {
+        const tabNoidungBtn = document.getElementById('btn-tab-noidung');
+        const tabLuongBtn = document.getElementById('btn-tab-luong');
+        const contentNoidung = document.getElementById('tab-content-noidung');
+        const contentLuong = document.getElementById('tab-content-luong');
+
+        if (tabId === 'noidung') {
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentNoidung.classList.remove('hidden');
+            contentLuong.classList.add('hidden');
+        } else {
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentLuong.classList.remove('hidden');
+            contentNoidung.classList.add('hidden');
+        }
+    }
+
+    function previewPdf(filename) {
+        const previewer = document.getElementById('pdf-previewer');
+        const filenameSpan = document.getElementById('preview-filename');
+        const titleSpan = document.getElementById('preview-doc-title');
+        
+        filenameSpan.textContent = filename;
+        titleSpan.textContent = filename.includes('941') ? "QUYẾT ĐỊNH CHỈ ĐỊNH NHÀ THẦU" : "QUYẾT ĐỊNH PHÊ DUYỆT";
+        previewer.classList.remove('hidden');
+        previewer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closePdfPreview() {
+        document.getElementById('pdf-previewer').classList.add('hidden');
+    }
+
+    function openViewerModal() {
+        const modal = document.getElementById('add-viewer-modal');
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeViewerModal() {
+        const modal = document.getElementById('add-viewer-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.getElementById('modal-viewer-name').value = '';
+        }, 300);
+    }
+
+    function confirmAddViewer() {
+        const nameInput = document.getElementById('modal-viewer-name');
+        const nameVal = nameInput.value.trim();
+        if (!nameVal) {
+            alert('Vui lòng nhập tên người xem!');
+            return;
+        }
+
+        const container = document.getElementById('viewer-tags-container');
+        const tag = document.createElement('span');
+        tag.className = "inline-flex items-center gap-1.5 bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full font-semibold border border-gray-200";
+        tag.innerHTML = `
+            <span class="material-symbols-outlined text-sm">person</span>
+            <span>${nameVal}</span>
+            <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+        `;
+        container.appendChild(tag);
+        closeViewerModal();
+    }
+</script>
