@@ -1,0 +1,189 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-6">
+        <h1 class="text-xl font-bold text-[#333]">Đăng ký lịch ĐHĐN</h1>
+        <div class="flex items-center gap-3 ml-auto">
+            <button onclick="loadPage('../pages/calendar/dang-ky-lich.html')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Hủy bỏ
+            </button>
+            <button onclick="submitForm()" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-8 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+                Đăng ký
+            </button>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="bg-white rounded-[1.25rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-10">
+        <form class="space-y-8">
+            <!-- Row 1: Năm, Tuần chọn, Ngày -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">1. Năm <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="2026" selected>2026</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">2. Tuần chọn <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Tuần 1</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">3. Ngày <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="01/01/2026">01/01/2026</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Thời gian bắt đầu, Thời gian đến -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">4. Thời gian bắt đầu <span class="text-red-500">*</span></label>
+                    <input type="time" value="00:00" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">Thời gian đến <span class="text-red-500">*</span></label>
+                    <input type="time" value="00:00" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                </div>
+            </div>
+
+            <!-- Row 3: Nội dung, Thành phần -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">5. Nội dung <span class="text-red-500">*</span></label>
+                    <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">6. Thành phần <span class="text-red-500">*</span></label>
+                    <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+                </div>
+            </div>
+
+            <!-- Row 4: Địa điểm (Select + Input) -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-500">7. Địa điểm <span class="text-red-500">*</span></label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative">
+                        <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                            <option value="">Chọn</option>
+                            <option value="1">Hội trường A</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                    <input type="text" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300" />
+                </div>
+            </div>
+
+            <!-- Row 5: Chủ trì, Số lượng tham dự -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">8. Chủ trì <span class="text-red-500">*</span></label>
+                    <input type="text" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-500">9. Số lượng tham dự</label>
+                    <input type="number" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300" />
+                </div>
+            </div>
+
+            <!-- Row 6: Yêu cầu -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-500">10. Yêu cầu</label>
+                <textarea placeholder="Nhập" rows="4" class="w-full bg-white border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700 placeholder:text-gray-300 resize-none"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Reset selection colors */
+    ::selection {
+        background-color: rgba(0, 105, 217, 0.1);
+        color: #0069D9;
+    }
+    
+    /* Smooth transitions */
+    button, input, select, textarea {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Custom scrollbar */
+    textarea::-webkit-scrollbar {
+        width: 8px;
+    }
+    textarea::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    textarea::-webkit-scrollbar-thumb {
+        background: #E9ECEF;
+        border-radius: 10px;
+    }
+</style>
+
+<!-- Beautiful Custom Success Dialog -->
+<div id="custom-success-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h3 id="success-modal-title" class="text-base font-extrabold text-[#333]">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Đăng ký lịch ĐHĐN thành công!</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()" class="flex-1 py-2.5 px-4 bg-[#0069D9] hover:bg-[#0056b3] text-white rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let successDialogCallback = null;
+
+    function submitForm() {
+        showSuccessDialog("Thành công", "Đăng ký lịch ĐHĐN thành công!", () => {
+            loadPage('../pages/calendar/dang-ky-lich.html');
+        });
+    }
+
+    function showSuccessDialog(title, message, callback = null) {
+        const modal = document.getElementById('custom-success-modal');
+        document.getElementById('success-modal-title').innerText = title;
+        document.getElementById('success-modal-text').innerText = message;
+        successDialogCallback = callback;
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            if (successDialogCallback) {
+                successDialogCallback();
+                successDialogCallback = null;
+            }
+        }, 300);
+    }
+</script>

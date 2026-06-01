@@ -22,7 +22,7 @@
             <div class="space-y-2">
                 <label class="text-sm font-medium text-gray-500">1. Tên phòng</label>
                 <div class="relative">
-                    <select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
+                    <select id="room-select" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 appearance-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700">
                         <option value="">Chọn</option>
                         <option value="1">Phòng họp nhỏ</option>
                         <option value="2">Hội trường</option>
@@ -35,7 +35,7 @@
             <!-- Số thứ tự -->
             <div class="space-y-2">
                 <label class="text-sm font-medium text-gray-500">2. Số thứ tự <span class="text-red-500">*</span></label>
-                <input type="text" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none placeholder:text-gray-300 text-gray-700" />
+                <input id="room-order" type="text" placeholder="Nhập" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none placeholder:text-gray-300 text-gray-700" />
             </div>
         </div>
 
@@ -69,7 +69,7 @@
                                         <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
-                                        <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/sua-phong-hop.html')" title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
                                         <button onclick="showDeleteDialog('Phòng họp nhỏ')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
@@ -92,7 +92,7 @@
                                         <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
-                                        <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/sua-phong-hop.html')" title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
                                         <button onclick="showDeleteDialog('Hội trường')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
@@ -115,7 +115,7 @@
                                         <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
-                                        <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/sua-phong-hop.html')" title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
                                         <button onclick="showDeleteDialog('Phòng họp khác')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">

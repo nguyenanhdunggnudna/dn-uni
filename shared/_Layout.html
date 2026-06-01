@@ -238,6 +238,36 @@
 
             updatePageTitle(pagePath);
             
+            // Cập nhật trạng thái active trên sidebar
+            const allLinks = document.querySelectorAll('#sidebar-placeholder a');
+            allLinks.forEach(link => {
+                const onclickAttr = link.getAttribute('onclick') || '';
+                if (onclickAttr.includes(pagePath)) {
+                    if (link.classList.contains('flex')) {
+                        link.classList.remove('text-gray-600', 'hover:bg-gray-50');
+                        link.classList.add('bg-blue-50', 'text-blue-600', 'font-semibold');
+                    } else {
+                        link.classList.remove('text-gray-500');
+                        link.classList.add('text-blue-600', 'font-semibold', 'bg-blue-50/60', 'pl-4', 'rounded-md');
+                    }
+                    
+                    const parentMenu = link.closest('[id^="menu-"]');
+                    if (parentMenu) {
+                        parentMenu.style.maxHeight = parentMenu.scrollHeight + "px";
+                        const arrow = document.getElementById('arrow-' + parentMenu.id);
+                        if (arrow) arrow.style.transform = 'rotate(90deg)';
+                    }
+                } else {
+                    if (link.classList.contains('flex')) {
+                        link.classList.add('text-gray-600', 'hover:bg-gray-50');
+                        link.classList.remove('bg-blue-50', 'text-blue-600', 'font-semibold');
+                    } else {
+                        link.classList.add('text-gray-500');
+                        link.classList.remove('text-blue-600', 'font-semibold', 'bg-blue-50/60', 'pl-4', 'rounded-md');
+                    }
+                }
+            });
+
             console.log("Chuyển trang thành công: " + pagePath);
         } catch (err) {
             console.error("Lỗi nạp trang:", err);

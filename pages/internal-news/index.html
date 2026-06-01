@@ -72,7 +72,7 @@
                             <td class="px-4 py-4 text-center">
                                 <div class="flex justify-center space-x-3 text-sm">
                                     <button class="text-blue-500 hover:text-blue-700 transition" title="Sửa" onclick="loadPage('../pages/internal-news/create.html')"><i class="far fa-edit"></i></button>
-                                    <button onclick="if(confirm('Bạn có chắc chắn muốn xóa tin công khai này?')) { alert('Đã xóa thành công!'); }" class="text-red-500 hover:text-red-700 transition" title="Xóa"><i class="far fa-trash-alt"></i></button>
+                                    <button onclick="showDeleteDialog('File tin công khai 1')" class="text-red-500 hover:text-red-700 transition" title="Xóa"><i class="far fa-trash-alt"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -84,7 +84,7 @@
                             <td class="px-4 py-4 text-center">
                                 <div class="flex justify-center space-x-3 text-sm">
                                     <button class="text-blue-500 hover:text-blue-700 transition" onclick="loadPage('../pages/internal-news/create.html')"><i class="far fa-edit"></i></button>
-                                    <button onclick="if(confirm('Bạn có chắc chắn muốn xóa tin công khai này?')) { alert('Đã xóa thành công!'); }" class="text-red-500 hover:text-red-700 transition" title="Xóa"><i class="far fa-trash-alt"></i></button>
+                                    <button onclick="showDeleteDialog('File tin công khai 2')" class="text-red-500 hover:text-red-700 transition" title="Xóa"><i class="far fa-trash-alt"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -123,3 +123,79 @@
         </div>
     </div>
 </section>
+
+<!-- Custom Delete Confirmation Dialog -->
+<div id="custom-confirm-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                <i class="fas fa-exclamation-triangle text-xl"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-gray-800">Xác nhận xóa</h3>
+            <p id="confirm-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Bạn có chắc chắn muốn xóa tin này không?</p>
+        </div>
+        <div class="flex gap-3 pt-1">
+            <button onclick="closeDeleteDialog()" class="flex-1 py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold transition">Hủy bỏ</button>
+            <button id="confirm-delete-btn" class="flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition shadow-md">Xóa</button>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Success Dialog -->
+<div id="custom-success-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <i class="fas fa-check-circle text-2xl"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-gray-800">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Đã xóa thành công!</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()" class="flex-1 py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let targetNewsName = '';
+
+    function showDeleteDialog(newsName) {
+        targetNewsName = newsName;
+        const modal = document.getElementById('custom-confirm-modal');
+        document.getElementById('confirm-modal-text').innerText = `Bạn có chắc chắn muốn xóa "${newsName}"? Hành động này không thể hoàn tác.`;
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+        document.getElementById('confirm-delete-btn').onclick = executeDelete;
+    }
+
+    function closeDeleteDialog() {
+        const modal = document.getElementById('custom-confirm-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function executeDelete() {
+        closeDeleteDialog();
+        setTimeout(() => {
+            const modal = document.getElementById('custom-success-modal');
+            document.getElementById('success-modal-text').innerText = `Đã xóa thành công "${targetNewsName}"!`;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 50);
+        }, 350);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+</script>

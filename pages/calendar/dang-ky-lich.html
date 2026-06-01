@@ -2,7 +2,7 @@
     <!-- Header Section -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 class="text-xl font-bold text-[#333]">Đăng ký lịch</h1>
-        <a href="javascript:void(0)" onclick="loadPage('../pages/calendar/dang-ky-lich-create.html')" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 flex items-center gap-2 text-sm ml-auto">
+        <a id="add-btn" href="javascript:void(0)" onclick="loadPage('../pages/calendar/dang-ky-lich-create.html')" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 flex items-center gap-2 text-sm ml-auto">
             <span class="material-symbols-outlined text-[20px]">add</span>
             Thêm mới
         </a>
@@ -28,13 +28,13 @@
 
     <!-- Tabs Section -->
     <div class="border-b border-gray-100 flex gap-8">
-        <button class="px-4 py-3 text-[#0069D9] font-bold text-sm border-b-2 border-[#0069D9] transition-all">Lịch của trường</button>
-        <button class="px-4 py-3 text-gray-400 font-medium text-sm hover:text-gray-600 transition-all">Lịch nội bộ</button>
+        <button id="tab-truong" onclick="switchTab('truong')" class="px-4 py-3 text-[#0069D9] font-bold text-sm border-b-2 border-[#0069D9] transition-all">Lịch của trường</button>
+        <button id="tab-noi-bo" onclick="switchTab('noi-bo')" class="px-4 py-3 text-gray-400 font-medium text-sm hover:text-gray-600 transition-all border-b-2 border-transparent">Lịch nội bộ</button>
     </div>
 
     <!-- Main Content Card -->
     <div class="bg-white rounded-[1.25rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 space-y-6">
-        <h2 class="text-lg font-bold text-[#333]">Lịch của trường</h2>
+        <h2 id="table-title" class="text-lg font-bold text-[#333]">Lịch của trường</h2>
         
         <div class="border border-gray-100 rounded-xl overflow-hidden">
             <div class="overflow-x-auto">
@@ -158,3 +158,24 @@
         color: inherit !important;
     }
 </style>
+
+<script>
+    function switchTab(tabType) {
+        const tabTruong = document.getElementById('tab-truong');
+        const tabNoiBo = document.getElementById('tab-noi-bo');
+        const tableTitle = document.getElementById('table-title');
+        const addBtn = document.getElementById('add-btn');
+
+        if (tabType === 'truong') {
+            tabTruong.className = "px-4 py-3 text-[#0069D9] font-bold text-sm border-b-2 border-[#0069D9] transition-all";
+            tabNoiBo.className = "px-4 py-3 text-gray-400 font-medium text-sm hover:text-gray-600 transition-all border-b-2 border-transparent";
+            tableTitle.innerText = "Lịch của trường";
+            addBtn.setAttribute('onclick', "loadPage('../pages/calendar/dang-ky-lich-create.html')");
+        } else {
+            tabTruong.className = "px-4 py-3 text-gray-400 font-medium text-sm hover:text-gray-600 transition-all border-b-2 border-transparent";
+            tabNoiBo.className = "px-4 py-3 text-[#0069D9] font-bold text-sm border-b-2 border-[#0069D9] transition-all";
+            tableTitle.innerText = "Lịch nội bộ";
+            addBtn.setAttribute('onclick', "loadPage('../pages/calendar/dang-ky-lich-dhdn.html')");
+        }
+    }
+</script>

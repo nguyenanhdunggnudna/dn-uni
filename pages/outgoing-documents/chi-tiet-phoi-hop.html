@@ -84,7 +84,7 @@
                                     </td>
                                     <td class="px-3 py-2 text-center">-</td>
                                     <td class="px-3 py-2 text-center">
-                                        <button class="bg-primary/10 hover:bg-primary hover:text-on-primary text-primary px-2 py-0.5 rounded text-[10px] font-bold transition shadow-sm">Xem</button>
+                                        <button onclick="previewFile('PLPH Quyet dinh P14_duyet chu truong_signed (1).pdf')" class="bg-primary/10 hover:bg-primary hover:text-on-primary text-primary px-2 py-0.5 rounded text-[10px] font-bold transition shadow-sm">Xem</button>
                                     </td>
                                     <td class="px-3 py-2 text-on-surface-variant italic">-</td>
                                 </tr>
@@ -115,7 +115,7 @@
                                     </td>
                                     <td class="px-3 py-2 text-on-surface-variant">30/04/2026 11:18:44 AM</td>
                                     <td class="px-3 py-2 text-center">
-                                        <button class="bg-primary/10 hover:bg-primary hover:text-on-primary text-primary px-2 py-0.5 rounded text-[10px] font-bold transition shadow-sm">Xem</button>
+                                        <button onclick="previewFile('913/PL.Trinh ky mua thiet bi hop-1.docx.pdf')" class="bg-primary/10 hover:bg-primary hover:text-on-primary text-primary px-2 py-0.5 rounded text-[10px] font-bold transition shadow-sm">Xem</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -435,4 +435,80 @@
 
         closeFeedbackModal();
     }
+
+    // Preview file modal
+    function previewFile(filename) {
+        document.getElementById('preview-filename').innerText = filename;
+        const modal = document.getElementById('preview-modal');
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('.preview-inner').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closePreviewModal() {
+        const modal = document.getElementById('preview-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('.preview-inner').classList.add('scale-95');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    }
 </script>
+
+<!-- File Preview Modal -->
+<div id="preview-modal" class="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="preview-inner bg-surface-container-lowest rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden border border-outline-variant/20 flex flex-col h-[85vh] transform scale-95 transition-transform duration-300">
+        <div class="p-5 border-b border-surface-container-high flex items-center justify-between bg-primary/5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">description</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-on-surface text-sm" id="preview-filename">File</h3>
+                    <p class="text-[11px] text-on-surface-variant">Xem trước file đã ký</p>
+                </div>
+            </div>
+            <button onclick="closePreviewModal()" class="w-8 h-8 rounded-lg hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        </div>
+        <div class="flex-1 bg-surface-container p-8 overflow-y-auto flex justify-center">
+            <div class="w-[595px] bg-white shadow-lg rounded-sm p-16 relative select-none">
+                <div class="text-center space-y-1">
+                    <p class="text-[10px] font-bold tracking-widest text-gray-800">ĐẠI HỌC ĐÀ NẴNG</p>
+                    <p class="text-[11px] font-extrabold tracking-widest text-gray-900 border-b border-black pb-2 w-32 mx-auto">TRƯỜNG TEST 1</p>
+                </div>
+                <div class="mt-8 space-y-4 text-xs text-justify leading-relaxed">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-gray-500">
+                        <span>Số: 14/KH-ĐHĐN</span>
+                        <span>Đà Nẵng, ngày 30 tháng 04 năm 2026</span>
+                    </div>
+                    <p class="text-center font-bold text-sm text-gray-900 mt-6 uppercase">KẾ HOẠCH</p>
+                    <p class="text-center font-bold text-xs text-gray-800">Kế hoạch tra 21/5</p>
+                    <div class="space-y-3 mt-6 text-gray-800 text-[11px]">
+                        <p class="italic">- Căn cứ Quyết định số 156/QĐ-TTg ngày 28 tháng 01 năm 2026;</p>
+                        <p class="font-bold uppercase mt-4">I. MỤC ĐÍCH, YÊU CẦU</p>
+                        <p>Triển khai kế hoạch kiểm tra, đánh giá chất lượng các hoạt động đào tạo tại đơn vị.</p>
+                        <p class="font-bold uppercase mt-4">II. NỘI DUNG</p>
+                        <p>Kiểm tra theo kế hoạch đã được phê duyệt, đảm bảo đúng quy trình và tiến độ.</p>
+                    </div>
+                    <div class="mt-16 flex justify-end">
+                        <div class="text-center space-y-1">
+                            <p class="font-bold text-gray-900 uppercase">HIỆU TRƯỞNG</p>
+                            <div class="h-12 flex items-center justify-center">
+                                <span class="text-xs text-blue-500 font-semibold border border-dashed border-blue-300 px-2 py-1 rounded bg-blue-50/50 flex items-center gap-1 select-none">
+                                    <span class="material-symbols-outlined text-sm">lock</span>
+                                    Đã ký số
+                                </span>
+                            </div>
+                            <p class="font-bold text-gray-800 mt-2">Hiệu trưởng Trường Test1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 border-t border-surface-container-high bg-primary/5 flex justify-end">
+            <button onclick="closePreviewModal()" class="px-6 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl font-bold transition border border-outline-variant/20 text-xs">Đóng</button>
+        </div>
+    </div>
+</div>

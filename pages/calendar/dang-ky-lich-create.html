@@ -6,7 +6,7 @@
             <button onclick="loadPage('../pages/calendar/dang-ky-lich.html')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
                 Hủy bỏ
             </button>
-            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-8 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+            <button onclick="submitForm()" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-8 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
                 Đăng ký
             </button>
         </div>
@@ -152,3 +152,55 @@
         border-radius: 10px;
     }
 </style>
+
+<!-- Beautiful Custom Success Dialog -->
+<div id="custom-success-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h3 id="success-modal-title" class="text-base font-extrabold text-[#333]">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Đăng ký lịch thành công!</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()" class="flex-1 py-2.5 px-4 bg-[#0069D9] hover:bg-[#0056b3] text-white rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let successDialogCallback = null;
+
+    function submitForm() {
+        showSuccessDialog("Thành công", "Đăng ký lịch trường thành công!", () => {
+            loadPage('../pages/calendar/dang-ky-lich.html');
+        });
+    }
+
+    function showSuccessDialog(title, message, callback = null) {
+        const modal = document.getElementById('custom-success-modal');
+        document.getElementById('success-modal-title').innerText = title;
+        document.getElementById('success-modal-text').innerText = message;
+        successDialogCallback = callback;
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            if (successDialogCallback) {
+                successDialogCallback();
+                successDialogCallback = null;
+            }
+        }, 300);
+    }
+</script>

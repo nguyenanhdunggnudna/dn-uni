@@ -561,4 +561,77 @@
             el.style.top = yPos + "px";
         }
     }
+
+    // Preview file modal
+    function previewFile(filename, type) {
+        document.getElementById('preview-filename').innerText = filename;
+        const modal = document.getElementById('preview-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closePreviewModal() {
+        const modal = document.getElementById('preview-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
 </script>
+
+<!-- File Preview Modal -->
+<div id="preview-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center hidden">
+    <div class="bg-white rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col h-[85vh]">
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">description</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900" id="preview-filename">File</h3>
+                    <p class="text-xs text-gray-500">Xem trước file đã ký</p>
+                </div>
+            </div>
+            <button onclick="closePreviewModal()" class="w-8 h-8 rounded-lg hover:bg-gray-200 flex items-center justify-center text-gray-500 transition-colors">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        </div>
+        <div class="flex-1 bg-gray-100 p-8 overflow-y-auto flex justify-center">
+            <div class="w-[595px] bg-white shadow-lg rounded-sm p-16 relative select-none">
+                <div class="text-center space-y-1">
+                    <p class="text-[10px] font-bold tracking-widest text-gray-800">ĐẠI HỌC ĐÀ NẴNG</p>
+                    <p class="text-[11px] font-extrabold tracking-widest text-gray-900 border-b border-black pb-2 w-32 mx-auto">TRƯỜNG TEST 1</p>
+                </div>
+                <div class="mt-8 space-y-4 text-xs text-justify leading-relaxed">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-gray-500">
+                        <span>Số: 387/QĐ-ĐHĐN-QLSVCĐT</span>
+                        <span>Đà Nẵng, ngày 04 tháng 03 năm 2026</span>
+                    </div>
+                    <p class="text-center font-bold text-sm text-gray-900 mt-6 uppercase">QUYẾT ĐỊNH</p>
+                    <p class="text-center font-bold text-xs text-gray-800">V/v Hướng dẫn triển khai Tổng kiểm kê tài sản công tại cơ quan, tổ chức, đơn vị</p>
+                    <div class="space-y-3 mt-6 text-gray-800 text-[11px]">
+                        <p class="italic">- Căn cứ Luật Quản lý, sử dụng tài sản công ngày 21 tháng 6 năm 2017;</p>
+                        <p class="italic">- Căn cứ Quyết định số 156/QĐ-TTg ngày 28 tháng 01 năm 2026 của Thủ tướng Chính phủ;</p>
+                        <p class="font-bold uppercase mt-4">HIỆU TRƯỞNG QUYẾT ĐỊNH:</p>
+                        <p><span class="font-bold">Điều 1.</span> Ban hành kèm theo Quyết định này Hướng dẫn tổng kiểm kê tài sản công tại các đơn vị trực thuộc Trường Test 1.</p>
+                        <p><span class="font-bold">Điều 2.</span> Giao Trưởng phòng Quản lý cơ sở vật chất chủ trì phối hợp với các ban ngành liên quan triển khai thực hiện đúng quy định.</p>
+                        <p><span class="font-bold">Điều 3.</span> Quyết định này có hiệu lực kể từ ngày ký.</p>
+                    </div>
+                    <div class="mt-16 flex justify-end">
+                        <div class="text-center space-y-1 relative">
+                            <p class="font-bold text-gray-900 uppercase">HIỆU TRƯỞNG</p>
+                            <div class="h-12 flex items-center justify-center">
+                                <span class="text-xs text-blue-500 font-semibold border border-dashed border-blue-300 px-2 py-1 rounded bg-blue-50/50 flex items-center gap-1 select-none">
+                                    <span class="material-symbols-outlined text-sm">lock</span>
+                                    Đã ký bởi Hiệu trưởng
+                                </span>
+                            </div>
+                            <p class="font-bold text-gray-800 mt-2">Nguyễn Văn A</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 border-t border-gray-100 bg-gray-50 flex justify-end">
+            <button onclick="closePreviewModal()" class="px-6 py-2.5 bg-white hover:bg-gray-100 text-gray-700 rounded-xl font-bold transition border border-gray-200 text-xs">Đóng</button>
+        </div>
+    </div>
+</div>
