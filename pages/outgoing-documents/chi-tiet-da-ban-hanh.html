@@ -1,16 +1,141 @@
 <div class="px-8 py-6 space-y-6">
     <!-- Header Section -->
-    <div class="flex items-center gap-3">
-        <button onclick="loadPage('../pages/outgoing-documents/da-ban-hanh.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
-            <span class="material-symbols-outlined text-xl">arrow_back</span>
-        </button>
-        <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản đã ban hành</h1>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/outgoing-documents/da-ban-hanh.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản đã ban hành</h1>
+        </div>
+
+        <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+            <button onclick="switchTab('noidung')" id="btn-tab-noidung" class="px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm">
+                Nội dung
+            </button>
+            <button onclick="switchTab('luong')" id="btn-tab-luong" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
+                Luồng ban hành
+            </button>
+        </div>
     </div>
 
-    <!-- Placeholder content -->
-    <div class="bg-white border border-gray-200 rounded-2xl p-12 flex flex-col items-center justify-center text-center shadow-sm min-h-[400px]">
-        <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">inventory_2</span>
-        <p class="text-gray-400 text-lg font-medium">Trang đang được phát triển</p>
-        <p class="text-gray-300 text-sm mt-1">Nội dung chi tiết văn bản đã ban hành sẽ được hiển thị tại đây</p>
+    <!-- Tab Content: Nội dung -->
+    <div id="tab-content-noidung" class="space-y-6">
+        <div class="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+            <table class="w-full text-left border-collapse text-sm">
+                <tbody>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trích yếu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300">Về việc triển khai kế hoạch số hóa tài liệu năm 2026 tại các đơn vị trực thuộc</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trạng thái</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%]">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full font-bold bg-[#E8F5E9] text-[#2E7D32] border border-[#C8E6C9] text-xs">
+                                Đã ban hành
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ký hiệu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-bold text-[#0f56b3] border-r border-gray-300">123/CV-VP</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày ban hành</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">30/12/2025</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Loại văn bản</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">Công văn</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Hạn xử lý</td>
+                        <td class="px-4 py-3.5 text-red-600 font-semibold">15/01/2026</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Nơi nhận</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3">Các phòng, ban, khoa, trung tâm trực thuộc Trường</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-4 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Tệp đính kèm chính thức</td>
+                        <td class="px-4 py-4 text-gray-800 font-medium space-y-2" colspan="3">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+                                <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">123_CV-VP_BanHanhChinhThuc.pdf</a>
+                                <span class="text-gray-400 text-xs">(2.5 MB)</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Tab Content: Luồng ban hành -->
+    <div id="tab-content-luong" class="hidden space-y-6">
+        <div class="bg-white border border-gray-300 rounded-xl p-8 shadow-sm">
+            <h3 class="text-base font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0f56b3]">account_tree</span>
+                <span>Luồng xử lý & Ban hành văn bản đi</span>
+            </h3>
+            
+            <div class="relative pl-10 border-l-2 border-gray-200 space-y-8">
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">1. Soạn thảo dự thảo</span>
+                            <span class="text-xs text-gray-500 font-semibold">25/12/2025 09:00 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Văn phòng Trường</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã hoàn thành dự thảo công văn triển khai kế hoạch số hóa tài liệu.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">2. Ký duyệt & Đóng dấu</span>
+                            <span class="text-xs text-gray-500 font-semibold">29/12/2025 03:30 PM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Lãnh đạo Ban Giám Hiệu</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã ký duyệt và văn thư đóng dấu phát hành số 123/CV-VP.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">3. Ban hành chính thức</span>
+                            <span class="text-xs text-gray-500 font-semibold">30/12/2025 09:00 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Văn thư hệ thống</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã phát hành văn bản điện tử gửi đến tất cả các đơn vị trực thuộc qua hệ thống HSCV.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+    function switchTab(tabId) {
+        const tabNoidungBtn = document.getElementById('btn-tab-noidung');
+        const tabLuongBtn = document.getElementById('btn-tab-luong');
+        const contentNoidung = document.getElementById('tab-content-noidung');
+        const contentLuong = document.getElementById('tab-content-luong');
+
+        if (tabId === 'noidung') {
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentNoidung.classList.remove('hidden');
+            contentLuong.classList.add('hidden');
+        } else {
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentLuong.classList.remove('hidden');
+            contentNoidung.classList.add('hidden');
+        }
+    }
+</script>

@@ -1,0 +1,286 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center gap-3 border-b border-outline-variant/10 pb-4">
+        <button onclick="loadPage('../pages/tasks/cong-viec-giao.html')"
+            class="p-2 bg-surface-container hover:bg-surface-container-high rounded-full transition text-on-surface flex items-center justify-center">
+            <span class="material-symbols-outlined text-xl">arrow_back</span>
+        </button>
+        <h1 class="text-xl font-bold text-on-surface">Thêm mới công việc</h1>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left Column: Main Form -->
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/10 p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-lg font-bold text-on-surface">Phần giao việc</h2>
+                    <button onclick="showSuccessDialog('Giao việc', 'Đã thêm mới và giao việc thành công!', () => loadPage('../pages/tasks/cong-viec-giao.html'))"
+                        class="px-6 py-2.5 bg-[#0056B3] text-white rounded-lg font-bold hover:bg-[#004494] transition-all">
+                        Thêm mới
+                    </button>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- 1. Title -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-on-surface text-sm">1. Tiêu đề <span
+                                class="text-red-500">*</span></label>
+                        <textarea
+                            class="w-full border border-outline-variant/30 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20 outline-none min-h-[80px]"
+                            placeholder="Nhập tiêu đề công việc..."></textarea>
+                    </div>
+
+                    <!-- 2 & 3: Type & Deadline -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="block font-bold text-on-surface text-sm">2. Loại công việc <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select
+                                    class="w-full appearance-none border border-outline-variant/30 rounded-lg p-3 pr-10 text-sm focus:ring-2 focus:ring-primary/20 outline-none bg-white">
+                                    <option>Chọn loại công việc</option>
+                                    <option>Xử lý công văn</option>
+                                    <option>Soạn thảo văn bản</option>
+                                    <option>Hội họp / Sự kiện</option>
+                                    <option>Khác</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block font-bold text-on-surface text-sm">3. Ngày hạn xử lý <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <input type="text"
+                                    class="w-full border border-outline-variant/30 rounded-lg p-3 pr-10 text-sm focus:ring-2 focus:ring-primary/20 outline-none"
+                                    placeholder="Chọn ngày hạn" value="05/06/2026">
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline-variant">calendar_month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Content -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-on-surface text-sm">4. Nội dung yêu cầu <span
+                                class="text-red-500">*</span></label>
+                        <textarea
+                            class="w-full border border-outline-variant/30 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20 outline-none min-h-[120px]"
+                            placeholder="Nhập chi tiết nội dung yêu cầu..."></textarea>
+                    </div>
+
+                    <!-- 5. Table -->
+                    <div class="space-y-4">
+                        <h3 class="text-base font-bold text-on-surface">5. Chọn cá nhân xử lý</h3>
+                        <div class="overflow-x-auto rounded-lg border border-outline-variant/20">
+                            <table class="w-full text-xs text-left border-collapse">
+                                <thead class="bg-surface-container-low text-on-surface">
+                                    <tr>
+                                        <th
+                                            class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center w-12">
+                                            Số</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10">Họ tên</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            LĐ theo dõi</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            XL. Chính</th>
+                                        <th class="px-4 py-3 font-bold border-r border-outline-variant/10 text-center">
+                                            Phối hợp</th>
+                                        <th class="px-4 py-3 font-bold text-center">Để xem</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-outline-variant/10">
+                                    <tr>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">1</td>
+                                        <td
+                                            class="px-4 py-3 border-r border-outline-variant/10 text-[#007BFF] font-medium">
+                                            Nguyễn Văn A</td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="radio" name="xl_chinh" class="w-4 h-4 text-[#007BFF] focus:ring-blue-500" checked>
+                                        </td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                        <td class="px-4 py-3 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">2</td>
+                                        <td
+                                            class="px-4 py-3 border-r border-outline-variant/10 text-[#007BFF] font-medium">
+                                            Trần Thị B</td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="radio" name="xl_chinh" class="w-4 h-4 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                        <td class="px-4 py-3 border-r border-outline-variant/10 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500" checked>
+                                        </td>
+                                        <td class="px-4 py-3 text-center">
+                                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-[#007BFF] focus:ring-blue-500">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Attachments -->
+                    <div class="space-y-2">
+                        <h3 class="text-base font-bold text-on-surface">Đính kèm file</h3>
+                        <div class="flex items-start gap-4">
+                            <input type="file" id="fileInput" class="hidden" multiple>
+                            <div
+                                onclick="document.getElementById('fileInput').click()"
+                                class="flex-1 border-2 border-dashed border-[#007BFF] rounded-xl p-6 bg-blue-50/10 flex flex-col items-center justify-center cursor-pointer group hover:bg-blue-50/30 transition-all">
+                                <div class="text-[#007BFF] font-bold text-base mb-1">Kéo & thả file vào đây hoặc click để chọn</div>
+                                <div class="text-outline-variant text-[11px] italic">Loại file: doc, docx, pdf, jpg, jpeg, xls, zip, rar, png</div>
+                            </div>
+                            <button
+                                class="w-12 h-12 flex items-center justify-center bg-[#FF4500] text-white rounded-lg shadow-sm hover:opacity-90 transition-all">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Unit -->
+                    <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+                        <h3 class="text-base font-bold text-on-surface">V. Đơn vị phối hợp xử lý công việc</h3>
+                        <button
+                            onclick="openUnitModal()"
+                            class="flex items-center gap-2 px-4 py-2 bg-surface-container-high text-on-surface rounded-lg font-bold hover:bg-surface-container-highest transition-all text-xs">
+                            <span class="material-symbols-outlined text-[18px]">add</span> Thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Info Panels & Meta Info -->
+        <div class="space-y-6">
+            <!-- Guidelines & Notes -->
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/10 p-6 space-y-4">
+                <h3 class="text-lg font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">info</span>
+                    Thông tin cần lưu ý
+                </h3>
+                <div class="text-xs text-on-surface-variant space-y-3 leading-relaxed">
+                    <p>• Các trường thông tin có dấu <span class="text-red-500 font-bold">*</span> là bắt buộc phải nhập.</p>
+                    <p>• Hãy chọn chính xác loại công việc để hệ thống phân loại đúng quy trình xử lý.</p>
+                    <p>• Đảm bảo chỉ định đúng cán bộ xử lý chính và các cá nhân / đơn vị phối hợp.</p>
+                    <p>• File đính kèm dung lượng không quá 20MB mỗi file.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Unit Selection Modal -->
+<div id="unitModal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeUnitModal()"></div>
+    
+    <!-- Modal Content -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+        <!-- Modal Header -->
+        <div class="bg-gray-100 px-4 py-2 flex justify-end border-b border-gray-200">
+            <button onclick="closeUnitModal()" class="text-gray-500 hover:text-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-[20px] bg-white border border-gray-300 rounded shadow-sm">close</span>
+            </button>
+        </div>
+
+        <div class="p-6 space-y-6">
+            <!-- Search & Filters -->
+            <div class="bg-gray-50/50 p-6 rounded-lg border border-gray-200 space-y-4">
+                <div class="flex justify-end gap-0">
+                    <div class="relative w-full max-w-sm">
+                        <input type="text" placeholder="Search" class="w-full border border-amber-400 rounded-l-md px-4 py-2 outline-none focus:ring-1 focus:ring-amber-400">
+                    </div>
+                    <button class="px-8 py-2 bg-gray-500 text-white font-bold rounded-r-md hover:bg-gray-600 transition-all">Tìm</button>
+                </div>
+
+                <div class="flex items-end">
+                    <div class="flex border border-gray-300 rounded-t-md overflow-hidden bg-white">
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium border-r border-gray-300 hover:bg-gray-300 transition-all">Lãnh đạo</button>
+                        <button class="px-6 py-2 bg-white text-on-surface font-medium border-r border-gray-300 hover:bg-gray-100 transition-all">Tất cả</button>
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium border-r border-gray-300 hover:bg-gray-300 transition-all">Nội dung công việc</button>
+                        <button class="px-6 py-2 bg-gray-200 text-on-surface font-medium hover:bg-gray-300 transition-all">VT Trường</button>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-300 bg-white min-h-[40px] rounded-b-md rounded-tr-md"></div>
+            </div>
+
+            <!-- Content Area (Placeholder for data) -->
+            <div class="min-h-[300px] flex items-center justify-center text-sm text-gray-500">
+                Chưa chọn đơn vị phối hợp.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Success Dialog -->
+<div id="custom-success-modal"
+    class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div
+        class="bg-surface-container-lowest rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h3 id="success-modal-title" class="text-base font-extrabold text-on-surface">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-on-surface-variant font-medium leading-relaxed">Thao tác đã được thực hiện thành công.</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()"
+                class="flex-1 py-2.5 px-4 bg-primary hover:bg-primary-dim text-on-primary rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openUnitModal() {
+        document.getElementById('unitModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeUnitModal() {
+        document.getElementById('unitModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    let successDialogCallback = null;
+
+    function showSuccessDialog(title, message, callback = null) {
+        const modal = document.getElementById('custom-success-modal');
+        document.getElementById('success-modal-title').innerText = title;
+        document.getElementById('success-modal-text').innerText = message;
+        successDialogCallback = callback;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            if (successDialogCallback) {
+                successDialogCallback();
+                successDialogCallback = null;
+            }
+        }, 300);
+    }
+</script>

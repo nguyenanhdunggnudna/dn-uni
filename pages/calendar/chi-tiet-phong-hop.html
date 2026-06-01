@@ -1,0 +1,260 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/calendar/phong-hop.html')" class="p-2 bg-surface-container hover:bg-surface-container-high rounded-full transition text-on-surface flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-extrabold text-on-surface tracking-tight font-manrope">Chi tiết Phòng họp</h1>
+        </div>
+        
+        <div class="flex items-center gap-2">
+            <button onclick="loadPage('../pages/calendar/phong-hop.html')" class="px-4 py-2 bg-primary hover:bg-primary-dim text-on-primary rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">edit</span>
+                <span>Chỉnh sửa</span>
+            </button>
+            <button onclick="showDeleteDialog('Phòng họp nhỏ', true)" class="px-4 py-2 bg-error hover:bg-error-dim text-on-error rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">delete</span>
+                <span>Xóa phòng</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Column 1 & 2: Room Info & Schedule (Col-span 2) -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Room Specs Card -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-6 space-y-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 class="text-lg font-bold text-on-surface font-manrope">Phòng họp nhỏ</h2>
+                        <p class="text-xs text-on-surface-variant">Phòng họp tiêu chuẩn phù hợp cho các buổi làm việc nhóm, ký kết hợp đồng và họp phòng ban.</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full font-bold bg-green-500/10 text-green-600 text-[10px] uppercase tracking-wide">
+                        Sẵn sàng sử dụng
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                    <div class="bg-surface-container-low p-3.5 rounded-xl text-center space-y-1.5">
+                        <span class="material-symbols-outlined text-primary text-2xl">groups</span>
+                        <p class="text-[10px] text-on-surface-variant font-medium uppercase">Sức chứa</p>
+                        <p class="text-sm font-bold text-on-surface">15 - 20 người</p>
+                    </div>
+                    <div class="bg-surface-container-low p-3.5 rounded-xl text-center space-y-1.5">
+                        <span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+                        <p class="text-[10px] text-on-surface-variant font-medium uppercase">Vị trí</p>
+                        <p class="text-sm font-bold text-on-surface">Tầng 3 - Nhà A</p>
+                    </div>
+                    <div class="bg-surface-container-low p-3.5 rounded-xl text-center space-y-1.5">
+                        <span class="material-symbols-outlined text-primary text-2xl">square_foot</span>
+                        <p class="text-[10px] text-on-surface-variant font-medium uppercase">Diện tích</p>
+                        <p class="text-sm font-bold text-on-surface">35 m²</p>
+                    </div>
+                    <div class="bg-surface-container-low p-3.5 rounded-xl text-center space-y-1.5">
+                        <span class="material-symbols-outlined text-primary text-2xl">co-present</span>
+                        <p class="text-[10px] text-on-surface-variant font-medium uppercase">Thiết bị chính</p>
+                        <p class="text-sm font-bold text-on-surface">Máy chiếu / Tivi</p>
+                    </div>
+                </div>
+
+                <!-- Equipment Detail List -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-xs font-bold text-on-surface uppercase tracking-wider">Danh sách thiết bị đi kèm</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-on-surface">
+                        <div class="flex items-center gap-2.5 p-2.5 rounded-lg border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-primary text-lg">videocam</span>
+                            <span class="font-medium">Hệ thống Camera hội nghị chất lượng cao</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 p-2.5 rounded-lg border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-primary text-lg">settings_voice</span>
+                            <span class="font-medium">02 Mic không dây & Hệ thống âm thanh vòm</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 p-2.5 rounded-lg border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-primary text-lg">ac_unit</span>
+                            <span class="font-medium">Hệ thống điều hòa trung tâm độc lập</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 p-2.5 rounded-lg border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-primary text-lg">board</span>
+                            <span class="font-medium">Bảng kính viết bút dạ di động</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Card -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                <div class="bg-primary/5 px-5 py-3 border-b border-outline-variant/10 flex justify-between items-center">
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-wider font-manrope">Lịch sử dụng trong tuần</h2>
+                    <span class="text-[10px] font-semibold text-on-surface-variant italic">Tuần từ 01/06/2026 - 05/06/2026</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-surface-container-high text-on-surface-variant font-semibold">
+                                <th class="px-5 py-3 w-28">Thứ / Ngày</th>
+                                <th class="px-5 py-3 w-24 text-center">Buổi</th>
+                                <th class="px-5 py-3 w-40">Người đăng ký</th>
+                                <th class="px-5 py-3">Mục đích / Nội dung cuộc họp</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-surface-container text-on-surface">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-5 py-3.5 font-bold" rowspan="2">Thứ Hai<br><span class="text-[10px] text-on-surface-variant font-normal">01/06/2026</span></td>
+                                <td class="px-5 py-3.5 text-center"><span class="px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[9px] uppercase">Sáng</span></td>
+                                <td class="px-5 py-3.5 font-semibold">Văn phòng Trường</td>
+                                <td class="px-5 py-3.5 text-on-surface-variant">Họp giao ban đầu tuần văn phòng</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors border-b">
+                                <td class="px-5 py-3.5 text-center"><span class="px-2.5 py-0.5 rounded bg-orange-100 text-orange-800 font-bold text-[9px] uppercase">Chiều</span></td>
+                                <td class="px-5 py-3.5 font-semibold">Phòng Đào tạo</td>
+                                <td class="px-5 py-3.5 text-on-surface-variant">Thảo luận kế hoạch tuyển sinh đại học năm 2026</td>
+                            </tr>
+                            
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-5 py-3.5 font-bold" rowspan="2">Thứ Ba<br><span class="text-[10px] text-on-surface-variant font-normal">02/06/2026</span></td>
+                                <td class="px-5 py-3.5 text-center"><span class="px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[9px] uppercase">Sáng</span></td>
+                                <td class="px-5 py-3.5 text-gray-400 italic">Trống lịch</td>
+                                <td class="px-5 py-3.5 text-gray-400 italic">-</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors border-b">
+                                <td class="px-5 py-3.5 text-center"><span class="px-2.5 py-0.5 rounded bg-orange-100 text-orange-800 font-bold text-[9px] uppercase">Chiều</span></td>
+                                <td class="px-5 py-3.5 font-semibold">Khoa CNTT</td>
+                                <td class="px-5 py-3.5 text-on-surface-variant">Họp hội đồng nghiệm thu đề tài cấp cơ sở</td>
+                            </tr>
+
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-5 py-3.5 font-bold">Thứ Tư<br><span class="text-[10px] text-on-surface-variant font-normal">03/06/2026</span></td>
+                                <td class="px-5 py-3.5 text-center"><span class="px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[9px] uppercase">Sáng</span></td>
+                                <td class="px-5 py-3.5 font-semibold">Ban Thanh tra Pháp chế</td>
+                                <td class="px-5 py-3.5 text-on-surface-variant">Tập huấn quy chế thi cử và thanh tra nội bộ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3: Photo / Layout sketch & Quick Notes -->
+        <div class="space-y-6">
+            <!-- Room Image / Visual Sketch -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                <div class="bg-primary/5 px-5 py-3 border-b border-outline-variant/10">
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-wider font-manrope">SƠ ĐỒ PHÒNG HỌP</h2>
+                </div>
+                <div class="p-6 flex flex-col items-center justify-center space-y-4">
+                    <!-- Custom SVG representation of room configuration -->
+                    <div class="w-full max-w-[240px] aspect-[4/3] bg-surface-container-low rounded-lg p-4 flex flex-col justify-between border border-outline-variant/20 relative">
+                        <!-- TV screen indicator -->
+                        <div class="h-2 w-16 bg-red-500 rounded mx-auto -mt-1 shadow-sm flex items-center justify-center"><span class="text-[6px] text-white font-bold">TIVI</span></div>
+                        
+                        <!-- Table and Chairs -->
+                        <div class="flex-1 flex items-center justify-center my-2">
+                            <div class="w-24 h-12 bg-primary/20 border-2 border-primary rounded-full relative flex items-center justify-center">
+                                <span class="text-[9px] font-bold text-primary">BÀN HỌP</span>
+                                
+                                <!-- Chairs representation -->
+                                <div class="absolute -top-3 left-1 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                <div class="absolute -top-3 left-7 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                <div class="absolute -top-3 left-14 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                
+                                <div class="absolute -bottom-3 left-1 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                <div class="absolute -bottom-3 left-7 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                <div class="absolute -bottom-3 left-14 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+
+                                <div class="absolute -left-3 top-4.5 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                                <div class="absolute -right-3 top-4.5 w-2.5 h-2.5 bg-on-surface-variant rounded-sm"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-[9px] text-center text-on-surface-variant font-medium">Bố trí bàn chữ U - Sức chứa 15-20 ghế</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regulations / Quick Guidelines -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                <div class="bg-primary/5 px-5 py-3 border-b border-outline-variant/10">
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-wider font-manrope">NỘI QUY SỬ DỤNG</h2>
+                </div>
+                <div class="p-5 text-xs text-on-surface-variant space-y-3.5 leading-relaxed">
+                    <div class="flex gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm mt-0.5">verified_user</span>
+                        <p>Đăng ký trước ít nhất 24 giờ trên hệ thống quản lý lịch.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm mt-0.5">power_settings_new</span>
+                        <p>Tắt toàn bộ thiết bị điện, điều hòa, máy chiếu và khóa cửa sau khi kết thúc.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm mt-0.5">clean_hands</span>
+                        <p>Giữ gìn vệ sinh chung, không mang đồ ăn thức uống có mùi vào phòng họp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Beautiful Custom Delete Confirmation Dialog (Shared with calendar pages) -->
+<div id="custom-confirm-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                <span class="material-symbols-outlined text-3xl">warning</span>
+            </div>
+            <h3 class="text-base font-extrabold text-on-surface font-manrope">Xác nhận xóa phòng họp</h3>
+            <p id="confirm-modal-text" class="text-xs text-on-surface-variant font-medium leading-relaxed">Bạn có chắc chắn muốn xóa phòng họp này không? Hành động này không thể hoàn tác.</p>
+        </div>
+        <div class="flex gap-3 pt-1">
+            <button onclick="closeDeleteDialog()" class="flex-1 py-2.5 px-4 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl text-xs font-bold transition">Hủy bỏ</button>
+            <button id="confirm-delete-btn" class="flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition shadow-md">Xóa vĩnh viễn</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let targetRoomName = '';
+    let isRedirectAfterDelete = false;
+
+    function showDeleteDialog(roomName, redirectOnSuccess = false) {
+        targetRoomName = roomName;
+        isRedirectAfterDelete = redirectOnSuccess;
+        
+        const modal = document.getElementById('custom-confirm-modal');
+        document.getElementById('confirm-modal-text').innerText = `Bạn có chắc chắn muốn xóa "${roomName}"? Tất cả lịch họp của phòng này cũng sẽ bị hủy.`;
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+
+        // Assign action to confirm button
+        document.getElementById('confirm-delete-btn').onclick = executeDelete;
+    }
+
+    function closeDeleteDialog() {
+        const modal = document.getElementById('custom-confirm-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    function executeDelete() {
+        closeDeleteDialog();
+        
+        // Notify success via simulated notification toast or simple alert
+        setTimeout(() => {
+            alert(`Đã xóa thành công phòng họp "${targetRoomName}"!`);
+            if (isRedirectAfterDelete) {
+                loadPage('../pages/calendar/phong-hop.html');
+            }
+        }, 350);
+    }
+</script>

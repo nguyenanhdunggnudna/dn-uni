@@ -2,10 +2,10 @@
     <!-- Header Section -->
     <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <button onclick="loadPage('../pages/incoming-documents/van-ban-chi-dao.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
+            <button onclick="loadPage('../pages/incoming-documents/van-ban-but-phe.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
                 <span class="material-symbols-outlined text-xl">arrow_back</span>
             </button>
-            <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản chỉ đạo</h1>
+            <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản bút phê</h1>
         </div>
 
         <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
@@ -13,7 +13,7 @@
                 Nội dung
             </button>
             <button onclick="switchTab('luong')" id="btn-tab-luong" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
-                Luồng ý kiến chỉ đạo
+                Luồng ý kiến bút phê
             </button>
         </div>
     </div>
@@ -25,31 +25,41 @@
                 <tbody>
                     <tr class="border-b border-gray-300">
                         <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trích yếu nội dung</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300">Tờ trình về việc đề nghị ban hành Quyết định thành lập Hội đồng xét công nhận tốt nghiệp đại học hình thức đào tạo từ xa, ngành Ngôn ngữ Anh, lớp AV31.1B2VTA mở tại Trường Cao đẳng Kỹ thuật Công nghệ Bà Rịa Vũng Tàu và đợt bổ sung lớp AV28.2B2 mở tại Trung tâm Đào tạo Thường xuyên - Đại học Đà Nẵng</td>
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trạng thái</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%]">
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300" colspan="3">Về việc thông báo đoàn khách nước ngoài đến làm việc tại Trường Đại học Bách khoa - ĐHĐN</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Số đến</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">13</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày đến</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">23/03/2026</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ký hiệu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">1340/ĐHBK-KHCN&ĐN</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Cơ quan ban hành</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">Trường Đại học Bách khoa - ĐHĐN</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Chủ trì</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">Phòng để Test 1</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Hạn xử lý</td>
+                        <td class="px-4 py-3.5 text-red-500 font-bold italic">Chưa thiết lập (None)</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Trạng thái</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3">
                             <span class="inline-flex items-center px-4 py-1.5 bg-[#FFB300] text-white rounded-full text-xs font-bold shadow-sm">
                                 Đang xử lý
                             </span>
                         </td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày nhận</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">19/03/2026 2:14:19 PM</td>
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày hạn xử lý</td>
-                        <td class="px-4 py-3.5 text-red-500 font-bold italic">Chưa thiết lập (None)</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Đơn vị gửi</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3">Trung tâm Đào tạo Thường xuyên - Đại học Đà Nẵng</td>
                     </tr>
                     <tr>
                         <td class="px-4 py-4 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Tệp văn bản đính kèm</td>
                         <td class="px-4 py-4 text-gray-800 font-medium space-y-2" colspan="3">
                             <div class="flex items-center gap-2">
                                 <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
-                                <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">TTr_ThanhLapHoiDong_AV31_TDTX.pdf</a>
-                                <span class="text-gray-400 text-xs">(4.1 MB)</span>
+                                <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">1340_DHBK_ThongBaoDoanKhach.pdf</a>
+                                <span class="text-gray-400 text-xs">(2.4 MB)</span>
                             </div>
                         </td>
                     </tr>
@@ -63,7 +73,7 @@
         <div class="bg-white border border-gray-300 rounded-xl p-8 shadow-sm">
             <h3 class="text-base font-bold text-gray-800 mb-6 flex items-center gap-2">
                 <span class="material-symbols-outlined text-[#0f56b3]">account_tree</span>
-                <span>Tiến trình chỉ đạo xử lý văn bản đến</span>
+                <span>Ý kiến bút phê chỉ đạo xử lý văn bản</span>
             </h3>
             
             <div class="relative pl-10 border-l-2 border-gray-200 space-y-8">
@@ -74,10 +84,10 @@
                     <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
                         <div class="flex items-center justify-between mb-2">
                             <span class="text-xs font-bold text-green-600 uppercase">1. Tiếp nhận văn bản đến</span>
-                            <span class="text-xs text-gray-500 font-semibold">19/03/2026 02:14 PM</span>
+                            <span class="text-xs text-gray-500 font-semibold">23/03/2026 09:30 AM</span>
                         </div>
                         <p class="text-sm font-bold text-gray-800">Bộ phận Văn thư trường</p>
-                        <p class="text-xs text-gray-600 mt-1">Đã cập nhật tờ trình chuyển tiếp đến Ban giám hiệu và bộ phận chuyên môn xem xét.</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã cập nhật công văn và chuyển tiếp đến Ban giám hiệu phê duyệt.</p>
                     </div>
                 </div>
 
@@ -87,11 +97,13 @@
                     </div>
                     <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
                         <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold text-green-600 uppercase">2. Ý kiến chỉ đạo từ Ban Giám Hiệu</span>
-                            <span class="text-xs text-gray-500 font-semibold">19/03/2026 03:00 PM</span>
+                            <span class="text-xs font-bold text-green-600 uppercase">2. Bút phê Ban Giám Hiệu</span>
+                            <span class="text-xs text-gray-500 font-semibold">23/03/2026 10:15 AM</span>
                         </div>
-                        <p class="text-sm font-bold text-gray-800">Hiệu trưởng Đại học Đà Nẵng</p>
-                        <p class="text-xs text-gray-600 mt-1">Bút phê chỉ đạo: "Chuyển Ban Đào tạo kiểm tra hồ sơ, chuẩn bị quyết định thành lập hội đồng xét tốt nghiệp theo đúng quy chế hiện hành."</p>
+                        <p class="text-sm font-bold text-gray-800 font-manrope text-primary">Hiệu trưởng ký duyệt</p>
+                        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-gray-700 font-medium mt-1">
+                            Bút phê chỉ đạo: "Giao Phòng để Test 1 chủ trì phối hợp các đơn vị chuẩn bị chu đáo đón tiếp đoàn khách quốc tế theo kế hoạch."
+                        </div>
                     </div>
                 </div>
 
@@ -101,11 +113,11 @@
                     </div>
                     <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200">
                         <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold text-amber-600 uppercase">3. Ban Đào tạo đang xử lý</span>
+                            <span class="text-xs font-bold text-amber-600 uppercase">3. Đơn vị đang triển khai</span>
                             <span class="text-xs text-gray-500 font-semibold">Đang tiến hành</span>
                         </div>
-                        <p class="text-sm font-bold text-gray-800">Ban Đào tạo (Đơn vị chủ trì)</p>
-                        <p class="text-xs text-gray-600 mt-1">Đang phối hợp với Trung tâm Đào tạo Thường xuyên thẩm định hồ sơ tốt nghiệp của các lớp học liên kết để lập Quyết định thành lập hội đồng chính thức.</p>
+                        <p class="text-sm font-bold text-gray-800">Phòng để Test 1 (Đơn vị chủ trì)</p>
+                        <p class="text-xs text-gray-600 mt-1">Đang liên hệ các bên để sắp xếp lịch trình và chương trình làm việc cụ thể.</p>
                     </div>
                 </div>
             </div>

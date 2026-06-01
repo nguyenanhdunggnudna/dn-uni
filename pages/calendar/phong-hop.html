@@ -3,10 +3,10 @@
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 class="text-xl font-bold text-[#333]">Phòng họp</h1>
         <div class="flex items-center gap-3">
-            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
+            <button onclick="saveChanges()" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 text-sm">
                 Lưu thay đổi
             </button>
-            <button class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 flex items-center gap-2 text-sm">
+            <button onclick="loadPage('../pages/calendar/them-phong-hop.html')" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2.5 rounded-lg font-bold shadow-sm transition-all active:scale-95 flex items-center gap-2 text-sm">
                 <span class="material-symbols-outlined text-[20px]">add</span>
                 Thêm mới
             </button>
@@ -60,19 +60,19 @@
                                 <td class="px-6 py-4 text-sm text-gray-600 text-center">1</td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-700">Phòng họp nhỏ</td>
                                 <td class="px-6 py-4 text-center">
-                                    <button class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
+                                    <button onclick="showDeleteDialog('Phòng họp nhỏ')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
                                         XN xóa
                                     </button>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
-                                        <button title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
                                         <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
-                                        <button title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
+                                        <button onclick="showDeleteDialog('Phòng họp nhỏ')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">delete</span>
                                         </button>
                                     </div>
@@ -83,19 +83,19 @@
                                 <td class="px-6 py-4 text-sm text-gray-600 text-center">2</td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-700">Hội trường</td>
                                 <td class="px-6 py-4 text-center">
-                                    <button class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
+                                    <button onclick="showDeleteDialog('Hội trường')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
                                         XN xóa
                                     </button>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
-                                        <button title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
                                         <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
-                                        <button title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
+                                        <button onclick="showDeleteDialog('Hội trường')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">delete</span>
                                         </button>
                                     </div>
@@ -106,19 +106,19 @@
                                 <td class="px-6 py-4 text-sm text-gray-600 text-center">3</td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-700">Khác</td>
                                 <td class="px-6 py-4 text-center">
-                                    <button class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
+                                    <button onclick="showDeleteDialog('Phòng họp khác')" class="bg-[#E9ECEF] hover:bg-gray-200 text-[#495057] px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-colors">
                                         XN xóa
                                     </button>
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-center gap-2">
-                                        <button title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
+                                        <button onclick="loadPage('../pages/calendar/chi-tiet-phong-hop.html')" title="Xem" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">visibility</span>
                                         </button>
                                         <button title="Sửa" class="p-2 bg-[#F1F3F5] hover:bg-gray-200 text-gray-600 rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </button>
-                                        <button title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
+                                        <button onclick="showDeleteDialog('Phòng họp khác')" title="Xóa" class="p-2 bg-[#FFF0F0] hover:bg-[#FFE0E0] text-[#FF4D4D] rounded-lg transition-all active:scale-95">
                                             <span class="material-symbols-outlined text-[20px]">delete</span>
                                         </button>
                                     </div>
@@ -131,7 +131,7 @@
                 <!-- Pagination Footer -->
                 <div class="px-6 py-4 bg-[#F8F9FA] flex flex-col md:flex-row items-center justify-between gap-4 border-t border-gray-100">
                     <div class="text-sm text-gray-500">
-                        Hiển thị <span class="font-bold text-gray-700">1-10</span> trong tổng số <span class="font-bold text-gray-700">1000</span> mục
+                        Hiển thị <span class="font-bold text-gray-700">1-3</span> trong tổng số <span class="font-bold text-gray-700">3</span> mục
                     </div>
                     
                     <div class="flex items-center gap-6">
@@ -148,15 +148,11 @@
                         </div>
 
                         <nav class="flex items-center gap-1">
-                            <button class="p-1.5 text-gray-400 hover:bg-gray-100 rounded-lg transition-colors">
+                            <button class="p-1.5 text-gray-400 hover:bg-gray-100 rounded-lg transition-colors" disabled>
                                 <span class="material-symbols-outlined">chevron_left</span>
                             </button>
                             <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#0069D9] text-white text-sm font-bold shadow-sm">1</button>
-                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors">2</button>
-                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors">3</button>
-                            <span class="px-1 text-gray-400">...</span>
-                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors">10</button>
-                            <button class="p-1.5 text-gray-400 hover:bg-gray-100 rounded-lg transition-colors">
+                            <button class="p-1.5 text-gray-400 hover:bg-gray-100 rounded-lg transition-colors" disabled>
                                 <span class="material-symbols-outlined">chevron_right</span>
                             </button>
                         </nav>
@@ -166,6 +162,104 @@
         </div>
     </div>
 </div>
+
+<!-- Beautiful Custom Delete Confirmation Dialog -->
+<div id="custom-confirm-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                <span class="material-symbols-outlined text-3xl">warning</span>
+            </div>
+            <h3 class="text-base font-extrabold text-[#333] font-manrope">Xác nhận xóa</h3>
+            <p id="confirm-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Bạn có chắc chắn muốn xóa phòng họp này không? Hành động này không thể hoàn tác.</p>
+        </div>
+        <div class="flex gap-3 pt-1">
+            <button onclick="closeDeleteDialog()" class="flex-1 py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold transition">Hủy bỏ</button>
+            <button id="confirm-delete-btn" class="flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition shadow-md">Xóa vĩnh viễn</button>
+        </div>
+    </div>
+</div>
+
+<!-- Beautiful Custom Success Dialog -->
+<div id="custom-success-modal" class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-gray-100 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h3 id="success-modal-title" class="text-base font-extrabold text-[#333] font-manrope">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-gray-500 font-medium leading-relaxed">Thao tác đã được thực hiện thành công.</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()" class="flex-1 py-2.5 px-4 bg-[#0069D9] hover:bg-[#0056b3] text-white rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let targetRoomName = '';
+    let successDialogCallback = null;
+
+    function showDeleteDialog(roomName) {
+        targetRoomName = roomName;
+        const modal = document.getElementById('custom-confirm-modal');
+        document.getElementById('confirm-modal-text').innerText = `Bạn có chắc chắn muốn xóa "${roomName}"? Hành động này không thể hoàn tác.`;
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+
+        document.getElementById('confirm-delete-btn').onclick = executeDelete;
+    }
+
+    function closeDeleteDialog() {
+        const modal = document.getElementById('custom-confirm-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    function executeDelete() {
+        closeDeleteDialog();
+        setTimeout(() => {
+            showSuccessDialog("Đã xóa!", `Đã xóa thành công phòng họp "${targetRoomName}"!`);
+        }, 350);
+    }
+
+    function saveChanges() {
+        showSuccessDialog("Lưu thay đổi", "Lưu thay đổi phòng họp thành công!");
+    }
+
+    function showSuccessDialog(title, message, callback = null) {
+        const modal = document.getElementById('custom-success-modal');
+        document.getElementById('success-modal-title').innerText = title;
+        document.getElementById('success-modal-text').innerText = message;
+        successDialogCallback = callback;
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            if (successDialogCallback) {
+                successDialogCallback();
+                successDialogCallback = null;
+            }
+        }, 300);
+    }
+</script>
 
 <style>
     /* Reset selection colors to match primary brand */

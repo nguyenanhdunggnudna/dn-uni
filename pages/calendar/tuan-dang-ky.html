@@ -54,8 +54,8 @@
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-gray-500">3. Từ ngày <span class="text-red-500">*</span></label>
                     <div class="relative group">
-                        <input type="text" value="01/01/2026" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
-                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">calendar_month</span>
+                        <input type="date" id="tu-ngay" value="2026-01-01" onclick="this.showPicker()" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                        <span onclick="document.getElementById('tu-ngay').showPicker()" class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors cursor-pointer">calendar_month</span>
                     </div>
                 </div>
 
@@ -63,8 +63,8 @@
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-gray-500">4. Đến ngày <span class="text-red-500">*</span></label>
                     <div class="relative group">
-                        <input type="text" value="01/01/2026" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
-                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">calendar_month</span>
+                        <input type="date" id="den-ngay" value="2026-01-01" onclick="this.showPicker()" class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none text-gray-700" />
+                        <span onclick="document.getElementById('den-ngay').showPicker()" class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors cursor-pointer">calendar_month</span>
                     </div>
                 </div>
             </div>

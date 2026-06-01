@@ -46,6 +46,7 @@
                         <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-40 text-center">Hạn xử lý</th>
                         <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Nội dung</th>
                         <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant w-32 text-center">Trạng thái</th>
+                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant w-24 text-center">Thao tác</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant/10">
@@ -64,6 +65,11 @@
                         <td class="px-4 py-4 text-center">
                             <span
                                 class="inline-flex items-center px-4 py-1.5 bg-[#FFC107] text-white rounded-full text-[12px] font-bold shadow-sm">Đang xử lý</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-nhan.html')" class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm" title="Xem chi tiết">
+                                <span class="material-symbols-outlined text-base">visibility</span>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
