@@ -1,16 +1,260 @@
 <div class="px-8 py-6 space-y-6">
     <!-- Header Section -->
-    <div class="flex items-center gap-3">
-        <button onclick="loadPage('../pages/tasks/cong-viec-giao.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
-            <span class="material-symbols-outlined text-xl">arrow_back</span>
-        </button>
-        <h1 class="text-xl font-bold text-gray-800">Chi tiết Công việc</h1>
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/tasks/cong-viec-giao.html')"
+                class="p-2 bg-surface-container hover:bg-surface-container-high rounded-full transition text-on-surface flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-extrabold text-on-surface tracking-tight font-manrope">Chi tiết Công việc giao</h1>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="loadPage('../pages/tasks/chinh-sua-cong-viec.html')"
+                class="px-4 py-2 bg-primary hover:bg-primary-dim text-on-primary rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">edit</span>
+                <span>Chỉnh sửa</span>
+            </button>
+            <button onclick="showSuccessDialog('Xóa công việc', 'Đã xóa công việc thành công!', () => loadPage('../pages/tasks/cong-viec-giao.html'))"
+                class="px-4 py-2 bg-[#FF4500] hover:bg-red-700 text-white rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">delete</span>
+                <span>Xóa</span>
+            </button>
+        </div>
     </div>
 
-    <!-- Placeholder content -->
-    <div class="bg-white border border-gray-200 rounded-2xl p-12 flex flex-col items-center justify-center text-center shadow-sm min-h-[400px]">
-        <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">task</span>
-        <p class="text-gray-400 text-lg font-medium">Trang đang được phát triển</p>
-        <p class="text-gray-300 text-sm mt-1">Nội dung chi tiết công việc sẽ được hiển thị tại đây</p>
+    <!-- ===== SECTION 1: NỘI DUNG CÔNG VIỆC ===== -->
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+        <div class="bg-primary/5 px-5 py-3 border-b border-outline-variant/10">
+            <h2 class="text-sm font-bold text-primary uppercase tracking-wider font-manrope">NỘI DUNG CÔNG VIỆC GIAO</h2>
+        </div>
+        <div class="p-0">
+            <table class="w-full text-left border-collapse text-xs">
+                <tbody>
+                    <tr class="border-b border-outline-variant/10">
+                        <td
+                            class="px-5 py-3.5 bg-primary/5 text-primary font-bold w-[160px] border-r border-outline-variant/10">
+                            Nội dung</td>
+                        <td class="px-5 py-3.5 text-on-surface font-semibold text-sm">Xử lý công việc: test cv</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Yêu cầu</td>
+                        <td class="px-5 py-3.5 text-on-surface font-medium">test cvtest cvtest cvtest cvtest cv</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Hạn xử lý</td>
+                        <td class="px-5 py-3.5 text-red-600 font-bold">29/01/2026</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Người giao</td>
+                        <td class="px-5 py-3.5 text-on-surface font-medium">Lãnh đạo Ban Giám Hiệu</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Ký xử chính</td>
+                        <td class="px-5 py-3.5 text-on-surface font-medium">Chuyên viên A</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Phối hợp</td>
+                        <td class="px-5 py-3.5 text-on-surface font-medium">Chuyên viên B, Văn thư 1</td>
+                    </tr>
+                    <tr class="border-b border-outline-variant/10">
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            File đính kèm</td>
+                        <td class="px-5 py-3.5">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 text-base">picture_as_pdf</span>
+                                <a href="javascript:void(0)" class="text-primary hover:underline font-bold">cv-dinh-kem.pdf</a>
+                                <span class="text-on-surface-variant italic text-[10px]">(Xem nội dung)</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-5 py-3.5 bg-primary/5 text-primary font-bold border-r border-outline-variant/10">
+                            Ngày tạo</td>
+                        <td class="px-5 py-3.5 text-on-surface font-medium">27/01/2026 10:15:30 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 2: QUÁ TRÌNH XỬ LÝ ===== -->
+    <div class="space-y-3">
+        <div class="flex items-center justify-between bg-[#eef9fd] border-l-4 border-primary px-4 py-2.5 rounded-r-md">
+            <span class="font-bold text-primary tracking-wide text-sm font-manrope">QUÁ TRÌNH XỬ LÝ</span>
+            <div
+                class="flex items-center gap-1 bg-surface-container rounded-full p-0.5 border border-outline-variant/20">
+                <button onclick="switchProcessTab('all')" id="proc-tab-all"
+                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all bg-primary text-on-primary shadow-sm">Tất cả</button>
+                <button onclick="switchProcessTab('process')" id="proc-tab-process"
+                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Quá trình</button>
+                <button onclick="switchProcessTab('log')" id="proc-tab-log"
+                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Log</button>
+            </div>
+        </div>
+
+        <!-- TRAO ĐỔI, PHẢN HỒI -->
+        <div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-outline-variant/10 bg-surface-container-low/50">
+                <h3 class="text-xs font-bold text-on-surface uppercase tracking-wider">Trao đổi, Phản hồi</h3>
+            </div>
+            <div id="process-timeline-content" class="divide-y divide-outline-variant/10">
+                <!-- Entry 1 -->
+                <div class="flex items-start gap-4 px-5 py-4 hover:bg-surface-container-low/30 transition-colors process-item"
+                    data-cat="process">
+                    <div class="w-9 h-9 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-lg">person</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-xs font-bold text-on-surface">Chuyên viên A</p>
+                        <p class="text-[11px] text-on-surface-variant mt-0.5">Đã tiếp nhận yêu cầu và bắt đầu xử lý. <span
+                                class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-blue-100 text-blue-600 ml-1">Đang xử lý</span>
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-[10px] text-on-surface-variant whitespace-nowrap">27/01/2026 11:00:00 AM</span>
+                        <div class="flex gap-1">
+                            <button onclick="openChatModal('Chuyên viên A')" class="w-6 h-6 bg-amber-500 rounded flex items-center justify-center hover:bg-amber-600 transition" title="Nhắn tin"><span class="material-symbols-outlined text-white text-xs">chat</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 3: ĐƠN VỊ XỬ LÝ CHÍNH ===== -->
+    <div class="space-y-3">
+        <div class="flex items-center bg-[#eef9fd] border-l-4 border-primary px-4 py-2.5 rounded-r-md">
+            <span class="font-bold text-primary tracking-wide text-sm font-manrope">ĐƠN VỊ XỬ LÝ CHÍNH</span>
+        </div>
+        <div
+            class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl shadow-sm overflow-hidden divide-y divide-outline-variant/10">
+            <div class="flex items-start gap-4 px-5 py-4 hover:bg-surface-container-low/30 transition-colors">
+                <div class="w-9 h-9 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-secondary text-lg">groups</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-bold text-on-surface">Phòng Hành chính - Tổng hợp</p>
+                    <p class="text-[11px] text-on-surface-variant mt-0.5">Tiếp nhận phân xử lý chính <span
+                            class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-green-100 text-green-600 ml-1">Đã xử lý</span></p>
+                </div>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <span class="text-[10px] text-on-surface-variant whitespace-nowrap">27/01/2026 10:30:00 AM</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<!-- Custom Success Dialog -->
+<div id="custom-success-modal"
+    class="fixed inset-0 bg-black/60 z-[99999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div
+        class="bg-surface-container-lowest rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h3 id="success-modal-title" class="text-base font-extrabold text-on-surface font-manrope">Thành công</h3>
+            <p id="success-modal-text" class="text-xs text-on-surface-variant font-medium leading-relaxed">Thao tác đã được thực hiện thành công.</p>
+        </div>
+        <div class="flex pt-1">
+            <button onclick="closeSuccessDialog()"
+                class="flex-1 py-2.5 px-4 bg-primary hover:bg-primary-dim text-on-primary rounded-xl text-xs font-bold transition shadow-md">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Chat Modal (Rich Text Editor Dialog) -->
+<div id="custom-chat-modal" class="fixed inset-0 bg-black/60 z-[9999] flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg max-w-4xl w-full mx-4 shadow-2xl border border-gray-200 overflow-hidden flex flex-col font-sans">
+        <!-- Modal Header -->
+        <div class="bg-[#F8F9FA] px-6 py-3 border-b border-gray-200 flex items-center justify-between">
+            <h3 id="chat-modal-title" class="text-red-600 font-bold text-base">Nhắn tin</h3>
+            <button onclick="closeChatModal()" class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+        </div>
+        <!-- Modal Body -->
+        <div class="p-6 space-y-4 text-[13px] text-gray-700">
+            <div>
+                <label class="block font-medium mb-2">Nội dung:</label>
+                <!-- Editor Toolbar Mock -->
+                <div class="border border-gray-300 border-b-0 bg-[#F0F2F5] p-2 flex flex-wrap gap-1 items-center rounded-t">
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Bold"><span class="material-symbols-outlined text-base">format_bold</span></button>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Italic"><span class="material-symbols-outlined text-base">format_italic</span></button>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Underline"><span class="material-symbols-outlined text-base">format_underlined</span></button>
+                </div>
+                <!-- Textarea -->
+                <textarea rows="8" class="w-full border border-gray-300 rounded-b p-3 outline-none focus:ring-1 focus:ring-blue-500 text-sm resize-none" placeholder="Nhập nội dung tin nhắn..."></textarea>
+            </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="bg-[#F8F9FA] px-6 py-4 border-t border-gray-200 flex justify-start">
+            <button onclick="closeChatModal(); showSuccessDialog('Gửi tin nhắn', 'Đã gửi tin nhắn thành công!')" class="px-5 py-2 bg-[#51459E] hover:bg-[#433887] text-white rounded font-bold transition shadow-sm">Gửi tin nhắn</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchProcessTab(tabId) {
+        const tabs = ['all', 'process', 'log'];
+        tabs.forEach(t => {
+            const btn = document.getElementById('proc-tab-' + t);
+            if (t === tabId) {
+                btn.className = "px-4 py-1 rounded-full text-[10px] font-bold transition-all bg-primary text-on-primary shadow-sm";
+            } else {
+                btn.className = "px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface";
+            }
+        });
+
+        const items = document.querySelectorAll('.process-item');
+        items.forEach(item => {
+            if (tabId === 'all') {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.toggle('hidden', item.getAttribute('data-cat') !== tabId);
+            }
+        });
+    }
+
+    let successDialogCallback = null;
+
+    function showSuccessDialog(title, message, callback = null) {
+        const modal = document.getElementById('custom-success-modal');
+        document.getElementById('success-modal-title').innerText = title;
+        document.getElementById('success-modal-text').innerText = message;
+        successDialogCallback = callback;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 50);
+    }
+
+    function closeSuccessDialog() {
+        const modal = document.getElementById('custom-success-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            if (successDialogCallback) { successDialogCallback(); successDialogCallback = null; }
+        }, 300);
+    }
+
+    function openChatModal(title) {
+        document.getElementById('chat-modal-title').innerText = "Nhắn tin đến: " + title;
+        const modal = document.getElementById('custom-chat-modal');
+        modal.classList.remove('hidden');
+    }
+
+    function closeChatModal() {
+        const modal = document.getElementById('custom-chat-modal');
+        modal.classList.add('hidden');
+    }
+</script>
