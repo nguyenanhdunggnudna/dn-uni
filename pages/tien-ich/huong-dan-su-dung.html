@@ -1,0 +1,226 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-2xl font-bold text-on-surface">Hướng dẫn sử dụng</h1>
+            <p class="text-sm text-on-surface-variant mt-1">Tài liệu hướng dẫn quy trình nghiệp vụ cho các vai trò trên hệ thống</p>
+        </div>
+    </div>
+
+    <!-- Role Tabs -->
+    <div class="border-b border-outline-variant/20 bg-surface-container-lowest p-2 rounded-xl flex flex-wrap gap-2 shadow-sm">
+        <button onclick="switchTab('lanh-dao', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-blue-600 bg-blue-50">
+            Lãnh đạo
+        </button>
+        <button onclick="switchTab('truong-ban', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low">
+            Trưởng, phó các Ban, phòng
+        </button>
+        <button onclick="switchTab('van-thu', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low">
+            Văn thư
+        </button>
+        <button onclick="switchTab('chuyen-vien', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low">
+            Chuyên viên
+        </button>
+        <button onclick="switchTab('ky-so', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low">
+            Ký số
+        </button>
+        <button onclick="switchTab('khac', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low">
+            Khác
+        </button>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/5">
+        
+        <!-- Tab Content: Lãnh đạo -->
+        <div id="content-lanh-dao" class="tab-content space-y-8">
+            <div>
+                <h2 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    1. Văn bản đến – văn bản bút phê
+                </h2>
+                
+                <!-- Grid of instruction steps (Placeholders for images) -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <!-- @* .NET Developer: Loop and output steps here *@ -->
+                    <!-- Step 1 -->
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4 transition-colors group-hover:bg-blue-50/25">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1 group-hover:text-blue-500 transition-colors">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 1</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 1: Truy cập văn bản đến</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Lãnh đạo chọn mục Văn bản đến từ thanh menu điều hướng trái.</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4 transition-colors group-hover:bg-blue-50/25">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1 group-hover:text-blue-500 transition-colors">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 2</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 2: Chọn văn bản cần bút phê</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Nhấn chọn vào dòng văn bản có trạng thái "Chờ xử lý".</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4 transition-colors group-hover:bg-blue-50/25">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1 group-hover:text-blue-500 transition-colors">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 3</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 3: Nhập nội dung chỉ đạo</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Ghi ý kiến chỉ đạo, giao việc trực tiếp vào ô Bút phê chỉ đạo.</div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4 transition-colors group-hover:bg-blue-50/25">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1 group-hover:text-blue-500 transition-colors">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 4</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 4: Chọn đơn vị phối hợp</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Chọn các phòng ban hoặc cá nhân chịu trách nhiệm xử lý chính và phối hợp.</div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4 transition-colors group-hover:bg-blue-50/25">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1 group-hover:text-blue-500 transition-colors">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 5</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 5: Ký duyệt & Chuyển</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Hoàn thành quy trình bằng nút lưu và phê duyệt chuyển tiếp văn bản.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Trưởng ban -->
+        <div id="content-truong-ban" class="tab-content hidden space-y-8">
+            <div>
+                <h2 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    1. Phân công xử lý công việc cho chuyên viên
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 1</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 1: Tiếp nhận văn bản</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Vào danh sách văn bản chuyển đến ban phòng.</div>
+                    </div>
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 2</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 2: Chỉ đạo chi tiết</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Nhập ý kiến xử lý của lãnh đạo ban.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Văn thư -->
+        <div id="content-van-thu" class="tab-content hidden space-y-8">
+            <div>
+                <h2 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    1. Tiếp nhận và Vào sổ văn bản đến
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 1</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 1: Quét/Upload file văn bản</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Số hóa tài liệu giấy và đính kèm vào hệ thống.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Chuyên viên -->
+        <div id="content-chuyen-vien" class="tab-content hidden space-y-8">
+            <div>
+                <h2 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    1. Báo cáo tiến độ và Nộp kết quả xử lý
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh bước 1</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 1: Thực hiện xử lý nhiệm vụ</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Xem chi tiết nhiệm vụ và đính kèm dự thảo hoặc văn bản xử lý.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Ký số -->
+        <div id="content-ky-so" class="tab-content hidden space-y-8">
+            <div>
+                <h2 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    1. Hướng dẫn cấu hình và thực hiện Ký số SIM/Token
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="group flex flex-col gap-2 bg-surface-container-low rounded-xl p-3 border border-outline-variant/10 hover:border-blue-200 transition-all hover:shadow-md">
+                        <div class="aspect-[4/3] rounded-lg bg-surface-variant/40 border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center p-4">
+                            <span class="material-symbols-outlined text-outline/60 text-3xl mb-1">image</span>
+                            <span class="text-xs text-on-surface-variant/60">Hình ảnh cấu hình</span>
+                        </div>
+                        <div class="text-xs font-semibold text-on-surface">Bước 1: Cài đặt Plugin ký số</div>
+                        <div class="text-[11px] text-on-surface-variant line-clamp-2">Tải phần mềm ký số Ban Cơ yếu hoặc nhà cung cấp tương thích.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Khác -->
+        <div id="content-khac" class="tab-content hidden space-y-8">
+            <div class="text-center py-12 text-on-surface-variant">
+                <span class="material-symbols-outlined text-5xl text-outline/40 mb-2">support_agent</span>
+                <p class="font-medium text-base">Tài liệu khác</p>
+                <p class="text-xs text-on-surface-variant/75 mt-1">Các tài liệu hướng dẫn phụ trợ và khắc phục sự cố hệ thống</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function switchTab(tabId, btn) {
+        // Hide all tab content
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        
+        // Show target tab content
+        const targetContent = document.getElementById('content-' + tabId);
+        if (targetContent) {
+            targetContent.classList.remove('hidden');
+        }
+        
+        // Reset button states
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.classList.remove('text-blue-600', 'bg-blue-50');
+            button.classList.add('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container-low');
+        });
+        
+        // Activate current button
+        btn.classList.add('text-blue-600', 'bg-blue-50');
+        btn.classList.remove('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container-low');
+    }
+</script>

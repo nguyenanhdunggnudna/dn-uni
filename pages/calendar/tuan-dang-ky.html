@@ -158,6 +158,12 @@
 </div>
 
 <style>
+    /* Hide default calendar icon in date input */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        cursor: pointer;
+    }
+
     /* Reset selection colors to match primary brand */
     ::selection {
         background-color: rgba(0, 105, 217, 0.1);

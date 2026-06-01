@@ -230,10 +230,21 @@
         <!-- } -->
     </nav>
 
-    <div class="p-4 border-t border-gray-100">
-        <button
-            class="flex items-center p-3 text-gray-600 w-full hover:bg-red-50 hover:text-red-600 rounded-lg transition font-medium">
-            <i class="fas fa-sign-out-alt w-6"></i> <span>Đăng xuất</span>
+    <div class="p-4 border-t border-gray-100 space-y-1">
+        <a href="javascript:void(0)" onclick="loadPage('../pages/tien-ich/huong-dan-su-dung.html')"
+            class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition font-medium">
+            <span class="material-symbols-outlined text-gray-500 text-lg w-6 text-center">help</span>
+            <span>Hướng dẫn sử dụng</span>
+        </a>
+        <a href="javascript:void(0)" onclick="loadPage('../pages/tien-ich/nhom-nguoi-nhan.html')"
+            class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition font-medium">
+            <span class="material-symbols-outlined text-gray-500 text-lg w-6 text-center">groups</span>
+            <span>Nhóm người nhận</span>
+        </a>
+        <button onclick="logout()"
+            class="flex items-center gap-3 p-3 text-gray-600 w-full hover:bg-red-50 hover:text-red-600 rounded-lg transition font-medium">
+            <span class="material-symbols-outlined text-gray-500 text-lg w-6 text-center">logout</span>
+            <span>Đăng xuất</span>
         </button>
     </div>
 </aside>
