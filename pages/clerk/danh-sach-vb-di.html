@@ -1,0 +1,295 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between">
+        <h1 class="text-xl font-bold text-gray-800">Danh sách VB đi</h1>
+        <button onclick="loadPage('../pages/clerk/ban-hanh-van-ban.html')" class="px-6 py-2.5 bg-[#0f56b3] hover:bg-blue-700 text-white rounded font-bold text-sm transition shadow-sm">
+            Thêm mới
+        </button>
+    </div>
+
+    <!-- Filter Section (with green left border) -->
+    <div class="bg-[#eaf8f4]/60 border-l-[3px] border-[#22c55e] p-4 rounded-r flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <!-- Năm -->
+            <div class="flex items-center gap-2">
+                <span class="text-blue-600 font-semibold text-sm">Năm:</span>
+                <div class="relative">
+                    <select class="appearance-none bg-white border border-gray-300 rounded px-3 py-1.5 pr-8 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm cursor-pointer w-28">
+                        <option>Tất cả</option>
+                        <option>2026</option>
+                        <option>2025</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-lg">expand_more</span>
+                </div>
+            </div>
+
+            <!-- Tháng -->
+            <div class="flex items-center gap-2">
+                <span class="text-blue-600 font-semibold text-sm">Tháng:</span>
+                <div class="relative">
+                    <select class="appearance-none bg-white border border-gray-300 rounded px-3 py-1.5 pr-8 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm cursor-pointer w-28">
+                        <option>Tất cả</option>
+                        <option>Tháng 1</option>
+                        <option>Tháng 2</option>
+                        <option>Tháng 3</option>
+                        <option>Tháng 4</option>
+                        <option>Tháng 5</option>
+                        <option>Tháng 6</option>
+                        <option>Tháng 7</option>
+                        <option>Tháng 8</option>
+                        <option>Tháng 9</option>
+                        <option>Tháng 10</option>
+                        <option>Tháng 11</option>
+                        <option>Tháng 12</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-lg">expand_more</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search input & button -->
+        <div class="flex items-center">
+            <input type="text" placeholder="Search" class="bg-white border border-[#dcae1d] rounded-l px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm w-48 shadow-sm">
+            <button class="bg-[#788896] hover:bg-[#647482] text-white px-4 py-1.5 rounded-r text-sm font-semibold transition shadow-sm">
+                Tìm
+            </button>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+        <div class="overflow-x-auto text-xs">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-100 border-b border-gray-300 text-gray-700 font-bold">
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-12">TT</th>
+                        <th class="px-3 py-3 border-r border-gray-300 w-44">Số văn bản</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-28">Ngày BH</th>
+                        <th class="px-3 py-3 border-r border-gray-300 w-48">Đơn vị BH</th>
+                        <th class="px-3 py-3 border-r border-gray-300">Trích yếu</th>
+                        <th class="px-3 py-3 border-r border-gray-300 text-center w-28">Hạn xử lý</th>
+                        <th class="px-3 py-3 text-center w-24"></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-300 text-gray-800">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">1</td>
+                        <td class="px-3 py-4 border-r border-gray-300 font-semibold">32/QĐ--CFFFF</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">27/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-[#e53935] font-semibold">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">nhap thu</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button onclick="showRouteFlow()" class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button onclick="confirmDeleteDocument(1, '32/QĐ--CFFFF')" class="w-8 h-8 rounded bg-[#E53935] hover:bg-red-700 flex items-center justify-center text-white col-span-2 mx-auto w-[72px]" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">assignment_late</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">2</td>
+                        <td class="px-3 py-4 border-r border-gray-300 font-semibold">18/QĐ-JJJJ</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">19/03/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-[#e53935] font-semibold">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">phieu trinh lan 2</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button onclick="showRouteFlow()" class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button onclick="confirmDeleteDocument(2, '18/QĐ-JJJJ')" class="w-8 h-8 rounded bg-[#E53935] hover:bg-red-700 flex items-center justify-center text-white col-span-2 mx-auto w-[72px]" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">assignment_late</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">3</td>
+                        <td class="px-3 py-4 border-r border-gray-300 font-semibold">1/546546456546</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">01/05/2026</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-[#e53935] font-semibold">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">tetst ttung dong dau</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button onclick="showRouteFlow()" class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button onclick="confirmDeleteDocument(3, '1/546546456546')" class="w-8 h-8 rounded bg-[#E53935] hover:bg-red-700 flex items-center justify-center text-white col-span-2 mx-auto w-[72px]" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">assignment_late</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">4</td>
+                        <td class="px-3 py-4 border-r border-gray-300 font-semibold">55/QĐ-ĐHĐN</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">15/12/2025</td>
+                        <td class="px-3 py-4 border-r border-gray-300"></td>
+                        <td class="px-3 py-4 border-r border-gray-300">ban hanh thu van ban</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button onclick="showRouteFlow()" class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button onclick="confirmDeleteDocument(4, '55/QĐ-ĐHĐN')" class="w-8 h-8 rounded bg-[#E53935] hover:bg-red-700 flex items-center justify-center text-white col-span-2 mx-auto w-[72px]" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">assignment_late</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">5</td>
+                        <td class="px-3 py-4 border-r border-gray-300 font-semibold">55/QĐ-ĐHĐN</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center">20/11/2025</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-[#e53935] font-semibold">Phòng để Test 1</td>
+                        <td class="px-3 py-4 border-r border-gray-300">ban hanh thu vn noi bo</td>
+                        <td class="px-3 py-4 border-r border-gray-300 text-center"></td>
+                        <td class="px-3 py-4 text-center">
+                            <div class="grid grid-cols-2 gap-1 w-[72px] mx-auto">
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-8 h-8 rounded bg-[#00A8B5] hover:bg-[#00929D] flex items-center justify-center text-white" title="Xem chi tiết">
+                                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                </button>
+                                <button onclick="showRouteFlow()" class="w-8 h-8 rounded bg-[#FFB703] hover:bg-[#E0A000] flex items-center justify-center text-white" title="Xem luồng xử lý">
+                                    <span class="material-symbols-outlined text-[18px]">account_tree</span>
+                                </button>
+                                <button onclick="confirmDeleteDocument(5, '55/QĐ-ĐHĐN')" class="w-8 h-8 rounded bg-[#E53935] hover:bg-red-700 flex items-center justify-center text-white col-span-2 mx-auto w-[72px]" title="Xóa">
+                                    <span class="material-symbols-outlined text-[18px]">assignment_late</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Confirmation Dialog Modal -->
+<div id="deleteConfirmModal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeDeleteModal()"></div>
+    
+    <!-- Modal Content -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden p-8 animate-in fade-in zoom-in duration-200">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">Xác nhận xóa</h3>
+            <button onclick="closeDeleteModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                <span class="material-symbols-outlined text-2xl font-bold">close</span>
+            </button>
+        </div>
+        
+        <p id="deleteConfirmText" class="text-gray-600 text-lg leading-relaxed mb-10">
+            Bạn có chắc chắn muốn xóa văn bản đi này không? Hành động này không thể khôi phục.
+        </p>
+        
+        <div class="flex items-center gap-4">
+            <button onclick="closeDeleteModal()" class="flex-1 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-2xl transition-all text-lg">
+                Hủy bỏ
+            </button>
+            <button id="btnConfirmDelete" class="flex-1 py-4 bg-[#E53935] hover:bg-red-700 text-white font-bold rounded-2xl transition-all text-lg shadow-lg shadow-red-200">
+                Xóa
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let selectedDocId = null;
+
+    function confirmDeleteDocument(id, docNumber) {
+        selectedDocId = id;
+        const textElem = document.getElementById('deleteConfirmText');
+        textElem.innerText = `Bạn có chắc chắn muốn xóa văn bản số "${docNumber}" không? Hành động này không thể khôi phục.`;
+        
+        const confirmBtn = document.getElementById('btnConfirmDelete');
+        confirmBtn.onclick = function() {
+            // Logic to delete row
+            showToast(`Đã xóa văn bản "${docNumber}" thành công!`, 'success');
+            closeDeleteModal();
+            // Optional: remove row from DOM
+        };
+        
+        const modal = document.getElementById('deleteConfirmModal');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDeleteModal() {
+        const modal = document.getElementById('deleteConfirmModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function showRouteFlow() {
+        showToast("Đang hiển thị luồng xử lý văn bản...", "info");
+    }
+
+    function showToast(message, type = 'success') {
+        let toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none';
+            document.body.appendChild(toastContainer);
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-sm transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto bg-white`;
+        
+        let icon = 'check_circle';
+        let iconColor = 'text-green-500';
+        let borderColor = 'border-green-100';
+        
+        if (type === 'error') {
+            icon = 'error';
+            iconColor = 'text-red-500';
+            borderColor = 'border-red-100';
+        } else if (type === 'info') {
+            icon = 'info';
+            iconColor = 'text-blue-500';
+            borderColor = 'border-blue-100';
+        }
+        
+        toast.innerHTML = `
+            <span class="material-symbols-outlined ${iconColor}">${icon}</span>
+            <span class="text-gray-800 font-medium">${message}</span>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.remove('translate-y-2', 'opacity-0');
+        }, 10);
+        
+        setTimeout(() => {
+            toast.classList.add('translate-y-2', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 3000);
+    }
+</script>

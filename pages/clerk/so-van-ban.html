@@ -41,15 +41,15 @@
                 placeholder="Đến số" type="text" />
 
             <!-- Action Buttons -->
-            <button class="bg-primary hover:bg-primary-dim text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow-sm">Lưu</button>
-            <button class="bg-primary hover:bg-primary-dim text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow-sm">Tạo sổ</button>
+            <button onclick="handleSave()" class="bg-primary hover:bg-primary-dim text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow-sm">Lưu</button>
+            <button onclick="handleCreateBook()" class="bg-primary hover:bg-primary-dim text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow-sm">Tạo sổ</button>
         </div>
 
         <div class="flex items-center gap-3">
-            <button class="p-2.5 bg-surface-container-lowest border border-outline-variant/10 text-on-surface-variant hover:text-primary hover:shadow-md rounded-xl transition-all flex items-center justify-center">
+            <button onclick="handleRefresh()" class="p-2.5 bg-surface-container-lowest border border-outline-variant/10 text-on-surface-variant hover:text-primary hover:shadow-md rounded-xl transition-all flex items-center justify-center">
                 <span class="material-symbols-outlined text-xl">refresh</span>
             </button>
-            <button class="bg-primary hover:bg-primary-dim text-white px-4 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2 shadow-sm">
+            <button onclick="handleExport()" class="bg-primary hover:bg-primary-dim text-white px-4 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2 shadow-sm">
                 <span class="material-symbols-outlined text-lg">upload</span>
                 Xuất file
             </button>
@@ -89,8 +89,8 @@
                         <td class="px-4 py-4 border-r border-outline-variant/10">59217</td>
                         <td class="px-4 py-4 text-center">
                             <div class="flex items-center justify-center gap-2">
-                                <button class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">Xóa cả VB</button>
-                                <button class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter" onclick="showDeleteModal()">XN xóa</button>
+                                <button onclick="showDeleteModal('all')" class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">Xóa cả VB</button>
+                                <button onclick="showDeleteModal('item')" class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">XN xóa</button>
                             </div>
                         </td>
                     </tr>
@@ -108,8 +108,8 @@
                         <td class="px-4 py-4 border-r border-outline-variant/10">59217</td>
                         <td class="px-4 py-4 text-center">
                             <div class="flex items-center justify-center gap-2">
-                                <button class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">Xóa cả VB</button>
-                                <button class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter" onclick="showDeleteModal()">XN xóa</button>
+                                <button onclick="showDeleteModal('all')" class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">Xóa cả VB</button>
+                                <button onclick="showDeleteModal('item')" class="bg-surface-container-high hover:bg-surface-variant text-on-surface-variant px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition shadow-sm uppercase tracking-tighter">XN xóa</button>
                             </div>
                         </td>
                     </tr>
@@ -182,8 +182,22 @@
 </div>
 
 <script>
-    function showDeleteModal() {
+    let currentDeleteType = 'all';
+
+    function showDeleteModal(type) {
+        currentDeleteType = type;
         const modal = document.getElementById('deleteModal');
+        const modalTitle = modal.querySelector('h3');
+        const modalDesc = modal.querySelector('p');
+        
+        if (type === 'all') {
+            modalTitle.innerText = 'Xóa cả văn bản';
+            modalDesc.innerText = 'Bạn có chắc chắn muốn xóa toàn bộ thông tin văn bản này? Hành động này không thể khôi phục.';
+        } else {
+            modalTitle.innerText = 'Xác nhận xóa';
+            modalDesc.innerText = 'Bạn có chắc chắn muốn xóa mục này khỏi danh sách?';
+        }
+        
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
@@ -195,8 +209,74 @@
     }
 
     function confirmDelete() {
-        // Implement delete logic here
-        alert('Đã xóa văn bản thành công!');
+        if (currentDeleteType === 'all') {
+            showToast('Đã xóa toàn bộ văn bản thành công!', 'success');
+        } else {
+            showToast('Đã xóa mục thành công!', 'success');
+        }
         hideDeleteModal();
+    }
+
+    function handleSave() {
+        showToast('Đã lưu thay đổi thành công!', 'success');
+    }
+
+    function handleCreateBook() {
+        showToast('Đã tạo sổ văn bản thành công!', 'success');
+    }
+
+    function handleExport() {
+        showToast('Đã xuất file excel thành công!', 'success');
+    }
+
+    function handleRefresh() {
+        showToast('Đã làm mới dữ liệu!', 'info');
+    }
+
+    function showToast(message, type = 'success') {
+        let toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none';
+            document.body.appendChild(toastContainer);
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-sm transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto bg-white`;
+        
+        let icon = 'check_circle';
+        let iconColor = 'text-green-500';
+        let borderColor = 'border-green-100';
+        
+        if (type === 'error') {
+            icon = 'error';
+            iconColor = 'text-red-500';
+            borderColor = 'border-red-100';
+        } else if (type === 'info') {
+            icon = 'info';
+            iconColor = 'text-blue-500';
+            borderColor = 'border-blue-100';
+        }
+        
+        toast.innerHTML = `
+            <span class="material-symbols-outlined ${iconColor}">${icon}</span>
+            <span class="text-gray-800 font-medium">${message}</span>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Trigger animation
+        setTimeout(() => {
+            toast.classList.remove('translate-y-2', 'opacity-0');
+        }, 10);
+        
+        // Remove toast
+        setTimeout(() => {
+            toast.classList.add('translate-y-2', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 3000);
     }
 </script>

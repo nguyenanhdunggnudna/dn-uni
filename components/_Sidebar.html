@@ -15,7 +15,7 @@
             <button onclick="toggleSidebarMenu('menu-clerk')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
                 <div class="flex gap-3 items-center">
-                    <div class="w-6 h-6"></div>
+                    <i class="fas fa-folder-open text-gray-500 w-6 text-center text-lg"></i>
                     <span>Văn thư</span>
                 </div>
                 <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-clerk"></i>
@@ -172,7 +172,7 @@
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
         <div class="space-y-1" id="group-tasks">
             <button onclick="toggleSidebarMenu('menu-tasks'); loadPage('../pages/tasks/cong-viec-giao.html')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">

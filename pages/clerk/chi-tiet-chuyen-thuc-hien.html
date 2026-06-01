@@ -1,0 +1,189 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/clerk/chuyen-thuc-hien.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold text-gray-800">Chi tiết Chuyển thực hiện</h1>
+        </div>
+
+        <!-- Tabs on the right -->
+        <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
+            <button onclick="switchTab('noidung')" id="btn-tab-noidung" class="px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm">
+                Nội dung
+            </button>
+            <button onclick="switchTab('luong')" id="btn-tab-luong" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
+                Luồng xử lý
+            </button>
+        </div>
+    </div>
+
+    <!-- Tab 1: Nội dung văn bản -->
+    <div id="tab-content-noidung" class="space-y-6">
+        <!-- Main Document Details Grid Table -->
+        <div class="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
+            <table class="w-full text-left border-collapse text-sm">
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trích yếu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300">Thư lần 3</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Độ khẩn</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%]">Bình thường</td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Số ký hiệu</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-bold text-[#0f56b3] border-r border-gray-300">/</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày đến</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">12/01/2026</td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Loại văn bản</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">Thư</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">CQ ban hành</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">Đối tác ngoài</td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Số đến</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-bold border-r border-gray-300">4</td>
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày bảo hiểm</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium">12/01/2026</td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="border-b border-gray-300">
+                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Trạng thái</td>
+                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3">
+                            <span class="inline-flex items-center px-4 py-1 bg-[#FCE4EC] text-[#D81B60] rounded-full text-[11px] font-bold">New</span>
+                        </td>
+                    </tr>
+                    <!-- Row 6 -->
+                    <tr>
+                        <td class="px-4 py-4 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">File đính kèm</td>
+                        <td class="px-4 py-4 text-gray-800 font-medium space-y-2" colspan="3">
+                            <div class="flex items-center gap-2">
+                                <span>1-</span>
+                                <a href="javascript:void(0)" onclick="previewPdf('thu_lan_3_chuyen_thuc_hien.pdf')" class="text-[#0053dc] hover:underline font-bold">thu_lan_3_chuyen_thuc_hien.pdf</a>
+                                <span onclick="previewPdf('thu_lan_3_chuyen_thuc_hien.pdf')" class="text-[#0053dc] italic cursor-pointer hover:underline text-xs">(Xem nội dung)</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PDF Previewer Panel -->
+        <div id="pdf-previewer" class="hidden bg-white border border-gray-300 rounded-xl overflow-hidden shadow-md transition-all duration-300">
+            <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-5 py-3">
+                <span class="text-xs font-bold text-gray-700 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[18px] text-red-500">picture_as_pdf</span>
+                    <span id="preview-filename">document.pdf</span>
+                </span>
+                <button onclick="closePdfPreview()" class="text-gray-400 hover:text-gray-600">
+                    <span class="material-symbols-outlined text-lg">close</span>
+                </button>
+            </div>
+            <div class="bg-gray-100 p-8 flex justify-center max-h-[500px] overflow-y-auto">
+                <div class="bg-white shadow-lg border border-gray-200 p-10 max-w-xl w-full text-gray-800 font-serif space-y-6">
+                    <div class="flex justify-between border-b border-gray-200 pb-4 text-xs font-sans not-italic text-gray-500">
+                        <div class="text-center">
+                            <p class="font-bold uppercase">ĐẠI HỌC ĐÀ NẴNG</p>
+                            <p class="font-bold underline uppercase">VĂN PHÒNG</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold uppercase">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                            <p class="font-bold underline uppercase">Độc lập - Tự do - Hạnh phúc</p>
+                        </div>
+                    </div>
+                    <div class="text-center space-y-2 font-sans py-4">
+                        <h3 class="font-black text-base uppercase text-gray-900" id="preview-doc-title">THƯ MỜI / THÔNG BÁO</h3>
+                        <p class="font-bold text-xs italic">V/v Chuyển thực hiện các nội dung công tác quý I/2026</p>
+                    </div>
+                    <div class="space-y-4 text-justify leading-relaxed text-xs font-sans">
+                        <p>Kính gửi: Các bộ phận, đơn vị trực thuộc Đại học Đà Nẵng,</p>
+                        <p>Thực hiện kế hoạch triển khai công tác chuyên môn và chuyển giao thực hiện các công việc phối hợp liên phòng ban.</p>
+                        <p><strong>Nội dung:</strong> Tiếp nhận thông tin, triển khai thực hiện và phản hồi báo cáo kết quả đúng thời hạn quy định.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 2: Luồng xử lý -->
+    <div id="tab-content-luong" class="hidden space-y-6">
+        <div class="bg-white border border-gray-300 rounded-xl p-8 shadow-sm">
+            <h3 class="text-base font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0f56b3]">account_tree</span>
+                <span>Luồng luân chuyển chi tiết văn bản chuyển thực hiện</span>
+            </h3>
+            
+            <div class="relative pl-10 border-l-2 border-gray-200 space-y-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">check</span>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-green-600 uppercase">1. Tiếp nhận văn bản</span>
+                            <span class="text-xs text-gray-500 font-semibold">12/01/2026 08:30 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Trần Thị Hoa - Văn thư</p>
+                        <p class="text-xs text-gray-600 mt-1">Đã tiếp nhận thư từ đối tác ngoài, nhập thông tin vào hệ thống sổ đến số 4.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[49px] top-1.5 w-8 h-8 rounded-full bg-[#FFB703] border-4 border-white shadow flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-white font-bold">hourglass_empty</span>
+                    </div>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-amber-600 uppercase">2. Chuyển thực hiện (Hiện tại)</span>
+                            <span class="text-xs text-gray-500 font-semibold">12/01/2026 09:15 AM</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">Văn thư - Trần Thị Hoa</p>
+                        <p class="text-xs text-gray-600 mt-1">Đang chuyển giao văn bản và hồ sơ liên quan cho các đơn vị chuyên trách để triển khai thực hiện.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tabId) {
+        const tabNoidungBtn = document.getElementById('btn-tab-noidung');
+        const tabLuongBtn = document.getElementById('btn-tab-luong');
+        const contentNoidung = document.getElementById('tab-content-noidung');
+        const contentLuong = document.getElementById('tab-content-luong');
+
+        if (tabId === 'noidung') {
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentNoidung.classList.remove('hidden');
+            contentLuong.classList.add('hidden');
+        } else {
+            tabLuongBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
+            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
+            contentLuong.classList.remove('hidden');
+            contentNoidung.classList.add('hidden');
+        }
+    }
+
+    function previewPdf(filename) {
+        const previewer = document.getElementById('pdf-previewer');
+        const filenameSpan = document.getElementById('preview-filename');
+        filenameSpan.textContent = filename;
+        previewer.classList.remove('hidden');
+        previewer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closePdfPreview() {
+        document.getElementById('pdf-previewer').classList.add('hidden');
+    }
+</script>
