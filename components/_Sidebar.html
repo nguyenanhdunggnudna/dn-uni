@@ -45,7 +45,7 @@
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-news">
             <button onclick="toggleSidebarMenu('menu-news')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -64,7 +64,7 @@
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-docs">
             <button onclick="toggleSidebarMenu('menu-docs')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -99,16 +99,18 @@
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản nội bộ</a>
                 <!-- } -->
 
+                <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
                 <a href="javascript:void(0)" onclick="loadPage('../pages/incoming-documents/van-ban-cu.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cũ</a>
+                <!-- } -->
             </div>
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-outgoing">
             <button onclick="toggleSidebarMenu('menu-outgoing')"
-                class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
+                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
                 <div class="flex gap-3 items-center">
                     <img src="../assets/images/outgoing-documents-icon.svg" class="w-6 h-6" alt="Send Icon"> <span>Văn
                         bản đi</span>
@@ -117,6 +119,11 @@
                     id="arrow-menu-outgoing"></i>
             </button>
             <div id="menu-outgoing" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <!-- @if (User.IsInRole("Specialist")) { -->
+                <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/soan-thao.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Soạn thảo</a>
+                <!-- } -->
+
                 <!-- @if (User.IsInRole("Director") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
                 <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/trinh-ky-van-ban.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Trình ký văn bản</a>
@@ -130,16 +137,18 @@
                 <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/can-ky.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cần ký</a>
 
+                <!-- @if (User.IsInRole("Specialist")) { -->
+                <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/ban-hanh-van-ban.html')"
+                    class="block p-2 text-gray-500 hover:text-blue-600">Ban hành văn bản</a>
+                <!-- } -->
+
                 <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/da-ban-hanh.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Văn bản đã ban hành</a>
-
-                <a href="javascript:void(0)" onclick="loadPage('../pages/outgoing-documents/van-ban-cu.html')"
-                    class="block p-2 text-gray-500 hover:text-blue-600">Văn bản cũ</a>
             </div>
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-calendar">
             <button onclick="toggleSidebarMenu('menu-calendar')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -172,7 +181,7 @@
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-tasks">
             <button onclick="toggleSidebarMenu('menu-tasks'); loadPage('../pages/tasks/cong-viec-giao.html')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">
@@ -184,11 +193,13 @@
                 <i class="fas fa-chevron-right text-[10px] transition-transform duration-300" id="arrow-menu-tasks"></i>
             </button>
             <div id="menu-tasks" class="pl-10 space-y-1 text-sm overflow-hidden max-h-0 transition-all duration-300">
+                <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
                 <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-giao.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Công việc giao</a>
 
                 <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-chi-dao.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Công việc chỉ đạo</a>
+                <!-- } -->
 
                 <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/cong-viec-nhan.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Công việc nhận</a>
@@ -199,7 +210,7 @@
                 <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/de-nam-thong-tin.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Để nắm thông tin</a>
 
-                <!-- @if (User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+                <!-- @if (User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
                 <a href="javascript:void(0)" onclick="loadPage('../pages/tasks/luu-tru-van-ban.html')"
                     class="block p-2 text-gray-500 hover:text-blue-600">Lưu trữ văn bản</a>
                 <!-- } -->
@@ -207,7 +218,7 @@
         </div>
         <!-- } -->
 
-        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead")) { -->
+        <!-- @if (User.IsInRole("Director") || User.IsInRole("Principal") || User.IsInRole("Clerk") || User.IsInRole("AdministrativeHead") || User.IsInRole("DeputyHead") || User.IsInRole("Specialist")) { -->
         <div class="space-y-1" id="group-utilities">
             <button onclick="toggleSidebarMenu('menu-utilities')"
                 class="w-full flex items-center justify-between p-3 text-gray-600 hover:bg-gray-50 rounded-lg transition">

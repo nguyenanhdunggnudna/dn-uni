@@ -32,6 +32,13 @@ window.MOCK_DATA = {
             DashboardTitle: "Hệ thống Quản lý Hành chính",
             Permissions: ["INTERNAL_NEWS", "INCOMING_DOCS", "OUTGOING_DOCS"]
         },
+        "Specialist": {
+            UserName: "Lê Văn C",
+            UserRole: "Chuyên viên",
+            UserAvatar: "../assets/images/avatar.svg",
+            DashboardTitle: "Hệ thống Quản lý Chuyên viên",
+            Permissions: ["INTERNAL_NEWS", "INCOMING_DOCS", "OUTGOING_DOCS"]
+        },
         "DeputyHead": {
             UserName: "Phạm Văn B",
             UserRole: "Phó phòng",
@@ -48,5 +55,6 @@ window.MOCK_USERS = [
     { username: "hieutruong", password: "123", role: "Principal" },
     { username: "vanthu", password: "123", role: "Clerk" },
     { username: "truongphong", password: "123", role: "AdministrativeHead" },
-    { username: "phophong", password: "123", role: "DeputyHead" }
+    { username: "phophong", password: "123", role: "DeputyHead" },
+    { username: "chuyenvien", password: "123", role: "Specialist" }
 ];

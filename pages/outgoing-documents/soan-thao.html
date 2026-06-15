@@ -1,0 +1,262 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/10 pb-4">
+        <div>
+            <h2 class="text-xl font-extrabold tracking-tight text-on-surface leading-none font-manrope">Soạn thảo</h2>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="loadPage('../pages/outgoing-documents/ban-hanh-van-ban.html')" class="bg-primary hover:bg-primary-dim text-on-primary px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95 text-sm">
+                <span class="material-symbols-outlined text-base">add</span>
+                Thêm mới
+            </button>
+        </div>
+    </div>
+
+    <!-- Filter & Search Section -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div class="flex items-center gap-3 overflow-x-auto pb-2 lg:pb-0">
+            <button class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Chưa trình <span class="bg-[#007BFF] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">19</span>
+            </button>
+            <button class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Đã trình <span class="bg-[#FFC107] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">34</span>
+            </button>
+            <button class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Đã ký <span class="bg-[#28A745] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">3</span>
+            </button>
+            <button class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
+                Ban hành <span class="bg-secondary text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">8</span>
+            </button>
+            <button class="flex items-center gap-2 px-5 py-2 bg-[#F8F9FA] border border-gray-200 text-gray-800 rounded-lg font-bold shadow-sm whitespace-nowrap text-sm">
+                Tất cả <span class="bg-[#6C757D] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">64</span>
+            </button>
+        </div>
+
+        <div class="relative max-w-md w-full lg:w-80 group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">search</span>
+            <input class="w-full bg-white border border-gray-200 rounded-xl py-2.5 pl-10 pr-4 text-sm text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm" placeholder="Tìm kiếm nội dung..." type="text" />
+        </div>
+    </div>
+
+    <!-- Main Data Table Card -->
+    <div class="bg-surface-container-lowest rounded-[1rem] shadow-[0_32px_64px_-12px_rgba(43,52,55,0.06)] overflow-hidden border border-outline-variant/5">
+        <div class="overflow-x-auto text-[14px]">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high border-b border-outline-variant/20 text-on-surface-variant font-bold">
+                        <th class="px-6 py-4 uppercase tracking-wider border-r border-outline-variant/20 w-16 text-center">STT</th>
+                        <th class="px-6 py-4 uppercase tracking-wider border-r border-outline-variant/20 w-36 text-center">Ngày lập</th>
+                        <th class="px-6 py-4 uppercase tracking-wider border-r border-outline-variant/20 w-36 text-center">Hạn xử lý</th>
+                        <th class="px-6 py-4 uppercase tracking-wider border-r border-outline-variant/20">Nội dung</th>
+                        <th class="px-6 py-4 uppercase tracking-wider w-36 text-center">Trạng thái</th>
+                        <th class="px-6 py-4 uppercase tracking-wider w-24 text-center">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10 text-on-surface">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-bold">1</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-semibold text-[#2E7D32]">06/04/2026</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center"></td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10">
+                            <div class="space-y-2">
+                                <div>
+                                    <span class="inline-flex items-center px-2 py-0.5 bg-error/10 text-error rounded text-xs font-extrabold mr-2 uppercase">Gấp</span>
+                                    <span class="font-semibold text-primary hover:underline cursor-pointer">test gởi công văn có đóng dấu</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-xs text-on-surface-variant font-medium italic">
+                                    <p><span class="font-semibold not-italic">Ký hiệu:</span> ; <span class="font-semibold not-italic ml-2">Ngày ký:</span> 06/04/2026</p>
+                                    <p><span class="font-semibold not-italic">Đang thực hiện:</span> Nhập thông tin</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase">Chưa trình</span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')" class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm" title="Chỉnh sửa">
+                                <span class="material-symbols-outlined text-base">edit</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-bold">2</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-semibold text-[#2E7D32]">19/05/2026</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center"></td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10">
+                            <div class="space-y-2">
+                                <div>
+                                    <span class="inline-flex items-center px-2 py-0.5 bg-error/10 text-error rounded text-xs font-extrabold mr-2 uppercase">Gấp</span>
+                                    <span class="font-semibold text-error hover:underline cursor-pointer">V/v cử đầu mối phụ trách triển khai, quản lý và phối hợp sử dụng phần mềm kiểm tra trùng lặp, chống đạo văn</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-xs text-on-surface-variant font-medium italic">
+                                    <p><span class="font-semibold not-italic">Ký hiệu:</span> 35/ĐHĐN-CNTTLS; <span class="font-semibold not-italic ml-2">Ngày ký:</span> 20/05/2026</p>
+                                    <p><span class="font-semibold not-italic">LĐ kiểm tra, ký nháy:</span> Trưởng phòng test; <span class="font-semibold not-italic ml-2">LĐ ký:</span> Hiệu trưởng trường Test1</p>
+                                    <p class="md:col-span-2"><span class="font-semibold not-italic">Đơn vị kiểm tra:</span></p>
+                                </div>
+                                <!-- Sub-table -->
+                                <div class="border rounded-lg overflow-hidden border-surface-container mt-2">
+                                    <table class="w-full border-collapse text-xs">
+                                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                                            <tr>
+                                                <th class="px-3 py-1.5 text-center w-8">TT</th>
+                                                <th class="px-3 py-1.5 text-left">Đơn vị/Cá nhân</th>
+                                                <th class="px-3 py-1.5 text-center whitespace-nowrap">Cần ký</th>
+                                                <th class="px-3 py-1.5 text-center whitespace-nowrap">Phản hồi</th>
+                                                <th class="px-3 py-1.5 text-left">Ý kiến</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-surface-container">
+                                            <tr class="hover:bg-surface-container-low transition-colors">
+                                                <td class="px-3 py-1.5 text-center font-bold">1</td>
+                                                <td class="px-3 py-1.5 font-semibold">Trung tâm 1</td>
+                                                <td class="px-3 py-1.5 text-center"></td>
+                                                <td class="px-3 py-1.5 text-center">
+                                                    <span class="font-bold px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng ý</span>
+                                                </td>
+                                                <td class="px-3 py-1.5 text-on-surface-variant italic">ok</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold uppercase">Ban hành</span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')" class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB703] hover:bg-[#E0A000] text-white rounded-lg transition shadow-sm" title="Điều tuyến">
+                                <span class="material-symbols-outlined text-base font-bold">alt_route</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-bold">3</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-semibold text-[#2E7D32]">21/04/2026</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center"></td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10">
+                            <div class="space-y-2">
+                                <div>
+                                    <span class="font-semibold text-primary hover:underline cursor-pointer">thu noi nhan</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-xs text-on-surface-variant font-medium italic">
+                                    <p><span class="font-semibold not-italic">Ký hiệu:</span> 657765; <span class="font-semibold not-italic ml-2">LĐ ký:</span> Trường phòng test</p>
+                                    <p><span class="font-semibold not-italic">Đang thực hiện:</span> Nhập thông tin</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase">Chưa trình</span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')" class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm" title="Chỉnh sửa">
+                                <span class="material-symbols-outlined text-base">edit</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-surface-container-low transition-colors">
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-bold">4</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center font-semibold text-[#2E7D32]">17/04/2026</td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10 text-center"></td>
+                        <td class="px-6 py-5 border-r border-outline-variant/10">
+                            <div class="space-y-2">
+                                <div>
+                                    <span class="font-semibold text-primary hover:underline cursor-pointer">Thử phiếu trình ký nhiều đơn vị 17/4/2026</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-xs text-on-surface-variant font-medium italic">
+                                    <p><span class="font-semibold not-italic">Ký hiệu:</span> ĐHĐN-CNTTLS</p>
+                                    <p><span class="font-semibold not-italic">LĐ kiểm tra, ký nháy:</span> Trưởng phòng test; <span class="font-semibold not-italic ml-2">LĐ ký:</span> Hiệu trưởng trường Test1</p>
+                                    <p class="md:col-span-2"><span class="font-semibold not-italic">Đơn vị kiểm tra:</span></p>
+                                </div>
+                                <!-- Sub-table -->
+                                <div class="border rounded-lg overflow-hidden border-surface-container mt-2">
+                                    <table class="w-full border-collapse text-xs">
+                                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                                            <tr>
+                                                <th class="px-3 py-1.5 text-center w-8">TT</th>
+                                                <th class="px-3 py-1.5 text-left">Đơn vị/Cá nhân</th>
+                                                <th class="px-3 py-1.5 text-center whitespace-nowrap">Cần ký</th>
+                                                <th class="px-3 py-1.5 text-center whitespace-nowrap">Phản hồi</th>
+                                                <th class="px-3 py-1.5 text-left">Ý kiến</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-surface-container">
+                                            <tr class="hover:bg-surface-container-low transition-colors">
+                                                <td class="px-3 py-1.5 text-center font-bold">1</td>
+                                                <td class="px-3 py-1.5 font-semibold">Trung tâm 1</td>
+                                                <td class="px-3 py-1.5 text-center">X</td>
+                                                <td class="px-3 py-1.5 text-center">
+                                                    <span class="font-bold px-1.5 py-0.5 rounded bg-tertiary-container/10 text-tertiary">Ý kiến khác</span>
+                                                </td>
+                                                <td class="px-3 py-1.5 text-on-surface-variant italic">ko dong y</td>
+                                            </tr>
+                                            <tr class="hover:bg-surface-container-low transition-colors">
+                                                <td class="px-3 py-1.5 text-center font-bold">2</td>
+                                                <td class="px-3 py-1.5 font-semibold">Phòng ĐT test1</td>
+                                                <td class="px-3 py-1.5 text-center">Y</td>
+                                                <td class="px-3 py-1.5 text-center">
+                                                    <span class="font-bold px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng ý</span>
+                                                </td>
+                                                <td class="px-3 py-1.5 text-on-surface-variant italic"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold uppercase">Trả lại</span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <div class="flex flex-col items-center gap-1.5 justify-center">
+                                <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')" class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm" title="Chỉnh sửa">
+                                    <span class="material-symbols-outlined text-base">edit</span>
+                                </button>
+                                <span class="bg-[#2E7D32] text-white text-[11px] font-bold px-2 py-0.5 rounded-full" title="Lượt ý kiến">1</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Footer -->
+        <div class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
+            <div class="text-on-surface-variant">
+                Hiển thị <span class="font-medium text-on-surface">1-4</span> trong tổng số <span class="font-medium text-on-surface">64</span> mục
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 text-on-surface-variant">
+                    <span class="text-sm">Số hàng mỗi trang:</span>
+                    <div class="relative">
+                        <select class="appearance-none bg-surface-container-low border border-outline-variant/20 rounded-lg px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all text-sm outline-none">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <nav class="flex items-center gap-1">
+                    <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30" disabled="">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium shadow-sm">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+                    <span class="px-1 text-on-surface-variant">...</span>
+                    <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">7</button>
+                    <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,29 +8,32 @@
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div class="flex items-center gap-3 overflow-x-auto pb-2 lg:pb-0">
             <button
-                class="flex items-center gap-2 px-5 py-2 bg-[#F8F9FA] border border-gray-200 text-gray-800 rounded-lg font-bold shadow-sm whitespace-nowrap text-sm">
+                class="flex items-center gap-2 px-4 py-1.5 bg-white border border-gray-200 text-gray-700 rounded-full font-medium text-sm hover:bg-gray-50 transition-all">
                 Mới <span class="bg-[#17A2B8] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
             </button>
             <button
-                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
-                Đang xử lý <span class="bg-[#FFC107] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
+                class="flex items-center gap-2 px-4 py-1.5 bg-[#FFFDF3] border border-[#FFC107]/40 text-[#B7791F] rounded-full font-semibold text-sm hover:bg-[#FFFDF3]/80 transition-all">
+                Đang xử lý <span class="bg-[#FFC107] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">1</span>
             </button>
             <button
-                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
-                Hoàn thành <span class="bg-[#28A745] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
+                class="flex items-center gap-2 px-4 py-1.5 bg-[#F4FDF4] border border-[#28A745]/40 text-[#1E7E34] rounded-full font-semibold text-sm hover:bg-[#F4FDF4]/80 transition-all">
+                Hoàn thành <span class="bg-[#28A745] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">6</span>
             </button>
             <button
-                class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
-                Tất cả <span class="bg-[#4D4D4D] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">0</span>
+                class="flex items-center gap-2 px-4 py-1.5 bg-[#9E3310] text-white rounded-full font-semibold text-sm transition-all">
+                Tất cả <span class="bg-white/20 text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">7</span>
             </button>
         </div>
 
-        <div class="relative max-w-md w-full lg:w-80 group">
-            <span
-                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">search</span>
-            <input
-                class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
-                placeholder="Tìm kiếm nội dung..." type="text" />
+        <div class="flex items-center gap-2 w-full lg:w-auto">
+            <div class="relative max-w-md w-full lg:w-80 group">
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">search</span>
+                <input
+                    class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
+                    placeholder="Tìm kiếm nội dung..." type="text" />
+            </div>
+            <button class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-all shadow-sm">Tìm</button>
         </div>
     </div>
 
@@ -40,18 +43,135 @@
         <div class="overflow-x-auto text-[14px]">
             <table class="w-full text-left border-collapse">
                 <thead>
-                    <tr class="bg-surface-container-high border-b border-outline-variant/20">
-                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-12 text-center">STT</th>
-                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-40 text-center">Ngày giao</th>
-                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20 w-40 text-center">Hạn xử lý</th>
-                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant border-r border-outline-variant/20">Nội dung</th>
-                        <th class="px-4 py-4 font-bold uppercase tracking-wider text-on-surface-variant w-32 text-center">Trạng thái</th>
+                    <tr class="bg-[#007BFF] text-white">
+                        <th class="px-4 py-3 font-bold border-r border-white/20 w-12 text-center">STT</th>
+                        <th class="px-4 py-3 font-bold border-r border-white/20 w-32 text-center">Ngày giao</th>
+                        <th class="px-4 py-3 font-bold border-r border-white/20 w-32 text-center">Hạn xử lý</th>
+                        <th class="px-4 py-3 font-bold border-r border-white/20">Nội dung</th>
+                        <th class="px-4 py-3 font-bold border-r border-white/20 w-28 text-center">Trạng thái</th>
+                        <th class="px-4 py-3 font-bold w-16 text-center"></th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-outline-variant/10">
-                    <tr class="hover:bg-blue-50/30 transition-colors border-b border-outline-variant/10">
-                        <td colspan="5" class="px-4 py-20 text-center text-outline-variant italic">
-                            Chưa có dữ liệu công việc xử lý
+                <tbody class="divide-y divide-gray-100 bg-white text-gray-700">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-gray-100">1</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 font-medium text-green-600">18/12/2025</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100"></td>
+                        <td class="px-4 py-4 border-r border-gray-100 space-y-1">
+                            <div class="text-[#9E2A2B] font-bold leading-snug">
+                                Xử lý văn bản V/v triển khai Cuộc thi “HSSV với ý tưởng khởi nghiệp” lần thứ VIII 4537/ĐHĐN-CTSVDNTT ngày 09/12/2025
+                            </div>
+                            <div class="text-xs text-gray-500 font-semibold underline">Yêu cầu chung:</div>
+                            <div class="text-xs text-gray-600">
+                                <span class="font-bold text-[#9E2A2B]">Xử lý chính:</span> <span class="text-[#E63946]">C.Viên1</span>; 
+                                <span class="font-bold text-gray-700 ml-1">Phối hợp:</span> <span class="text-[#E63946]">C.Viên2</span>; <span class="text-[#E63946]">Tp.test1</span>;
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100">
+                            <span class="inline-block px-3 py-1.5 bg-[#2A7B14] text-white text-xs font-semibold rounded-lg shadow-sm">Hoàn thành</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-xu-ly.html')" class="p-1.5 bg-[#17A2B8] text-white rounded hover:bg-[#138496] transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] block">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-gray-100">2</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 font-medium text-green-600">18/12/2025</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100"></td>
+                        <td class="px-4 py-4 border-r border-gray-100 space-y-1">
+                            <div class="text-[#9E2A2B] font-bold leading-snug">
+                                Xử lý văn bản V/v triển khai Cuộc thi “HSSV với ý tưởng khởi nghiệp” lần thứ VIII 4537/ĐHĐN-CTSVDNTT ngày 09/12/2025
+                            </div>
+                            <div class="text-xs text-gray-500 font-semibold underline">Yêu cầu chung:</div>
+                            <div class="text-xs text-gray-600">
+                                <span class="font-bold text-[#9E2A2B]">Xử lý chính:</span> <span class="text-[#E63946]">C.Viên1</span>; 
+                                <span class="font-bold text-gray-700 ml-1">Phối hợp:</span> <span class="text-[#E63946]">C.Viên2</span>; <span class="text-[#E63946]">Tp.test1</span>;
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100">
+                            <span class="inline-block px-3 py-1.5 bg-[#2A7B14] text-white text-xs font-semibold rounded-lg shadow-sm">Hoàn thành</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-xu-ly.html')" class="p-1.5 bg-[#17A2B8] text-white rounded hover:bg-[#138496] transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] block">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-gray-100">3</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 font-medium text-green-600">27/12/2025</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100"></td>
+                        <td class="px-4 py-4 border-r border-gray-100 space-y-1">
+                            <div class="text-[#1D3557] font-bold leading-snug">
+                                ✔ Xử lý văn bản Công văn về việc triển khai Tổng kiểm kê tài sản công tại đơn vị 4752/Số 4752ĐHĐN-QLCSVCĐT ngày 24/12/2025
+                            </div>
+                            <div class="text-xs text-gray-500 font-semibold underline">Yêu cầu chung:</div>
+                            <div class="text-xs text-gray-600">
+                                <span class="font-bold text-[#9E2A2B]">Xử lý chính:</span> <span class="font-bold text-gray-700 ml-1">Phối hợp:</span> ✔ <span class="text-[#2A7B14] font-medium">C.Viên1</span>;
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100">
+                            <span class="inline-block px-3 py-1.5 bg-[#FFC107] text-black text-xs font-semibold rounded-lg shadow-sm">Đang XL</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-xu-ly.html')" class="p-1.5 bg-[#17A2B8] text-white rounded hover:bg-[#138496] transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] block">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-gray-100">4</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 font-medium text-green-600">16/04/2026</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100"></td>
+                        <td class="px-4 py-4 border-r border-gray-100 space-y-1">
+                            <div class="text-[#1D3557] font-bold leading-snug">
+                                ✔ Xử lý văn bản Đơn xin cấp lại bằng tốt nghiệp thạc sĩ - Trà Thị Doãn Dung / ngày 20/03/2026
+                            </div>
+                            <div class="text-xs text-gray-500 font-semibold underline">Yêu cầu chung:</div>
+                            <div class="text-xs text-gray-600">
+                                <span class="font-bold text-[#9E2A2B]">Xử lý chính:</span> ✔ <span class="text-[#2A7B14] font-medium">C.Viên1</span>;
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100">
+                            <span class="inline-block px-3 py-1.5 bg-[#2A7B14] text-white text-xs font-semibold rounded-lg shadow-sm">Hoàn thành</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-xu-ly.html')" class="p-1.5 bg-[#17A2B8] text-white rounded hover:bg-[#138496] transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] block">visibility</span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 5 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-4 py-4 text-center border-r border-gray-100">5</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 font-medium text-green-600">30/12/2025</td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100 text-[#E63946] font-semibold">03/01/2026</td>
+                        <td class="px-4 py-4 border-r border-gray-100 space-y-1">
+                            <div class="text-[#1D3557] font-bold leading-snug">
+                                ✔ Test Thống kê tài sản thanh lý năm 2025
+                            </div>
+                            <div class="text-xs text-gray-500 font-semibold underline">Yêu cầu chung: <span class="no-underline text-gray-600 font-normal">Thống kê tài sản thanh lý năm 2025</span></div>
+                            <div class="text-xs text-gray-600">
+                                <span class="font-bold text-[#9E2A2B]">Xử lý chính:</span> ✔ <span class="text-[#2A7B14] font-medium">C.Viên1</span>;
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center border-r border-gray-100">
+                            <span class="inline-block px-3 py-1.5 bg-[#2A7B14] text-white text-xs font-semibold rounded-lg shadow-sm">Hoàn thành</span>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <button onclick="loadPage('../pages/tasks/chi-tiet-cong-viec-xu-ly.html')" class="p-1.5 bg-[#17A2B8] text-white rounded hover:bg-[#138496] transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] block">visibility</span>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -62,7 +182,7 @@
         <div
             class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
             <div class="text-on-surface-variant">
-                Hiển thị <span class="font-medium text-on-surface">0</span> trong tổng số <span class="font-medium text-on-surface">0</span> mục
+                Hiển thị <span class="font-medium text-on-surface">5</span> trong tổng số <span class="font-medium text-on-surface">5</span> mục
             </div>
             <div class="flex items-center gap-4">
                 <div class="flex items-center gap-2 text-on-surface-variant">
