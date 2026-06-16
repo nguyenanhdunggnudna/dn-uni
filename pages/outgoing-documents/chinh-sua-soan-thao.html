@@ -217,7 +217,8 @@
                         <span class="material-symbols-outlined text-primary">draw</span>
                         <h3 class="text-base font-bold text-on-surface font-manrope">II. FILE CẦN KÝ CÓ ĐÓNG DẤU <span class="text-error">*</span></h3>
                     </div>
-                    <button class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                    <input type="file" id="sec-2-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-2-tbody', 'type-2')" />
+                    <button onclick="document.getElementById('sec-2-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-sm">cloud_upload</span>
                         <span>Thêm File</span>
                     </button>
@@ -240,7 +241,7 @@
                                 <th class="px-4 py-3 text-center w-20"></th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-surface-container">
+                        <tbody id="sec-2-tbody" class="divide-y divide-surface-container">
                             <tr class="hover:bg-surface-container-low transition-colors">
                                 <td class="px-4 py-3 text-center font-bold">1</td>
                                 <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
@@ -252,7 +253,7 @@
                                 <td class="px-4 py-3 text-center"></td>
                                 <td class="px-4 py-3 text-center"></td>
                                 <td class="px-4 py-3 text-center">
-                                    <button class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
                                         <span class="material-symbols-outlined text-base">delete</span>
                                     </button>
                                 </td>
@@ -269,7 +270,8 @@
                         <span class="material-symbols-outlined text-primary">assignment</span>
                         <h3 class="text-base font-bold text-on-surface font-manrope">III. PHIẾU TRÌNH KÝ</h3>
                     </div>
-                    <button class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                    <input type="file" id="sec-3-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-3-tbody', 'type-3')" />
+                    <button onclick="document.getElementById('sec-3-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-sm">cloud_upload</span>
                         <span>Thêm File</span>
                     </button>
@@ -285,7 +287,7 @@
                                 <th class="px-4 py-3 text-center w-20"></th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-surface-container">
+                        <tbody id="sec-3-tbody" class="divide-y divide-surface-container">
                             <tr class="hover:bg-surface-container-low transition-colors">
                                 <td class="px-4 py-3 text-center font-bold">1</td>
                                 <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
@@ -295,7 +297,7 @@
                                     <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
                                 </td>
                                 <td class="px-4 py-3 text-center">
-                                    <button class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
                                         <span class="material-symbols-outlined text-base">delete</span>
                                     </button>
                                 </td>
@@ -312,7 +314,8 @@
                         <span class="material-symbols-outlined text-primary">gavel</span>
                         <h3 class="text-base font-bold text-on-surface font-manrope">IV. FILE CĂN CỨ PHÁP LÝ (NẾU CÓ)</h3>
                     </div>
-                    <button class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                    <input type="file" id="sec-4-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-4-tbody', 'type-4')" />
+                    <button onclick="document.getElementById('sec-4-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-sm">cloud_upload</span>
                         <span>Thêm File</span>
                     </button>
@@ -328,7 +331,7 @@
                                 <th class="px-4 py-3 text-center w-20"></th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-surface-container">
+                        <tbody id="sec-4-tbody" class="divide-y divide-surface-container">
                             <tr class="hover:bg-surface-container-low transition-colors">
                                 <td class="px-4 py-3 text-center font-bold">1</td>
                                 <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
@@ -338,7 +341,7 @@
                                     <input type="checkbox" class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
                                 </td>
                                 <td class="px-4 py-3 text-center">
-                                    <button class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
                                         <span class="material-symbols-outlined text-base">delete</span>
                                     </button>
                                 </td>
@@ -355,7 +358,8 @@
                         <span class="material-symbols-outlined text-primary">edit_document</span>
                         <h3 class="text-base font-bold text-on-surface font-manrope">V. FILE SOẠN THẢO</h3>
                     </div>
-                    <button class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                    <input type="file" id="sec-5-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-5-tbody', 'type-5')" />
+                    <button onclick="document.getElementById('sec-5-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-sm">cloud_upload</span>
                         <span>Thêm File</span>
                     </button>
@@ -371,7 +375,7 @@
                                 <th class="px-4 py-3 text-center w-20"></th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-surface-container">
+                        <tbody id="sec-5-tbody" class="divide-y divide-surface-container">
                             <tr class="hover:bg-surface-container-low transition-colors">
                                 <td class="px-4 py-3 text-center font-bold">1</td>
                                 <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer text-ellipsis overflow-hidden">
@@ -379,7 +383,7 @@
                                 </td>
                                 <td class="px-4 py-3 text-center"></td>
                                 <td class="px-4 py-3 text-center">
-                                    <button class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
                                         <span class="material-symbols-outlined text-base">delete</span>
                                     </button>
                                 </td>
@@ -414,7 +418,7 @@
                                 <td class="px-4 py-3 text-center">15/06/2026</td>
                                 <td class="px-4 py-3 text-center">—</td>
                                 <td class="px-4 py-3 text-center">
-                                    <button class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
                                         <span class="material-symbols-outlined text-base">delete</span>
                                     </button>
                                 </td>
@@ -746,18 +750,144 @@
     </div>
 </div>
 
+<!-- Modal: Thêm nơi nhận ngoài đơn vị -->
+<div id="outside-recipient-modal" class="fixed inset-0 bg-black/55 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-4xl w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex items-center justify-between border-b border-surface-container pb-3">
+            <h3 class="text-sm font-bold text-on-surface flex items-center gap-2 font-manrope uppercase">
+                <span class="material-symbols-outlined text-primary">person_add</span>
+                <span>Thêm người nhận</span>
+            </h3>
+            <button onclick="closeOutsideRecipientModal()" class="text-outline hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <!-- Search Bar at Top Right -->
+        <div class="flex justify-end items-center gap-2">
+            <input id="outside-search-input" onkeyup="if(event.key === 'Enter') searchOutsideRecipients()" type="text" placeholder="Search" class="bg-white border border-[#FFB703]/80 rounded px-3 py-1.5 text-xs outline-none w-60 focus:border-[#FFB703] focus:ring-1 focus:ring-[#FFB703]/20" />
+            <button onclick="searchOutsideRecipients()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-1.5 rounded text-xs font-semibold transition">Tìm</button>
+        </div>
+
+        <!-- Table View -->
+        <div class="border rounded-xl overflow-hidden border-surface-container max-h-[380px] overflow-y-auto">
+            <table class="w-full border-collapse text-xs text-left">
+                <thead>
+                    <tr class="bg-[#2B547E] text-white font-bold border-b border-surface-container">
+                        <th class="px-4 py-3 text-center w-12">TT</th>
+                        <th class="px-4 py-3 w-64 border-r border-white/10">Tên</th>
+                        <th class="px-4 py-3 border-r border-white/10">Tên đơn vị</th>
+                        <th class="px-4 py-3 text-center w-24"></th>
+                    </tr>
+                </thead>
+                <tbody id="outside-recipients-table-body" class="divide-y divide-surface-container">
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">1</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư ĐHĐN</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Văn phòng ĐHĐN (ĐHĐN)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư ĐHĐN')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">2</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHBK</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức Hành chính (Tr ĐHBK)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHBK')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">3</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHKT</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức Hành chính (Tr ĐHKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHKT')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">4</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHSP</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính (Tr ĐHSP)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHSP')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">5</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHSPKT</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức - Hành chính (Tr ĐHSPKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHSPKT')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">6</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHNN</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức - Hành chính (Tr ĐHNN)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHNN')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">7</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường Việt - Hàn</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức hành chính (Tr ĐH CNTT-TT VH)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường Việt - Hàn')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">8</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư PH Kon Tum</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính - Tổng hợp (PHKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư PH Kon Tum')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">9</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường Y Dược</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính Tổng hợp (Tr Y Dược)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường Y Dược')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">10</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư VNUK</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính Tổng hợp (Viện NCĐTVA)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư VNUK')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <script>
     let activeRecipientType = 'outside'; // 'inside' or 'outside'
 
     function openRecipientModal(type) {
         activeRecipientType = type;
-        const modal = document.getElementById('recipient-modal');
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-            modal.classList.remove('opacity-0');
-            modal.querySelector('.bg-surface-container-lowest').classList.remove('scale-95');
-        }, 50);
-        switchModalTab('tab-lanh-dao');
+        if (type === 'outside') {
+            const modal = document.getElementById('outside-recipient-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.bg-surface-container-lowest').classList.remove('scale-95');
+            }, 50);
+        } else {
+            const modal = document.getElementById('recipient-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.bg-surface-container-lowest').classList.remove('scale-95');
+            }, 50);
+            switchModalTab('tab-lanh-dao');
+        }
     }
 
     function closeRecipientModal() {
@@ -767,6 +897,95 @@
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
+    }
+
+    function closeOutsideRecipientModal() {
+        const modal = document.getElementById('outside-recipient-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('.bg-surface-container-lowest').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    function searchOutsideRecipients() {
+        const query = document.getElementById('outside-search-input').value.toLowerCase();
+        const rows = document.querySelectorAll('#outside-recipients-table-body tr');
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            if (text.includes(query)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function deleteTableRow(button) {
+        const row = button.closest('tr');
+        const tbody = row.parentElement;
+        row.remove();
+        // Cập nhật lại số thứ tự (STT)
+        Array.from(tbody.rows).forEach((r, idx) => {
+            r.cells[0].textContent = idx + 1;
+        });
+        showToast('Đã xóa thành công!', 'success');
+    }
+
+    function addUploadedFile(input, tbodyId, type) {
+        if (!input.files || input.files.length === 0) return;
+        const file = input.files[0];
+        const tbody = document.getElementById(tbodyId);
+        const newRowIndex = tbody.rows.length + 1;
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-surface-container-low transition-colors';
+        
+        let cellsHTML = '';
+        if (type === 'type-2') {
+            const isFirst = tbody.rows.length === 0;
+            const iconHTML = isFirst ? '<span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>' : '';
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">${file.name}</td>
+                <td class="px-4 py-3 text-center">${iconHTML}</td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        } else if (type === 'type-3' || type === 'type-4') {
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">${file.name}</td>
+                <td class="px-4 py-3 text-center">
+                    <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
+                </td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        } else if (type === 'type-5') {
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer text-ellipsis overflow-hidden">${file.name}</td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        }
+        
+        row.innerHTML = cellsHTML;
+        tbody.appendChild(row);
+        showToast(`Đã tải lên file: ${file.name}`, 'success');
+        input.value = ''; // Reset
     }
 
     function switchModalTab(tabId) {
@@ -835,7 +1054,11 @@
         if (exists) {
             if (!bulk) {
                 showToast('Nơi nhận này đã được chọn!', 'info');
-                closeRecipientModal();
+                if (activeRecipientType === 'outside') {
+                    closeOutsideRecipientModal();
+                } else {
+                    closeRecipientModal();
+                }
             }
             return;
         }
@@ -852,7 +1075,11 @@
         
         if (!bulk) {
             showToast('Đã thêm nơi nhận thành công!', 'success');
-            closeRecipientModal();
+            if (activeRecipientType === 'outside') {
+                closeOutsideRecipientModal();
+            } else {
+                closeRecipientModal();
+            }
         }
     }
 
