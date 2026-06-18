@@ -1,0 +1,1156 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/10 pb-4">
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+            <span class="hover:text-primary cursor-pointer font-medium" onclick="loadPage('../pages/outgoing-documents/soan-thao.html')">Soạn thảo</span>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="font-bold text-on-surface">Soạn thảo văn bản có cấp số, có đóng dấu</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="handleSave()" class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-2.5 rounded-xl font-bold transition-all text-sm">
+                Lưu nháp
+            </button>
+            <button onclick="handleSend()" class="bg-primary hover:bg-primary-dim text-on-primary px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95 text-sm">
+                <span class="material-symbols-outlined text-base">send</span>
+                Trình ký / Ban hành
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Grid Layout (Two Column: Left Form, Right sidebars) -->
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        
+        <!-- Left Side: Form Details -->
+        <div class="xl:col-span-2 space-y-8">
+            
+            <!-- Section I: Basic Info -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-6">
+                <div class="flex items-center gap-3 pb-3 border-b border-surface-container">
+                    <span class="material-symbols-outlined text-primary">description</span>
+                    <h3 class="text-base font-bold text-on-surface font-manrope">I. THÔNG TIN VĂN BẢN CÓ CẤP SỐ, CÓ ĐÓNG DẤU</h3>
+                </div>
+
+                <div class="bg-blue-50/50 text-blue-800 text-xs p-4 rounded-xl space-y-1 font-medium leading-relaxed">
+                    <p class="font-bold uppercase mb-1">Hướng dẫn xử lý:</p>
+                    <p>• Dùng để ban hành các văn bản do ban giám đốc/ban giám hiệu, lãnh đạo ban/phòng ký và đóng dấu, số văn bản do văn thư ĐHĐN/Trường cấp</p>
+                    <p>• Luồng 1: Soạn thảo → Lãnh đạo ban/phòng ký nháy → Phòng/ban liên quan kiểm tra (nếu có) → Ban giám đốc/ban giám hiệu ký → Văn thư ĐHĐN/Trường cấp số và đóng dấu → Chuyên viên ban hành</p>
+                    <p>• Luồng 2: Soạn thảo → Lãnh đạo ban/phòng ký chính → Văn thư ĐHĐN/Trường cấp số và đóng dấu → Chuyên viên ban hành</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-on-surface-variant uppercase">1. Trích yếu <span class="text-error">*</span></label>
+                        <textarea rows="3" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none resize-none" placeholder="Nhập trích yếu nội dung văn bản..."></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">2. Loại văn bản <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option>Công văn</option>
+                                    <option>Quyết định</option>
+                                    <option>Tờ trình</option>
+                                    <option>Thông báo</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">3. Độ khẩn <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option>Bình thường</option>
+                                    <option selected>Gấp</option>
+                                    <option>Hỏa tốc</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">4. Lĩnh vực <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option>Hành chính</option>
+                                    <option>Đào tạo</option>
+                                    <option selected>Hợp tác quốc tế</option>
+                                    <option>Khoa học công nghệ</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">Loại khác</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="..." />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">5. Đơn vị ban hành <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option selected>Phòng ĐT test1</option>
+                                    <option>Văn phòng ĐHĐN</option>
+                                    <option>Ban Kế hoạch Tài chính</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">6. Đơn vị ký phê duyệt <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option selected>Đại học Đà Nẵng</option>
+                                    <option>Trường Đại học Công nghệ thông tin</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">7. Người ký phê duyệt <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option selected>Nguyễn Ngọc Vũ</option>
+                                    <option>Lê Minh</option>
+                                    <option>Phạm Văn B</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">8. Chức vụ <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option selected>Hiệu trưởng</option>
+                                    <option>Giám đốc</option>
+                                    <option>Trưởng phòng</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">9. Nơi cấp số, đóng dấu <span class="text-error">*</span></label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
+                                    <option selected>Văn phòng ĐHĐN</option>
+                                </select>
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">10. Số văn bản</label>
+                            <input type="text" class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm text-on-surface-variant cursor-not-allowed outline-none" readonly value="(Sẽ cấp sau khi đóng dấu)" />
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">11. Ký hiệu văn bản <span class="text-error">*</span></label>
+                            <input type="text" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" value="/ĐHĐN-KHHTQT" />
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-on-surface-variant uppercase">12. Nơi nhận <span class="text-error">*</span> <span class="text-[10px] font-normal lowercase text-gray-500">(Ghi như mục kính gửi hoặc ghi cụ thể nơi nhận, nhưng viết tắt)</span></label>
+                        <textarea rows="3" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none resize-none" placeholder="Như kính gửi (hoặc ghi cụ thể)"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">13. Ngày ban hành</label>
+                            <div class="relative">
+                                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Chọn ngày..." />
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">calendar_month</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">14. Ngày hiệu lực</label>
+                            <div class="relative">
+                                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Chọn ngày..." />
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">calendar_month</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">15. Hạn trả lời VB</label>
+                            <div class="relative">
+                                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Chọn ngày..." />
+                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">calendar_month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-6 pt-2">
+                        <label class="flex items-center gap-2 cursor-pointer text-sm font-semibold text-on-surface">
+                            <input type="checkbox" class="w-5 h-5 rounded border-outline-variant/30 text-primary focus:ring-primary">
+                            <span>16. Văn bản QPPL</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-sm font-semibold text-error">
+                            <input type="checkbox" class="w-5 h-5 rounded border-error/30 text-error focus:ring-error">
+                            <span>18. Cần xử lý gấp</span>
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">17. Số trang</label>
+                            <input type="number" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="0" />
+                        </div>
+                        <div class="md:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-on-surface-variant uppercase">19. Ghi chú</label>
+                            <textarea rows="1" class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary/20 outline-none resize-none" placeholder="Nhập ghi chú khác..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section II: File cần ký có đóng dấu -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">draw</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">II. FILE CẦN KÝ CÓ ĐÓNG DẤU <span class="text-error">*</span></h3>
+                    </div>
+                    <input type="file" id="sec-2-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-2-tbody', 'type-2')" />
+                    <button onclick="document.getElementById('sec-2-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        <span>Thêm File</span>
+                    </button>
+                </div>
+
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-xl p-4 space-y-1 text-xs text-on-surface-variant font-medium leading-relaxed">
+                    <p>• <b>File ký chính:</b> Chừa trống 9 space cho Số, Ngày và Tháng, và chừa trống chữ ký của lãnh đạo.</p>
+                    <p>• <b>File phụ lục:</b> Không ghi gì ở góc trên bên phải (để chèn đóng dấu chữ ký số).</p>
+                </div>
+
+                <div class="border rounded-xl overflow-hidden border-surface-container mt-2">
+                    <table class="w-full border-collapse text-xs">
+                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                            <tr>
+                                <th class="px-4 py-3 text-center w-12">TT</th>
+                                <th class="px-4 py-3 text-left">Tên file</th>
+                                <th class="px-4 py-3 text-center w-24">Ký chính</th>
+                                <th class="px-4 py-3 text-center w-24">File ký</th>
+                                <th class="px-4 py-3 text-center w-24">File dấu</th>
+                                <th class="px-4 py-3 text-center w-20"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="sec-2-tbody" class="divide-y divide-surface-container">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-4 py-3 text-center font-bold">1</td>
+                                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
+                                    Thong bao ve su dung trang van phong co TCHC (1).pdf
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                                </td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                        <span class="material-symbols-outlined text-base">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section III: Phiếu trình ký -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">assignment</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">III. PHIẾU TRÌNH KÝ</h3>
+                    </div>
+                    <input type="file" id="sec-3-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-3-tbody', 'type-3')" />
+                    <button onclick="document.getElementById('sec-3-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        <span>Thêm File</span>
+                    </button>
+                </div>
+
+                <div class="border rounded-xl overflow-hidden border-surface-container">
+                    <table class="w-full border-collapse text-xs">
+                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                            <tr>
+                                <th class="px-4 py-3 text-center w-12">TT</th>
+                                <th class="px-4 py-3 text-left">Tên file</th>
+                                <th class="px-4 py-3 text-center w-36">Ban hành</th>
+                                <th class="px-4 py-3 text-center w-20"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="sec-3-tbody" class="divide-y divide-surface-container">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-4 py-3 text-center font-bold">1</td>
+                                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
+                                    Phieu trinh ky to trinh sua chua phong hop.pdf
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                        <span class="material-symbols-outlined text-base">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section IV: File căn cứ pháp lý -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">gavel</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">IV. FILE CĂN CỨ PHÁP LÝ (NẾU CÓ)</h3>
+                    </div>
+                    <input type="file" id="sec-4-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-4-tbody', 'type-4')" />
+                    <button onclick="document.getElementById('sec-4-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        <span>Thêm File</span>
+                    </button>
+                </div>
+
+                <div class="border rounded-xl overflow-hidden border-surface-container">
+                    <table class="w-full border-collapse text-xs">
+                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                            <tr>
+                                <th class="px-4 py-3 text-center w-12">TT</th>
+                                <th class="px-4 py-3 text-left">Tên file</th>
+                                <th class="px-4 py-3 text-center w-36">Ban hành</th>
+                                <th class="px-4 py-3 text-center w-20"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="sec-4-tbody" class="divide-y divide-surface-container">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-4 py-3 text-center font-bold">1</td>
+                                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">
+                                    Nghi quyet to chuc hoi nghi hoi thao.pdf
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <input type="checkbox" class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                        <span class="material-symbols-outlined text-base">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section V: File soạn thảo -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">edit_document</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">V. FILE SOẠN THẢO</h3>
+                    </div>
+                    <input type="file" id="sec-5-file-input" class="hidden" onchange="addUploadedFile(this, 'sec-5-tbody', 'type-5')" />
+                    <button onclick="document.getElementById('sec-5-file-input').click()" class="px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        <span>Thêm File</span>
+                    </button>
+                </div>
+
+                <div class="border rounded-xl overflow-hidden border-surface-container">
+                    <table class="w-full border-collapse text-xs">
+                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                            <tr>
+                                <th class="px-4 py-3 text-center w-12">TT</th>
+                                <th class="px-4 py-3 text-left">Tên file</th>
+                                <th class="px-4 py-3 text-center w-36">Ban hành</th>
+                                <th class="px-4 py-3 text-center w-20"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="sec-5-tbody" class="divide-y divide-surface-container">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-4 py-3 text-center font-bold">1</td>
+                                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer text-ellipsis overflow-hidden">
+                                    Thong bao ve su dung trang van phong co TCHC (1).docx
+                                </td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                        <span class="material-symbols-outlined text-base">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section VI: Các cá nhân tham gia ký -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center gap-3 pb-3 border-b border-surface-container">
+                    <span class="material-symbols-outlined text-primary">groups</span>
+                    <h3 class="text-base font-bold text-on-surface font-manrope">VI. CÁC CÁ NHÂN THAM GIA KÝ (KHÔNG PHẢI LÀ LĐ KÝ NHÁY VÀ LĐ KÝ PHÊ DUYỆT)</h3>
+                </div>
+
+                <div class="border rounded-xl overflow-hidden border-surface-container">
+                    <table class="w-full border-collapse text-xs">
+                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                            <tr>
+                                <th class="px-4 py-3 text-center w-12">TT</th>
+                                <th class="px-4 py-3 text-left">Họ tên</th>
+                                <th class="px-4 py-3 text-center w-36">Ngày chuyển</th>
+                                <th class="px-4 py-3 text-center w-36">Ngày ký</th>
+                                <th class="px-4 py-3 text-center w-20"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-surface-container text-on-surface-variant font-medium">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-4 py-3 text-center font-bold">1</td>
+                                <td class="px-4 py-3 text-on-surface font-semibold">Lê Thị Hồng Oanh</td>
+                                <td class="px-4 py-3 text-center">15/06/2026</td>
+                                <td class="px-4 py-3 text-center">—</td>
+                                <td class="px-4 py-3 text-center">
+                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                                        <span class="material-symbols-outlined text-base">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Right Side: Sidebar Uploads & Target Recipients -->
+        <div class="space-y-6">
+            
+            <!-- 20. Nơi nhận ngoài đơn vị -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <h3 class="text-sm font-bold text-on-surface font-manrope">20. Nơi nhận ngoài đơn vị</h3>
+                    <button onclick="openRecipientModal('outside')" class="px-3 py-1 bg-primary text-on-primary rounded-lg text-xs font-bold hover:bg-primary-dim transition shadow-sm">Thêm</button>
+                </div>
+                <div class="space-y-2" id="outside-recipients-list">
+                    <div class="flex items-center justify-between bg-surface-container-low px-3.5 py-2.5 rounded-xl border border-outline-variant/10 text-xs font-semibold">
+                        <span>Ủy ban Nhân dân TP. Đà Nẵng</span>
+                        <button onclick="this.parentElement.remove()" class="text-error hover:bg-error/10 p-1 rounded transition">
+                            <span class="material-symbols-outlined text-base">close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. Nơi nhận trong đơn vị -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-surface-container pb-3">
+                    <h3 class="text-sm font-bold text-on-surface font-manrope">21. Nơi nhận trong đơn vị</h3>
+                    <button onclick="openRecipientModal('inside')" class="px-3 py-1 bg-primary text-on-primary rounded-lg text-xs font-bold hover:bg-primary-dim transition shadow-sm">Thêm</button>
+                </div>
+                <div class="space-y-2" id="inside-recipients-list">
+                    <div class="flex items-center justify-between bg-surface-container-low px-3.5 py-2.5 rounded-xl border border-outline-variant/10 text-xs font-semibold">
+                        <span>Trung tâm 1</span>
+                        <button onclick="this.parentElement.remove()" class="text-error hover:bg-error/10 p-1 rounded transition">
+                            <span class="material-symbols-outlined text-base">close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. File gửi thêm khi Ban hành -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+                <h3 class="text-sm font-bold text-on-surface font-manrope border-b border-surface-container pb-3">22. File gửi thêm khi Ban hành (nếu có)</h3>
+                <div class="border-2 border-dashed border-primary/20 hover:border-primary bg-surface-container-low hover:bg-primary/5 rounded-xl p-6 text-center cursor-pointer transition-all">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-2">cloud_upload</span>
+                    <p class="text-xs font-bold text-on-surface mb-1">Kéo & thả file vào đây</p>
+                    <p class="text-[10px] text-outline-variant">Loại file: doc, docx, pdf, xls, zip...</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal: Thêm người nhận -->
+<div id="recipient-modal" class="fixed inset-0 bg-black/55 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-4xl w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex items-center justify-between border-b border-surface-container pb-3">
+            <h3 class="text-sm font-bold text-on-surface flex items-center gap-2 font-manrope uppercase">
+                <span class="material-symbols-outlined text-primary">person_add</span>
+                <span>Thêm người nhận</span>
+            </h3>
+            <button onclick="closeRecipientModal()" class="text-outline hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <!-- Navigation Tabs inside Modal -->
+        <div class="flex items-center gap-2 border-b border-surface-container-high pb-px text-xs font-semibold text-on-surface-variant">
+            <button onclick="switchModalTab('tab-lanh-dao')" id="btn-tab-lanh-dao" class="px-4 py-2 bg-surface-container-low border border-outline-variant/20 border-b-transparent rounded-t-lg text-primary font-bold -mb-px">Lãnh đạo</button>
+            <button onclick="switchModalTab('tab-vt-khac')" id="btn-tab-vt-khac" class="px-4 py-2 hover:bg-surface-container-low transition rounded-t-lg">VT khác</button>
+            <button onclick="switchModalTab('tab-nhom')" id="btn-tab-nhom" class="px-4 py-2 hover:bg-surface-container-low transition rounded-t-lg">Nhóm</button>
+            <button onclick="switchModalTab('tab-tat-ca')" id="btn-tab-tat-ca" class="px-4 py-2 hover:bg-surface-container-low transition rounded-t-lg">Tất cả</button>
+            <button onclick="switchModalTab('tab-tim-kiem')" id="btn-tab-tim-kiem" class="px-4 py-2 hover:bg-surface-container-low transition rounded-t-lg">Tìm kiếm</button>
+        </div>
+
+        <!-- Tab 1: Lãnh đạo (Tree View) -->
+        <div id="tab-lanh-dao" class="modal-tab-content space-y-4 max-h-[380px] overflow-y-auto p-2">
+            <div class="space-y-3 pl-2 text-sm">
+                <!-- Group 1 -->
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" onchange="toggleGroupCheckboxes(this, 'grp-bgh')" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Ban giám hiệu 1</span>
+                    </label>
+                    <div class="pl-6 border-l border-dashed border-outline-variant/30 ml-2 space-y-1.5 grp-bgh">
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Hiệu trưởng trường Test1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span class="text-blue-600 underline">Hiệu trưởng trường Test1 - Hiệu trưởng</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Hiệu phó trường Test1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Hiệu phó trường Test1 - Bí thư</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" onchange="toggleGroupCheckboxes(this, 'grp-tt1')" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Trung tâm 1</span>
+                    </label>
+                    <div class="pl-6 border-l border-dashed border-outline-variant/30 ml-2 space-y-1.5 grp-tt1">
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="GD Trung tam 1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>GD Trung tam 1 - Giám đốc Trung tâm</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Truong phong 2 TT1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Truong phong 2 TT1 - Trưởng phòng</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Truong phong 3 TT1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Truong phong 3 TT1 - Trưởng phòng</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div>
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" value="Phòng để Test phần mềm" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Phòng để Test phần mềm</span>
+                    </label>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" onchange="toggleGroupCheckboxes(this, 'grp-pdt1')" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Phòng để Test 1</span>
+                    </label>
+                    <div class="pl-6 border-l border-dashed border-outline-variant/30 ml-2 space-y-1.5 grp-pdt1">
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Truong phong test 1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Truong phong test 1 - Trưởng phòng</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Trường phòng test" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Trường phòng test - Trưởng phòng</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Phó phòng test" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Phó phòng test - Phó Trưởng phòng</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Group 5 -->
+                <div>
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" value="Trung tâm 2" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Trung tâm 2</span>
+                    </label>
+                </div>
+
+                <!-- Group 6 -->
+                <div>
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" value="Phòng HC Test1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Phòng HC Test1</span>
+                    </label>
+                </div>
+
+                <!-- Group 7 -->
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 font-bold text-indigo-950 cursor-pointer">
+                        <input type="checkbox" onchange="toggleGroupCheckboxes(this, 'grp-pdt')" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                        <span>Phòng ĐT test1</span>
+                    </label>
+                    <div class="pl-6 border-l border-dashed border-outline-variant/30 ml-2 space-y-1.5 grp-pdt">
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="truong phong ĐT test 1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>truong phong ĐT test 1 - Trưởng phòng</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs font-medium text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" value="Phó phòng ĐT test 1" class="w-4 h-4 text-primary rounded border-outline-variant/30">
+                            <span>Phó phòng ĐT test 1 - Phó Trưởng phòng</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-container flex justify-start">
+                <button onclick="getCheckedRecipients()" class="bg-[#5c54a4] hover:bg-[#4b438c] text-white px-6 py-2.5 rounded-lg text-xs font-bold transition shadow-sm">Lấy danh sách đã chọn</button>
+            </div>
+        </div>
+
+        <!-- Tab 2: VT khác (Table view) -->
+        <div id="tab-vt-khac" class="modal-tab-content space-y-4 max-h-[380px] overflow-y-auto hidden">
+            <div class="border rounded-xl overflow-hidden border-surface-container">
+                <table class="w-full border-collapse text-xs text-left">
+                    <thead>
+                        <tr class="bg-surface-container-high text-on-surface-variant font-bold border-b border-surface-container">
+                            <th class="px-4 py-3 text-center w-12">TT</th>
+                            <th class="px-4 py-3 w-48">Tên</th>
+                            <th class="px-4 py-3">Tên đơn vị</th>
+                            <th class="px-4 py-3 text-center w-24"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container">
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">1</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư Trung tâm ĐTTX</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Trung tâm Đào tạo Thường xuyên (ĐHĐN)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư Trung tâm ĐTTX')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">2</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư Khoa GDTC</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Khoa Giáo dục thể chất (ĐHĐN)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư Khoa GDTC')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">3</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư Ban QLDA ODA</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Ban Quản lý dự án ODA (ĐHĐN)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư Ban QLDA ODA')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">4</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư SDC</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Trung tâm Phát triển Phần mềm (ĐHĐN)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư SDC')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">5</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư TTQPANTT</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Trung tâm Giáo dục Quốc phòng - An ninh và Thể thao (ĐHĐN)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư TTQPANTT')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">6</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Văn thư tt1</td>
+                            <td class="px-4 py-3 text-on-surface-variant">Trung tâm 1 (Tr Test1)</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Văn thư tt1')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 3: Nhóm (Table view) -->
+        <div id="tab-nhom" class="modal-tab-content space-y-4 max-h-[380px] overflow-y-auto hidden">
+            <div class="border rounded-xl overflow-hidden border-surface-container">
+                <table class="w-full border-collapse text-xs text-left">
+                    <thead>
+                        <tr class="bg-surface-container-high text-on-surface-variant font-bold border-b border-surface-container">
+                            <th class="px-4 py-3 text-center w-12">TT</th>
+                            <th class="px-4 py-3">Tên nhóm</th>
+                            <th class="px-4 py-3 text-center w-24"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container">
+                        <tr class="hover:bg-surface-container-low transition-colors">
+                            <td class="px-4 py-3 text-center font-bold">1</td>
+                            <td class="px-4 py-3 font-semibold text-on-surface">Tổ kiểm tra văn bản</td>
+                            <td class="px-4 py-3 text-center">
+                                <button onclick="selectRecipient('Tổ kiểm tra văn bản')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm">Chọn</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 4: Tất cả (Dropdown & list selection) -->
+        <div id="tab-tat-ca" class="modal-tab-content space-y-5 max-h-[380px] overflow-y-auto hidden">
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-bold text-on-surface-variant">Đơn vị:</span>
+                <div class="relative w-72">
+                    <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg py-2 px-3 text-xs outline-none appearance-none">
+                        <option>Chọn phòng</option>
+                        <option>Ban Giám hiệu 1</option>
+                        <option>Trung tâm 1</option>
+                        <option>Phòng ĐT test1</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-base">expand_more</span>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-surface-container flex justify-start">
+                <button onclick="getCheckedRecipients()" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-6 py-2.5 rounded-lg text-xs font-bold transition shadow-sm">Lấy danh sách đã chọn</button>
+            </div>
+        </div>
+
+        <!-- Tab 5: Tìm kiếm (Table search layout) -->
+        <div id="tab-tim-kiem" class="modal-tab-content space-y-4 max-h-[380px] overflow-y-auto hidden">
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-bold text-on-surface-variant">Ban, Phòng:</span>
+                <div class="relative w-64">
+                    <select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg py-2 px-3 text-xs outline-none appearance-none">
+                        <option>Chọn phòng</option>
+                        <option>Ban Giám hiệu 1</option>
+                        <option>Trung tâm 1</option>
+                        <option>Phòng ĐT test1</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none text-base">expand_more</span>
+                </div>
+                <div class="relative w-56">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-base">search</span>
+                    <input id="tab-tim-kiem-search-input" type="text" placeholder="Search" class="w-full bg-white border border-gray-300 rounded-lg py-2 pl-9 pr-3 text-xs outline-none" />
+                </div>
+                <button onclick="filterSearchTabRecipients()" class="bg-[#788896] hover:bg-[#647482] text-white px-5 py-2 rounded-lg text-xs font-semibold transition shadow-sm">Tìm</button>
+            </div>
+            <div class="border border-surface-container rounded-xl p-6 text-center text-xs text-on-surface-variant bg-surface-container-low">
+                Vui lòng chọn bộ lọc hoặc nhập thông tin và nhấn Tìm để hiển thị danh sách.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Thêm nơi nhận ngoài đơn vị -->
+<div id="outside-recipient-modal" class="fixed inset-0 bg-black/55 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-4xl w-full p-6 space-y-5 shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300">
+        <div class="flex items-center justify-between border-b border-surface-container pb-3">
+            <h3 class="text-sm font-bold text-on-surface flex items-center gap-2 font-manrope uppercase">
+                <span class="material-symbols-outlined text-primary">person_add</span>
+                <span>Thêm người nhận</span>
+            </h3>
+            <button onclick="closeOutsideRecipientModal()" class="text-outline hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <!-- Search Bar at Top Right -->
+        <div class="flex justify-end items-center gap-2">
+            <input id="outside-search-input" onkeyup="if(event.key === 'Enter') searchOutsideRecipients()" type="text" placeholder="Search" class="bg-white border border-[#FFB703]/80 rounded px-3 py-1.5 text-xs outline-none w-60 focus:border-[#FFB703] focus:ring-1 focus:ring-[#FFB703]/20" />
+            <button onclick="searchOutsideRecipients()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-1.5 rounded text-xs font-semibold transition">Tìm</button>
+        </div>
+
+        <!-- Table View -->
+        <div class="border rounded-xl overflow-hidden border-surface-container max-h-[380px] overflow-y-auto">
+            <table class="w-full border-collapse text-xs text-left">
+                <thead>
+                    <tr class="bg-[#2B547E] text-white font-bold border-b border-surface-container">
+                        <th class="px-4 py-3 text-center w-12">TT</th>
+                        <th class="px-4 py-3 w-64 border-r border-white/10">Tên</th>
+                        <th class="px-4 py-3 border-r border-white/10">Tên đơn vị</th>
+                        <th class="px-4 py-3 text-center w-24"></th>
+                    </tr>
+                </thead>
+                <tbody id="outside-recipients-table-body" class="divide-y divide-surface-container">
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">1</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư ĐHĐN</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Văn phòng ĐHĐN (ĐHĐN)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư ĐHĐN')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">2</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHBK</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức Hành chính (Tr ĐHBK)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHBK')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">3</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHKT</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức Hành chính (Tr ĐHKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHKT')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">4</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHSP</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính (Tr ĐHSP)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHSP')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">5</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHSPKT</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức - Hành chính (Tr ĐHSPKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHSPKT')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">6</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường ĐHNN</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức - Hành chính (Tr ĐHNN)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường ĐHNN')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">7</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường Việt - Hàn</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Tổ chức hành chính (Tr ĐH CNTT-TT VH)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường Việt - Hàn')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">8</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư PH Kon Tum</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính - Tổng hợp (PHKT)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư PH Kon Tum')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">9</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư Trường Y Dược</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính Tổng hợp (Tr Y Dược)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư Trường Y Dược')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container-low transition-colors odd:bg-white even:bg-gray-50/50">
+                        <td class="px-4 py-3 text-center font-bold">10</td>
+                        <td class="px-4 py-3 font-semibold text-on-surface border-r border-gray-100">Văn thư VNUK</td>
+                        <td class="px-4 py-3 text-on-surface-variant border-r border-gray-100">Phòng Hành chính Tổng hợp (Viện NCĐTVA)</td>
+                        <td class="px-4 py-3 text-center">
+                            <button onclick="selectRecipient('Văn thư VNUK')" class="bg-[#00A8B5] hover:bg-[#00929D] text-white px-3 py-1 rounded font-bold transition shadow-sm text-[11px]">Chọn</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    let activeRecipientType = 'outside'; // 'inside' or 'outside'
+
+    function openRecipientModal(type) {
+        activeRecipientType = type;
+        if (type === 'outside') {
+            const modal = document.getElementById('outside-recipient-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.bg-surface-container-lowest').classList.remove('scale-95');
+            }, 50);
+        } else {
+            const modal = document.getElementById('recipient-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.bg-surface-container-lowest').classList.remove('scale-95');
+            }, 50);
+            switchModalTab('tab-lanh-dao');
+        }
+    }
+
+    function closeRecipientModal() {
+        const modal = document.getElementById('recipient-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('.bg-surface-container-lowest').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    function closeOutsideRecipientModal() {
+        const modal = document.getElementById('outside-recipient-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('.bg-surface-container-lowest').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    function searchOutsideRecipients() {
+        const query = document.getElementById('outside-search-input').value.toLowerCase();
+        const rows = document.querySelectorAll('#outside-recipients-table-body tr');
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            if (text.includes(query)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function deleteTableRow(button) {
+        const row = button.closest('tr');
+        const tbody = row.parentElement;
+        row.remove();
+        // Cập nhật lại số thứ tự (STT)
+        Array.from(tbody.rows).forEach((r, idx) => {
+            r.cells[0].textContent = idx + 1;
+        });
+        showToast('Đã xóa thành công!', 'success');
+    }
+
+    function addUploadedFile(input, tbodyId, type) {
+        if (!input.files || input.files.length === 0) return;
+        const file = input.files[0];
+        const tbody = document.getElementById(tbodyId);
+        const newRowIndex = tbody.rows.length + 1;
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-surface-container-low transition-colors';
+        
+        let cellsHTML = '';
+        if (type === 'type-2') {
+            const isFirst = tbody.rows.length === 0;
+            const iconHTML = isFirst ? '<span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>' : '';
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">${file.name}</td>
+                <td class="px-4 py-3 text-center">${iconHTML}</td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        } else if (type === 'type-3' || type === 'type-4') {
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer">${file.name}</td>
+                <td class="px-4 py-3 text-center">
+                    <input type="checkbox" checked class="w-4 h-4 text-primary rounded border-outline-variant/30 focus:ring-primary">
+                </td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        } else if (type === 'type-5') {
+            cellsHTML = `
+                <td class="px-4 py-3 text-center font-bold">${newRowIndex}</td>
+                <td class="px-4 py-3 font-semibold text-primary hover:underline cursor-pointer text-ellipsis overflow-hidden">${file.name}</td>
+                <td class="px-4 py-3 text-center"></td>
+                <td class="px-4 py-3 text-center">
+                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                    </button>
+                </td>
+            `;
+        }
+        
+        row.innerHTML = cellsHTML;
+        tbody.appendChild(row);
+        showToast(`Đã tải lên file: ${file.name}`, 'success');
+        input.value = ''; // Reset
+    }
+
+    function switchModalTab(tabId) {
+        // Hide all tab contents
+        document.querySelectorAll('.modal-tab-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        // Show target tab content
+        document.getElementById(tabId).classList.remove('hidden');
+
+        // Reset all tab button styles
+        const tabs = ['tab-lanh-dao', 'tab-vt-khac', 'tab-nhom', 'tab-tat-ca', 'tab-tim-kiem'];
+        tabs.forEach(t => {
+            const btn = document.getElementById('btn-' + t);
+            if (btn) {
+                btn.className = 'px-4 py-2 hover:bg-surface-container-low transition rounded-t-lg';
+            }
+        });
+
+        // Set active tab button style
+        const activeBtn = document.getElementById('btn-' + tabId);
+        if (activeBtn) {
+            activeBtn.className = 'px-4 py-2 bg-surface-container-low border border-outline-variant/20 border-b-transparent rounded-t-lg text-primary font-bold -mb-px';
+        }
+    }
+
+    function toggleGroupCheckboxes(master, groupClass) {
+        const checkboxes = document.querySelectorAll(`.${groupClass} input[type="checkbox"]`);
+        checkboxes.forEach(cb => {
+            cb.checked = master.checked;
+        });
+    }
+
+    function getCheckedRecipients() {
+        const activeTabContent = document.querySelector('.modal-tab-content:not(.hidden)');
+        if (!activeTabContent) return;
+
+        const checkedBoxes = activeTabContent.querySelectorAll('input[type="checkbox"]:checked');
+        let addedCount = 0;
+
+        checkedBoxes.forEach(cb => {
+            if (cb.value && cb.value !== "on" && !cb.getAttribute('onchange')) {
+                selectRecipient(cb.value, true);
+                addedCount++;
+            }
+        });
+
+        if (addedCount > 0) {
+            showToast(`Đã thêm ${addedCount} người nhận thành công!`, 'success');
+            closeRecipientModal();
+        } else {
+            showToast('Vui lòng chọn ít nhất một người nhận!', 'info');
+        }
+    }
+
+    function selectRecipient(name, bulk = false) {
+        const listId = activeRecipientType === 'outside' ? 'outside-recipients-list' : 'inside-recipients-list';
+        const listContainer = document.getElementById(listId);
+        
+        // Check duplicate
+        let exists = false;
+        listContainer.querySelectorAll('span').forEach(el => {
+            if (el.textContent.trim() === name) exists = true;
+        });
+
+        if (exists) {
+            if (!bulk) {
+                showToast('Nơi nhận này đã được chọn!', 'info');
+                if (activeRecipientType === 'outside') {
+                    closeOutsideRecipientModal();
+                } else {
+                    closeRecipientModal();
+                }
+            }
+            return;
+        }
+
+        const item = document.createElement('div');
+        item.className = 'flex items-center justify-between bg-surface-container-low px-3.5 py-2.5 rounded-xl border border-outline-variant/10 text-xs font-semibold';
+        item.innerHTML = `
+            <span>${name}</span>
+            <button onclick="this.parentElement.remove()" class="text-error hover:bg-error/10 p-1 rounded transition">
+                <span class="material-symbols-outlined text-base">close</span>
+            </button>
+        `;
+        listContainer.appendChild(item);
+        
+        if (!bulk) {
+            showToast('Đã thêm nơi nhận thành công!', 'success');
+            if (activeRecipientType === 'outside') {
+                closeOutsideRecipientModal();
+            } else {
+                closeRecipientModal();
+            }
+        }
+    }
+
+    function filterRecipients() {
+        // Keeps previous compatibility if needed
+    }
+
+    function filterSearchTabRecipients() {
+        showToast("Đang thực hiện tìm kiếm...", "info");
+    }
+
+    function handleSave() {
+        showToast('Đã lưu nháp thông tin soạn thảo thành công!', 'success');
+    }
+
+    function handleSend() {
+        showToast('Đã gửi trình ký phê duyệt văn bản thành công!', 'success');
+        setTimeout(() => {
+            loadPage('../pages/outgoing-documents/soan-thao.html');
+        }, 1000);
+    }
+
+    function showToast(message, type = 'success') {
+        let toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none';
+            document.body.appendChild(toastContainer);
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-sm transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto bg-white`;
+        
+        let icon = 'check_circle';
+        let iconColor = 'text-green-500';
+        let borderColor = 'border-green-100';
+        
+        if (type === 'error') {
+            icon = 'error';
+            iconColor = 'text-red-500';
+            borderColor = 'border-red-100';
+        } else if (type === 'info') {
+            icon = 'info';
+            iconColor = 'text-blue-500';
+            borderColor = 'border-blue-100';
+        }
+        
+        toast.innerHTML = `
+            <span class="material-symbols-outlined ${iconColor}">${icon}</span>
+            <span class="text-gray-800 font-medium">${message}</span>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.remove('translate-y-2', 'opacity-0');
+        }, 10);
+        
+        setTimeout(() => {
+            toast.classList.add('translate-y-2', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 3000);
+    }
+</script>
+

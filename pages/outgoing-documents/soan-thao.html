@@ -5,12 +5,27 @@
         <div>
             <h2 class="text-xl font-extrabold tracking-tight text-on-surface leading-none font-manrope">Soạn thảo</h2>
         </div>
-        <div class="flex items-center gap-3">
-            <button onclick="loadPage('../pages/outgoing-documents/ban-hanh-van-ban.html')"
+        <div class="flex items-center gap-3 relative">
+            <button id="btn-them-moi" onclick="toggleThemMoiDropdown(event)"
                 class="w-full sm:w-auto bg-primary hover:bg-primary-dim text-on-primary px-6 py-2.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95 text-sm">
                 <span class="material-symbols-outlined text-base">add</span>
-                Thêm mới
+                <span>Thêm mới</span>
+                <span class="material-symbols-outlined text-[20px]">arrow_drop_down</span>
             </button>
+            <div id="dropdown-them-moi" class="hidden absolute right-0 top-full mt-2 w-64 bg-white border border-gray-100 rounded-xl shadow-xl z-50 py-1 text-sm font-semibold text-gray-700">
+                <button onclick="loadPage('../pages/outgoing-documents/soan-thao-co-dong-dau.html'); closeThemMoiDropdown()" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors text-left">
+                    <span class="material-symbols-outlined text-gray-600 text-[20px]">motion_photos_on</span>
+                    <span>Có đóng dấu</span>
+                </button>
+                <button onclick="loadPage('../pages/outgoing-documents/soan-thao-dong-dau-khong-so.html'); closeThemMoiDropdown()" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors text-left border-t border-gray-100">
+                    <span class="material-symbols-outlined text-gray-600 text-[20px]">motion_photos_on</span>
+                    <span>Đóng dấu, không số</span>
+                </button>
+                <button onclick="loadPage('../pages/outgoing-documents/soan-thao-khong-dong-dau.html'); closeThemMoiDropdown()" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors text-left border-t border-gray-100">
+                    <span class="material-symbols-outlined text-gray-600 text-[20px]">motion_photos_off</span>
+                    <span>Không đóng dấu</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -353,3 +368,27 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleThemMoiDropdown(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById('dropdown-them-moi');
+        dropdown.classList.toggle('hidden');
+    }
+    
+    function closeThemMoiDropdown() {
+        const dropdown = document.getElementById('dropdown-them-moi');
+        if (dropdown) {
+            dropdown.classList.add('hidden');
+        }
+    }
+
+    // Close dropdown when clicking anywhere else
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('dropdown-them-moi');
+        const btn = document.getElementById('btn-them-moi');
+        if (dropdown && !dropdown.classList.contains('hidden') && !btn.contains(event.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+</script>
