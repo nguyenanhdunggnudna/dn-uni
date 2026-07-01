@@ -1,0 +1,186 @@
+<div class="px-4 py-4 md:px-8 md:py-6 space-y-6 bg-white min-h-screen">
+    <!-- Header Section -->
+    <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium border-b border-gray-200 pb-3">
+        <span class="hover:text-primary cursor-pointer" onclick="loadPage('../pages/outgoing-documents/soan-thao.html')">Soạn thảo</span>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="text-gray-900 font-bold">Chuyển trình ký</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Left Column -->
+        <div class="space-y-6">
+            <!-- I. THÔNG TIN TRÌNH KÝ -->
+            <div class="border border-teal-500 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between p-3 border-b border-teal-500 bg-teal-50/30">
+                    <h3 class="text-teal-600 font-bold text-sm">I. THÔNG TIN TRÌNH KÝ</h3>
+                    <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-1.5 rounded-full text-xs font-bold transition">Quay lại</button>
+                </div>
+                
+                <div class="p-4 space-y-4 text-sm text-gray-700">
+                    <div class="flex items-center gap-4">
+                        <label class="font-semibold whitespace-nowrap min-w-[120px]">Đơn vị soạn thảo:</label>
+                        <select class="w-full border border-gray-300 rounded px-3 py-1.5 bg-gray-50 text-gray-600 focus:outline-none focus:border-teal-500">
+                            <option>Trung tâm Công nghệ thông tin và Học liệu số</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <label class="font-semibold whitespace-nowrap min-w-[120px]">Cá nhân trình ký:</label>
+                        <select class="w-[180px] border border-gray-300 rounded px-3 py-1.5 bg-gray-50 text-gray-600 focus:outline-none focus:border-teal-500">
+                            <option>Trần Nhật Anh</option>
+                        </select>
+                        <label class="font-semibold whitespace-nowrap ml-4">1. Hạn xử lý:</label>
+                        <input type="date" class="flex-1 border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:border-teal-500">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="font-bold text-gray-800">2.Nội dung trình ký: <span class="text-red-500">*</span></label>
+                        <textarea rows="4" class="w-full border border-yellow-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-yellow-400">Test</textarea>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="font-bold text-gray-800">3. Lãnh đạo kiểm tra/ký nháy:</label>
+                        <select id="ldKiemTraKyNhay" class="w-full border border-yellow-400 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-yellow-400">
+                            <option>-</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="font-bold text-gray-800">4.Đơn vị ký phê duyệt: <span class="text-red-500">*</span></label>
+                        <select class="w-full border border-yellow-400 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-yellow-400">
+                            <option>Ban Giám đốc Đại học Đà Nẵng</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="font-bold text-gray-800">5. Lãnh đạo ký chính: <span class="text-red-500">*</span></label>
+                            <select id="ldKyChinh" class="w-full border border-yellow-400 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-yellow-400">
+                                <option>Nguyễn Mạnh Toàn</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="font-bold text-gray-800">6. Chức vụ: <span class="text-red-500">*</span></label>
+                            <select class="w-full border border-yellow-400 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-yellow-400 bg-gray-50 text-gray-600">
+                                <option>Phó Giám đốc Đại học Đà Nẵng</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="localStorage.setItem('daTrinh', 'true'); localStorage.setItem('ldKiemTraKyNhay', document.getElementById('ldKiemTraKyNhay').value); localStorage.setItem('ldKyChinh', document.getElementById('ldKyChinh').value); loadPage('../pages/outgoing-documents/soan-thao.html')" class="bg-[#00BCD4] hover:bg-[#00ACC1] text-white px-6 py-2 rounded text-sm font-bold transition shadow-sm">
+                            7. Chuyển phê duyệt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+            
+            <!-- II. THÔNG TIN VĂN BẢN -->
+            <div class="border border-blue-600 rounded-lg overflow-hidden">
+                <div class="p-3 border-b border-blue-600 bg-blue-50/30">
+                    <h3 class="text-blue-700 font-bold text-sm">II. THÔNG TIN VĂN BẢN</h3>
+                </div>
+                
+                <div class="p-4">
+                    <table class="w-full border-collapse border border-gray-300 text-sm">
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2 w-1/4">Trích yếu</td>
+                                <td class="border border-gray-300 px-3 py-2">Test</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Số/Ký hiệu</td>
+                                <td class="border border-gray-300 px-3 py-2">/ĐHĐN-CNTTHLS</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Độ khẩn</td>
+                                <td class="border border-gray-300 px-3 py-2">Bình thường</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Loại văn bản</td>
+                                <td class="border border-gray-300 px-3 py-2">Công văn</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Lĩnh vực</td>
+                                <td class="border border-gray-300 px-3 py-2">Cơ sở vật chất</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Nơi nhận</td>
+                                <td class="border border-gray-300 px-3 py-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2">Văn bản</td>
+                                <td class="border border-gray-300 px-3 py-2">Có số, đóng dấu</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 bg-[#24526e] text-white font-semibold px-3 py-2 align-top">File cần ký</td>
+                                <td class="border border-gray-300 p-0">
+                                    <table class="w-full text-xs text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-100 font-bold border-b border-gray-300">
+                                                <th class="py-2 border-r border-gray-300">TT</th>
+                                                <th class="py-2 border-r border-gray-300">Tên file</th>
+                                                <th class="py-2 border-r border-gray-300">LĐ K. chính</th>
+                                                <th class="py-2 border-r border-gray-300">K.nháy</th>
+                                                <th class="py-2 border-r border-gray-300">L.Ký</th>
+                                                <th class="py-2">L.Điều</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-2 border-r border-gray-300">1</td>
+                                                <td class="py-2 border-r border-gray-300 text-left px-2">VB-2075-05-23.pdf</td>
+                                                <td class="py-2 border-r border-gray-300">X</td>
+                                                <td class="py-2 border-r border-gray-300">
+                                                    <div class="flex gap-1 justify-center">
+                                                        <button class="bg-[#1a56db] text-white px-2 py-1 rounded text-[10px] font-bold">Ký ▾</button>
+                                                        <div class="relative inline-block">
+                                                            <button onclick="toggleXemDropdown(event)" class="bg-[#1a56db] text-white px-2 py-1 rounded text-[10px] font-bold">Xem ▾</button>
+                                                            <div id="xemDropdown" class="absolute right-0 bottom-full mb-1 w-36 bg-white border border-gray-200 rounded shadow-lg z-50 hidden">
+                                                                <a onclick="event.preventDefault();" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 cursor-pointer">Ký số misa</a>
+                                                                <a onclick="event.preventDefault();" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 cursor-pointer">Ký số VCCA</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-2 border-r border-gray-300"></td>
+                                                <td class="py-2"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- III. ĐƠN VỊ PHỐI HỢP -->
+            <div class="flex items-center justify-between mt-6">
+                <h3 class="text-[#00BCD4] font-bold text-sm uppercase">III. ĐƠN VỊ PHỐI HỢP KIỂM TRA, KÝ VB (Nếu có)</h3>
+                <button class="bg-[#1a56db] hover:bg-blue-700 text-white px-5 py-1.5 rounded-full text-xs font-bold transition shadow-sm">Thêm</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleXemDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('xemDropdown');
+    dropdown.classList.toggle('hidden');
+}
+
+document.addEventListener('click', function(e) {
+    const dropdown = document.getElementById('xemDropdown');
+    if (dropdown && !dropdown.parentElement.contains(e.target)) {
+        dropdown.classList.add('hidden');
+    }
+});
+</script>

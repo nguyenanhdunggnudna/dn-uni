@@ -7,13 +7,6 @@
             <span class="font-bold text-on-surface">Chỉnh sửa văn bản</span>
         </div>
         <div class="flex items-center gap-3">
-            <button onclick="handleSave()" class="bg-surface-container hover:bg-surface-container-high text-on-surface px-6 py-2.5 rounded-xl font-bold transition-all text-sm">
-                Lưu nháp
-            </button>
-            <button onclick="handleSend()" class="bg-primary hover:bg-primary-dim text-on-primary px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all transform active:scale-95 text-sm">
-                <span class="material-symbols-outlined text-base">send</span>
-                Trình ký / Ban hành
-            </button>
         </div>
     </div>
 
@@ -393,38 +386,45 @@
                 </div>
             </div>
 
-            <!-- Section VI: Các cá nhân tham gia ký -->
-            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
-                <div class="flex items-center gap-3 pb-3 border-b border-surface-container">
-                    <span class="material-symbols-outlined text-primary">groups</span>
-                    <h3 class="text-base font-bold text-on-surface font-manrope">VI. CÁC CÁ NHÂN THAM GIA KÝ (KHÔNG PHẢI LÀ LĐ KÝ NHÁY VÀ LĐ KÝ PHÊ DUYỆT)</h3>
+            <!-- Section VI: Tham gia ký -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-6">
+                <div class="flex items-center justify-between pb-3 border-b border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">group</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">VI. CÁC CÁ NHÂN THAM GIA KÝ (KHÔNG PHẢI LÀ LĐ KÝ NHÁY VÀ LĐ KÝ PHÊ DUYỆT)</h3>
+                    </div>
+                    <button onclick="openAddSignerModal()" class="px-5 py-2 bg-[#1a56db] text-white rounded-full text-sm font-bold hover:bg-blue-700 transition shadow-sm">Thêm</button>
                 </div>
 
                 <div class="border rounded-xl overflow-hidden border-surface-container">
-                    <table class="w-full border-collapse text-xs">
-                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                    <table class="w-full border-collapse text-xs" id="signer-table">
+                        <thead class="bg-[#24526e] text-white font-bold border-b border-surface-container">
                             <tr>
-                                <th class="px-4 py-3 text-center w-12">TT</th>
-                                <th class="px-4 py-3 text-left">Họ tên</th>
-                                <th class="px-4 py-3 text-center w-36">Ngày chuyển</th>
-                                <th class="px-4 py-3 text-center w-36">Ngày ký</th>
-                                <th class="px-4 py-3 text-center w-20"></th>
+                                <th class="px-3 py-3 text-center w-10 border-r border-white/20">TT</th>
+                                <th class="px-4 py-3 text-left border-r border-white/20">Họ tên</th>
+                                <th class="px-4 py-3 text-left w-36 border-r border-white/20">Ngày chuyển</th>
+                                <th class="px-4 py-3 text-left w-36 border-r border-white/20">Ngày ký</th>
+                                <th class="px-2 py-3 text-center w-24 border-r border-white/20"></th>
+                                <th class="px-2 py-3 text-center w-16 border-r border-white/20">XN xóa</th>
+                                <th class="px-2 py-3 text-center w-16"></th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-surface-container text-on-surface-variant font-medium">
-                            <tr class="hover:bg-surface-container-low transition-colors">
-                                <td class="px-4 py-3 text-center font-bold">1</td>
-                                <td class="px-4 py-3 text-on-surface font-semibold">Lê Thị Hồng Oanh</td>
-                                <td class="px-4 py-3 text-center">15/06/2026</td>
-                                <td class="px-4 py-3 text-center">—</td>
-                                <td class="px-4 py-3 text-center">
-                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
-                                        <span class="material-symbols-outlined text-base">delete</span>
-                                    </button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center justify-between mt-6 pt-4">
+                    <button class="px-6 py-2 bg-[#1a56db] text-white rounded text-sm font-bold shadow-sm hover:bg-blue-700 transition">Lưu</button>
+                    
+                    <div class="flex-1 flex justify-center">
+                        <button onclick="loadPage('../pages/outgoing-documents/chuyen-kiem-tra-ky.html')" class="px-6 py-2 bg-[#00BCD4] text-white rounded text-sm font-bold shadow-sm hover:bg-[#00ACC1] transition flex items-center gap-1">
+                            Chuyển kiểm tra, ký nháy >>
+                        </button>
+                    </div>
+
+                    <div class="w-[72px]"></div> <!-- Spacer to keep the middle button perfectly centered -->
                 </div>
             </div>
             
@@ -1148,3 +1148,103 @@
     }
 </script>
 
+<!-- Modal: Thêm người ký -->
+<div id="add-signer-modal" class="fixed inset-0 bg-black/55 z-[9999] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <div class="bg-[#f0f0f0] rounded-lg max-w-4xl w-full flex flex-col shadow-2xl border border-outline-variant/20 transform scale-95 transition-transform duration-300" style="height: 80vh;">
+        <!-- Modal Header -->
+        <div class="bg-[#e0e0e0] px-4 py-2 border-b border-[#ccc] flex items-center justify-between rounded-t-lg">
+            <h3 class="text-sm font-bold text-gray-700">Thêm người ký</h3>
+            <button onclick="closeAddSignerModal()" class="text-gray-500 hover:text-gray-800 transition-colors">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="flex-1 p-4 bg-white m-4 border border-[#e0e0e0] flex flex-col">
+            <!-- Search Input -->
+            <div class="flex items-center justify-end mb-4 gap-0">
+                <input type="text" value="Chuyên Viên" class="border border-[#FFC107] px-3 py-1.5 text-sm w-64 outline-none focus:ring-1 focus:ring-[#FFC107]" />
+                <button class="bg-[#8c939d] text-white px-4 py-1.5 text-sm hover:bg-gray-500 transition-colors font-bold">Tìm</button>
+            </div>
+
+            <!-- Table -->
+            <div class="border border-[#e0e0e0] flex-1 overflow-auto">
+                <table class="w-full border-collapse text-xs">
+                    <thead class="bg-[#24526e] text-white font-bold">
+                        <tr>
+                            <th class="px-3 py-2 text-center w-10 border-r border-white/20">TT</th>
+                            <th class="px-4 py-2 text-left border-r border-white/20">Họ tên</th>
+                            <th class="px-4 py-2 text-left border-r border-white/20">Tên đơn vị</th>
+                            <th class="px-4 py-2 text-left border-r border-white/20">Chức vụ</th>
+                            <th class="px-3 py-2 text-center w-24"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#e0e0e0] text-gray-800 bg-[#f9f9f9]">
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="px-3 py-2 text-center border-r border-[#e0e0e0] font-bold">1</td>
+                            <td class="px-4 py-2 border-r border-[#e0e0e0]">Chuyên viên test 2</td>
+                            <td class="px-4 py-2 border-r border-[#e0e0e0]">Phòng để Test 1 (Tr Test1)</td>
+                            <td class="px-4 py-2 border-r border-[#e0e0e0]">Chuyên viên</td>
+                            <td class="px-3 py-2 text-center">
+                                <button onclick="selectSigner()" class="bg-[#00BCD4] text-white px-3 py-1 rounded text-xs hover:bg-[#00ACC1] transition-colors font-bold">Chọn</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="bg-[#f0f0f0] p-4 border-t border-[#ccc] flex justify-end rounded-b-lg">
+            <button onclick="closeAddSignerModal()" class="bg-[#FFC107] text-white font-bold px-6 py-2 rounded shadow-sm hover:bg-[#e0a800] transition-colors text-sm">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openAddSignerModal() {
+        const modal = document.getElementById('add-signer-modal');
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 10);
+    }
+
+    function closeAddSignerModal() {
+        const modal = document.getElementById('add-signer-modal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+    
+    function selectSigner() {
+        closeAddSignerModal();
+        const tbody = document.querySelector('#signer-table tbody');
+        const emptyRow = document.getElementById('signer-row-empty');
+        if (emptyRow) {
+            emptyRow.style.display = 'none';
+        }
+        
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-surface-container-low transition-colors bg-[#f4f7f6]';
+        tr.innerHTML = `
+            <td class="px-3 py-3 text-center border-r border-outline-variant/10 font-bold">1</td>
+            <td class="px-4 py-3 border-r border-outline-variant/10 text-on-surface">Chuyên viên test 2</td>
+            <td class="px-4 py-3 border-r border-outline-variant/10 text-on-surface-variant">01/07/2026 5:28:56 PM</td>
+            <td class="px-4 py-3 border-r border-outline-variant/10"></td>
+            <td class="px-2 py-3 text-center border-r border-outline-variant/10">
+                <button class="px-3 py-1 bg-[#00BCD4] text-white rounded text-xs font-bold hover:bg-[#00ACC1] transition shadow-sm whitespace-nowrap">Chuyển ký</button>
+            </td>
+            <td class="px-2 py-3 text-center border-r border-outline-variant/10">
+                <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer">
+            </td>
+            <td class="px-2 py-3 text-center">
+                <button onclick="this.closest('tr').remove()" class="px-3 py-1 bg-[#dc3545] text-white rounded text-xs font-bold hover:bg-[#c82333] transition shadow-sm">Xóa</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    }
+</script>

@@ -1,55 +1,90 @@
+<!-- Main Section Container -->
 <section class="p-8 max-w-6xl mx-auto">
-    <!-- Header Area -->
-    <div class="flex justify-between items-center mb-8">
-        <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Tin nhắn riêng</h2>
-        <button type="button" form="messageForm" onclick="submitMessage()" class="bg-[#1a56db] hover:bg-blue-700 text-white px-7 py-2.5 rounded-lg flex items-center gap-2.5 transition-all active:scale-95 font-semibold shadow-lg shadow-blue-500/20 group">
-            <i class="fa-solid fa-paper-plane text-sm group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-            <span>Gửi tin</span>
-        </button>
+    <!-- Message List View -->
+    <div id="messageListView" class="space-y-6">
+        <!-- Header Area -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Tin nhắn riêng</h2>
+            <button type="button" onclick="showComposeForm()" class="bg-[#1a56db] hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg flex items-center gap-2.5 transition-all active:scale-95 font-semibold shadow-lg shadow-blue-500/20 group">
+                <i class="fa-solid fa-plus text-sm"></i>
+                <span>Thêm mới</span>
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex justify-end gap-3 mb-6">
+            <div class="relative w-80">
+                <input type="text" id="searchInput" placeholder="Search" class="w-full pl-4 pr-10 py-2 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-sm">
+                <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3 text-gray-400 text-sm"></i>
+            </div>
+            <button onclick="searchMessages()" class="bg-gray-700 hover:bg-gray-850 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors">Tìm</button>
+        </div>
+
+        <!-- Message Accordion List -->
+        <div id="messageListContainer" class="space-y-3 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 p-4">
+            <!-- Dynamic message list items will be rendered here -->
+        </div>
     </div>
 
-    <!-- Form Container -->
-    <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-10">
-        <form action="" method="POST" id="messageForm" class="space-y-8">
-            <!-- Recipient Field -->
-            <div class="space-y-2.5">
-                <label for="recipient" class="block text-[15px] font-bold text-gray-700">
-                    Gửi đến <span class="text-red-500">*</span>
-                </label>
-                <div class="relative group">
-                    <input type="text" id="recipient" name="Recipient" placeholder="Gửi đến" required
-                        class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
-                </div>
+    <!-- Message Compose Form View (Hidden by default) -->
+    <div id="messageComposeView" class="hidden space-y-6">
+        <!-- Header Area -->
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-3">
+                <button type="button" onclick="showListView()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-500">
+                    <i class="fa-solid fa-arrow-left text-lg"></i>
+                </button>
+                <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Soạn tin nhắn riêng</h2>
             </div>
+            <button type="button" form="messageForm" onclick="submitMessage()" class="bg-[#1a56db] hover:bg-blue-700 text-white px-7 py-2.5 rounded-lg flex items-center gap-2.5 transition-all active:scale-95 font-semibold shadow-lg shadow-blue-500/20 group">
+                <i class="fa-solid fa-paper-plane text-sm group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                <span>Gửi tin</span>
+            </button>
+        </div>
 
-            <!-- Title Field -->
-            <div class="space-y-2.5">
-                <label for="title" class="block text-[15px] font-bold text-gray-700">
-                    Tiêu đề <span class="text-red-500">*</span>
-                </label>
-                <div class="relative group">
-                    <input type="text" id="title" name="Title" placeholder="Nhập tiêu đề" required
-                        class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
+        <!-- Form Container -->
+        <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-10">
+            <form action="" method="POST" id="messageForm" class="space-y-8">
+                <!-- Recipient Field -->
+                <div class="space-y-2.5">
+                    <label for="recipient" class="block text-[15px] font-bold text-gray-700">
+                        Gửi đến <span class="text-red-500">*</span>
+                    </label>
+                    <div class="relative group">
+                        <input type="text" id="recipient" name="Recipient" placeholder="Gửi đến" required
+                            class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Content Field (CKEditor) -->
-            <div class="space-y-2.5">
-                <label class="block text-[15px] font-bold text-gray-700">
-                    Nội dung <span class="text-red-500">*</span>
-                </label>
-                <div class="rounded-xl overflow-hidden border border-gray-200 focus-within:border-blue-500 transition-colors">
-                    <textarea id="messageContentEditor" name="Content" required></textarea>
+                <!-- Title Field -->
+                <div class="space-y-2.5">
+                    <label for="title" class="block text-[15px] font-bold text-gray-700">
+                        Tiêu đề <span class="text-red-500">*</span>
+                    </label>
+                    <div class="relative group">
+                        <input type="text" id="title" name="Title" placeholder="Nhập tiêu đề" required
+                            class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white outline-none transition-all text-gray-700 placeholder:text-gray-400 font-medium">
+                    </div>
                 </div>
-            </div>
-        </form>
+
+                <!-- Content Field (CKEditor) -->
+                <div class="space-y-2.5">
+                    <label class="block text-[15px] font-bold text-gray-700">
+                        Nội dung <span class="text-red-500">*</span>
+                    </label>
+                    <div class="rounded-xl overflow-hidden border border-gray-200 focus-within:border-blue-500 transition-colors">
+                        <textarea id="messageContentEditor" name="Content" required></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 
 <style>
     /* Custom styles for CKEditor 5 integration */
     .ck-editor__editable {
-        min-height: 400px !important;
+        min-height: 350px !important;
         border-bottom-left-radius: 12px !important;
         border-bottom-right-radius: 12px !important;
         padding: 0 20px !important;
@@ -76,8 +111,216 @@
 </style>
 
 <script>
+    // Mock private messages data list
+    let privateMessages = [
+        {
+            id: 1,
+            title: "Về việc góp ý Dự thảo báo cáo Kết quả thực hiện nhiệm vụ 06 tháng đầu năm 2026 và triển khai nhiệm vụ trọng tâm 06 tháng cuối năm 2026",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu; VT.ĐNIIT; VT.ĐTTX; VT.YD; VT.GDTC; NTH.Giang; NQ.Giao; NV.Hân; TTK.Hiền; HP.Hiếu; HNM. Hiếu; NTN. Hoa; HV.Hùng; NT.Hường; VT.TTKDCLGD; LN.Khánh; PNM.Lan; TTK.Ly; TNT.Mỹ; LT. Nhân; TTK.Oanh; VT.ODA; ND.Phong; TĐK.Quốc; NN.Quỳnh; VT.SĐC; HM.Sơn; NTT. Thanh; TTD.Thảo; TT.Thủy; NĐ.Tiến; TLB.Trâm; PHT.Trình; VT.QPANTT; PK.Tuân; CX.Tuấn; NT.Tùng; VT.VNUK; NT.Vũ; NKH.Vy",
+            date: "09/06/2026 10:15:30 AM",
+            content: "Kính gửi quý thầy cô,<br><br>Nhằm chuẩn bị báo cáo Kết quả thực hiện nhiệm vụ 06 tháng đầu năm 2026 và triển khai nhiệm vụ trọng tâm 06 tháng cuối năm 2026, Văn phòng kính đề nghị các đơn vị đóng góp ý kiến cho Dự thảo đính kèm.<br><br>Trân trọng./.",
+            attachments: ["Dự thảo báo cáo 06 tháng.docx"]
+        },
+        {
+            id: 2,
+            title: "Danh sách (dự kiến) nâng bậc lương đợt 1 năm 2026",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu",
+            date: "08/06/2026 4:45:12 PM",
+            content: "Kính gửi quý thầy cô,<br><br>Văn phòng gửi Danh sách (dự kiến) nâng bậc lương đợt 1 năm 2026 của CB-VC cơ quan Đại học Đà Nẵng để các đơn vị kiểm tra thông tin phản hồi.<br><br>Trân trọng./.",
+            attachments: ["Danh sach nang bac luong dot 1.xlsx"]
+        },
+        {
+            id: 3,
+            title: "Về việc báo cáo phục vụ giao ban Cơ quan ĐHĐN quý II/2026",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu; VT.ĐNIIT; VT.ĐTTX; VT.YD; VT.GDTC; NTH.Giang; NQ.Giao; NV.Hân; TTK.Hiền; HP.Hiếu; HNM. Hiếu; NTN. Hoa; HV.Hùng; NT.Hường; VT.TTKDCLGD; LN.Khánh; PNM.Lan; TTK.Ly; TNT.Mỹ; LT. Nhân; TTK.Oanh; VT.ODA; ND.Phong; TĐK.Quốc; NN.Quỳnh; VT.SĐC; HM.Sơn; NTT. Thanh; TTD.Thảo; TT.Thủy; NĐ.Tiến; TLB.Trâm; PHT.Trình; VT.QPANTT; PK.Tuân; CX.Tuấn; NT.Tùng; VT.VNUK; NT.Vũ; NKH.Vy",
+            date: "08/06/2026 3:23:37 PM",
+            content: "Kính gửi quý thầy cô,<br><br>Lm xin gửi mẫu biểu báo cáo kết quả thực hiện nhiệm vụ quý II/2026 và bảng cập nhật tiến độ công việc phục vụ Họp giao ban Cơ quan ĐHĐN quý II/2026. Kính nhờ quý thầy cô cập nhật thông tin và gửi thông tin về Văn phòng trước ngày 22/6/2026 giúp em với ạ.<br><br>Trân trọng./.",
+            attachments: ["Mau bao cao quy.doc", "Tien do cong viec.doc"]
+        },
+        {
+            id: 4,
+            title: "Cập nhật tiến độ thực hiện nhiệm vụ tháng 5/2026",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu",
+            date: "05/06/2026 11:12:05 AM",
+            content: "Kính gửi quý thầy cô,<br><br>Vui lòng cập nhật tiến độ thực hiện nhiệm vụ tháng 5/2026 vào biểu mẫu trực tuyến hoặc gửi file báo cáo về địa chỉ Văn phòng.<br><br>Trân trọng./.",
+            attachments: ["Tien do thuc hien thang 5.xlsx"]
+        },
+        {
+            id: 5,
+            title: "Về việc góp ý Danh mục hồ sơ, tài liệu của Đại học Đà Nẵng",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu",
+            date: "04/06/2026 9:05:40 AM",
+            content: "Kính gửi quý thầy cô,<br><br>Đề nghị đóng góp ý kiến về Danh mục hồ sơ, tài liệu lưu trữ của Đại học Đà Nẵng năm học 2025-2026.<br><br>Trân trọng./.",
+            attachments: ["Danh muc ho so tai lieu.docx"]
+        },
+        {
+            id: 6,
+            title: "Về việc báo cáo phục vụ giao ban Cơ quan ĐHĐN quý I/2026",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu",
+            date: "12/03/2026 8:40:22 AM",
+            content: "Kính gửi quý thầy cô,<br><br>Văn phòng xin gửi mẫu biểu báo cáo phục vụ Họp giao ban Cơ quan ĐHĐN quý I/2026.<br><br>Trân trọng./.",
+            attachments: ["Mau bao cao quy 1.doc"]
+        },
+        {
+            id: 7,
+            title: "Công văn đăng ký CKS lần 2",
+            sender: "Hà Lê Anh Dũng",
+            recipients: "TN.Anh; NHH.Cường; TLH.Điệp; DTT.Diệu",
+            date: "05/03/2026 2:15:10 PM",
+            content: "Kính gửi quý thầy cô,<br><br>Đề nghị các đơn vị gửi thông tin đăng ký chữ ký số (CKS) lần 2 trước ngày 10/03/2026.<br><br>Trân trọng./.",
+            attachments: ["Mau dang ky CKS lan 2.docx"]
+        }
+    ];
+
+    let expandedMessageId = null;
+
     /**
-     * Tích hợp CKEditor 5 cho phần nội dung tin nhắn riêng
+     * Render the list of messages
+     */
+    function renderMessages(filterText = "") {
+        const container = document.getElementById("messageListContainer");
+        if (!container) return;
+
+        const filtered = privateMessages.filter(msg => {
+            if (!filterText) return true;
+            const term = filterText.toLowerCase();
+            return msg.title.toLowerCase().includes(term) || 
+                   msg.sender.toLowerCase().includes(term) || 
+                   msg.content.toLowerCase().includes(term);
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = `
+                <div class="text-center py-12 text-gray-500">
+                    <i class="fa-regular fa-envelope-open text-3xl mb-3 block"></i>
+                    <span>Không tìm thấy tin nhắn nào</span>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = filtered.map((msg, index) => {
+            const isExpanded = msg.id === expandedMessageId;
+            const itemBg = isExpanded ? "bg-[#efeef6] border-purple-200" : "bg-white hover:bg-gray-50 border-gray-100";
+            const titleColor = isExpanded ? "text-white" : "text-amber-600";
+            const titleRowBg = isExpanded ? "bg-[#5b519e] text-white px-4 py-3 rounded-t-lg" : "px-4 py-3 rounded-lg";
+            
+            return `
+                <div class="border rounded-lg overflow-hidden transition-all duration-200 ${itemBg}">
+                    <!-- Title Row -->
+                    <div onclick="toggleMessage(${msg.id})" class="flex justify-between items-center cursor-pointer ${titleRowBg}">
+                        <div class="flex items-center gap-2 font-semibold text-[15px] select-none flex-1 pr-4">
+                            <span class="${isExpanded ? 'text-[#ffc107]' : 'text-amber-500'}">[${msg.id}]</span>
+                            <span class="line-clamp-1">${msg.title}</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button type="button" class="w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isExpanded ? 'bg-white/20 text-white hover:bg-white/30' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'}">
+                                <i class="fa-solid fa-reply text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Details Area (Collapsible) -->
+                    <div id="details-${msg.id}" class="${isExpanded ? 'block' : 'hidden'} p-6 bg-white border-t border-gray-100 space-y-4 text-sm text-gray-700">
+                        <div class="prose max-w-none text-gray-800">
+                            ${msg.content}
+                        </div>
+
+                        ${msg.attachments && msg.attachments.length > 0 ? `
+                            <div class="pt-2">
+                                <span class="font-semibold text-red-650">File đính kèm:</span>
+                                <span class="text-blue-600 hover:underline cursor-pointer ml-1">${msg.attachments.join("; ")}</span>
+                            </div>
+                        ` : ''}
+
+                        <div class="border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
+                            <div class="space-y-1.5 text-xs text-gray-500">
+                                <div><span class="font-semibold text-gray-700">Người gửi:</span> <span class="font-bold text-gray-800">${msg.sender}</span></div>
+                                <div class="leading-relaxed"><span class="font-semibold text-gray-700">Người nhận:</span> ${msg.recipients}</div>
+                                <div><span class="font-semibold text-gray-700">ngày:</span> ${msg.date}</div>
+                            </div>
+                            <button onclick="replyMessage('${msg.sender}', '${msg.title}')" class="w-10 h-10 rounded-full bg-red-500 hover:bg-red-650 text-white flex items-center justify-center shadow-lg shadow-red-500/20 active:scale-95 transition-all self-end sm:self-auto">
+                                <i class="fa-solid fa-reply"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    /**
+     * Expand/Collapse message
+     */
+    function toggleMessage(id) {
+        if (expandedMessageId === id) {
+            expandedMessageId = null;
+        } else {
+            expandedMessageId = id;
+        }
+        renderMessages(document.getElementById("searchInput").value);
+    }
+
+    /**
+     * Search trigger
+     */
+    function searchMessages() {
+        const query = document.getElementById("searchInput").value;
+        renderMessages(query);
+    }
+
+    // Attach search trigger on Enter key
+    setTimeout(() => {
+        const searchInput = document.getElementById("searchInput");
+        if (searchInput) {
+            searchInput.addEventListener("keypress", function(e) {
+                if (e.key === 'Enter') {
+                    searchMessages();
+                }
+            });
+        }
+    }, 100);
+
+    /**
+     * Switch view functions
+     */
+    function showComposeForm() {
+        document.getElementById("messageListView").classList.add("hidden");
+        document.getElementById("messageComposeView").classList.remove("hidden");
+        
+        // Reset form
+        document.getElementById("messageForm").reset();
+        if (window.messageEditor) {
+            window.messageEditor.setData("");
+        }
+    }
+
+    function showListView() {
+        document.getElementById("messageComposeView").classList.add("hidden");
+        document.getElementById("messageListView").classList.remove("hidden");
+    }
+
+    /**
+     * Pre-fill and switch to compose form for replying
+     */
+    function replyMessage(sender, title) {
+        showComposeForm();
+        document.getElementById("recipient").value = sender;
+        document.getElementById("title").value = "Re: " + title;
+        if (window.messageEditor) {
+            window.messageEditor.setData(`<p><br></p><hr><p>Vào lúc ${new Date().toLocaleString()}, <b>${sender}</b> đã viết:</p><blockquote>Trả lời tin nhắn...</blockquote>`);
+            window.messageEditor.focus();
+        }
+    }
+
+    /**
+     * Tích hợp CKEditor 5
      */
     function initMessageEditor() {
         if (typeof ClassicEditor !== 'undefined') {
@@ -89,19 +332,14 @@
                             'undo', 'redo', '|', 'heading', '|', 
                             'bold', 'italic', 'underline', 'strikethrough', '|',
                             'bulletedList', 'numberedList', 'outdent', 'indent', '|',
-                            'link', 'insertTable', 'imageUpload', 'blockQuote', 'mediaEmbed', '|',
-                            'sourceEditing', 'fullScreen'
+                            'link', 'insertTable', 'blockQuote', '|',
+                            'sourceEditing'
                         ]
                     },
                     language: 'vi'
                 })
                 .then(editor => {
                     window.messageEditor = editor;
-                    
-                    // Khởi tạo một số nội dung mẫu nếu muốn
-                    editor.setData(`
-                        <p>Nội dung tin nhắn riêng...</p>
-                    `);
                 })
                 .catch(error => {
                     console.error('Lỗi khởi tạo CKEditor:', error);
@@ -109,7 +347,7 @@
         }
     }
 
-    // Kiểm tra và tải CKEditor 5 script nếu chưa có
+    // Load CKEditor script
     if (typeof ClassicEditor === 'undefined') {
         const script = document.createElement('script');
         script.src = 'https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js';
@@ -120,7 +358,7 @@
     }
 
     /**
-     * Hàm giả lập gửi tin nhắn riêng
+     * Submit simulated handler
      */
     function submitMessage() {
         const form = document.getElementById('messageForm');
@@ -132,7 +370,6 @@
 
         const formData = new FormData(form);
         
-        // Lấy nội dung từ CKEditor
         if (window.messageEditor) {
             const editorData = window.messageEditor.getData();
             if (!editorData || editorData.trim() === '') {
@@ -144,6 +381,25 @@
 
         const data = Object.fromEntries(formData.entries());
         console.log('Dữ liệu gửi lên .NET Controller:', data);
+        
+        // Add the new message dynamically to the mock array to show interaction
+        const newMsg = {
+            id: privateMessages.length + 1,
+            title: data.Title,
+            sender: "Tôi (Lớp trưởng/Chuyên viên)",
+            recipients: data.Recipient,
+            date: new Date().toLocaleString('vi-VN'),
+            content: data.Content,
+            attachments: []
+        };
+        
+        privateMessages.unshift(newMsg); // add to top
         alert('Gửi tin nhắn riêng thành công!');
+        showListView();
+        renderMessages();
     }
+
+    // Initial render
+    renderMessages();
 </script>
+

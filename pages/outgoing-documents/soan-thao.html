@@ -34,12 +34,12 @@
         <div class="flex items-center gap-3 overflow-x-auto pb-2 lg:pb-0 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
             <button
                 class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
-                Chưa trình <span
+                Chưa trình <span id="chuaTrinhCount"
                     class="bg-[#007BFF] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">19</span>
             </button>
             <button
                 class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium rounded-lg transition-all whitespace-nowrap text-sm">
-                Đã trình <span
+                Đã trình <span id="daTrinhCount"
                     class="bg-[#FFC107] text-white w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold">34</span>
             </button>
             <button
@@ -107,7 +107,7 @@
                                     <span class="font-semibold text-primary hover:underline cursor-pointer">test gởi
                                         công văn có đóng dấu</span>
                                 </div>
-                                <div
+                                <div id="row1Info"
                                     class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-xs text-on-surface-variant font-medium italic">
                                     <p><span class="font-semibold not-italic">Ký hiệu:</span> ; <span
                                             class="font-semibold not-italic ml-2">Ngày ký:</span> 06/04/2026</p>
@@ -116,16 +116,23 @@
                             </div>
                         </td>
                         <td class="px-4 md:px-6 py-4 text-center">
-                            <span
+                            <span id="statusRow1"
                                 class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase">Chưa
                                 trình</span>
                         </td>
                         <td class="px-4 md:px-6 py-4 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
-                                class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm"
-                                title="Chỉnh sửa">
-                                <span class="material-symbols-outlined text-base">edit</span>
-                            </button>
+                            <div class="flex flex-col items-center gap-1.5">
+                                <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#00BCD4] hover:bg-[#00ACC1] text-white rounded transition shadow-sm"
+                                    title="Chỉnh sửa">
+                                    <span class="material-symbols-outlined text-base">edit</span>
+                                </button>
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB300] hover:bg-[#FF8F00] text-white rounded transition shadow-sm"
+                                    title="Điều tuyến">
+                                    <span class="material-symbols-outlined text-base">shuffle</span>
+                                </button>
+                            </div>
                         </td>
                     </tr>
 
@@ -189,15 +196,22 @@
                         </td>
                         <td class="px-4 md:px-6 py-4 text-center">
                             <span
-                                class="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold uppercase">Ban
-                                hành</span>
+                                class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase">Chưa
+                                trình</span>
                         </td>
                         <td class="px-4 md:px-6 py-4 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')"
-                                class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB703] hover:bg-[#E0A000] text-white rounded-lg transition shadow-sm"
-                                title="Điều tuyến">
-                                <span class="material-symbols-outlined text-base font-bold">alt_route</span>
-                            </button>
+                            <div class="flex flex-col items-center gap-1.5">
+                                <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#00BCD4] hover:bg-[#00ACC1] text-white rounded transition shadow-sm"
+                                    title="Chỉnh sửa">
+                                    <span class="material-symbols-outlined text-base">edit</span>
+                                </button>
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB300] hover:bg-[#FF8F00] text-white rounded transition shadow-sm"
+                                    title="Điều tuyến">
+                                    <span class="material-symbols-outlined text-base">shuffle</span>
+                                </button>
+                            </div>
                         </td>
                     </tr>
 
@@ -228,11 +242,18 @@
                                 trình</span>
                         </td>
                         <td class="px-4 md:px-6 py-4 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
-                                class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm"
-                                title="Chỉnh sửa">
-                                <span class="material-symbols-outlined text-base">edit</span>
-                            </button>
+                            <div class="flex flex-col items-center gap-1.5">
+                                <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#00BCD4] hover:bg-[#00ACC1] text-white rounded transition shadow-sm"
+                                    title="Chỉnh sửa">
+                                    <span class="material-symbols-outlined text-base">edit</span>
+                                </button>
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB300] hover:bg-[#FF8F00] text-white rounded transition shadow-sm"
+                                    title="Điều tuyến">
+                                    <span class="material-symbols-outlined text-base">shuffle</span>
+                                </button>
+                            </div>
                         </td>
                     </tr>
 
@@ -310,12 +331,17 @@
                         <td class="px-4 md:px-6 py-4 text-center">
                             <div class="flex flex-col items-center gap-1.5 justify-center">
                                 <button onclick="loadPage('../pages/outgoing-documents/chinh-sua-soan-thao.html')"
-                                    class="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary-dim text-on-primary rounded-lg transition shadow-sm"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#00BCD4] hover:bg-[#00ACC1] text-white rounded transition shadow-sm"
                                     title="Chỉnh sửa">
                                     <span class="material-symbols-outlined text-base">edit</span>
                                 </button>
-                                <span class="bg-[#2E7D32] text-white text-[11px] font-bold px-2 py-0.5 rounded-full"
-                                    title="Lượt ý kiến">1</span>
+                                <div class="w-8 h-6 bg-[#2E7D32] text-white rounded-full flex items-center justify-center text-[12px] font-black border-2 border-[#FFB300] shadow-sm"
+                                    title="Lượt ý kiến">1</div>
+                                <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-phoi-hop.html')"
+                                    class="inline-flex items-center justify-center w-8 h-8 bg-[#FFB300] hover:bg-[#FF8F00] text-white rounded transition shadow-sm"
+                                    title="Điều tuyến">
+                                    <span class="material-symbols-outlined text-base">shuffle</span>
+                                </button>
                             </div>
                         </td>
                     </tr>
@@ -391,4 +417,36 @@
             dropdown.classList.add('hidden');
         }
     });
+
+    // Check if coming from "Chuyển phê duyệt"
+    if (localStorage.getItem('daTrinh') === 'true') {
+        const statusEl = document.getElementById('statusRow1');
+        if (statusEl) {
+            statusEl.className = 'inline-flex items-center px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold uppercase';
+            statusEl.textContent = 'Đã trình';
+        }
+        const daTrinhCountEl = document.getElementById('daTrinhCount');
+        if (daTrinhCountEl) {
+            daTrinhCountEl.textContent = '35';
+        }
+        const chuaTrinhCountEl = document.getElementById('chuaTrinhCount');
+        if (chuaTrinhCountEl) {
+            chuaTrinhCountEl.textContent = '18';
+        }
+        const infoEl = document.getElementById('row1Info');
+        if (infoEl) {
+            const ldKiemTra = localStorage.getItem('ldKiemTraKyNhay') || '';
+            const ldKy = localStorage.getItem('ldKyChinh') || '';
+            const p1 = document.createElement('p');
+            p1.className = 'md:col-span-2';
+            p1.innerHTML = '<span class="font-semibold not-italic">LĐ kiểm tra, ký nháy:</span> ' + ldKiemTra + ' <span class="font-semibold not-italic ml-2">LĐ Ký:</span> ' + ldKy;
+            const p2 = document.createElement('p');
+            p2.innerHTML = '<span class="font-semibold not-italic">Đang thực hiện:</span> Kiểm tra, ký nháy';
+            infoEl.appendChild(p1);
+            infoEl.appendChild(p2);
+            localStorage.removeItem('ldKiemTraKyNhay');
+            localStorage.removeItem('ldKyChinh');
+        }
+        localStorage.removeItem('daTrinh');
+    }
 </script>

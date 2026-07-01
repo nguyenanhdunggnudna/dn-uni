@@ -1,0 +1,868 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Hidden File Input for Paperclip Trigger -->
+    <input type="file" id="generalFileInput" class="hidden" onchange="handleFileChosen(this)">
+
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/10 pb-4">
+        <div>
+            <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-1.5">
+                <span class="hover:text-primary cursor-pointer font-medium" onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')">Danh sách VB đến</span>
+                <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                <span class="font-semibold text-primary">Chi tiết & Xử lý văn bản</span>
+            </div>
+            <h2 class="font-manrope text-2xl font-extrabold text-on-surface tracking-tight">Chi tiết & Tiến trình xử lý</h2>
+        </div>
+        <button onclick="loadPage('../pages/incoming-documents/danh-sach-van-ban-den.html')" 
+            class="flex items-center gap-2 px-4 py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-full text-sm font-semibold transition-all border border-outline-variant/30 shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            <span>Quay lại</span>
+        </button>
+    </div>
+
+    <!-- Title and Search Bar -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <h3 class="text-lg font-bold text-red-650 tracking-tight">Chi tiết: Về việc Báo cáo thực hiện Kế hoạch số 1919/KH-BGDĐT</h3>
+        <div class="flex gap-2 w-full md:w-auto">
+            <input type="text" placeholder="Search" class="px-4 py-1.5 border border-gray-300 rounded text-sm outline-none focus:ring-2 focus:ring-blue-500/20 w-full md:w-60">
+            <button class="bg-gray-700 hover:bg-gray-850 text-white px-4 py-1.5 rounded text-sm font-semibold transition-colors">Tìm</button>
+        </div>
+    </div>
+
+    <!-- Top Two Cards Layout: NỘI DUNG VĂN BẢN & NỘI DUNG CÔNG VIỆC -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- NỘI DUNG VĂN BẢN Card -->
+        <div class="bg-white border border-gray-250 rounded shadow-sm overflow-hidden">
+            <div class="bg-gray-50 border-b border-gray-250 px-4 py-2">
+                <h4 class="font-extrabold text-[13px] text-gray-700 uppercase tracking-wider">NỘI DUNG VĂN BẢN</h4>
+            </div>
+            <table class="w-full text-left border-collapse text-xs">
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200 w-1/4">Trích yếu</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">Về việc Báo cáo thực hiện Kế hoạch số 1919/KH-BGDĐT</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Độ khẩn</td>
+                        <td class="px-4 py-3 text-gray-550 italic">-</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Số ký hiệu</td>
+                        <td class="px-4 py-3 text-gray-800 font-bold text-primary">7351/BGDĐT-GDĐH</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Ngày ban hành</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">12/11/2025</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Loại văn bản</td>
+                        <td class="px-4 py-3 text-gray-800 font-semibold">Công văn</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Bút phê</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">Trường phòng TCHC thực hiện</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Hạn xử lý</td>
+                        <td class="px-4 py-3 text-red-500 italic font-semibold">Chưa thiết lập</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">File văn bản</td>
+                        <td class="px-4 py-3 text-blue-600 font-bold hover:underline cursor-pointer">
+                            1- 4053 (7351 BGDDT-GDDH).pdf <span class="text-gray-400 font-normal hover:no-underline">(Xem nội dung)</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NỘI DUNG CÔNG VIỆC Card -->
+        <div class="bg-white border border-gray-250 rounded shadow-sm overflow-hidden">
+            <div class="bg-gray-50 border-b border-gray-250 px-4 py-2">
+                <h4 class="font-extrabold text-[13px] text-gray-700 uppercase tracking-wider">NỘI DUNG CÔNG VIỆC</h4>
+            </div>
+            <table class="w-full text-left border-collapse text-xs">
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200 w-1/4">Yêu cầu</td>
+                        <td class="px-4 py-3 text-gray-800"></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Hạn xử lý</td>
+                        <td class="px-4 py-3 text-gray-800"></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Đơn vị xử lý chính</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">Tp.test1;</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Đơn vị phối hợp</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">T.Phòng; Tp2TT1; TT1.Tp3;</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-blue-50/70 font-bold text-blue-900 border-r border-gray-200">Lãnh đạo theo dõi, chỉ đạo</td>
+                        <td class="px-4 py-3 text-gray-800"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Banner CHỈ ĐẠO, THEO DÕI -->
+    <div class="flex items-center justify-between bg-[#e6f7ff] border-l-4 border-[#1890ff] px-6 py-3 rounded-r shadow-sm">
+        <span class="font-bold text-blue-800 flex items-center gap-2 text-sm uppercase">
+            <i class="fa-solid fa-comment-dots"></i> CHỈ ĐẠO, THEO DÕI
+        </span>
+        <button onclick="openFeedbackModal('Phản hồi công việc')" class="bg-[#1890ff] hover:bg-blue-600 text-white px-5 py-1.5 rounded text-xs font-bold transition-all shadow-sm">
+            Phản hồi
+        </button>
+    </div>
+
+    <!-- Main Content Section with Tab Control & Sidebar -->
+    <div class="bg-white border border-gray-250 rounded shadow-sm overflow-hidden">
+        <!-- Section Header -->
+        <div class="bg-gray-50 border-b border-gray-250 px-5 py-3.5 flex justify-between items-center">
+            <h4 class="font-bold text-sm text-blue-800 tracking-wide">QUÁ TRÌNH XỬ LÝ</h4>
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="completeCheck" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                <label for="completeCheck" class="text-xs font-bold text-blue-850">Hoàn thành</label>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12 min-h-[450px]">
+            <!-- Sidebar Navigation Tabs (col-span-2) -->
+            <div class="col-span-2 border-r border-gray-250 bg-gray-50/50 p-4 space-y-1.5">
+                <button onclick="switchTab('tatca')" id="btn-tatca" class="w-full text-left px-4 py-2.5 rounded text-xs font-bold transition-all text-white bg-[#5b519e] shadow-sm">
+                    Tất cả
+                </button>
+                <button onclick="switchTab('ptest1')" id="btn-ptest1" class="w-full text-left px-4 py-2.5 rounded text-xs font-semibold transition-all text-gray-650 hover:bg-gray-100 hover:text-gray-900">
+                    P.TEST1
+                </button>
+                <button onclick="switchTab('testtt1')" id="btn-testtt1" class="w-full text-left px-4 py-2.5 rounded text-xs font-semibold transition-all text-gray-650 hover:bg-gray-100 hover:text-gray-900">
+                    Test.TT1
+                </button>
+                <button onclick="switchTab('quatrinh')" id="btn-quatrinh" class="w-full text-left px-4 py-2.5 rounded text-xs font-semibold transition-all text-gray-650 hover:bg-gray-100 hover:text-gray-900">
+                    Quá trình
+                </button>
+                <button onclick="switchTab('log')" id="btn-log" class="w-full text-left px-4 py-2.5 rounded text-xs font-semibold transition-all text-gray-650 hover:bg-gray-100 hover:text-gray-900">
+                    Log
+                </button>
+            </div>
+
+            <!-- Content Area (col-span-10) -->
+            <div class="col-span-10 p-6">
+                <!-- TAB 1: Tất cả -->
+                <div id="tab-tatca" class="space-y-6">
+                    <h5 class="text-[#007acc] font-bold text-[13px] border-b border-gray-100 pb-2 uppercase">TRAO ĐỔI, PHẢN HỒI</h5>
+                    
+                    <div id="feedbackItemsList" class="space-y-5">
+                        <!-- Comment 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-1-tatca" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            thu lan 3
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">30/12/2025 8:02:37 AM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('thu lan 3')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-1-tatca" onclick="markAsRead('1')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-2-tatca" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ✓ đã xong
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">31/12/2025 3:52:21 PM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('✓ đã xong')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-2-tatca" onclick="markAsRead('2')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-3-tatca" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ok
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">31/03/2026 8:26:39 PM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('ok')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-3-tatca" onclick="markAsRead('3')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 4 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-4-tatca" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ✓ ok
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">13/04/2026 10:47:52 AM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('✓ ok')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-4-tatca" onclick="markAsRead('4')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ĐƠN VỊ CHỦ TRÌ -->
+                    <div class="border-t border-gray-200 pt-6 space-y-4">
+                        <h5 class="text-[#007acc] font-bold text-[13px] border-b border-gray-100 pb-2 uppercase">ĐƠN VỊ CHỦ TRÌ</h5>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center font-bold text-blue-600 shadow-sm flex-shrink-0">
+                                    TP
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div class="space-y-1">
+                                            <span class="font-bold text-xs text-gray-850">Trưởng phòng test</span>
+                                            <div class="text-xs text-gray-750 bg-gray-50 p-2.5 rounded border border-gray-200 block">
+                                                mo lai cong viec
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                            <span class="text-[11px] text-gray-400">15/01/2026 9:30:13 PM</span>
+                                            <button onclick="openFeedbackModal('mo lai cong viec')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 border-t border-gray-100 pt-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center font-bold text-blue-600 shadow-sm flex-shrink-0">
+                                    TP
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div class="space-y-1">
+                                            <span class="font-bold text-xs text-gray-850">Trưởng phòng test</span>
+                                            <div class="text-xs text-gray-750 bg-gray-50 p-2.5 rounded border border-gray-200 block">
+                                                mo lai
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                            <span class="text-[11px] text-gray-400">15/01/2026 8:44:04 PM</span>
+                                            <button onclick="openFeedbackModal('mo lai')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ý KIẾN ĐƠN VỊ PHỐI HỢP -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h5 class="text-[#007acc] font-bold text-[13px] border-b border-gray-100 pb-2 uppercase">Ý KIẾN ĐƠN VỊ PHỐI HỢP</h5>
+                        <div class="py-4 text-xs text-gray-400 italic">
+                            Chưa có ý kiến phối hợp nào.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: P.TEST1 -->
+                <div id="tab-ptest1" class="hidden space-y-5">
+                    <div class="bg-red-50/40 border-l-4 border-red-400 p-4 rounded-r text-xs space-y-1.5 text-red-950">
+                        <div><strong>* Tiêu đề:</strong> <span class="text-red-750 font-semibold">Xử lý văn bản Về việc Báo cáo thực hiện Kế hoạch số 1919/KH-BGDĐT 7351/BGDĐT-GDĐH ngày 12/11/2025</span> (22/12/2025 9:10:24 PM)</div>
+                        <div><strong>* Yêu cầu:</strong> </div>
+                        <div><strong>* Xử lý chính:</strong> </div>
+                        <div><strong>* Thời hạn:</strong> </div>
+                    </div>
+
+                    <div class="space-y-5 pt-3">
+                        <!-- Comment 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-1-ptest1" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            thu lan 3
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">30/12/2025 8:02:37 AM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('thu lan 3')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-1-ptest1" onclick="markAsRead('1')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-2-ptest1" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ✓ đã xong
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">31/12/2025 3:52:21 PM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('✓ đã xong')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-2-ptest1" onclick="markAsRead('2')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-3-ptest1" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ok
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">31/03/2026 8:26:39 PM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('ok')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-3-ptest1" onclick="markAsRead('3')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 4 -->
+                        <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center font-bold text-gray-600 shadow-sm flex-shrink-0">
+                                CB
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-xs text-gray-800">Chuyên viên test 1</span>
+                                            <span id="badge-4-ptest1" class="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-black scale-90 uppercase">New</span>
+                                        </div>
+                                        <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                            ✓ ok
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                                        <span class="text-[11px] text-gray-400">13/04/2026 10:47:52 AM</span>
+                                        <div class="flex gap-1">
+                                            <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                            <button onclick="openFeedbackModal('✓ ok')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                                            <button id="eye-4-ptest1" onclick="markAsRead('4')" class="w-7 h-7 bg-[#ffb300] hover:bg-[#ff8f00] text-white rounded flex items-center justify-center shadow-sm" title="Đánh dấu đã xem"><i class="fa-solid fa-eye text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Test.TT1 -->
+                <div id="tab-testtt1" class="hidden text-center py-10 text-gray-400 italic text-xs">
+                    Không có thông tin xử lý của phòng Test.TT1
+                </div>
+
+                <!-- TAB 4: Quá trình (Workflow Graph Layout) -->
+                <div id="tab-quatrinh" class="hidden relative p-4 overflow-x-auto min-h-[450px]">
+                    <div class="min-w-[650px] relative flex flex-col items-center py-6 font-sans">
+                        
+                        <!-- Main flow wrapper -->
+                        <div class="flex flex-row items-center gap-12 relative">
+                            <!-- Chuyển thực hiện -->
+                            <div class="flex flex-col items-center relative z-10">
+                                <div class="bg-[#1e88e5] text-white text-xs font-bold px-4 py-2.5 rounded shadow-md border border-blue-600 text-center w-48">
+                                    CHUYỂN THỰC HIỆN
+                                    <div class="text-[10px] text-blue-100 font-medium mt-1">27/12/2025 8:27:11 PM</div>
+                                </div>
+                            </div>
+
+                            <!-- Arrow Line connector -->
+                            <div class="h-0.5 bg-gray-300 w-12 flex-shrink-0 relative">
+                                <div class="absolute right-0 -top-[3px] border-t-4 border-b-4 border-l-4 border-transparent border-l-gray-400"></div>
+                            </div>
+
+                            <!-- P.TEST1 (Middle Box) -->
+                            <div class="flex flex-col items-center relative z-10">
+                                <div class="bg-[#2e7d32] text-white text-xs font-medium px-4 py-3 rounded shadow-md border border-green-700 border-dashed text-left w-56 space-y-1 relative">
+                                    <div class="text-[10px] text-green-150">➔ 26/12/2025 3:42:02 PM</div>
+                                    <div class="font-bold">Truong phong test 1 (P.TEST1)</div>
+                                    <div class="text-[10px] flex items-center gap-1 text-green-200">
+                                        <i class="fa-solid fa-eye text-[9px]"></i> 26/12/2025 3:37:40 PM
+                                    </div>
+                                    <div class="text-[10px] flex items-center gap-1 text-green-200">
+                                        <i class="fa-solid fa-pen text-[9px]"></i> 31/12/2025 3:56:27 PM
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Branch Connector -->
+                            <div class="w-16 h-40 flex items-center justify-center relative flex-shrink-0">
+                                <!-- Horizontal branch line coming out of middle box -->
+                                <div class="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-gray-300 w-8"></div>
+                                <!-- Vertical split line -->
+                                <div class="absolute left-8 top-[32px] bottom-[32px] w-0.5 bg-gray-300"></div>
+                                <!-- Top branch horizontal line to Box 3 -->
+                                <div class="absolute left-8 top-[32px] h-0.5 bg-gray-300 w-8">
+                                    <div class="absolute right-0 -top-[3px] border-t-4 border-b-4 border-l-4 border-transparent border-l-gray-400"></div>
+                                </div>
+                                <!-- Bottom branch horizontal line to Box 4 -->
+                                <div class="absolute left-8 bottom-[32px] h-0.5 bg-gray-300 w-8">
+                                    <div class="absolute right-0 -top-[3px] border-t-4 border-b-4 border-l-4 border-transparent border-l-gray-400"></div>
+                                </div>
+                            </div>
+
+                            <!-- Right Branches Wrapper -->
+                            <div class="flex flex-col gap-6 justify-center">
+                                <!-- Top branch: Phó phòng test -->
+                                <div class="bg-[#2e7d32] text-white text-xs font-medium px-4 py-3 rounded shadow-md border border-green-700 text-left w-52 space-y-1 relative">
+                                    <div class="text-[10px] text-green-150">➔ 22/12/2025 9:10:24 PM</div>
+                                    <div class="font-bold">Phó phòng test</div>
+                                    <div class="text-[10px] flex items-center gap-1 text-green-200">
+                                        <i class="fa-solid fa-eye text-[9px]"></i> 26/12/2025 11:16:15 PM
+                                    </div>
+                                </div>
+
+                                <!-- Bottom branch: Chuyên viên test 1 -->
+                                <div class="bg-[#2e7d32] text-white text-xs font-medium px-4 py-3 rounded shadow-md border border-green-700 border-dashed text-left w-52 space-y-1 relative">
+                                    <div class="text-[10px] text-green-150">➔ 22/12/2025 9:10:24 PM</div>
+                                    <div class="font-bold">Chuyên viên test 1</div>
+                                    <div class="text-[10px] flex items-center gap-1 text-green-200">
+                                        <i class="fa-solid fa-eye text-[9px]"></i> 22/12/2025 10:07:02 PM
+                                    </div>
+                                    <div class="text-[10px] flex items-center gap-1 text-green-200">
+                                        <i class="fa-solid fa-pen text-[9px]"></i> 13/04/2026 10:47:52 AM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lower branch layout for orange and grey steps -->
+                        <div class="mt-8 flex flex-row items-center gap-12 ml-4">
+                            <!-- Orange Box -->
+                            <div class="flex flex-col items-center relative">
+                                <!-- Connector up to the main flow line -->
+                                <div class="absolute -top-8 w-0.5 bg-gray-300 h-8"></div>
+                                <div class="bg-[#f0ad4e] text-white text-xs font-medium px-4 py-3 rounded shadow-md border border-amber-600 text-left w-56 space-y-1 relative">
+                                    <div class="text-[10px] text-amber-100">➔ 26/12/2025 4:05:24 PM</div>
+                                    <div class="font-bold">Trưởng phòng test (P.TEST1)</div>
+                                    <div class="text-[10px] flex items-center gap-1 text-amber-200">
+                                        <i class="fa-solid fa-eye text-[9px]"></i> 22/12/2025 9:09:18 PM
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Grey Box -->
+                            <div class="flex flex-col items-center relative">
+                                <!-- Connector up -->
+                                <div class="absolute -top-8 w-0.5 bg-gray-300 h-8"></div>
+                                <div class="bg-[#999] text-white text-xs font-medium px-4 py-3 rounded shadow-md border border-gray-500 text-left w-56 space-y-1 relative">
+                                    <div class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-white border border-gray-400 rounded-full flex items-center justify-center text-gray-600 font-bold text-[9px] cursor-pointer shadow">✕</div>
+                                    <div class="text-[10px] text-gray-200">➔ 20/12/2025 2:15:51 PM</div>
+                                    <div class="font-bold">Truong phong 2 TT1 (Test.TT1)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: Log -->
+                <div id="tab-log" class="hidden space-y-4">
+                    <h5 class="text-[#007acc] font-bold text-center text-[15px] border-b border-gray-150 pb-2 uppercase tracking-wide">QUÁ TRÌNH XỬ LÝ</h5>
+                    
+                    <div class="max-h-[380px] overflow-y-auto pr-2 space-y-2.5 font-sans text-xs">
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 9:27:53 AM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 9:28:42 AM:</span>
+                            <span class="text-gray-600 font-medium">Chuyển thực hiện</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 1:10:55 PM:</span>
+                            <span class="text-gray-600 font-medium">Trung tâm Công nghệ thông tin và Học liệu số phân xử lý</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 2:48:47 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 3:21:24 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 3:22:03 PM:</span>
+                            <span class="text-gray-600 font-medium">Chuyển thực hiện</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">13/11/2025 3:22:18 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">14/11/2025 1:50:03 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">28/11/2025 7:18:34 AM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">28/11/2025 7:19:47 AM:</span>
+                            <span class="text-gray-600 font-medium">Chuyển lãnh đạo</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">01/12/2025 10:41:10 AM:</span>
+                            <span class="text-gray-600 font-medium">Văn phòng ĐHĐN phân xử lý</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">03/12/2025 9:01:18 PM:</span>
+                            <span class="text-gray-600 font-medium">Xác nhận hoàn thành xử lý công văn đến</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">07/12/2025 5:28:27 PM:</span>
+                            <span class="text-gray-600 font-medium">Xác nhận hoàn thành xử lý công văn đến</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">08/12/2025 8:36:52 AM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">08/12/2025 8:36:54 AM:</span>
+                            <span class="text-gray-600 font-medium">Chuyển lãnh đạo</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">10/12/2025 3:23:34 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">10/12/2025 3:23:37 PM:</span>
+                            <span class="text-gray-600 font-medium">Chuyển thực hiện</span>
+                        </div>
+                        <div class="flex gap-2.5 py-1.5 border-b border-gray-100 hover:bg-gray-50/80 px-2 transition-colors">
+                            <span class="font-bold text-gray-800 w-36 flex-shrink-0">20/12/2025 2:13:52 PM:</span>
+                            <span class="text-gray-600 font-medium">Nhập thông tin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Phản hồi công việc -->
+<div id="feedbackModal" class="fixed inset-0 bg-black/60 z-[9999] flex items-center justify-center hidden opacity-0 transition-opacity duration-350">
+    <div class="bg-white rounded-lg shadow-2xl border border-gray-300 w-full max-w-4xl mx-4 overflow-hidden flex flex-col font-sans transform scale-95 transition-transform duration-350">
+        <!-- Header -->
+        <div class="bg-[#F8F9FA] px-6 py-3 border-b border-gray-200 flex items-center justify-between">
+            <h3 id="feedbackModalTitle" class="text-red-600 font-extrabold text-base">Phản hồi công việc</h3>
+            <button onclick="closeFeedbackModal()" class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+        </div>
+        <!-- Body -->
+        <div class="p-6 space-y-4">
+            <div>
+                <label class="block font-bold text-gray-700 text-[13px] mb-2">Nội dung:</label>
+                <!-- Editor Toolbar Simulation -->
+                <div class="border border-gray-300 border-b-0 bg-[#F0F2F5] p-2 flex flex-wrap gap-1 items-center rounded-t">
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Cut"><span class="material-symbols-outlined text-base">content_cut</span></button>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Copy"><span class="material-symbols-outlined text-base">content_copy</span></button>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Paste"><span class="material-symbols-outlined text-base">content_paste</span></button>
+                    <div class="w-px h-4 bg-gray-300 mx-1"></div>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Undo"><span class="material-symbols-outlined text-base">undo</span></button>
+                    <button class="p-1 hover:bg-gray-200 rounded text-gray-500 flex items-center justify-center" title="Redo"><span class="material-symbols-outlined text-base">redo</span></button>
+                    <div class="w-px h-4 bg-gray-300 mx-1"></div>
+                    <select class="text-xs border border-gray-300 rounded px-1.5 py-0.5 bg-white"><option>Normal</option></select>
+                    <select class="text-xs border border-gray-300 rounded px-1.5 py-0.5 bg-white"><option>Arial</option></select>
+                    <select class="text-xs border border-gray-300 rounded px-1.5 py-0.5 bg-white"><option>(Font Size)</option></select>
+                    <div class="w-px h-4 bg-gray-300 mx-1"></div>
+                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 font-bold text-xs" title="Bold">B</button>
+                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-655 italic text-xs" title="Italic">I</button>
+                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-655 underline text-xs" title="Underline">U</button>
+                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-655 line-through text-xs" title="Strikethrough">S</button>
+                </div>
+                <!-- Textarea -->
+                <textarea id="feedbackTextarea" rows="8" class="w-full border border-gray-300 rounded-b p-3 outline-none focus:ring-1 focus:ring-blue-500 text-sm resize-none" placeholder="Nhập nội dung phản hồi..."></textarea>
+            </div>
+
+            <div>
+                <label class="block font-bold text-gray-700 text-[13px] mb-2">File đính kèm:</label>
+                <div class="flex items-center gap-2">
+                    <input type="file" id="feedbackFileInput" class="text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded file:border file:border-gray-300 file:bg-gray-50 file:text-xs file:font-semibold file:text-gray-700 hover:file:bg-gray-100">
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="bg-[#F8F9FA] px-6 py-4 border-t border-gray-200 flex justify-end">
+            <button onclick="submitFeedbackForm()" class="px-5 py-2 bg-[#51459E] hover:bg-[#433887] text-white rounded font-bold transition shadow-sm">Gửi tin nhắn</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    /**
+     * Custom lightweight Toast Notification System
+     */
+    function showToast(message, type = 'success') {
+        let container = document.getElementById('toastNotificationContainer');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'toastNotificationContainer';
+            container.className = 'fixed bottom-6 right-6 z-[10000] space-y-2.5 max-w-sm w-full';
+            document.body.appendChild(container);
+        }
+
+        const toast = document.createElement('div');
+        toast.className = 'flex items-center gap-3 px-4 py-3.5 bg-white text-gray-800 rounded-xl shadow-2xl border border-gray-150 transform translate-y-3 opacity-0 transition-all duration-300 text-xs font-bold font-sans';
+        
+        const iconName = type === 'success' ? 'check_circle' : 'info';
+        const iconColor = type === 'success' ? 'text-green-500' : 'text-blue-500';
+
+        toast.innerHTML = `
+            <span class="material-symbols-outlined ${iconColor} text-xl flex-shrink-0">${iconName}</span>
+            <div class="flex-1">${message}</div>
+            <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-gray-600 ml-auto flex items-center"><span class="material-symbols-outlined text-sm">close</span></button>
+        `;
+
+        container.appendChild(toast);
+
+        // Slide/Fade In
+        setTimeout(() => {
+            toast.classList.remove('translate-y-3', 'opacity-0');
+        }, 10);
+
+        // Auto remove
+        setTimeout(() => {
+            toast.classList.add('translate-y-3', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 3500);
+    }
+
+    /**
+     * File Chosen simulation handler
+     */
+    function handleFileChosen(input) {
+        if (input.files && input.files[0]) {
+            showToast(`Đã đính kèm tệp thành công: <b>${input.files[0].name}</b>`, 'success');
+        }
+    }
+
+    function switchTab(tabId) {
+        const tabs = ['tatca', 'ptest1', 'testtt1', 'quatrinh', 'log'];
+        tabs.forEach(t => {
+            const btn = document.getElementById('btn-' + t);
+            const content = document.getElementById('tab-' + t);
+            if (btn) {
+                btn.className = "w-full text-left px-4 py-2.5 rounded text-xs font-semibold transition-all text-gray-650 hover:bg-gray-100 hover:text-gray-900";
+            }
+            if (content) {
+                content.classList.add('hidden');
+            }
+        });
+
+        const activeBtn = document.getElementById('btn-' + tabId);
+        const activeContent = document.getElementById('tab-' + tabId);
+        if (activeBtn) {
+            activeBtn.className = "w-full text-left px-4 py-2.5 rounded text-xs font-bold transition-all text-white bg-[#5b519e] shadow-sm";
+        }
+        if (activeContent) {
+            activeContent.classList.remove('hidden');
+        }
+    }
+
+    /**
+     * Modal functions
+     */
+    function openFeedbackModal(titleText = 'Phản hồi công việc') {
+        const modal = document.getElementById('feedbackModal');
+        const modalTitle = document.getElementById('feedbackModalTitle');
+        const textarea = document.getElementById('feedbackTextarea');
+        const fileInput = document.getElementById('feedbackFileInput');
+        
+        if (modal && modalTitle) {
+            modalTitle.innerText = titleText;
+            if (textarea) textarea.value = '';
+            if (fileInput) fileInput.value = '';
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.firstElementChild.classList.remove('scale-95');
+            }, 10);
+        }
+    }
+
+    function closeFeedbackModal() {
+        const modal = document.getElementById('feedbackModal');
+        if (modal) {
+            modal.classList.add('opacity-0');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 350);
+        }
+    }
+
+    function submitFeedbackForm() {
+        const content = document.getElementById('feedbackTextarea').value;
+        if (!content || content.trim() === '') {
+            showToast('Vui lòng nhập nội dung!', 'info');
+            return;
+        }
+
+        const modalTitle = document.getElementById('feedbackModalTitle').innerText;
+        showToast(`Đã gửi phản hồi thành công!`, 'success');
+        
+        // Dynamically insert the new comment in the lists to simulate updates
+        const listTatca = document.getElementById('feedbackItemsList');
+        const newHtml = `
+            <div class="flex items-start gap-4 border-t border-gray-100 pt-5">
+                <div class="w-10 h-10 rounded-full bg-indigo-150 border border-indigo-250 flex items-center justify-center font-bold text-indigo-700 shadow-sm flex-shrink-0">
+                    Tôi
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-xs text-gray-800">Chuyên viên (Tôi)</span>
+                            </div>
+                            <div class="text-xs text-gray-700 bg-gray-50/50 p-2.5 rounded border border-gray-200/60 inline-block font-medium min-w-[200px]">
+                                ${content}
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                            <span class="text-[11px] text-gray-400">Vừa xong</span>
+                            <div class="flex gap-1">
+                                <button onclick="document.getElementById('generalFileInput').click()" class="w-7 h-7 bg-[#337ab7] hover:bg-[#286090] text-white rounded flex items-center justify-center shadow-sm" title="Chọn tệp tải lên"><i class="fa-solid fa-paperclip text-xs"></i></button>
+                                <button onclick="openFeedbackModal('${content.substring(0, 15)}...')" class="w-7 h-7 bg-[#26a69a] hover:bg-[#00897b] text-white rounded flex items-center justify-center shadow-sm" title="Phản hồi"><i class="fa-solid fa-comment-dots text-xs"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        if (listTatca) {
+            listTatca.insertAdjacentHTML('afterbegin', newHtml);
+        }
+        
+        closeFeedbackModal();
+    }
+
+    /**
+     * Mark as read logic
+     */
+    function markAsRead(id) {
+        const badgeTatca = document.getElementById(`badge-${id}-tatca`);
+        const badgePtest1 = document.getElementById(`badge-${id}-ptest1`);
+        const eyeBtnTatca = document.getElementById(`eye-${id}-tatca`);
+        const eyeBtnPtest1 = document.getElementById(`eye-${id}-ptest1`);
+        
+        if (badgeTatca) badgeTatca.classList.add('hidden');
+        if (badgePtest1) badgePtest1.classList.add('hidden');
+        
+        // Visual indicator on eye buttons
+        if (eyeBtnTatca) {
+            eyeBtnTatca.className = "w-7 h-7 bg-gray-200 text-gray-400 rounded flex items-center justify-center shadow-sm cursor-not-allowed";
+            eyeBtnTatca.title = "Đã xem";
+        }
+        if (eyeBtnPtest1) {
+            eyeBtnPtest1.className = "w-7 h-7 bg-gray-200 text-gray-400 rounded flex items-center justify-center shadow-sm cursor-not-allowed";
+            eyeBtnPtest1.title = "Đã xem";
+        }
+        
+        showToast('Đã đánh dấu đã xem phản hồi này!', 'success');
+    }
+</script>

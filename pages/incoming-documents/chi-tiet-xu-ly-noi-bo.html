@@ -1,0 +1,139 @@
+<div class="px-6 py-4 space-y-0">
+
+    <!-- Breadcrumb -->
+    <div class="mb-4">
+        <span class="text-sm text-gray-700 font-semibold cursor-pointer hover:text-blue-600 transition-colors" onclick="loadPage('../pages/incoming-documents/van-ban-noi-bo.html')">Danh sách VB đến</span>
+    </div>
+
+    <!-- Top Blue Header Bar with Tabs -->
+    <div class="bg-[#1a73b5] rounded-t-md px-5 py-3 flex items-center justify-between min-h-[48px]">
+        <span class="text-white font-bold text-sm"></span>
+        <div class="flex items-center gap-1">
+            <button id="tab-btn-noidung" onclick="switchMainTab('noidung')"
+                class="px-5 py-1.5 rounded text-sm font-bold transition-all bg-[#2196F3] text-white shadow-sm">Nội dung</button>
+            <button id="tab-btn-luong" onclick="switchMainTab('luong')"
+                class="px-5 py-1.5 rounded text-sm font-bold transition-all bg-[#90CAF9]/40 text-blue-100 hover:bg-[#64B5F6]/50">Luồng</button>
+        </div>
+    </div>
+
+    <!-- TAB: Nội dung - Metadata Table -->
+    <div id="tab-noidung" class="">
+        <div class="bg-white border border-gray-300 border-t-0 overflow-hidden">
+            <table class="w-full text-left border-collapse text-[13px]">
+                <tbody>
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200 w-[130px] align-top">Trích yếu</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium leading-relaxed" colspan="3">Quyết định về việc bổ nhiệm Phó Hiệu trưởng Trường Đại học Bách khoa (PGS.TS. Nguyễn Đình Lâm, PGS.TS. Nguyễn Hồng Hà, PGS.TS. Lê Tiến Dũng, PGS.TS. Huỳnh Phương Nam)</td>
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-l border-r border-gray-200 w-[120px]">Độ khẩn</td>
+                        <td class="px-4 py-3 text-gray-500 italic"></td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200">Số ký hiệu</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium" colspan="3">2309/QĐ-ĐHĐN</td>
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-l border-r border-gray-200">Ngày ban hành</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">16/05/2025</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200">Loại văn bản</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium" colspan="3">Quyết định</td>
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-l border-r border-gray-200">CQ ban hành</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">Ban Tổ chức Cán bộ</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200">Người ký</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium" colspan="3">PGS.TS. Nguyễn Ngọc Vũ</td>
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-l border-r border-gray-200">Soạn thảo</td>
+                        <td class="px-4 py-3 text-gray-800 font-medium">Lê Tổ Hạnh</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200 align-top">Nơi nhận</td>
+                        <td class="px-4 py-3 text-gray-700 leading-relaxed text-[12px]" colspan="5">PGĐ, NM.loan, TH.Phoc, CX.luân, GĐ NN.Vũ, H.lệt, THHH.tịnh, HMĐôn, HP.Hiếu, HV.Hùng, LN.KhaMi, U...Nhàn, U..Sác, U.Hạnh, NQ.Phong, NQ Tân, NHH.Cường, NN.Quynh, NP...King, NQ.Siac, NH.hường, Nl..lung, NI.Vũ, NHI.Giang, NTHung, NTT.Hương, NTV.Quynh, NV.Hiệu, PQ.Trinh, NC.Tuấn, DM.Fabi, TAK.Quốc, Tl R.Tùng, TI.HPhú, TP.Sáu, VT.BHKI, VT.BHKT, VT.BHNN, VT.BHSz, VT.BHSoPKT, VT.PHKcnTrain, VT.VCú, VT.VNHIK, VT.VYD</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 bg-gray-50 font-bold text-gray-700 border-r border-gray-200 align-top">Hệ văn bản</td>
+                        <td class="px-4 py-3 text-gray-700 leading-loose text-[12px]" colspan="5">
+                            <div>1- QĐ_2309_Bổ Phó Hiệu trưởng Trường ĐHBK_Nguyễn Đình Lâm_0001.pdf <span class="text-blue-600 cursor-pointer hover:underline font-medium">(Xem nội dung)</span></div>
+                            <div>2- QĐ_2311_Bổ Phó Hiệu trưởng Trường ĐHBK_Nguyễn Hồng Hà_0001.pdf <span class="text-blue-600 cursor-pointer hover:underline font-medium">(Xem nội dung)</span></div>
+                            <div>3- QĐ_2312_Bổ Phó Hiệu trưởng Trường ĐHBK_Lê Tiến Dũng_000...pdf <span class="text-blue-600 cursor-pointer hover:underline font-medium">(Xem nội dung)</span></div>
+                            <div>4- QĐ_2319_Bổ Phó Hiệu trưởng Trường ĐHBK_Huỳnh Phương Nam_0001.pdf <span class="text-blue-600 cursor-pointer hover:underline font-medium">(Xem nội dung)</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB: Luồng (hidden by default) -->
+    <div id="tab-luong" class="hidden">
+        <!-- Empty top area with light blue bg for Luồng tab -->
+    </div>
+
+    <!-- XỬ LÝ Section -->
+    <div class="mt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <div class="w-1 h-5 bg-[#1a73b5] rounded-full"></div>
+            <h4 class="text-[#1a73b5] font-bold text-sm uppercase tracking-wide">Xử lý</h4>
+        </div>
+
+        <!-- CHUYỂN THỰC HIỆN Badge -->
+        <div class="mb-5">
+            <div class="inline-flex items-center gap-2 bg-[#1e88e5] text-white px-5 py-2.5 rounded-md shadow-sm">
+                <div>
+                    <div class="font-bold text-sm">CHUYỂN THỰC HIỆN</div>
+                    <div class="text-[11px] text-blue-100 flex items-center gap-1 mt-0.5">
+                        <span>→</span> 17/06/2026 8:45:55 AM
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- XỬ LÝ CỦA CÁ NHÂN Section -->
+    <div class="mt-4">
+        <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+                <div class="w-1 h-5 bg-[#1a73b5] rounded-full"></div>
+                <h4 class="text-[#1a73b5] font-bold text-sm uppercase tracking-wide">Xử lý của cá nhân</h4>
+            </div>
+            <button class="px-5 py-1.5 bg-[#1e88e5] text-white rounded-full text-sm font-bold hover:bg-[#1565c0] transition-all shadow-sm">Lưu</button>
+        </div>
+
+        <div class="bg-[#f0f9ff] border border-[#b3e0ff] rounded-md p-4">
+            <!-- Checkbox -->
+            <div class="flex items-center gap-2 mb-3">
+                <input type="checkbox" id="trackDocCheckbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                <label for="trackDocCheckbox" class="text-sm text-gray-600">Theo dõi văn bản này</label>
+            </div>
+
+            <!-- Textarea -->
+            <textarea class="w-full border border-[#c5c87a] rounded-md p-3 text-sm text-gray-700 resize-y focus:ring-2 focus:ring-blue-200 outline-none bg-white min-h-[80px]" placeholder="Nhập nội dung xử lý..."></textarea>
+        </div>
+    </div>
+
+    <!-- GỬI ĐỂ XEM Section -->
+    <div class="mt-5 mb-6">
+        <div class="flex items-center gap-2">
+            <div class="w-1 h-5 bg-[#26a69a] rounded-full"></div>
+            <h4 class="text-[#26a69a] font-bold text-sm uppercase tracking-wide">Gửi để xem</h4>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function switchMainTab(tabName) {
+        // Hide all tabs
+        document.getElementById('tab-noidung').classList.add('hidden');
+        document.getElementById('tab-luong').classList.add('hidden');
+
+        // Reset all tab buttons
+        document.getElementById('tab-btn-noidung').className = 'px-5 py-1.5 rounded text-sm font-bold transition-all bg-[#90CAF9]/40 text-blue-100 hover:bg-[#64B5F6]/50';
+        document.getElementById('tab-btn-luong').className = 'px-5 py-1.5 rounded text-sm font-bold transition-all bg-[#90CAF9]/40 text-blue-100 hover:bg-[#64B5F6]/50';
+
+        // Show selected tab
+        document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+        // Activate selected tab button
+        document.getElementById('tab-btn-' + tabName).className = 'px-5 py-1.5 rounded text-sm font-bold transition-all bg-[#2196F3] text-white shadow-sm';
+    }
+</script>
