@@ -1,271 +1,73 @@
-<div class="px-8 py-6 space-y-6">
+<div class="px-6 py-4 bg-white h-full flex flex-col">
     <!-- Page Title & Toolbar -->
-    <div>
-        <h2 class="font-manrope text-xl font-extrabold text-on-surface tracking-tight">Văn bản cần ký</h2>
-    </div>
-
-    <!-- Search Area -->
-    <div class="flex items-center justify-between w-full gap-3 p-1.5 rounded-xl">
-        <div class="relative flex-1 max-w-md group">
-            <span
-                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">search</span>
-            <input
-                class="w-full bg-surface-container-lowest border-none rounded-xl py-3.5 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant"
-                placeholder="Tìm kiếm" type="text" />
+    <div class="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
+        <div class="flex items-center gap-2">
+            <div class="w-1 h-6 bg-blue-600 rounded-sm"></div>
+            <h2 class="text-[15px] font-bold text-gray-800">Văn bản cần ký</h2>
         </div>
-        <button
-            class="p-2.5 bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:shadow-md rounded-lg transition-all flex items-center justify-center">
-            <span class="material-symbols-outlined">refresh</span>
+        <button class="bg-[#0056b3] hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors shadow-sm">
+            Tự ký
         </button>
     </div>
 
-    <!-- Table Container -->
-    <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border-none">
-        <div class="overflow-x-auto text-[14px]">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-surface-container-high text-on-surface-variant">
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider">STT</th>
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider">Ngày nhận</th>
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider">Hạn xử lý</th>
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider">Nội dung</th>
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider">Trạng thái</th>
-                        <th class="px-6 py-4 font-medium uppercase tracking-wider text-center">Hành động</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-surface-container">
-                    <!-- Row 1 -->
-                    <tr class="hover:bg-surface-container-low transition-colors group">
-                        <td class="px-6 py-5 font-semibold text-on-surface">1</td>
-                        <td class="px-6 py-5 text-on-surface-variant">12/10/2023</td>
-                        <td class="px-6 py-5 text-on-surface-variant">15/10/2023</td>
-                        <td class="px-6 py-5">
-                            <div class="space-y-2">
-                                <div class="text-[13px] leading-relaxed">
-                                    <p class="text-on-surface font-medium text-sm mb-1 uppercase">Triển khai thực hiện
-                                        Nghị quyết số 248/2025/QH15 của Quốc hội về tổ chức hội nghị, hội thảo quốc tế
-                                    </p>
-                                    <div
-                                        class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-on-surface-variant font-medium italic">
-                                        <p><span class="font-medium not-italic">KH:</span> /ĐHĐN-KHHTQT</p>
-                                        <p><span class="font-medium not-italic">Soạn thảo:</span> Lê Thị Hồng Oanh</p>
-                                        <p><span class="font-medium not-italic">LĐ ký:</span> Nguyễn Ngọc Vũ</p>
-                                        <p><span class="font-medium not-italic">Đơn vị kiểm tra:</span></p>
-                                    </div>
-                                </div>
-
-                                <!-- Sub-table -->
-                                <div class="border rounded-lg overflow-hidden border-surface-container mt-3">
-                                    <table class="w-full border-collapse">
-                                        <thead
-                                            class="bg-surface-container-low text-on-surface-variant font-medium border-b border-surface-container">
-                                            <tr>
-                                                <th class="px-3 py-2 text-center w-8">TT</th>
-                                                <th class="px-3 py-2 text-left">Đơn vị/Cá nhân</th>
-                                                <th class="px-3 py-2 text-center whitespace-nowrap">Cần ký</th>
-                                                <th class="px-3 py-2 text-center whitespace-nowrap">Phản hồi</th>
-                                                <th class="px-3 py-2 text-left">Ý kiến</th>
-                                                <th class="px-3 py-2 text-center w-12"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-surface-container text-on-surface">
-                                            <tr class="hover:bg-surface-container-low transition-colors">
-                                                <td class="px-3 py-2 text-center font-medium">1</td>
-                                                <td class="px-3 py-2 font-medium">Văn phòng ĐHĐN</td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <span
-                                                        class="material-symbols-outlined text-sm text-green-600">check_circle</span>
-                                                </td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <span class=font-medium px-1.5 py-0.5 rounded
-                                                        bg-tertiary-container/10 text-tertiary">Ý
-                                                        kiến khác</span>
-                                                </td>
-                                                <td class="px-3 py-2">
-                                                    <div class="relative">
-                                                        <p class="content-text line-clamp-1">1. Văn bản chỉ gồm 01 phụ
-                                                            lục nên không đánh số phụ lục. 2. Bên dưới Phụ lục đính kèm
-                                                            cần ghi rõ Kèm theo Công văn số... 3. Mục 3: Ghi chung là
-                                                            Theo quy định. Không cần ghi rõ quy định của Thủ tướng Chính
-                                                            phủ và pháp luật.</p>
-                                                        <button onclick="toggleExpand(this)"
-                                                            class="text-primary font-medium uppercase mt-1 hidden view-more-btn hover:underline">Xem
-                                                            thêm</button>
-                                                    </div>
-                                                </td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <button
-                                                        class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded font-medium transition-all">EDIT</button>
-                                                </td>
-                                            </tr>
-                                            <tr class="hover:bg-surface-container-low transition-colors">
-                                                <td class="px-3 py-2 text-center font-medium">2</td>
-                                                <td class="px-3 py-2 font-medium">Ban Đào tạo và Đảm bảo chất lượng giáo
-                                                    dục</td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <span
-                                                        class="material-symbols-outlined text-sm text-green-600">check_circle</span>
-                                                </td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <span
-                                                        class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary">Đồng
-                                                        ý</span>
-                                                </td>
-                                                <td class="px-3 py-2">
-                                                    <p class="text-on-surface-variant italic">Thống nhất với dự thảo
-                                                        công văn</p>
-                                                </td>
-                                                <td class="px-3 py-2 text-center">
-                                                    <button
-                                                        class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-2 py-1 rounded text-[10px] font-medium transition-all">EDIT</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-5">
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full font-medium bg-tertiary-container/15 text-tertiary uppercase">
-                                Chưa xử lý
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')"
-                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg">visibility</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- Row 2 -->
-                    <tr class="hover:bg-surface-container-low transition-colors group">
-                        <td class="px-6 py-5 font-semibold text-on-surface">2</td>
-                        <td class="px-6 py-5 text-on-surface-variant">10/10/2023</td>
-                        <td class="px-6 py-5 text-on-surface-variant">20/10/2023</td>
-                        <td class="px-6 py-5">
-                            <div class="relative">
-                                <p class="text-on-surface font-medium line-clamp-1 content-text">Test Văn bản Thuê đường
-                                    truyền Leadline</p>
-                                <button onclick="toggleExpand(this)"
-                                    class="text-primary font-medium uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
-                                    thêm</button>
-                            </div>
-                        </td>
-                        <td class="px-6 py-5">
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full font-medium bg-secondary-container/40 text-secondary uppercase">
-                                Đã xử lý
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')"
-                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg">visibility</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- Row 3 -->
-                    <tr class="hover:bg-surface-container-low transition-colors group">
-                        <td class="px-6 py-5 font-semibold text-on-surface">3</td>
-                        <td class="px-6 py-5 text-on-surface-variant">09/10/2023</td>
-                        <td class="px-6 py-5 text-on-surface-variant">11/10/2023</td>
-                        <td class="px-6 py-5">
-                            <div class="relative">
-                                <p class="text-on-surface font-medium line-clamp-1 content-text">Báo cáo khảo sát hạ
-                                    tầng mạng tại chi
-                                    nhánh miền Nam</p>
-                                <button onclick="toggleExpand(this)"
-                                    class="text-primary font-medium uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
-                                    thêm</button>
-                            </div>
-                        </td>
-                        <td class="px-6 py-5">
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full font-medium bg-tertiary-container/15 text-tertiary uppercase whitespace-nowrap">
-                                Chưa xử lý
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')"
-                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg">visibility</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- Row 4 -->
-                    <tr class="hover:bg-surface-container-low transition-colors group">
-                        <td class="px-6 py-5 font-semibold text-on-surface">4</td>
-                        <td class="px-6 py-5 text-on-surface-variant">08/10/2023</td>
-                        <td class="px-6 py-5 text-on-surface-variant">25/10/2023</td>
-                        <td class="px-6 py-5">
-                            <div class="relative">
-                                <p class="text-on-surface font-medium line-clamp-1 content-text">Test Văn bản Thuê đường
-                                    truyền Leadline</p>
-                                <button onclick="toggleExpand(this)"
-                                    class="text-primary font-medium uppercase mt-1 hidden view-more-btn hover:opacity-80 transition-opacity">Xem
-                                    thêm</button>
-                            </div>
-                        </td>
-                        <td class="px-6 py-5">
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full font-medium bg-secondary-container/40 text-secondary uppercase whitespace-nowrap">
-                                Đã xử lý
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-center">
-                            <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')"
-                                class="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all inline-flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg">visibility</span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Search Area -->
+    <div class="flex justify-end mb-4">
+        <div class="relative w-[300px]">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[18px]">search</span>
+            <input
+                class="w-full border border-gray-200 rounded py-2 pl-9 pr-3 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder:text-gray-400"
+                placeholder="Tìm kiếm nội dung..." type="text" />
         </div>
+    </div>
 
-        <!-- Pagination -->
-        <div
-            class="px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-surface-container-high bg-surface-container-lowest">
-            <div class="">
-                Hiển thị <span class="">1-10</span> trong tổng số <span class="font-medium text-on-surface">1000</span>
-                mục
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2">
-                    <span class="">Số hàng mỗi trang</span>
-                    <div class="relative">
-                        <select
-                            class="appearance-none bg-surface-container-low border-none rounded-lg font-semibold px-3 py-1.5 pr-8 focus:ring-2 focus:ring-primary transition-all">
-                            <option>10</option>
-                            <option>20</option>
-                            <option>50</option>
-                        </select>
-                        <span
-                            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
-                    </div>
-                </div>
-                <nav class="flex items-center gap-1">
-                    <button
-                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors disabled:opacity-30"
-                        disabled="">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <button
-                        class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium shadow-sm">1</button>
-                    <button
-                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
-                    <button
-                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
-                    <span class="px-1 text-on-surface-variant">...</span>
-                    <button
-                        class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">10</button>
-                    <button
-                        class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
-                </nav>
-            </div>
+    <!-- Table Container -->
+    <div class="border border-gray-200 rounded-sm overflow-x-auto shadow-sm">
+        <table class="w-full text-left text-[13px] border-collapse min-w-[900px]">
+            <thead>
+                <tr class="bg-[#007bff] text-white">
+                    <th class="px-3 py-2.5 font-semibold border-r border-blue-400/30 w-12 text-center whitespace-nowrap">STT</th>
+                    <th class="px-3 py-2.5 font-semibold border-r border-blue-400/30 w-28 whitespace-nowrap">Ngày nhận</th>
+                    <th class="px-3 py-2.5 font-semibold border-r border-blue-400/30 w-28 whitespace-nowrap">Hạn xử lý</th>
+                    <th class="px-3 py-2.5 font-semibold border-r border-blue-400/30">Nội dung</th>
+                    <th class="px-3 py-2.5 font-semibold border-r border-blue-400/30 w-32 text-center whitespace-nowrap">Trạng thái</th>
+                    <th class="px-3 py-2.5 font-semibold w-12 border-r border-blue-400/30"></th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+                <tr class="hover:bg-gray-50/50">
+                    <td class="px-3 py-3 text-center text-gray-700 align-top">1</td>
+                    <td class="px-3 py-3 text-gray-500 align-top text-center">01/01/0001</td>
+                    <td class="px-3 py-3 align-top"></td>
+                    <td class="px-3 py-3 align-top">
+                        <div class="space-y-0.5">
+                            <div class="text-gray-400 mb-1">tetstts</div>
+                            <div><span class="font-bold text-gray-800">Ký hiệu:</span> <span class="text-gray-700">/ĐHĐN-CNTTHLS</span></div>
+                            <div>
+                                <span class="font-bold text-gray-800">Soạn thảo:</span> <span class="text-gray-700">Trần Nhật Anh;</span>
+                                <span class="font-bold text-gray-800 ml-2">LĐ ký:</span> <span class="text-gray-700">Nguyễn Mạnh Toàn</span>
+                            </div>
+                            <div><span class="font-bold text-gray-800">Ký phụ:</span> <span class="text-gray-700">Trần Nhật Anh;</span></div>
+                        </div>
+                    </td>
+                    <td class="px-3 py-3 text-center align-top pt-4">
+                        <span class="inline-flex items-center px-4 py-1 rounded-full text-xs font-medium bg-[#17a2b8] text-white whitespace-nowrap">
+                            Chưa ký
+                        </span>
+                    </td>
+                    <td class="px-3 py-3 text-center align-top pt-4">
+                        <button onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')" class="bg-[#0056b3] hover:bg-blue-700 text-white p-1 rounded inline-flex items-center justify-center transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-[16px]">edit</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination (Placeholder based on layout) -->
+    <div class="flex justify-end mt-4">
+        <div class="bg-gray-200 text-gray-600 px-3 py-1 rounded text-sm cursor-pointer hover:bg-gray-300">
+            1
         </div>
     </div>
 </div>

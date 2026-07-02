@@ -1,141 +1,159 @@
-<div class="px-8 py-6 space-y-6">
-    <!-- Header Section -->
-    <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <button onclick="loadPage('../pages/outgoing-documents/can-ky.html')" class="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition text-gray-700 flex items-center justify-center">
-                <span class="material-symbols-outlined text-xl">arrow_back</span>
-            </button>
-            <h1 class="text-xl font-bold text-gray-800">Chi tiết Văn bản cần ký</h1>
-        </div>
-
-        <div class="flex items-center bg-gray-100 rounded-full p-1 border border-gray-200">
-            <button onclick="switchTab('noidung')" id="btn-tab-noidung" class="px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm">
-                Nội dung
-            </button>
-            <button onclick="switchTab('ykien')" id="btn-tab-ykien" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900">
-                Ý kiến phối hợp
-            </button>
-        </div>
+<div class="bg-white h-full flex flex-col font-sans">
+    <!-- Header: Trình ký văn bản -->
+    <div class="border-b-4 border-[#0052cc] py-3 px-4 shadow-sm flex items-center gap-2">
+        <h2 class="text-[#0052cc] font-bold text-lg">Trình ký văn bản</h2>
     </div>
 
-    <!-- Tab Content: Nội dung -->
-    <div id="tab-content-noidung" class="space-y-6">
-        <div class="bg-white border border-gray-300 rounded overflow-hidden shadow-sm">
-            <table class="w-full text-left border-collapse text-sm">
-                <tbody>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Nội dung văn bản</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%] border-r border-gray-300">Triển khai thực hiện Nghị quyết số 248/2025/QH15 của Quốc hội về tổ chức hội nghị, hội thảo quốc tế</td>
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold w-1/5 border-r border-gray-300">Trạng thái</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium w-[30%]">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full font-medium bg-tertiary-container/15 text-tertiary uppercase text-xs font-bold">
-                                Chưa xử lý
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Số ký hiệu</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-bold text-[#0f56b3] border-r border-gray-300">/ĐHĐN-KHHTQT</td>
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Ngày nhận</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium">12/10/2023</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Người soạn thảo</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium border-r border-gray-300">Lê Thị Hồng Oanh</td>
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Hạn xử lý</td>
-                        <td class="px-4 py-3.5 text-red-600 font-semibold">15/10/2023</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3.5 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Lãnh đạo ký</td>
-                        <td class="px-4 py-3.5 text-gray-800 font-medium" colspan="3">Nguyễn Ngọc Vũ</td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-4 bg-[#0f56b3] text-white font-semibold border-r border-gray-300">Dự thảo văn bản</td>
-                        <td class="px-4 py-4 text-gray-800 font-medium space-y-2" colspan="3">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
-                                <a href="javascript:void(0)" class="text-[#0053dc] hover:underline font-bold">DuThao_NQ248_KHHTQT.pdf</a>
-                                <span class="text-gray-400 text-xs">(1.8 MB)</span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Main Content -->
+    <div class="p-4 flex-1">
+        <!-- Subtitle -->
+        <div class="mb-4 bg-white border-l-2 border-[#4caf50] p-2 shadow-[0_0_2px_rgba(0,0,0,0.1)] rounded-sm">
+            <h3 class="text-[#e65100] font-bold text-[14px]">Quá trình xử lý văn bản tetstts</h3>
         </div>
-    </div>
 
-    <!-- Tab Content: Ý kiến phối hợp -->
-    <div id="tab-content-ykien" class="hidden space-y-6">
-        <div class="bg-white border border-gray-300 rounded-xl p-6 shadow-sm">
-            <h3 class="text-base font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[#0f56b3]">comment</span>
-                <span>Ý kiến tham gia từ các Đơn vị / Cá nhân</span>
-            </h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            
+            <!-- NỘI DUNG VĂN BẢN -->
+            <div class="bg-[#f9f9f9] shadow-sm border border-gray-200">
+                <div class="border-l-2 border-[#e65100] px-3 py-2 border-b border-gray-200 bg-[#f4f4f4]">
+                    <h4 class="text-gray-600 font-bold uppercase text-[13px]">Nội dung văn bản</h4>
+                </div>
+                <div class="p-2">
+                    <table class="w-full text-[13px] text-left border-collapse bg-white border border-gray-300">
+                        <tbody>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 w-[120px] border-r border-gray-300">Trích yếu</td>
+                                <td class="px-3 py-2 text-gray-700">tetstts</td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Số/Ký hiệu</td>
+                                <td class="px-3 py-2 text-gray-700">/ĐHĐN-CNTTHLS</td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Độ khẩn</td>
+                                <td class="px-3 py-2 text-gray-700">Bình thường</td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Loại văn bản</td>
+                                <td class="px-3 py-2 text-gray-700">Công văn</td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Lĩnh vực</td>
+                                <td class="px-3 py-2 text-gray-700">Bảo hiểm</td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Nơi nhận</td>
+                                <td class="px-3 py-2 text-gray-700"></td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Văn bản</td>
+                                <td class="px-3 py-2 text-gray-700">Có số, đóng dấu</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300 align-top">File cần ký</td>
+                                <td class="p-0 text-gray-700">
+                                    <table class="w-full text-xs text-center border-collapse">
+                                        <thead>
+                                            <tr class="border-b border-gray-300">
+                                                <th class="border-r border-gray-300 py-1 font-normal w-8">TT</th>
+                                                <th class="border-r border-gray-300 py-1 font-normal text-left px-2">Tên file</th>
+                                                <th class="border-r border-gray-300 py-1 font-normal w-[45px] text-[10px] leading-tight">LĐ K.<br>chính</th>
+                                                <th class="border-r border-gray-300 py-1 font-normal w-16">Ký</th>
+                                                <th class="py-1 font-normal w-12 text-[10px] leading-tight">L.Dấu</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="border-r border-gray-300 py-2">1</td>
+                                                <td class="border-r border-gray-300 py-2 text-left px-2">VB-2026-08-23.pdf</td>
+                                                <td class="border-r border-gray-300 py-2 font-bold text-center">x</td>
+                                                <td class="border-r border-gray-300 py-2 relative">
+                                                    <div class="relative inline-block text-left">
+                                                        <button onclick="toggleSignDropdown(event)" data-dropdown="sign-dropdown" class="bg-[#0052cc] text-white px-2 py-1 text-xs rounded-sm hover:bg-blue-700 transition flex items-center justify-center gap-1 mx-auto shadow-sm">
+                                                            Xem <span class="text-[10px]">▼</span>
+                                                        </button>
+                                                        <div id="sign-dropdown" class="absolute right-0 mt-1 w-44 bg-white border border-gray-200 rounded shadow-lg z-50 hidden">
+                                                            <div class="py-1">
+                                                                <a href="#" onclick="loadPage('../pages/outgoing-documents/ky-vcca.html')" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 transition">Ký số Misa</a>
+                                                                <a href="#" onclick="loadPage('../pages/outgoing-documents/ky-vcca.html')" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 transition">Ký số VCCA</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="py-2"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <div class="border rounded-lg overflow-hidden border-gray-200">
-                <table class="w-full border-collapse text-sm">
-                    <thead class="bg-gray-50 text-gray-700 font-bold border-b border-gray-200">
-                        <tr>
-                            <th class="px-4 py-3 text-center w-12">TT</th>
-                            <th class="px-4 py-3 text-left">Đơn vị / Cá nhân</th>
-                            <th class="px-4 py-3 text-center w-28">Trạng thái ký</th>
-                            <th class="px-4 py-3 text-center w-36">Phản hồi</th>
-                            <th class="px-4 py-3 text-left">Ý kiến chi tiết</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200 text-gray-700">
-                        <tr class="hover:bg-gray-50/50">
-                            <td class="px-4 py-3 text-center font-medium">1</td>
-                            <td class="px-4 py-3 font-semibold">Văn phòng ĐHĐN</td>
-                            <td class="px-4 py-3 text-center">
-                                <span class="material-symbols-outlined text-green-600 text-xl">check_circle</span>
-                            </td>
-                            <td class="px-4 py-3 text-center">
-                                <span class="inline-flex px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-800">Ý kiến khác</span>
-                            </td>
-                            <td class="px-4 py-3 text-xs leading-relaxed text-gray-600">
-                                1. Văn bản chỉ gồm 01 phụ lục nên không đánh số phụ lục. <br>
-                                2. Bên dưới Phụ lục đính kèm cần ghi rõ Kèm theo Công văn số... <br>
-                                3. Mục 3: Ghi chung là Theo quy định. Không cần ghi rõ quy định của Thủ tướng Chính phủ và pháp luật.
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/50">
-                            <td class="px-4 py-3 text-center font-medium">2</td>
-                            <td class="px-4 py-3 font-semibold">Ban Đào tạo và Đảm bảo chất lượng giáo dục</td>
-                            <td class="px-4 py-3 text-center">
-                                <span class="material-symbols-outlined text-green-600 text-xl">check_circle</span>
-                            </td>
-                            <td class="px-4 py-3 text-center">
-                                <span class="inline-flex px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">Đồng ý</span>
-                            </td>
-                            <td class="px-4 py-3 text-xs italic text-gray-500">
-                                Thống nhất với dự thảo công văn
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- NỘI DUNG TRÌNH KÝ -->
+            <div class="bg-[#f9f9f9] shadow-sm border border-gray-200 h-fit">
+                <div class="border-l-2 border-[#e65100] px-3 py-2 border-b border-gray-200 bg-[#f4f4f4]">
+                    <h4 class="text-gray-600 font-bold uppercase text-[13px]">Nội dung trình ký</h4>
+                </div>
+                <div class="p-2">
+                    <table class="w-full text-[13px] text-left border-collapse bg-white border border-gray-300">
+                        <tbody>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 w-[120px] border-r border-gray-300">Nội dung</td>
+                                <td class="p-0"><input type="text" class="w-full h-full px-2 py-2 border-none focus:outline-none" /></td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Hạn xử lý</td>
+                                <td class="p-0"><input type="text" class="w-full h-full px-2 py-2 border-none focus:outline-none" /></td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Đơn vị trình ký</td>
+                                <td class="p-0"><input type="text" class="w-full h-full px-2 py-2 border-none focus:outline-none" /></td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Đơn vị liên quan</td>
+                                <td class="p-0"><input type="text" class="w-full h-full px-2 py-2 border-none focus:outline-none" /></td>
+                            </tr>
+                            <tr class="border-b border-gray-300">
+                                <td class="bg-[#0052cc] text-white px-3 py-2 border-r border-gray-300">Lãnh đạo ký</td>
+                                <td class="px-2 py-2 text-gray-700">PGS.TS. Nguyễn Mạnh Toàn</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Action Button -->
+        <div class="flex justify-end mt-4">
+            <div class="relative group">
+                <button class="bg-[#d9534f] hover:bg-red-700 text-white px-4 py-2 text-sm rounded shadow-sm flex items-center gap-1 transition-colors peer">
+                    Ký văn bản <span class="text-[10px]">▼</span>
+                </button>
+                <div class="absolute bottom-full right-0 hidden group-hover:block hover:block bg-white border border-gray-200 shadow-lg rounded w-36 overflow-hidden z-10 pb-1">
+                    <button onclick="loadPage('../pages/outgoing-documents/ky-vcca.html')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors border-b border-gray-100">Ký số VCCA</button>
+                    <button onclick="loadPage('../pages/outgoing-documents/ky-misa.html')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors">Ký số Misa</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    function switchTab(tabId) {
-        const tabNoidungBtn = document.getElementById('btn-tab-noidung');
-        const tabYkienBtn = document.getElementById('btn-tab-ykien');
-        const contentNoidung = document.getElementById('tab-content-noidung');
-        const contentYkien = document.getElementById('tab-content-ykien');
-
-        if (tabId === 'noidung') {
-            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
-            tabYkienBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
-            contentNoidung.classList.remove('hidden');
-            contentYkien.classList.add('hidden');
-        } else {
-            tabYkienBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all bg-[#0f56b3] text-white shadow-sm";
-            tabNoidungBtn.className = "px-5 py-2 rounded-full text-xs font-bold transition-all text-gray-600 hover:text-gray-900";
-            contentYkien.classList.remove('hidden');
-            contentNoidung.classList.add('hidden');
-        }
+    function toggleSignDropdown(event) {
+        event.stopPropagation();
+        const btn = event.currentTarget;
+        const dropdownId = btn.dataset.dropdown;
+        const dropdown = document.getElementById(dropdownId);
+        document.querySelectorAll('[id^="sign-dropdown"]').forEach(el => {
+            if (el.id !== dropdownId) el.classList.add('hidden');
+        });
+        dropdown.classList.toggle('hidden');
     }
+
+    document.addEventListener('click', function () {
+        document.querySelectorAll('[id^="sign-dropdown"]').forEach(el => el.classList.add('hidden'));
+    });
 </script>

@@ -392,38 +392,45 @@
                 </div>
             </div>
 
-            <!-- Section VI: Các cá nhân tham gia ký -->
-            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
-                <div class="flex items-center gap-3 pb-3 border-b border-surface-container">
-                    <span class="material-symbols-outlined text-primary">groups</span>
-                    <h3 class="text-base font-bold text-on-surface font-manrope">VI. CÁC CÁ NHÂN THAM GIA KÝ (KHÔNG PHẢI LÀ LĐ KÝ NHÁY VÀ LĐ KÝ PHÊ DUYỆT)</h3>
+            <!-- Section VI: Tham gia ký -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 shadow-sm space-y-6">
+                <div class="flex items-center justify-between pb-3 border-b border-surface-container">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">group</span>
+                        <h3 class="text-base font-bold text-on-surface font-manrope">VI. CÁC CÁ NHÂN THAM GIA KÝ (KHÔNG PHẢI LÀ LĐ KÝ NHÁY VÀ LĐ KÝ PHÊ DUYỆT)</h3>
+                    </div>
+                    <button onclick="openAddSignerModal()" class="px-5 py-2 bg-[#1a56db] text-white rounded-full text-sm font-bold hover:bg-blue-700 transition shadow-sm">Thêm</button>
                 </div>
 
                 <div class="border rounded-xl overflow-hidden border-surface-container">
-                    <table class="w-full border-collapse text-xs">
-                        <thead class="bg-surface-container-low text-on-surface-variant font-bold border-b border-surface-container">
+                    <table class="w-full border-collapse text-xs" id="signer-table">
+                        <thead class="bg-[#24526e] text-white font-bold border-b border-surface-container">
                             <tr>
-                                <th class="px-4 py-3 text-center w-12">TT</th>
-                                <th class="px-4 py-3 text-left">Họ tên</th>
-                                <th class="px-4 py-3 text-center w-36">Ngày chuyển</th>
-                                <th class="px-4 py-3 text-center w-36">Ngày ký</th>
-                                <th class="px-4 py-3 text-center w-20"></th>
+                                <th class="px-3 py-3 text-center w-10 border-r border-white/20">TT</th>
+                                <th class="px-4 py-3 text-left border-r border-white/20">Họ tên</th>
+                                <th class="px-4 py-3 text-left w-36 border-r border-white/20">Ngày chuyển</th>
+                                <th class="px-4 py-3 text-left w-36 border-r border-white/20">Ngày ký</th>
+                                <th class="px-2 py-3 text-center w-24 border-r border-white/20"></th>
+                                <th class="px-2 py-3 text-center w-16 border-r border-white/20">XN xóa</th>
+                                <th class="px-2 py-3 text-center w-16"></th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-surface-container text-on-surface-variant font-medium">
-                            <tr class="hover:bg-surface-container-low transition-colors">
-                                <td class="px-4 py-3 text-center font-bold">1</td>
-                                <td class="px-4 py-3 text-on-surface font-semibold">Lê Thị Hồng Oanh</td>
-                                <td class="px-4 py-3 text-center">15/06/2026</td>
-                                <td class="px-4 py-3 text-center">—</td>
-                                <td class="px-4 py-3 text-center">
-                                    <button onclick="deleteTableRow(this)" class="text-error hover:bg-error/10 p-1.5 rounded transition">
-                                        <span class="material-symbols-outlined text-base">delete</span>
-                                    </button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center justify-between mt-6 pt-4">
+                    <button class="px-6 py-2 bg-[#1a56db] text-white rounded text-sm font-bold shadow-sm hover:bg-blue-700 transition">Lưu</button>
+                    
+                    <div class="flex-1 flex justify-center">
+                        <button onclick="loadPage('../pages/outgoing-documents/chuyen-kiem-tra-ky.html')" class="px-6 py-2 bg-[#00BCD4] text-white rounded text-sm font-bold shadow-sm hover:bg-[#00ACC1] transition flex items-center gap-1">
+                            Chuyển kiểm tra, ký nháy >>
+                        </button>
+                    </div>
+
+                    <div class="w-[72px]"></div> <!-- Spacer to keep the middle button perfectly centered -->
                 </div>
             </div>
             

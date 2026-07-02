@@ -1,0 +1,181 @@
+<div class="px-8 py-6 space-y-6">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <h2 class="text-xl font-black tracking-tight text-on-surface leading-none mb-2">Ban hành VB</h2>
+        </div>
+        <button onclick="loadPage('../pages/outgoing-documents/them-moi-ban-hanh.html')" class="px-4 py-2 bg-primary text-white rounded-lg font-bold text-sm shadow-sm hover:bg-primary-dark transition-colors">
+            Thêm mới
+        </button>
+    </div>
+
+    <!-- Filter and Search Area -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between w-full gap-4">
+        <!-- Filter Pills -->
+        <div class="flex items-center gap-2">
+            <button class="px-4 py-1.5 rounded-full text-sm font-bold bg-primary text-white shadow-sm flex items-center gap-1">
+                Tất cả <span class="bg-white/20 px-1.5 py-0.5 rounded text-xs">63</span>
+            </button>
+            <button class="px-4 py-1.5 rounded-full text-sm font-bold bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors flex items-center gap-1">
+                Chưa ban hành <span class="bg-black/10 px-1.5 py-0.5 rounded text-xs">0</span>
+            </button>
+            <button class="px-4 py-1.5 rounded-full text-sm font-bold bg-green-600 text-white shadow-sm flex items-center gap-1 hover:bg-green-700 transition-colors">
+                Ban hành <span class="bg-white/20 px-1.5 py-0.5 rounded text-xs">63</span>
+            </button>
+        </div>
+
+        <!-- Search Area -->
+        <div class="flex items-center gap-2">
+            <div class="relative w-full max-w-[240px] group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[18px]">search</span>
+                <input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg py-2 pl-9 pr-3 shadow-sm focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder:text-outline-variant outline-none" placeholder="Tìm kiếm nội dung..." type="text" />
+            </div>
+            <button class="p-2 bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:text-primary hover:shadow-sm rounded-lg transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">filter_alt</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Data Table Card -->
+    <div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_-8px_rgba(43,52,55,0.08)] overflow-hidden border border-outline-variant/10">
+        <div class="overflow-x-auto text-[14px]">
+            <table class="w-full text-left border-collapse min-w-[900px]">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="px-4 py-3 font-medium border-r border-blue-500/30 text-center w-12">STT</th>
+                        <th class="px-4 py-3 font-medium border-r border-blue-500/30 w-32">Ngày VB</th>
+                        <th class="px-4 py-3 font-medium border-r border-blue-500/30 w-36">Ký hiệu</th>
+                        <th class="px-4 py-3 font-medium border-r border-blue-500/30">Nội dung</th>
+                        <th class="px-4 py-3 font-medium border-r border-blue-500/30 w-28 text-center">Trạng thái</th>
+                        <th class="px-4 py-3 font-medium text-center w-24"></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-blue-50/30 transition-colors">
+                        <td class="px-4 py-4 text-center text-on-surface-variant">1</td>
+                        <td class="px-4 py-4 text-green-600 font-medium">23/06/2026</td>
+                        <td class="px-4 py-4">
+                            <div class="text-red-500 font-bold">2481/</div>
+                            <div class="text-red-500 font-bold">ĐHĐN-</div>
+                            <div class="text-red-500 font-bold">CNTTHLS</div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="text-on-surface mb-2 font-medium">V/v cử viên chức tham dự tập huấn sử dụng hệ thống quản lý hành chính điện tử Eoffice</div>
+                            <div class="text-[13px] text-on-surface-variant mb-1">
+                                <span class="font-bold text-on-surface">LĐ ktra, ký nháy:</span> Hồ Văn Hùng
+                            </div>
+                            <div class="text-[13px] text-on-surface-variant">
+                                <span class="font-bold text-on-surface">LĐ ký:</span> Nguyễn Mạnh Toàn
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <div class="text-[13px] font-semibold text-green-700">
+                                Ban hành
+                            </div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="grid grid-cols-2 gap-1 w-[60px] mx-auto">
+                                <!-- Xem quá trình -->
+                                <button title="Xem quá trình" onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')" class="w-7 h-7 flex items-center justify-center bg-[#ffc107] text-white rounded hover:bg-yellow-500 transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[16px]">history</span>
+                                </button>
+                                <!-- Luồng ký -->
+                                <button title="Luồng ký" onclick="loadPage('../pages/outgoing-documents/chi-tiet-trinh-ky.html')" class="w-7 h-7 flex items-center justify-center bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[16px]">account_tree</span>
+                                </button>
+                                <!-- Xem -->
+                                <button title="Xem" onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-7 h-7 flex items-center justify-center bg-[#00bcd4] text-white rounded hover:bg-cyan-500 transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[16px]">visibility</span>
+                                </button>
+                                <!-- Ban hành -->
+                                <button title="Ban hành" onclick="loadPage('../pages/outgoing-documents/soan-thao-co-dong-dau.html')" class="w-7 h-7 flex items-center justify-center bg-[#1976d2] text-white rounded hover:bg-blue-700 transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[16px]">send</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-blue-50/30 transition-colors">
+                        <td class="px-4 py-4 text-center text-on-surface-variant">2</td>
+                        <td class="px-4 py-4 text-green-600 font-medium">23/06/2026</td>
+                        <td class="px-4 py-4">
+                            <div class="text-red-500 font-bold">2478/</div>
+                            <div class="text-red-500 font-bold">ĐHĐN-</div>
+                            <div class="text-red-500 font-bold">CNTTHLS</div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="text-on-surface mb-2 font-medium">V/v góp ý dự thảo Quyết định ban hành Khung kiến trúc dữ liệu, Khung quản trị, quản lý dữ liệu</div>
+                            <div class="text-[13px] text-on-surface-variant mb-1">
+                                <span class="font-bold text-on-surface">LĐ ktra, ký nháy:</span> Hồ Văn Hùng
+                            </div>
+                            <div class="text-[13px] text-on-surface-variant">
+                                <span class="font-bold text-on-surface">LĐ ký:</span> Nguyễn Mạnh Toàn
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <div class="text-[13px] font-semibold text-green-700">
+                                Ban hành
+                            </div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="grid grid-cols-2 gap-1 w-[60px] mx-auto">
+                                <button title="Xem quá trình" onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')" class="w-7 h-7 flex items-center justify-center bg-[#ffc107] text-white rounded hover:bg-yellow-500 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">history</span></button>
+                                <button title="Luồng ký" onclick="loadPage('../pages/outgoing-documents/chi-tiet-trinh-ky.html')" class="w-7 h-7 flex items-center justify-center bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">account_tree</span></button>
+                                <button title="Xem" onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-7 h-7 flex items-center justify-center bg-[#00bcd4] text-white rounded hover:bg-cyan-500 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+                                <button title="Ban hành" onclick="loadPage('../pages/outgoing-documents/soan-thao-co-dong-dau.html')" class="w-7 h-7 flex items-center justify-center bg-[#1976d2] text-white rounded hover:bg-blue-700 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">send</span></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-blue-50/30 transition-colors">
+                        <td class="px-4 py-4 text-center text-on-surface-variant">3</td>
+                        <td class="px-4 py-4 text-green-600 font-medium">22/06/2026</td>
+                        <td class="px-4 py-4">
+                            <div class="text-red-500 font-bold">2429/</div>
+                            <div class="text-red-500 font-bold">ĐHĐN-</div>
+                            <div class="text-red-500 font-bold">CNTTHLS</div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="text-on-surface mb-2 font-medium">V/v thu hồi chứng thư chữ ký số do sai thông tin</div>
+                            <div class="text-[13px] text-on-surface-variant mb-1">
+                                <span class="font-bold text-on-surface">LĐ ktra, ký nháy:</span> Hồ Văn Hùng
+                            </div>
+                            <div class="text-[13px] text-on-surface-variant">
+                                <span class="font-bold text-on-surface">LĐ ký:</span> Nguyễn Mạnh Toàn
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-center">
+                            <div class="text-[13px] font-semibold text-green-700">
+                                Ban hành
+                            </div>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="grid grid-cols-2 gap-1 w-[60px] mx-auto">
+                                <button title="Xem quá trình" onclick="loadPage('../pages/outgoing-documents/chi-tiet-can-ky.html')" class="w-7 h-7 flex items-center justify-center bg-[#ffc107] text-white rounded hover:bg-yellow-500 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">history</span></button>
+                                <button title="Luồng ký" onclick="loadPage('../pages/outgoing-documents/chi-tiet-trinh-ky.html')" class="w-7 h-7 flex items-center justify-center bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">account_tree</span></button>
+                                <button title="Xem" onclick="loadPage('../pages/outgoing-documents/chi-tiet-da-ban-hanh.html')" class="w-7 h-7 flex items-center justify-center bg-[#00bcd4] text-white rounded hover:bg-cyan-500 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+                                <button title="Ban hành" onclick="loadPage('../pages/outgoing-documents/soan-thao-co-dong-dau.html')" class="w-7 h-7 flex items-center justify-center bg-[#1976d2] text-white rounded hover:bg-blue-700 transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">send</span></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination Footer -->
+        <div class="px-6 py-4 flex items-center justify-center border-t border-outline-variant/10 bg-surface-container-lowest">
+            <nav class="flex items-center gap-1">
+                <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-medium shadow-sm">1</button>
+                <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+                <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+                <span class="px-1 text-on-surface-variant">...</span>
+                <button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">10</button>
+                <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+</div>
