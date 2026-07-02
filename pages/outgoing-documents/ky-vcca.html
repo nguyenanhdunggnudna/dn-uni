@@ -17,8 +17,8 @@
                 </select>
             </div>
             <div class="flex gap-4 absolute left-1/2 -translate-x-1/2">
-                <button onclick="openCancelModal()" class="bg-[#00a8b5] hover:bg-teal-600 text-white px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors">1. Ký số</button>
-                <button onclick="confirmSignDone()" class="bg-[#d9534f] hover:bg-red-600 text-white px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors">2. Ký xong</button>
+                <button onclick="openCancelModal()" class="bg-[#00a8b5] hover:bg-teal-600 text-white px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors">Ký số</button>
+                <button id="ky-xong-btn" onclick="handleKyXong()" class="px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors"></button>
             </div>
             <div class="text-xs text-[#0052cc] font-medium">
                 Page /4
@@ -194,5 +194,22 @@
         if (confirm('Xác nhận ký văn bản thành công?')) {
             loadPage('../pages/outgoing-documents/can-ky.html');
         }
+    }
+
+    function handleKyXong() {
+        var role = (window.MOCK_DATA && window.MOCK_DATA.currentRole) || localStorage.getItem('userRole') || 'Director';
+        if (role !== 'Principal') {
+            confirmSignDone();
+        }
+    }
+
+    var role = (window.MOCK_DATA && window.MOCK_DATA.currentRole) || localStorage.getItem('userRole') || 'Director';
+    var btn = document.getElementById('ky-xong-btn');
+    if (role === 'Principal') {
+        btn.textContent = 'Không cần ký file này';
+        btn.className = 'bg-amber-400 hover:bg-amber-500 text-white px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors';
+    } else {
+        btn.textContent = 'Ký xong';
+        btn.className = 'bg-[#d9534f] hover:bg-red-600 text-white px-8 py-1.5 text-[13px] font-medium rounded-sm shadow-sm transition-colors';
     }
 </script>
