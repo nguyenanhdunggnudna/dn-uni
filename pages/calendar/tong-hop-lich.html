@@ -9,19 +9,19 @@
                         <option value="">Năm</option>
                         <option value="2026">2026</option>
                     </select>
-                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">expand_more</span>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[22px]">expand_more</span>
                 </div>
                 <div class="relative">
                     <select class="min-w-[120px] bg-white border border-gray-200 rounded-lg py-2 px-4 appearance-none focus:ring-1 focus:ring-blue-500 transition-all outline-none text-gray-500 text-sm">
                         <option value="">Tuần</option>
                         <option value="1">Tuần 1</option>
                     </select>
-                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">expand_more</span>
+                    <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[22px]">expand_more</span>
                 </div>
             </div>
         </div>
         <button id="btnXem" onclick="toggleView()" class="bg-[#0069D9] hover:bg-[#0056b3] text-white px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 text-sm shadow-sm">
-            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            <span class="material-symbols-outlined text-[20px]">visibility</span>
             <span>Xem</span>
         </button>
     </div>
@@ -107,17 +107,17 @@
                             <option>10</option>
                             <option>20</option>
                         </select>
-                        <span class="material-symbols-outlined absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[18px]">expand_more</span>
+                        <span class="material-symbols-outlined absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[20px]">expand_more</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-1">
-                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
                     <button class="w-8 h-8 flex items-center justify-center rounded bg-[#0069D9] text-white font-bold text-sm">1</button>
                     <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">2</button>
                     <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">3</button>
                     <span class="px-1 text-gray-400">...</span>
                     <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-600 text-sm hover:bg-gray-50">10</button>
-                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
                 </div>
             </div>
         </div>
@@ -155,11 +155,11 @@
         if (listView.classList.contains('hidden')) {
             listView.classList.remove('hidden');
             resultView.classList.add('hidden');
-            btnXem.innerHTML = '<span class="material-symbols-outlined text-[18px]">visibility</span> <span>Xem</span>';
+            btnXem.innerHTML = '<span class="material-symbols-outlined text-[20px]">visibility</span> <span>Xem</span>';
         } else {
             listView.classList.add('hidden');
             resultView.classList.remove('hidden');
-            btnXem.innerHTML = '<span class="material-symbols-outlined text-[18px]">arrow_back</span> <span>Quay lại</span>';
+            btnXem.innerHTML = '<span class="material-symbols-outlined text-[20px]">arrow_back</span> <span>Quay lại</span>';
         }
     }
 </script>

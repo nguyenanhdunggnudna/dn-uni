@@ -35,12 +35,12 @@ export default {
         }
       },
      fontSize: {
-        'xs': '12px',
-        'sm': '14px',
-        'base': '16px',
-        'lg': '18px',
-        'xl': '20px',
-        '2xl': '26px',
+        'xs': '14px',
+        'sm': '16px',
+        'base': '18px',
+        'lg': '20px',
+        'xl': '22px',
+        '2xl': '28px',
       },
       spacing: {
         'sidebar': '16rem',

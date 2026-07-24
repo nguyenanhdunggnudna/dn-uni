@@ -68,7 +68,7 @@
                             <div class="flex items-center gap-2">
                                 <span class="material-symbols-outlined text-red-500 text-base">picture_as_pdf</span>
                                 <a href="javascript:void(0)" class="text-primary hover:underline font-bold">cv-dinh-kem.pdf</a>
-                                <span class="text-on-surface-variant italic text-[10px]">(Xem nội dung)</span>
+                                <span class="text-on-surface-variant italic text-[12px]">(Xem nội dung)</span>
                             </div>
                         </td>
                     </tr>
@@ -89,11 +89,11 @@
             <div
                 class="flex items-center gap-1 bg-surface-container rounded-full p-0.5 border border-outline-variant/20">
                 <button onclick="switchProcessTab('all')" id="proc-tab-all"
-                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all bg-primary text-on-primary shadow-sm">Tất cả</button>
+                    class="px-4 py-1 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary shadow-sm">Tất cả</button>
                 <button onclick="switchProcessTab('process')" id="proc-tab-process"
-                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Quá trình</button>
+                    class="px-4 py-1 rounded-full text-[12px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Quá trình</button>
                 <button onclick="switchProcessTab('log')" id="proc-tab-log"
-                    class="px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Log</button>
+                    class="px-4 py-1 rounded-full text-[12px] font-bold transition-all text-on-surface-variant hover:text-on-surface">Log</button>
             </div>
         </div>
 
@@ -111,12 +111,12 @@
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-xs font-bold text-on-surface">Chuyên viên A</p>
-                        <p class="text-[11px] text-on-surface-variant mt-0.5">Đã tiếp nhận yêu cầu và bắt đầu xử lý. <span
-                                class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-blue-100 text-blue-600 ml-1">Đang xử lý</span>
+                        <p class="text-[13px] text-on-surface-variant mt-0.5">Đã tiếp nhận yêu cầu và bắt đầu xử lý. <span
+                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-600 ml-1">Đang xử lý</span>
                         </p>
                     </div>
                     <div class="flex items-center gap-3 flex-shrink-0">
-                        <span class="text-[10px] text-on-surface-variant whitespace-nowrap">27/01/2026 11:00:00 AM</span>
+                        <span class="text-[12px] text-on-surface-variant whitespace-nowrap">27/01/2026 11:00:00 AM</span>
                         <div class="flex gap-1">
                             <button onclick="openChatModal('Chuyên viên A')" class="w-6 h-6 bg-amber-500 rounded flex items-center justify-center hover:bg-amber-600 transition" title="Nhắn tin"><span class="material-symbols-outlined text-white text-xs">chat</span></button>
                         </div>
@@ -139,11 +139,11 @@
                 </div>
                 <div class="flex-1 min-w-0">
                     <p class="text-xs font-bold text-on-surface">Phòng Hành chính - Tổng hợp</p>
-                    <p class="text-[11px] text-on-surface-variant mt-0.5">Tiếp nhận phân xử lý chính <span
-                            class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-green-100 text-green-600 ml-1">Đã xử lý</span></p>
+                    <p class="text-[13px] text-on-surface-variant mt-0.5">Tiếp nhận phân xử lý chính <span
+                            class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-green-100 text-green-600 ml-1">Đã xử lý</span></p>
                 </div>
                 <div class="flex items-center gap-3 flex-shrink-0">
-                    <span class="text-[10px] text-on-surface-variant whitespace-nowrap">27/01/2026 10:30:00 AM</span>
+                    <span class="text-[12px] text-on-surface-variant whitespace-nowrap">27/01/2026 10:30:00 AM</span>
                 </div>
             </div>
         </div>
@@ -180,7 +180,7 @@
             </button>
         </div>
         <!-- Modal Body -->
-        <div class="p-6 space-y-4 text-[13px] text-gray-700">
+        <div class="p-6 space-y-4 text-[15px] text-gray-700">
             <div>
                 <label class="block font-medium mb-2">Nội dung:</label>
                 <!-- Editor Toolbar Mock -->
@@ -206,9 +206,9 @@
         tabs.forEach(t => {
             const btn = document.getElementById('proc-tab-' + t);
             if (t === tabId) {
-                btn.className = "px-4 py-1 rounded-full text-[10px] font-bold transition-all bg-primary text-on-primary shadow-sm";
+                btn.className = "px-4 py-1 rounded-full text-[12px] font-bold transition-all bg-primary text-on-primary shadow-sm";
             } else {
-                btn.className = "px-4 py-1 rounded-full text-[10px] font-bold transition-all text-on-surface-variant hover:text-on-surface";
+                btn.className = "px-4 py-1 rounded-full text-[12px] font-bold transition-all text-on-surface-variant hover:text-on-surface";
             }
         });
 

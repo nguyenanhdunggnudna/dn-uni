@@ -1,4 +1,4 @@
-<div class="bg-white h-full flex flex-col font-sans text-[13px]">
+<div class="bg-white h-full flex flex-col font-sans text-[15px]">
 
     <!-- Main Content -->
     <div class="flex gap-0 flex-1 overflow-hidden">
@@ -7,7 +7,7 @@
         <div class="flex-1 border-r border-gray-200 overflow-y-auto">
             <!-- Panel Header -->
             <div class="border-l-4 border-[#0052cc] bg-[#f0f4ff] px-4 py-2.5 border-b border-gray-200">
-                <h4 class="text-[#0052cc] font-bold uppercase text-[13px]">PHÂN GIAO VIỆC</h4>
+                <h4 class="text-[#0052cc] font-bold uppercase text-[15px]">PHÂN GIAO VIỆC</h4>
             </div>
 
             <div class="p-4 space-y-4">
@@ -54,7 +54,7 @@
                 <div class="space-y-2">
                     <label class="font-bold text-gray-700">5. Chọn cá nhân xử lý:</label>
                     <div class="border border-gray-300 rounded overflow-hidden">
-                        <table class="w-full text-[12px] border-collapse">
+                        <table class="w-full text-[14px] border-collapse">
                             <thead>
                                 <tr class="bg-[#0052cc] text-white">
                                     <th class="px-2 py-2 border-r border-blue-400 w-8 font-bold">TT</th>
@@ -204,11 +204,11 @@
                 <div class="space-y-2">
                     <input type="file" id="fileInput" class="hidden" multiple onchange="handleFileChosen(this)">
                     <div class="border-l-4 border-[#0052cc] bg-[#f0f4ff] px-3 py-2">
-                        <h4 class="text-[#0052cc] font-bold uppercase text-[12px]">FILE ĐÍNH KÈM</h4>
+                        <h4 class="text-[#0052cc] font-bold uppercase text-[14px]">FILE ĐÍNH KÈM</h4>
                     </div>
                     <div onclick="document.getElementById('fileInput').click()" class="border-2 border-dashed border-gray-300 rounded bg-gray-50 p-4 text-center text-gray-400 text-xs cursor-pointer hover:border-blue-400 hover:bg-blue-50/30 transition-colors">
                         <p>Kéo & thả file vào đây hoặc click để chọn</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Loại file: doc, docx, pdf, jpg, jpeg, xls, xlsx, zip, rar, png</p>
+                        <p class="text-[13px] text-gray-400 mt-1">Loại file: doc, docx, pdf, jpg, jpeg, xls, xlsx, zip, rar, png</p>
                     </div>
                     <div id="fileList" class="space-y-1"></div>
                 </div>
@@ -229,9 +229,9 @@
             <!-- NỘI DUNG VĂN BẢN -->
             <div class="border-b border-gray-200">
                 <div class="border-l-4 border-[#0052cc] bg-[#f0f4ff] px-4 py-2.5">
-                    <h4 class="text-[#0052cc] font-bold uppercase text-[12px]">NỘI DUNG VĂN BẢN</h4>
+                    <h4 class="text-[#0052cc] font-bold uppercase text-[14px]">NỘI DUNG VĂN BẢN</h4>
                 </div>
-                <table class="w-full text-[12px] border-collapse">
+                <table class="w-full text-[14px] border-collapse">
                     <tbody class="divide-y divide-gray-200">
                         <tr>
                             <td class="px-3 py-2 bg-[#0052cc] text-white font-bold w-[110px] border-r border-blue-400 align-top">Trích yếu</td>
@@ -274,9 +274,9 @@
             <!-- NỘI DUNG CÔNG VIỆC -->
             <div>
                 <div class="border-l-4 border-[#0052cc] bg-[#f0f4ff] px-4 py-2.5">
-                    <h4 class="text-[#0052cc] font-bold uppercase text-[12px]">NỘI DUNG CÔNG VIỆC</h4>
+                    <h4 class="text-[#0052cc] font-bold uppercase text-[14px]">NỘI DUNG CÔNG VIỆC</h4>
                 </div>
-                <table class="w-full text-[12px] border-collapse">
+                <table class="w-full text-[14px] border-collapse">
                     <tbody class="divide-y divide-gray-200">
                         <tr>
                             <td class="px-3 py-2 bg-[#0052cc] text-white font-bold w-[110px] border-r border-blue-400">Yêu cầu</td>
@@ -304,8 +304,8 @@
                 <!-- V. ĐƠN VỊ PHỐI HỢP XỬ LÝ VB -->
                 <div class="border-t border-gray-200 mt-2">
                     <div class="flex items-center justify-between px-3 py-2.5 border-l-4 border-[#0052cc] bg-[#f0f4ff]">
-                        <h4 class="text-[#0052cc] font-bold uppercase text-[12px]">V. ĐƠN VỊ PHỐI HỢP XỬ LÝ VB</h4>
-                        <button onclick="openDonViModal()" class="bg-[#0052cc] hover:bg-blue-700 text-white px-4 py-1 rounded-full text-[11px] font-bold shadow-sm transition-colors">
+                        <h4 class="text-[#0052cc] font-bold uppercase text-[14px]">V. ĐƠN VỊ PHỐI HỢP XỬ LÝ VB</h4>
+                        <button onclick="openDonViModal()" class="bg-[#0052cc] hover:bg-blue-700 text-white px-4 py-1 rounded-full text-[13px] font-bold shadow-sm transition-colors">
                             Thêm
                         </button>
                     </div>
@@ -318,7 +318,7 @@
 
 <!-- Modal: Đơn vị phối hợp xử lý VB -->
 <div id="donvi-modal" class="fixed inset-0 z-[9999] flex items-center justify-center hidden" style="background:rgba(0,0,0,0.35)">
-    <div class="bg-white rounded shadow-2xl w-[800px] max-w-[96vw] max-h-[90vh] overflow-hidden flex flex-col text-[13px]">
+    <div class="bg-white rounded shadow-2xl w-[800px] max-w-[96vw] max-h-[90vh] overflow-hidden flex flex-col text-[15px]">
         
         <!-- Modal Header with Search -->
         <div class="bg-gray-100 border-b border-gray-300 px-4 py-3 flex items-center justify-between">
@@ -333,23 +333,23 @@
         <!-- Tabs -->
         <div class="bg-white border-b border-gray-300 px-2 pt-2 flex items-end gap-0">
             <button onclick="switchDonViTab('lanh-dao')" id="tab-btn-lanh-dao"
-                class="donvi-tab-btn px-4 py-2 text-[12px] border border-gray-300 border-b-white bg-white font-semibold text-gray-700 -mb-px z-10">
+                class="donvi-tab-btn px-4 py-2 text-[14px] border border-gray-300 border-b-white bg-white font-semibold text-gray-700 -mb-px z-10">
                 Lãnh đạo
             </button>
             <button onclick="switchDonViTab('tat-ca')" id="tab-btn-tat-ca"
-                class="donvi-tab-btn px-4 py-2 text-[12px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
+                class="donvi-tab-btn px-4 py-2 text-[14px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
                 Tất cả
             </button>
             <button onclick="switchDonViTab('noi-dung-cv')" id="tab-btn-noi-dung-cv"
-                class="donvi-tab-btn px-4 py-2 text-[12px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
+                class="donvi-tab-btn px-4 py-2 text-[14px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
                 Nội dung công việc
             </button>
             <button onclick="switchDonViTab('nhom')" id="tab-btn-nhom"
-                class="donvi-tab-btn px-4 py-2 text-[12px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
+                class="donvi-tab-btn px-4 py-2 text-[14px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
                 Nhóm
             </button>
             <button onclick="switchDonViTab('vt-truong')" id="tab-btn-vt-truong"
-                class="donvi-tab-btn px-4 py-2 text-[12px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
+                class="donvi-tab-btn px-4 py-2 text-[14px] border border-gray-300 bg-gray-100 text-gray-500 font-semibold ml-0.5">
                 VT Trường
             </button>
         </div>
@@ -392,8 +392,8 @@
                         <textarea rows="8" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none"></textarea>
                     </div>
                     <div class="flex items-center justify-between pt-1">
-                        <span class="text-red-500 font-bold text-[13px]">62784;0</span>
-                        <button class="bg-[#00897b] hover:bg-teal-700 text-white px-5 py-2 rounded text-[13px] font-bold shadow-sm transition-colors">
+                        <span class="text-red-500 font-bold text-[15px]">62784;0</span>
+                        <button class="bg-[#00897b] hover:bg-teal-700 text-white px-5 py-2 rounded text-[15px] font-bold shadow-sm transition-colors">
                             4. Lưu yêu cầu
                         </button>
                     </div>
@@ -422,7 +422,7 @@
             <!-- Tab: VT Trường -->
             <div id="donvi-tab-vt-truong" class="donvi-tab-content p-4 hidden">
                 <div class="border border-gray-200 rounded overflow-hidden">
-                    <table class="w-full text-[12px] border-collapse">
+                    <table class="w-full text-[14px] border-collapse">
                         <thead>
                             <tr class="bg-[#2a6496] text-white">
                                 <th class="px-3 py-2.5 text-left font-bold border-r border-blue-500/30 w-10">TT</th>
@@ -438,10 +438,10 @@
                                 <td class="px-3 py-2.5 border-r border-gray-200 font-medium">Văn thư ĐHĐN</td>
                                 <td class="px-3 py-2.5 border-r border-gray-200 text-gray-700">Văn phòng ĐHĐN (ĐHĐN)</td>
                                 <td class="px-3 py-2.5 border-r border-gray-200 text-center">
-                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[11px] font-bold transition-colors">Chuyển</button>
+                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[13px] font-bold transition-colors">Chuyển</button>
                                 </td>
                                 <td class="px-3 py-2.5 text-center">
-                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[11px] font-bold transition-colors">N.Dung</button>
+                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[13px] font-bold transition-colors">N.Dung</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50 transition-colors">
@@ -449,10 +449,10 @@
                                 <td class="px-3 py-2.5 border-r border-gray-200 font-medium">van thu test 2</td>
                                 <td class="px-3 py-2.5 border-r border-gray-200 text-gray-700">Phòng HC Test2 (Tr Test2)</td>
                                 <td class="px-3 py-2.5 border-r border-gray-200 text-center">
-                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[11px] font-bold transition-colors">Chuyển</button>
+                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[13px] font-bold transition-colors">Chuyển</button>
                                 </td>
                                 <td class="px-3 py-2.5 text-center">
-                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[11px] font-bold transition-colors">N.Dung</button>
+                                    <button class="bg-[#00897b] hover:bg-teal-700 text-white px-3 py-1 rounded text-[13px] font-bold transition-colors">N.Dung</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -505,7 +505,7 @@
             div.className = 'flex items-center justify-between bg-gray-50 border border-gray-200 rounded px-3 py-1.5';
             div.innerHTML = `
                 <span class="text-xs text-gray-700 font-medium">${file.name}</span>
-                <span class="text-[10px] text-gray-400">${(file.size / 1024).toFixed(1)} KB</span>
+                <span class="text-[12px] text-gray-400">${(file.size / 1024).toFixed(1)} KB</span>
             `;
             fileList.appendChild(div);
         });
